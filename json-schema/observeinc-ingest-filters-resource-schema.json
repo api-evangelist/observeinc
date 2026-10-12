@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/observeinc/main/json-schema/observeinc-ingest-filters-resource-schema.json",
+  "title": "IngestFiltersObject",
+  "description": "A drop filter resource.",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/observeinc-openapi.yml#/components/schemas/IngestFilters-Resource",
+  "type": "object",
+  "required": [
+    "id",
+    "label",
+    "description",
+    "iconUrl",
+    "sourceDataset",
+    "pipeline",
+    "layout",
+    "dropRate",
+    "enabled",
+    "managedBy",
+    "createdAt",
+    "createdBy",
+    "updatedAt",
+    "updatedBy"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/ObjectId",
+      "readOnly": true,
+      "description": "Unique, immutable identifier of the filter."
+    },
+    "label": {
+      "type": "string",
+      "description": "Mutable display name of the filter."
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional human-readable description."
+    },
+    "iconUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri",
+      "description": "Optional icon shown alongside the filter in the UI."
+    },
+    "sourceDataset": {
+      "$ref": "#/$defs/DatasetRef",
+      "description": "The source dataset this filter applies to. Cannot be changed after creation."
+    },
+    "pipeline": {
+      "type": "string",
+      "description": "OPAL pipeline expression defining the filter predicate. Observations matching the pipeline are candidates for dropping, subject to `dropRate`."
+    },
+    "layout": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Reserved for UI state. Stored and returned verbatim, never interpreted by Observe. Safe to omit."
+    },
+    "dropRate": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Fraction (0.0-1.0) of matching observations to drop. 1.0 = drop all matches; 0.0 = drop none."
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Whether the filter is actively dropping observations. Disabled filters are retained but have no effect on ingest."
+    },
+    "managedBy": {
+      "readOnly": true,
+      "description": "Identifies the owner/manager of this filter. Managed filters cannot be modified through the API.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User",
+      "readOnly": true,
+      "description": "User who created the filter."
+    },
+    "createdAt": {
+      "$ref": "#/$defs/Time",
+      "readOnly": true,
+      "description": "When the filter was created."
+    },
+    "updatedBy": {
+      "$ref": "#/$defs/User",
+      "readOnly": true,
+      "description": "User who most recently updated the filter."
+    },
+    "updatedAt": {
+      "$ref": "#/$defs/Time",
+      "readOnly": true,
+      "description": "When the filter was last updated."
+    }
+  },
+  "$defs": {
+    "DatasetBrief": {
+      "title": "DatasetBrief",
+      "type": "object",
+      "description": "Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "contentType"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/$defs/DatasetContentType",
+          "description": "The type of data the referenced dataset contains — Resource, Log,\nMetric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset's\nkind and interface bindings.\n"
+        }
+      }
+    },
+    "DatasetContentType": {
+      "title": "DatasetContentType",
+      "type": "string",
+      "description": "The type of data a dataset contains. For Resource datasets, this is\ndetermined by the dataset kind. For other kinds, it is derived from the\ndataset's interface bindings. Returns Unknown if no recognized interface\nis found.\n",
+      "enum": [
+        "Unknown",
+        "Resource",
+        "Log",
+        "Metric",
+        "OTelSpan",
+        "OTelTrace"
+      ]
+    },
+    "DatasetRef": {
+      "title": "DatasetRef",
+      "type": "object",
+      "description": "A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/DatasetBrief"
+        }
+      }
+    },
+    "ObjectBrief": {
+      "title": "ObjectBrief",
+      "type": "object",
+      "description": "Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "managedBy"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "managedBy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager's brief."
+        }
+      }
+    },
+    "ObjectId": {
+      "type": "string",
+      "format": "ObjectId"
+    },
+    "ObjectRef": {
+      "title": "ObjectRef",
+      "type": "object",
+      "description": "A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/ObjectBrief"
+        }
+      }
+    },
+    "Time": {
+      "type": "string",
+      "format": "RFC3339"
+    },
+    "User": {
+      "title": "User",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "User Identifier",
+          "$ref": "#/$defs/ObjectId"
+        },
+        "label": {
+          "title": "User Label",
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

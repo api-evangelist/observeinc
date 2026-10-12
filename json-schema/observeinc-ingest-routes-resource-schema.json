@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/observeinc/main/json-schema/observeinc-ingest-routes-resource-schema.json",
+  "title": "IngestRoutesObject",
+  "description": "An ingest route resource. This is one rule defining a route for observations of a certain type.",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/observeinc-openapi.yml#/components/schemas/IngestRoutes-Resource",
+  "type": "object",
+  "required": [
+    "id",
+    "createdBy",
+    "createdAt",
+    "updatedBy",
+    "updatedAt",
+    "type",
+    "pipeline",
+    "layout",
+    "destinationId",
+    "secondaryDestinationId",
+    "enabled",
+    "managedBy"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/ObjectId",
+      "readOnly": true,
+      "description": "Unique identifier for this ingest route."
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User",
+      "readOnly": true,
+      "description": "User who created this route. Always returned as an ID-only object; pass expand=true to populate `record`."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true,
+      "description": "Time at which this route was created."
+    },
+    "updatedBy": {
+      "$ref": "#/$defs/User",
+      "readOnly": true,
+      "description": "User who last updated this route. Always returned as an ID-only object; pass expand=true to populate `record`."
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true,
+      "description": "Time at which this route was last updated."
+    },
+    "type": {
+      "$ref": "#/$defs/IngestRoutes-Type",
+      "readOnly": true,
+      "description": "The observation type this route applies to. Set at creation and cannot be changed."
+    },
+    "pipeline": {
+      "type": "string",
+      "readOnly": true,
+      "description": "OPAL expression acting as the match predicate for this route. An observation is routed here when the expression evaluates true. Compiled against the schema of the destination source dataset.\n\nAn empty string identifies the type's default route, which matches every observation not matched by a higher-priority route. See the `pipeline` field on the create request for the restrictions that apply per type."
+    },
+    "layout": {
+      "type": "object",
+      "readOnly": true,
+      "description": "Opaque JSON blob round-tripped to the frontend; not interpreted by the server."
+    },
+    "destinationId": {
+      "$ref": "#/$defs/ObjectId",
+      "readOnly": true,
+      "description": "Primary destination dataset ID. Observations matching this route are written here."
+    },
+    "secondaryDestinationId": {
+      "$ref": "#/$defs/NullableObjectId",
+      "readOnly": true,
+      "description": "Secondary destination dataset ID. When set, observations matching this route are duplicated to both the primary and secondary destination datasets."
+    },
+    "enabled": {
+      "type": "boolean",
+      "readOnly": true,
+      "description": "Whether this route is evaluated against incoming data. A disabled route is skipped entirely, as though it did not exist. New routes are created disabled; see the create request for details."
+    },
+    "managedBy": {
+      "readOnly": true,
+      "description": "Identifies the owner/manager of this route. Managed routes cannot be created, modified, or deleted through the API. Always returned as an ID-only object; pass expand=true to populate `record` (label, description, iconUrl).",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "IngestRoutes-Type": {
+      "title": "IngestRoutesType",
+      "type": "string",
+      "description": "The observation type a route applies to. Each type corresponds to a source dataset schema and to the ingest endpoints that emit compatible data. `any` is the generic schema with `FIELDS` and `EXTRA` columns; the rest are direct-write source datasets. See the `type` path parameter for the endpoint mappings.",
+      "enum": [
+        "otellogs",
+        "otelmetrics",
+        "oteltraces",
+        "prometheus",
+        "k8sentity",
+        "any"
+      ]
+    },
+    "NullableObjectId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "ObjectId"
+    },
+    "ObjectBrief": {
+      "title": "ObjectBrief",
+      "type": "object",
+      "description": "Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "managedBy"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "managedBy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager's brief."
+        }
+      }
+    },
+    "ObjectId": {
+      "type": "string",
+      "format": "ObjectId"
+    },
+    "ObjectRef": {
+      "title": "ObjectRef",
+      "type": "object",
+      "description": "A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/ObjectBrief"
+        }
+      }
+    },
+    "User": {
+      "title": "User",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "User Identifier",
+          "$ref": "#/$defs/ObjectId"
+        },
+        "label": {
+          "title": "User Label",
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+generated: '2026-10-13'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 11
+  own: 6
+  other_domain: 4
+  platform: 1
+  roles:
+  - api
+  - docs
+  - identity
+  - other
+  - source
+  - status
+  - support
+  - website
+hosts:
+- host: account.observeinc.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: observeinc.com
+  role: identity
+  relation: own
+- host: api.observeinc.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: observeinc.com
+  role: api
+  relation: own
+- host: docs.observeinc.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - GettingStarted
+  - Documentation
+  - APIReference
+  serves:
+  - docs
+  registrable_domain: observeinc.com
+  role: docs
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: mkto.observeinc.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: observeinc.com
+  role: other
+  relation: own
+- host: signup.snowflake.com
+  found_by:
+  - pointer
+  types:
+  - SignUp
+  serves: []
+  registrable_domain: snowflake.com
+  role: identity
+  relation: other-domain
+- host: status.snowflake.com
+  found_by:
+  - pointer
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: snowflake.com
+  role: status
+  relation: other-domain
+- host: trust.snowflake.com
+  found_by:
+  - pointer
+  types:
+  - TrustCenter
+  serves: []
+  registrable_domain: snowflake.com
+  role: other
+  relation: other-domain
+- host: www.observeinc.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - TermsOfService
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: observeinc.com
+  role: website
+  relation: own
+- host: www.snowflake.com
+  found_by:
+  - pointer
+  types:
+  - Newsroom
+  - PrivacyPolicy
+  - Support
+  - Pricing
+  - Blog
+  serves: []
+  registrable_domain: snowflake.com
+  role: support
+  relation: other-domain
+- host: '{customerid}.observeinc.com'
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: observeinc.com
+  role: other
+  relation: own

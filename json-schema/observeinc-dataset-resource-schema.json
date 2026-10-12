@@ -1,0 +1,1057 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/observeinc/main/json-schema/observeinc-dataset-resource-schema.json",
+  "title": "DatasetResource",
+  "description": "Observe Dataset with properties.",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/observeinc-openapi.yml#/components/schemas/Dataset-Resource",
+  "type": "object",
+  "required": [
+    "id",
+    "label",
+    "description",
+    "icon",
+    "kind",
+    "source",
+    "lastUpdateSource",
+    "fieldList",
+    "validFromField",
+    "validToField",
+    "labelField",
+    "primaryKey",
+    "candidateKeys",
+    "foreignKeys",
+    "relatedKeys",
+    "groupingKey",
+    "correlationTags",
+    "isSource",
+    "interfaces",
+    "contentType",
+    "customFieldMappings",
+    "objectTags",
+    "alignment",
+    "compilationError",
+    "managedBy",
+    "dataTableViewState",
+    "defaultDashboard",
+    "defaultInstanceDashboard",
+    "isView",
+    "isMonitor",
+    "isMetricSMA",
+    "accelerationType",
+    "accelerationInfo",
+    "createdBy",
+    "updatedBy",
+    "createdAt",
+    "updatedAt",
+    "storageIntegration",
+    "definitionType",
+    "defaultQueryWindowSeconds"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/ObjectId",
+      "readOnly": true
+    },
+    "label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/Dataset-DatasetKind"
+    },
+    "source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lastUpdateSource": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fieldList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Dataset-FieldDesc"
+      }
+    },
+    "validFromField": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "validToField": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "labelField": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "primaryKey": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "candidateKeys": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "foreignKeys": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Dataset-ForeignKey"
+      }
+    },
+    "relatedKeys": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Dataset-RelatedKey"
+      }
+    },
+    "groupingKey": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Dataset-GroupingKey"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "correlationTags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Dataset-CorrelationTag"
+      }
+    },
+    "isSource": {
+      "type": "boolean"
+    },
+    "interfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Dataset-ImplementedInterface"
+      }
+    },
+    "contentType": {
+      "$ref": "#/$defs/DatasetContentType",
+      "description": "The type of data this dataset contains. For Resource datasets, determined by\nthe dataset kind. For other kinds, derived from the dataset's interface bindings.\nReturns Unknown if no recognized interface is found.\n"
+    },
+    "customFieldMappings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": "Custom field mappings associated with the dataset's content type. Maps canonical\nfield names to column name(s). Most fields map to a single column, but some\n(e.g. metric \"tag\") allow multiple columns. The exact set of keys depends on\nthe contentType. For example, a Log dataset might have {\"log\": [\"message\"]}, while\na Metric dataset might have {\"metric\": [\"metric_name\"], \"value\": [\"metric_value\"]}.\nEmpty if the dataset has no recognized content type.\n"
+    },
+    "objectTags": {
+      "$ref": "#/$defs/ObjectTags"
+    },
+    "alignment": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Dataset-TimeAlignment"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "compilationError": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Dataset-CompilationError"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "managedBy": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "dataTableViewState": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "defaultDashboard": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "defaultInstanceDashboard": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "isView": {
+      "type": "boolean"
+    },
+    "isMonitor": {
+      "type": "boolean"
+    },
+    "isMetricSMA": {
+      "type": "boolean"
+    },
+    "accelerationType": {
+      "$ref": "#/$defs/Dataset-AccelerationType"
+    },
+    "accelerationInfo": {
+      "$ref": "#/$defs/Dataset-AccelerationInfo"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "updatedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "createdAt": {
+      "$ref": "#/$defs/Time"
+    },
+    "updatedAt": {
+      "$ref": "#/$defs/Time"
+    },
+    "storageIntegration": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/StorageIntegration-Ref"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "readOnly": true,
+      "description": "The storage integration associated with this dataset, if any.\nReturns null for datasets without a storage integration.\nWhen expand=true, includes a record object with label, type, and storageProvider.\n"
+    },
+    "definitionType": {
+      "$ref": "#/$defs/Dataset-DefinitionType",
+      "description": "The kind of definition that produces this dataset. Always populated;\nclassifies every dataset, including source datasets (datastreams /\nexternal tables) and rows whose stored kind is empty or corrupt.\n"
+    },
+    "score": {
+      "type": "number",
+      "format": "double",
+      "readOnly": true,
+      "description": "Cosine similarity score (0–1). Only present when the `query` search\nparameter is used (semantic search). Omitted for non-semantic list\nrequests.\n"
+    }
+  },
+  "$defs": {
+    "Dataset-AccelerationError": {
+      "title": "AccelerationError",
+      "type": "object",
+      "required": [
+        "time",
+        "errorText"
+      ],
+      "properties": {
+        "time": {
+          "$ref": "#/$defs/Time"
+        },
+        "errorText": {
+          "type": "string"
+        }
+      }
+    },
+    "Dataset-AccelerationInfo": {
+      "title": "AccelerationInfo",
+      "type": "object",
+      "required": [
+        "state",
+        "stalenessSeconds",
+        "recentStalenessSeconds",
+        "stalenessReasons",
+        "userConfiguredTargetStalenessSeconds",
+        "targetExcludingDownstreamStalenessSeconds",
+        "effectiveTargetStalenessSeconds",
+        "rateLimitOverrideTargetStalenessSeconds",
+        "alwaysAccelerated",
+        "acceleratedRanges",
+        "targetAcceleratedRanges",
+        "freshnessTime",
+        "effectiveOnDemandMaterializationLengthDays",
+        "dataRetentionEnabled",
+        "effectiveDataRetentionPeriodDays",
+        "effectiveDataRetentionTimestamp",
+        "minimumDataTimestamp",
+        "hibernatedAt",
+        "errors"
+      ],
+      "properties": {
+        "state": {
+          "$ref": "#/$defs/Dataset-AccelerationState"
+        },
+        "stalenessSeconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Live staleness of the dataset. Null if alwaysAccelerated is true."
+        },
+        "recentStalenessSeconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "A stable, conservative measurement of what staleness the dataset is achieving\nover the past few hours. Null if alwaysAccelerated is true.\n"
+        },
+        "stalenessReasons": {
+          "type": "array",
+          "description": "Reasons explaining why this dataset's freshness is what it is.\nEmpty array indicates the dataset is meeting its freshness goal.\nToday the server returns at most one dominant reason; the list\nshape is reserved so we can return multiple stacked reasons\n(e.g. cost-throttle + decay together) in the future without an\nAPI contract change.\n",
+          "items": {
+            "$ref": "#/$defs/Dataset-StalenessReason"
+          }
+        },
+        "userConfiguredTargetStalenessSeconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "User-configured staleness target of the dataset. Set to default value if not set by user.\nActual target may be higher due to decaying or credit manager overrides.\n"
+        },
+        "targetExcludingDownstreamStalenessSeconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Target staleness of the dataset, ignoring downstream freshness goals.\nThis can be higher than the configured staleness target due to decaying or credit manager overrides.\n"
+        },
+        "effectiveTargetStalenessSeconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Effective target staleness of the dataset. This is the value that the dataset is being kept up to date to.\nThis can be higher or lower than the user-configured target staleness if the credit manager is active or downstream datasets staleness targets demand it.\n\nIf `effectiveTargetStalenessSeconds > userConfiguredTargetStalenessSeconds`, then the credit manager is active on this dataset, and\n`effectiveTargetStalenessSeconds == rateLimitOverrideTargetStalenessSeconds`.\nIf `effectiveTargetStalenessSeconds < userConfiguredTargetStalenessSeconds`, then a downstream dataset/monitor has a lower configured freshness goal.\nIf `effectiveTargetStalenessSeconds == userConfiguredTargetStalenessSeconds`, then the configured freshness goal is in effect.\n"
+        },
+        "rateLimitOverrideTargetStalenessSeconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "The target staleness override for this dataset from the credit manager, if\na transform credit rate limit is configured and is causing this dataset's\nconfigured freshness goal to be overridden.\n"
+        },
+        "alwaysAccelerated": {
+          "type": "boolean"
+        },
+        "acceleratedRanges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/OpenTimeRange"
+          }
+        },
+        "targetAcceleratedRanges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/OpenTimeRange"
+          }
+        },
+        "freshnessTime": {
+          "$ref": "#/$defs/NullableTime"
+        },
+        "effectiveOnDemandMaterializationLengthDays": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "dataRetentionEnabled": {
+          "type": "boolean"
+        },
+        "effectiveDataRetentionPeriodDays": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64"
+        },
+        "effectiveDataRetentionTimestamp": {
+          "$ref": "#/$defs/NullableTime"
+        },
+        "minimumDataTimestamp": {
+          "$ref": "#/$defs/NullableTime"
+        },
+        "hibernatedAt": {
+          "$ref": "#/$defs/NullableTime"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Dataset-AccelerationError"
+          }
+        }
+      }
+    },
+    "Dataset-AccelerationState": {
+      "title": "AccelerationState",
+      "type": "string",
+      "description": "The state of the dataset's acceleration.\nInitializing: The dataset is newly created/updated and acceleration has just started.\nAccelerated: The dataset is accelerated and available for querying.\nAcceleratedImmediately: The dataset is accelerated and available for querying. The dataset is also in \"live mode\", meaning it is being updated as fast as possible.\nUnavailable: The dataset is not accelerated and is not available for querying due to a compilation error in the dataset or upstream.\nDisabled: The dataset is not accelerated and is available for querying due to user disablement. (e.g. dataset is a view)\nError: The dataset is not accelerated and may return outdated results due to a critical error.\n",
+      "enum": [
+        "Initializing",
+        "Accelerated",
+        "AcceleratedImmediately",
+        "Unavailable",
+        "Disabled",
+        "Error"
+      ]
+    },
+    "Dataset-AccelerationType": {
+      "title": "AccelerationType",
+      "type": "string",
+      "enum": [
+        "InsertOnly",
+        "Aggregation",
+        "Other",
+        "NotSupported"
+      ]
+    },
+    "Dataset-CompilationError": {
+      "title": "CompilationError",
+      "type": "object",
+      "required": [
+        "error",
+        "errorInDataset"
+      ],
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "errorInDataset": {
+          "description": "Reference to the upstream dataset that produced the compilation\nerror. Weak ref: in many cases the upstream dataset cannot be\nresolved (cross-workspace deletion, RBAC visibility, race with\nsoft-delete). When unresolvable, the field is null and the caller\nstill has the `error` string. The field is always present; only\nits value is nullable.\n",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DatasetRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Dataset-CorrelationTag": {
+      "title": "CorrelationTag",
+      "type": "object",
+      "required": [
+        "tag",
+        "path"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string"
+        },
+        "path": {
+          "$ref": "#/$defs/Dataset-FieldPath"
+        }
+      }
+    },
+    "Dataset-DataType": {
+      "title": "DataType",
+      "type": "string",
+      "enum": [
+        "None",
+        "Bool",
+        "Float64",
+        "Int64",
+        "String",
+        "Timestamp",
+        "Duration",
+        "IPv4",
+        "TDigest",
+        "Array",
+        "Object",
+        "Variant",
+        "Link",
+        "DatasetRef"
+      ]
+    },
+    "Dataset-DatasetKind": {
+      "title": "DatasetKind",
+      "type": "string",
+      "enum": [
+        "Table",
+        "Resource",
+        "Event",
+        "Interval"
+      ]
+    },
+    "Dataset-DefinitionType": {
+      "title": "DefinitionType",
+      "type": "string",
+      "description": "The kind of dataset definition. Values match `metatypes.TransformKind`'s\nstring constants verbatim where the backend has one (`OPAL`, `Builtin`,\n`LogDerived`); `Source` and `Invalid` are REST-side additions for\ndataset shapes the backend does not surface as a TransformKind.\n- OPAL: dataset is produced by an OPAL transform pipeline.\n- Builtin: dataset is produced by a built-in transform (e.g. canonical-trace).\n- LogDerived: dataset is a log-derived metric.\n- Source: dataset receives data directly (datastream or external table); it has no transform.\n- Invalid: the stored transform kind is empty or unrecognised. Indicates corrupt or partially-migrated data, or a legacy SQL-kind transform (no production datasets carry one as of 2026-05-14).\n",
+      "enum": [
+        "OPAL",
+        "Builtin",
+        "LogDerived",
+        "Source",
+        "Invalid"
+      ]
+    },
+    "Dataset-FieldDesc": {
+      "title": "FieldDesc",
+      "type": "object",
+      "required": [
+        "name",
+        "type",
+        "indexDefs",
+        "linkDesc",
+        "isEnum",
+        "isSearchable",
+        "isHidden",
+        "isConst",
+        "isMetric"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/Dataset-FieldType"
+        },
+        "indexDefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Dataset-IndexDefinition"
+          }
+        },
+        "linkDesc": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Dataset-ForeignKey"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "isEnum": {
+          "type": "boolean"
+        },
+        "isSearchable": {
+          "type": "boolean"
+        },
+        "isHidden": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "isConst": {
+          "type": "boolean"
+        },
+        "isMetric": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Dataset-FieldPath": {
+      "title": "FieldPath",
+      "type": "object",
+      "required": [
+        "field",
+        "path"
+      ],
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      }
+    },
+    "Dataset-FieldType": {
+      "title": "FieldType",
+      "type": "object",
+      "required": [
+        "tag"
+      ],
+      "properties": {
+        "tag": {
+          "$ref": "#/$defs/Dataset-DataType"
+        }
+      }
+    },
+    "Dataset-ForeignKey": {
+      "title": "ForeignKey",
+      "type": "object",
+      "required": [
+        "label",
+        "targetDataset",
+        "targetStageLabel",
+        "targetLabelField",
+        "srcPaths",
+        "dstFields"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "targetDataset": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DatasetRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "targetStageLabel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "targetLabelField": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "srcPaths": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Dataset-FieldPath"
+          }
+        },
+        "dstFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Dataset-GroupingElement": {
+      "title": "GroupingElement",
+      "type": "object",
+      "required": [
+        "type",
+        "value"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/Dataset-GroupingElementType"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "Dataset-GroupingElementType": {
+      "title": "GroupingElementType",
+      "type": "string",
+      "enum": [
+        "Field",
+        "Link"
+      ]
+    },
+    "Dataset-GroupingKey": {
+      "title": "GroupingKey",
+      "type": "object",
+      "required": [
+        "elements"
+      ],
+      "properties": {
+        "elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Dataset-GroupingElement"
+          }
+        }
+      }
+    },
+    "Dataset-ImplementedInterface": {
+      "title": "ImplementedInterface",
+      "type": "object",
+      "required": [
+        "path",
+        "mapping"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "mapping": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Dataset-InterfaceFieldMapping"
+          }
+        }
+      }
+    },
+    "Dataset-IndexDefinition": {
+      "title": "IndexDefinition",
+      "type": "object",
+      "required": [
+        "field",
+        "type"
+      ],
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/Dataset-IndexType"
+        }
+      }
+    },
+    "Dataset-IndexType": {
+      "title": "IndexType",
+      "type": "string",
+      "enum": [
+        "TokenIndex",
+        "SubstringIndex",
+        "EqualityIndex",
+        "AutoClusteringIndex"
+      ]
+    },
+    "Dataset-InterfaceFieldMapping": {
+      "title": "InterfaceFieldMapping",
+      "type": "object",
+      "required": [
+        "interfaceField",
+        "field"
+      ],
+      "properties": {
+        "interfaceField": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        }
+      }
+    },
+    "Dataset-RelatedKey": {
+      "title": "RelatedKey",
+      "type": "object",
+      "required": [
+        "label",
+        "targetDataset",
+        "srcFields",
+        "dstFields"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "targetDataset": {
+          "$ref": "#/$defs/DatasetRef"
+        },
+        "srcFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dstFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Dataset-StalenessReason": {
+      "title": "StalenessReason",
+      "type": "string",
+      "description": "A reason explaining why a dataset's freshness is what it is.\nConfiguredFreshnessGoal: The data meets the freshness goal set for this dataset, but that goal is loose enough to allow this staleness; set a tighter goal for fresher data.\nCreditManagerOverride: The acceleration credit manager raised the freshness goal to keep acceleration cost down.\nSlowAcceleration: Acceleration can't keep up with the freshness goal; optimizing the dataset's query or reducing its data volume can help.\nActiveBackfill: A backfill is accelerating historical data, which can reduce freshness until it finishes.\nDatasetHibernated: Ongoing acceleration is suspended because the dataset is hibernated; querying it resumes acceleration.\nUnusedDatasetHibernating: The freshness goal was relaxed because the dataset hasn't been queried recently; querying it restores the configured goal.\n",
+      "enum": [
+        "ConfiguredFreshnessGoal",
+        "CreditManagerOverride",
+        "SlowAcceleration",
+        "ActiveBackfill",
+        "DatasetHibernated",
+        "UnusedDatasetHibernating"
+      ]
+    },
+    "Dataset-TimeAlignment": {
+      "title": "TimeAlignment",
+      "type": "object",
+      "required": [
+        "stepSizeNanoseconds",
+        "offsetNanoseconds"
+      ],
+      "properties": {
+        "stepSizeNanoseconds": {
+          "$ref": "#/$defs/DurationNanoseconds"
+        },
+        "offsetNanoseconds": {
+          "$ref": "#/$defs/DurationNanoseconds"
+        }
+      }
+    },
+    "DatasetBrief": {
+      "title": "DatasetBrief",
+      "type": "object",
+      "description": "Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "contentType"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/$defs/DatasetContentType",
+          "description": "The type of data the referenced dataset contains — Resource, Log,\nMetric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset's\nkind and interface bindings.\n"
+        }
+      }
+    },
+    "DatasetContentType": {
+      "title": "DatasetContentType",
+      "type": "string",
+      "description": "The type of data a dataset contains. For Resource datasets, this is\ndetermined by the dataset kind. For other kinds, it is derived from the\ndataset's interface bindings. Returns Unknown if no recognized interface\nis found.\n",
+      "enum": [
+        "Unknown",
+        "Resource",
+        "Log",
+        "Metric",
+        "OTelSpan",
+        "OTelTrace"
+      ]
+    },
+    "DatasetRef": {
+      "title": "DatasetRef",
+      "type": "object",
+      "description": "A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/DatasetBrief"
+        }
+      }
+    },
+    "DurationNanoseconds": {
+      "type": "string",
+      "format": "int64 nanoseconds"
+    },
+    "NullableTime": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "RFC3339"
+    },
+    "ObjectBrief": {
+      "title": "ObjectBrief",
+      "type": "object",
+      "description": "Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "managedBy"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "managedBy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager's brief."
+        }
+      }
+    },
+    "ObjectId": {
+      "type": "string",
+      "format": "ObjectId"
+    },
+    "ObjectRef": {
+      "title": "ObjectRef",
+      "type": "object",
+      "description": "A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/ObjectBrief"
+        }
+      }
+    },
+    "ObjectTags": {
+      "title": "ObjectTags",
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": "User-applied tags for organization and discovery, as a map of tag key\nto a list of values. For example: {\"env\": [\"prod\", \"staging\"], \"team\": [\"platform\"]}.\n"
+    },
+    "OpenTimeRange": {
+      "title": "Open Time Range",
+      "description": "A time range with a start and/or end time.",
+      "type": "object",
+      "required": [
+        "startTime",
+        "endTime"
+      ],
+      "properties": {
+        "startTime": {
+          "$ref": "#/$defs/NullableTime"
+        },
+        "endTime": {
+          "$ref": "#/$defs/NullableTime"
+        }
+      }
+    },
+    "StorageIntegration-Brief": {
+      "title": "StorageIntegrationBrief",
+      "type": "object",
+      "required": [
+        "label",
+        "type",
+        "storageProvider"
+      ],
+      "description": "Expanded fields for a storage integration reference.\nPresent only when the parent resource is fetched with ?expand=true.\n",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/StorageIntegration-Type"
+        },
+        "storageProvider": {
+          "$ref": "#/$defs/StorageIntegration-StorageProvider"
+        }
+      }
+    },
+    "StorageIntegration-Ref": {
+      "title": "StorageIntegrationRef",
+      "type": "object",
+      "description": "A reference to a storage integration, used when embedded in other resources.\nAlways includes id. When the parent resource is fetched with ?expand=true,\nthe record object is present with label, type, and storageProvider.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId",
+          "readOnly": true
+        },
+        "record": {
+          "$ref": "#/$defs/StorageIntegration-Brief"
+        }
+      }
+    },
+    "StorageIntegration-StorageProvider": {
+      "title": "StorageProvider",
+      "type": "string",
+      "enum": [
+        "S3"
+      ]
+    },
+    "StorageIntegration-Type": {
+      "title": "StorageIntegrationType",
+      "type": "string",
+      "enum": [
+        "Iceberg"
+      ]
+    },
+    "Time": {
+      "type": "string",
+      "format": "RFC3339"
+    },
+    "User": {
+      "title": "User",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "User Identifier",
+          "$ref": "#/$defs/ObjectId"
+        },
+        "label": {
+          "title": "User Label",
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

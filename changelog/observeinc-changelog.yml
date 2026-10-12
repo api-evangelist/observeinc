@@ -1,0 +1,29 @@
+generated: '2026-10-13'
+method: searched
+source: https://docs.observeinc.com/reference/api-changelog
+scheme: date-based (Observe-Api-Version header, YYYY-MM-DD)
+current_version: '2026-10-06'
+entries:
+- version: '2026-10-07'
+  date: '2026-10-07'
+  breaking: true
+  highlights:
+  - New dated response version 2026-10-06 for GET /v1/monitors/{id} (full Monitor-Resource shape, alpha)
+  - operationId getMonitor renamed GetMonitor
+  - monitor id path parameter modeled as string format int64
+  - label in Monitor-Brief and Monitor-ListItem deprecated in favor of name
+  url: https://docs.observeinc.com/reference/2026-10-07
+- version: '2026-09-09'
+  date: '2026-09-09'
+  breaking: true
+  highlights:
+  - Reference table {id} path parameters no longer declare format int64 (GetReferenceTable, UpdateReferenceTable, UpdateReferenceTableMetadata, DeleteReferenceTable)
+  url: https://docs.observeinc.com/reference/2026-09-09
+- version: '2026-08-26'
+  date: '2026-08-26'
+  breaking: true
+  highlights:
+  - 2026-08-04 is the first dated API version; GET /v1/monitors returns paginated {monitors, meta} envelope with CEL filter
+  - listMonitors renamed ListMonitors
+  - nameExact and nameSubstring deprecated in favor of filter
+  url: https://docs.observeinc.com/reference/2026-08-26

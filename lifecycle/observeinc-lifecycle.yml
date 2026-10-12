@@ -1,0 +1,25 @@
+generated: '2026-10-13'
+method: searched
+source: https://docs.observeinc.com/reference/use-the-observe-api-version-header
+versioning:
+  scheme: date-based response versioning via the Observe-Api-Version request header
+  header: Observe-Api-Version
+  default: Omit the header and you get the original, stable response. This default never changes.
+  versions:
+  - '2026-08-04'
+  - '2026-10-06'
+  notes: A version may need to be enabled for your account; if not, the request returns 403.
+changelog: https://docs.observeinc.com/reference/api-changelog
+deprecation:
+  policy: 'Deprecated fields and parameters are marked deprecated: true in the spec and retained for backward compatibility (per the API changelog).'
+  items:
+  - item: nameExact query parameter on GET /v1/monitors
+    since: '2026-08-04'
+    replacement: filter
+  - item: nameSubstring query parameter on GET /v1/monitors
+    since: '2026-08-04'
+    replacement: filter
+  - item: label in Monitor-Brief and Monitor-ListItem
+    since: '2026-10-07'
+    replacement: name
+status_page: https://status.snowflake.com/

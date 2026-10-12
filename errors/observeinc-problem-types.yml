@@ -1,0 +1,90 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/observeinc-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: ErrorMessage
+coverage:
+  operations: 88
+  statuses_declared: 11
+problems:
+- status: 400
+  title: Bad Request
+  description: Bad request
+  operations: 85
+  media_types:
+  - application/json
+  schema: ErrorMessage
+- status: 401
+  title: Unauthorized
+  description: Unauthorized
+  operations: 74
+  media_types:
+  - application/json
+  schema: ErrorMessage
+- status: 403
+  title: Forbidden
+  description: Forbidden
+  operations: 74
+  media_types:
+  - application/json
+  schema: ErrorMessage
+- status: 404
+  title: Not Found
+  description: Resource not found
+  operations: 43
+  media_types:
+  - application/json
+  schema: ErrorMessage
+- status: 409
+  title: Conflict
+  description: Conflict
+  operations: 5
+  media_types:
+  - application/json
+  schema: ErrorMessage
+- status: 413
+  title: Content Too Large
+  description: Payload too large (PayloadTooLarge).
+  operations: 3
+  media_types:
+  - application/json
+  schema: Apm-Error
+- status: 422
+  title: Unprocessable Content
+  description: Unprocessable entity — a required query parameter was omitted (e.g. `missing_field`).
+  operations: 4
+  media_types:
+  - application/json
+  schema: ErrorMessage
+- status: 429
+  title: Too Many Requests
+  description: Rate limit reached
+  operations: 71
+  media_types:
+  - application/json
+  schema: ErrorMessage
+- status: 500
+  title: Internal Server Error
+  description: Internal server error (InternalError).
+  operations: 4
+  media_types:
+  - application/json
+  schema: Apm-Error
+- status: 504
+  title: Gateway Timeout
+  description: Query timed out (TimedOut).
+  operations: 4
+  media_types:
+  - application/json
+  schema: Apm-Error
+- status: 5XX
+  title: null
+  description: Internal server error
+  operations: 70
+  media_types:
+  - application/json
+  schema: ErrorMessage

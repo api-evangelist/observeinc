@@ -1,0 +1,1224 @@
+{
+  "@context": {
+    "@vocab": "https://observeinc.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "observeinc": "https://observeinc.com/schema#",
+    "User": "observeinc:User",
+    "id": {
+      "@id": "observeinc:id",
+      "@type": "@id"
+    },
+    "label": {
+      "@id": "observeinc:label",
+      "@type": "xsd:string"
+    },
+    "timezone": {
+      "@id": "observeinc:timezone",
+      "@type": "xsd:string"
+    },
+    "locale": {
+      "@id": "observeinc:locale",
+      "@type": "xsd:string"
+    },
+    "ErrorMessage": "observeinc:ErrorMessage",
+    "type": {
+      "@id": "observeinc:type",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "observeinc:message",
+      "@type": "xsd:string"
+    },
+    "ApiTokenScope": "observeinc:ApiTokenScope",
+    "ApiToken-Resource": "observeinc:ApiToken-Resource",
+    "description": {
+      "@id": "observeinc:description",
+      "@type": "xsd:string"
+    },
+    "expiration": {
+      "@id": "observeinc:expiration",
+      "@type": "@id"
+    },
+    "createdBy": {
+      "@id": "observeinc:createdBy",
+      "@type": "@id"
+    },
+    "createdAt": {
+      "@id": "observeinc:createdAt",
+      "@type": "@id"
+    },
+    "updatedBy": {
+      "@id": "observeinc:updatedBy",
+      "@type": "@id"
+    },
+    "updatedAt": {
+      "@id": "observeinc:updatedAt",
+      "@type": "@id"
+    },
+    "disabled": {
+      "@id": "observeinc:disabled",
+      "@type": "xsd:boolean"
+    },
+    "scopes": {
+      "@id": "observeinc:scopes",
+      "@container": "@list"
+    },
+    "secret": {
+      "@id": "observeinc:secret",
+      "@type": "xsd:string"
+    },
+    "ApiToken-CreateRequest": "observeinc:ApiToken-CreateRequest",
+    "lifetimeHours": {
+      "@id": "observeinc:lifetimeHours",
+      "@type": "xsd:integer"
+    },
+    "ObjectRef": "observeinc:ObjectRef",
+    "record": {
+      "@id": "observeinc:record",
+      "@type": "@id"
+    },
+    "ObjectBrief": "observeinc:ObjectBrief",
+    "iconUrl": {
+      "@id": "observeinc:iconUrl",
+      "@type": "xsd:string"
+    },
+    "managedBy": {
+      "@id": "observeinc:managedBy"
+    },
+    "FrontendTimeRangePreset": "observeinc:FrontendTimeRangePreset",
+    "presetType": {
+      "@id": "observeinc:presetType",
+      "@type": "xsd:string"
+    },
+    "FrontendTimeRangeRelative": "observeinc:FrontendTimeRangeRelative",
+    "millisFromCurrentTime": {
+      "@id": "observeinc:millisFromCurrentTime",
+      "@type": "xsd:decimal"
+    },
+    "FrontendTimeRangeAbsolute": "observeinc:FrontendTimeRangeAbsolute",
+    "startTime": {
+      "@id": "observeinc:startTime",
+      "@type": "@id"
+    },
+    "endTime": {
+      "@id": "observeinc:endTime",
+      "@type": "@id"
+    },
+    "FrontendTimeRange": "observeinc:FrontendTimeRange",
+    "kind": {
+      "@id": "observeinc:kind",
+      "@type": "xsd:string"
+    },
+    "preset": {
+      "@id": "observeinc:preset",
+      "@type": "@id"
+    },
+    "relative": {
+      "@id": "observeinc:relative",
+      "@type": "@id"
+    },
+    "absolute": {
+      "@id": "observeinc:absolute",
+      "@type": "@id"
+    },
+    "ColumnLink": "observeinc:ColumnLink",
+    "targetDatasetId": {
+      "@id": "observeinc:targetDatasetId",
+      "@type": "@id"
+    },
+    "linkType": {
+      "@id": "observeinc:linkType",
+      "@type": "xsd:string"
+    },
+    "srcFields": {
+      "@id": "observeinc:srcFields",
+      "@container": "@list"
+    },
+    "dstFields": {
+      "@id": "observeinc:dstFields",
+      "@container": "@list"
+    },
+    "targetStageLabel": {
+      "@id": "observeinc:targetStageLabel",
+      "@type": "xsd:string"
+    },
+    "ColumnRef": "observeinc:ColumnRef",
+    "path": {
+      "@id": "observeinc:path",
+      "@type": "xsd:string"
+    },
+    "link": {
+      "@id": "observeinc:link",
+      "@type": "@id"
+    },
+    "FilterVerb": "observeinc:FilterVerb",
+    "PredicateValues": "observeinc:PredicateValues",
+    "values": {
+      "@id": "observeinc:values",
+      "@type": "@id"
+    },
+    "PredicateText": "observeinc:PredicateText",
+    "match": {
+      "@id": "observeinc:match",
+      "@type": "xsd:string"
+    },
+    "caseSensitive": {
+      "@id": "observeinc:caseSensitive",
+      "@type": "xsd:boolean"
+    },
+    "terms": {
+      "@id": "observeinc:terms",
+      "@type": "@id"
+    },
+    "paths": {
+      "@id": "observeinc:paths",
+      "@container": "@list"
+    },
+    "PredicateFilterCondition": "observeinc:PredicateFilterCondition",
+    "condition": {
+      "@id": "observeinc:condition",
+      "@type": "xsd:string"
+    },
+    "disabledCondition": {
+      "@id": "observeinc:disabledCondition",
+      "@type": "xsd:string"
+    },
+    "PredicateRange": "observeinc:PredicateRange",
+    "start": {
+      "@id": "observeinc:start",
+      "@type": "xsd:decimal"
+    },
+    "end": {
+      "@id": "observeinc:end",
+      "@type": "xsd:decimal"
+    },
+    "startUnit": {
+      "@id": "observeinc:startUnit",
+      "@type": "xsd:string"
+    },
+    "endUnit": {
+      "@id": "observeinc:endUnit",
+      "@type": "xsd:string"
+    },
+    "startExclusive": {
+      "@id": "observeinc:startExclusive",
+      "@type": "xsd:boolean"
+    },
+    "endExclusive": {
+      "@id": "observeinc:endExclusive",
+      "@type": "xsd:boolean"
+    },
+    "invert": {
+      "@id": "observeinc:invert",
+      "@type": "xsd:boolean"
+    },
+    "toColumnId": {
+      "@id": "observeinc:toColumnId",
+      "@type": "xsd:string"
+    },
+    "PredicateCidr": "observeinc:PredicateCidr",
+    "PredicateJsonValues": "observeinc:PredicateJsonValues",
+    "combine": {
+      "@id": "observeinc:combine",
+      "@type": "xsd:string"
+    },
+    "PredicateMultiColumn": "observeinc:PredicateMultiColumn",
+    "fields": {
+      "@id": "observeinc:fields",
+      "@container": "@list"
+    },
+    "rows": {
+      "@id": "observeinc:rows",
+      "@container": "@list"
+    },
+    "exclude": {
+      "@id": "observeinc:exclude",
+      "@type": "xsd:boolean"
+    },
+    "PredicateResourceInstance": "observeinc:PredicateResourceInstance",
+    "instances": {
+      "@id": "observeinc:instances",
+      "@container": "@list"
+    },
+    "PredicateParameter": "observeinc:PredicateParameter",
+    "parameters": {
+      "@id": "observeinc:parameters",
+      "@container": "@list"
+    },
+    "tagId": {
+      "@id": "observeinc:tagId",
+      "@type": "xsd:string"
+    },
+    "datasetKind": {
+      "@id": "observeinc:datasetKind",
+      "@type": "xsd:string"
+    },
+    "castToColumnType": {
+      "@id": "observeinc:castToColumnType",
+      "@type": "xsd:boolean"
+    },
+    "PredicateTag": "observeinc:PredicateTag",
+    "tagName": {
+      "@id": "observeinc:tagName",
+      "@type": "xsd:string"
+    },
+    "JoinField": "observeinc:JoinField",
+    "columnId": {
+      "@id": "observeinc:columnId",
+      "@type": "xsd:string"
+    },
+    "JoinKey": "observeinc:JoinKey",
+    "PredicateExists": "observeinc:PredicateExists",
+    "joinKey": {
+      "@id": "observeinc:joinKey",
+      "@type": "@id"
+    },
+    "inputLabel": {
+      "@id": "observeinc:inputLabel",
+      "@type": "xsd:string"
+    },
+    "streaming": {
+      "@id": "observeinc:streaming",
+      "@type": "xsd:boolean"
+    },
+    "PredicatePattern": "observeinc:PredicatePattern",
+    "FilterPredicate": "observeinc:FilterPredicate",
+    "operator": {
+      "@id": "observeinc:operator",
+      "@type": "xsd:string"
+    },
+    "text": {
+      "@id": "observeinc:text",
+      "@type": "@id"
+    },
+    "filterCondition": {
+      "@id": "observeinc:filterCondition",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "observeinc:range",
+      "@type": "@id"
+    },
+    "cidr": {
+      "@id": "observeinc:cidr",
+      "@type": "@id"
+    },
+    "jsonValues": {
+      "@id": "observeinc:jsonValues",
+      "@type": "@id"
+    },
+    "multiColumn": {
+      "@id": "observeinc:multiColumn",
+      "@type": "@id"
+    },
+    "resourceInstance": {
+      "@id": "observeinc:resourceInstance",
+      "@type": "@id"
+    },
+    "parameter": {
+      "@id": "observeinc:parameter",
+      "@type": "@id"
+    },
+    "tag": {
+      "@id": "observeinc:tag",
+      "@type": "@id"
+    },
+    "exists": {
+      "@id": "observeinc:exists",
+      "@type": "@id"
+    },
+    "pattern": {
+      "@id": "observeinc:pattern",
+      "@type": "@id"
+    },
+    "FilterRule": "observeinc:FilterRule",
+    "column": {
+      "@id": "observeinc:column",
+      "@type": "@id"
+    },
+    "verb": {
+      "@id": "observeinc:verb",
+      "@type": "@id"
+    },
+    "enabled": {
+      "@id": "observeinc:enabled",
+      "@type": "xsd:boolean"
+    },
+    "predicate": {
+      "@id": "observeinc:predicate",
+      "@type": "@id"
+    },
+    "DatasetFilter": "observeinc:DatasetFilter",
+    "datasetId": {
+      "@id": "observeinc:datasetId",
+      "@type": "@id"
+    },
+    "name": {
+      "@id": "observeinc:name",
+      "@type": "xsd:string"
+    },
+    "filterActions": {
+      "@id": "observeinc:filterActions",
+      "@container": "@list"
+    },
+    "preFilterActions": {
+      "@id": "observeinc:preFilterActions",
+      "@container": "@list"
+    },
+    "autoApply": {
+      "@id": "observeinc:autoApply",
+      "@type": "xsd:boolean"
+    },
+    "ValueKindResource": "observeinc:ValueKindResource",
+    "ValueSourceCustom": "observeinc:ValueSourceCustom",
+    "ValueSourceDataset": "observeinc:ValueSourceDataset",
+    "ValueSourceCard": "observeinc:ValueSourceCard",
+    "cardId": {
+      "@id": "observeinc:cardId",
+      "@type": "xsd:string"
+    },
+    "ValueSource": "observeinc:ValueSource",
+    "source": {
+      "@id": "observeinc:source",
+      "@type": "xsd:string"
+    },
+    "custom": {
+      "@id": "observeinc:custom",
+      "@type": "@id"
+    },
+    "dataset": {
+      "@id": "observeinc:dataset",
+      "@type": "@id"
+    },
+    "card": {
+      "@id": "observeinc:card",
+      "@type": "@id"
+    },
+    "ValueKindScalar": "observeinc:ValueKindScalar",
+    "scalarType": {
+      "@id": "observeinc:scalarType",
+      "@type": "xsd:string"
+    },
+    "valueSource": {
+      "@id": "observeinc:valueSource",
+      "@type": "@id"
+    },
+    "ValueKindCorrelationTag": "observeinc:ValueKindCorrelationTag",
+    "ValueKind": "observeinc:ValueKind",
+    "resource": {
+      "@id": "observeinc:resource",
+      "@type": "@id"
+    },
+    "scalar": {
+      "@id": "observeinc:scalar",
+      "@type": "@id"
+    },
+    "correlationTag": {
+      "@id": "observeinc:correlationTag",
+      "@type": "@id"
+    },
+    "ParameterDefaultValueDatasetRef": "observeinc:ParameterDefaultValueDatasetRef",
+    "datasetPath": {
+      "@id": "observeinc:datasetPath",
+      "@type": "xsd:string"
+    },
+    "stageId": {
+      "@id": "observeinc:stageId",
+      "@type": "xsd:string"
+    },
+    "ParameterDefaultValueCell": "observeinc:ParameterDefaultValueCell",
+    "bool": {
+      "@id": "observeinc:bool",
+      "@type": "xsd:boolean"
+    },
+    "float64": {
+      "@id": "observeinc:float64",
+      "@type": "xsd:decimal"
+    },
+    "int64": {
+      "@id": "observeinc:int64",
+      "@type": "xsd:string"
+    },
+    "string": {
+      "@id": "observeinc:string",
+      "@type": "xsd:string"
+    },
+    "timestamp": {
+      "@id": "observeinc:timestamp",
+      "@type": "@id"
+    },
+    "duration": {
+      "@id": "observeinc:duration",
+      "@type": "@id"
+    },
+    "datasetref": {
+      "@id": "observeinc:datasetref",
+      "@type": "@id"
+    },
+    "nullValueType": {
+      "@id": "observeinc:nullValueType",
+      "@type": "xsd:string"
+    },
+    "ParameterDefaultValue": "observeinc:ParameterDefaultValue",
+    "array": {
+      "@id": "observeinc:array"
+    },
+    "Parameter": "observeinc:Parameter",
+    "viewType": {
+      "@id": "observeinc:viewType",
+      "@type": "xsd:string"
+    },
+    "valueKind": {
+      "@id": "observeinc:valueKind",
+      "@type": "@id"
+    },
+    "allowEmpty": {
+      "@id": "observeinc:allowEmpty",
+      "@type": "xsd:boolean"
+    },
+    "hidden": {
+      "@id": "observeinc:hidden",
+      "@type": "xsd:boolean"
+    },
+    "defaultValue": {
+      "@id": "observeinc:defaultValue",
+      "@type": "@id"
+    },
+    "customEmptyValueLabel": {
+      "@id": "observeinc:customEmptyValueLabel",
+      "@type": "xsd:string"
+    },
+    "InputSourceDataset": "observeinc:InputSourceDataset",
+    "InputSourceDatasetFilter": "observeinc:InputSourceDatasetFilter",
+    "InputSource": "observeinc:InputSource",
+    "datasetFilter": {
+      "@id": "observeinc:datasetFilter",
+      "@type": "@id"
+    },
+    "Input": "observeinc:Input",
+    "role": {
+      "@id": "observeinc:role",
+      "@type": "xsd:string"
+    },
+    "isUserInput": {
+      "@id": "observeinc:isUserInput",
+      "@type": "xsd:boolean"
+    },
+    "CardContent": "observeinc:CardContent",
+    "pipeline": {
+      "@id": "observeinc:pipeline",
+      "@container": "@list"
+    },
+    "inputs": {
+      "@id": "observeinc:inputs",
+      "@container": "@list"
+    },
+    "builderDef": {
+      "@id": "observeinc:builderDef"
+    },
+    "VizType": "observeinc:VizType",
+    "FieldRefNested": "observeinc:FieldRefNested",
+    "FieldRefTag": "observeinc:FieldRefTag",
+    "FieldRefSrcField": "observeinc:FieldRefSrcField",
+    "nested": {
+      "@id": "observeinc:nested",
+      "@type": "@id"
+    },
+    "FieldRefLink": "observeinc:FieldRefLink",
+    "FieldRefPrimaryKey": "observeinc:FieldRefPrimaryKey",
+    "FieldRef": "observeinc:FieldRef",
+    "primaryKey": {
+      "@id": "observeinc:primaryKey",
+      "@type": "@id"
+    },
+    "LegendConfig": "observeinc:LegendConfig",
+    "visible": {
+      "@id": "observeinc:visible",
+      "@type": "xsd:boolean"
+    },
+    "layout": {
+      "@id": "observeinc:layout",
+      "@type": "xsd:string"
+    },
+    "tableAggregates": {
+      "@id": "observeinc:tableAggregates",
+      "@container": "@list"
+    },
+    "Threshold": "observeinc:Threshold",
+    "value": {
+      "@id": "observeinc:value",
+      "@type": "xsd:decimal"
+    },
+    "op": {
+      "@id": "observeinc:op",
+      "@type": "xsd:string"
+    },
+    "color": {
+      "@id": "observeinc:color",
+      "@type": "xsd:string"
+    },
+    "fillRegion": {
+      "@id": "observeinc:fillRegion",
+      "@type": "xsd:boolean"
+    },
+    "PointAnnotation": "observeinc:PointAnnotation",
+    "at": {
+      "@id": "observeinc:at",
+      "@type": "xsd:string"
+    },
+    "RangeAnnotation": "observeinc:RangeAnnotation",
+    "from": {
+      "@id": "observeinc:from",
+      "@type": "xsd:string"
+    },
+    "to": {
+      "@id": "observeinc:to",
+      "@type": "xsd:string"
+    },
+    "Annotation": "observeinc:Annotation",
+    "point": {
+      "@id": "observeinc:point",
+      "@type": "@id"
+    },
+    "AxisBounds": "observeinc:AxisBounds",
+    "SequentialColorScale": "observeinc:SequentialColorScale",
+    "DivergingColorScale": "observeinc:DivergingColorScale",
+    "DivergingScaleMidpoint": "observeinc:DivergingScaleMidpoint",
+    "ColorScaleConfig": "observeinc:ColorScaleConfig",
+    "colorScaleType": {
+      "@id": "observeinc:colorScaleType",
+      "@type": "xsd:string"
+    },
+    "bounds": {
+      "@id": "observeinc:bounds",
+      "@type": "@id"
+    },
+    "sequentialColorScale": {
+      "@id": "observeinc:sequentialColorScale",
+      "@type": "@id"
+    },
+    "divergingColorScale": {
+      "@id": "observeinc:divergingColorScale",
+      "@type": "@id"
+    },
+    "divergingScaleMidpoint": {
+      "@id": "observeinc:divergingScaleMidpoint",
+      "@type": "@id"
+    },
+    "reverseColors": {
+      "@id": "observeinc:reverseColors",
+      "@type": "xsd:boolean"
+    },
+    "target": {
+      "@id": "observeinc:target",
+      "@type": "xsd:string"
+    },
+    "ignoreMinimum": {
+      "@id": "observeinc:ignoreMinimum",
+      "@type": "xsd:boolean"
+    },
+    "ThresholdsConfig": "observeinc:ThresholdsConfig",
+    "startingColor": {
+      "@id": "observeinc:startingColor",
+      "@type": "@id"
+    },
+    "defaultColor": {
+      "@id": "observeinc:defaultColor",
+      "@type": "@id"
+    },
+    "thresholds": {
+      "@id": "observeinc:thresholds",
+      "@container": "@list"
+    },
+    "drawType": {
+      "@id": "observeinc:drawType",
+      "@type": "xsd:string"
+    },
+    "mode": {
+      "@id": "observeinc:mode",
+      "@type": "xsd:string"
+    },
+    "ColumnFormatting": "observeinc:ColumnFormatting",
+    "valueColors": {
+      "@id": "observeinc:valueColors",
+      "@container": "@list"
+    },
+    "colorTarget": {
+      "@id": "observeinc:colorTarget",
+      "@type": "xsd:string"
+    },
+    "colorScale": {
+      "@id": "observeinc:colorScale",
+      "@type": "@id"
+    },
+    "numberFormat": {
+      "@id": "observeinc:numberFormat"
+    },
+    "prefix": {
+      "@id": "observeinc:prefix",
+      "@type": "xsd:string"
+    },
+    "suffix": {
+      "@id": "observeinc:suffix",
+      "@type": "xsd:string"
+    },
+    "TableConfig": "observeinc:TableConfig",
+    "columnWidths": {
+      "@id": "observeinc:columnWidths"
+    },
+    "columnVisibility": {
+      "@id": "observeinc:columnVisibility"
+    },
+    "columnOrder": {
+      "@id": "observeinc:columnOrder",
+      "@container": "@list"
+    },
+    "conditionalFormatting": {
+      "@id": "observeinc:conditionalFormatting"
+    },
+    "sort": {
+      "@id": "observeinc:sort",
+      "@container": "@list"
+    },
+    "limit": {
+      "@id": "observeinc:limit",
+      "@type": "xsd:integer"
+    },
+    "LogScale": "observeinc:LogScale",
+    "use": {
+      "@id": "observeinc:use",
+      "@type": "xsd:boolean"
+    },
+    "base": {
+      "@id": "observeinc:base",
+      "@type": "xsd:decimal"
+    },
+    "CellNumberFormat": "observeinc:CellNumberFormat",
+    "options": {
+      "@id": "observeinc:options"
+    },
+    "AxisConfig": "observeinc:AxisConfig",
+    "show": {
+      "@id": "observeinc:show",
+      "@type": "xsd:boolean"
+    },
+    "domain": {
+      "@id": "observeinc:domain"
+    },
+    "scaleType": {
+      "@id": "observeinc:scaleType",
+      "@type": "@id"
+    },
+    "valueFormat": {
+      "@id": "observeinc:valueFormat",
+      "@type": "@id"
+    },
+    "hideGridLines": {
+      "@id": "observeinc:hideGridLines",
+      "@type": "xsd:boolean"
+    },
+    "orient": {
+      "@id": "observeinc:orient",
+      "@type": "xsd:string"
+    },
+    "ColorConfig": "observeinc:ColorConfig",
+    "field": {
+      "@id": "observeinc:field",
+      "@type": "@id"
+    },
+    "config": {
+      "@id": "observeinc:config"
+    },
+    "LineCurveType": "observeinc:LineCurveType",
+    "ChartAreaFillType": "observeinc:ChartAreaFillType",
+    "LineConfig": "observeinc:LineConfig",
+    "showPoints": {
+      "@id": "observeinc:showPoints",
+      "@type": "xsd:boolean"
+    },
+    "showValues": {
+      "@id": "observeinc:showValues",
+      "@type": "xsd:boolean"
+    },
+    "curve": {
+      "@id": "observeinc:curve",
+      "@type": "@id"
+    },
+    "areaFillType": {
+      "@id": "observeinc:areaFillType",
+      "@type": "@id"
+    },
+    "LineOptions": "observeinc:LineOptions",
+    "xConfig": {
+      "@id": "observeinc:xConfig",
+      "@type": "@id"
+    },
+    "yConfig": {
+      "@id": "observeinc:yConfig",
+      "@type": "@id"
+    },
+    "colorConfig": {
+      "@id": "observeinc:colorConfig",
+      "@type": "@id"
+    },
+    "lineConfig": {
+      "@id": "observeinc:lineConfig",
+      "@type": "@id"
+    },
+    "horizontal": {
+      "@id": "observeinc:horizontal",
+      "@type": "xsd:boolean"
+    },
+    "extensions": {
+      "@id": "observeinc:extensions",
+      "@type": "@id"
+    },
+    "StackMode": "observeinc:StackMode",
+    "BarOptions": "observeinc:BarOptions",
+    "x2": {
+      "@id": "observeinc:x2",
+      "@type": "@id"
+    },
+    "barConfig": {
+      "@id": "observeinc:barConfig"
+    },
+    "stack": {
+      "@id": "observeinc:stack",
+      "@type": "@id"
+    },
+    "histogram": {
+      "@id": "observeinc:histogram",
+      "@type": "xsd:boolean"
+    },
+    "AreaOptions": "observeinc:AreaOptions",
+    "areaConfig": {
+      "@id": "observeinc:areaConfig",
+      "@type": "@id"
+    },
+    "ScatterOptions": "observeinc:ScatterOptions",
+    "labelConfig": {
+      "@id": "observeinc:labelConfig"
+    },
+    "radiusConfig": {
+      "@id": "observeinc:radiusConfig"
+    },
+    "TableOptions": "observeinc:TableOptions",
+    "SingleStatOptions": "observeinc:SingleStatOptions",
+    "style": {
+      "@id": "observeinc:style"
+    },
+    "facet": {
+      "@id": "observeinc:facet"
+    },
+    "aggregation": {
+      "@id": "observeinc:aggregation",
+      "@type": "xsd:string"
+    },
+    "HeatmapOptions": "observeinc:HeatmapOptions",
+    "fieldValue": {
+      "@id": "observeinc:fieldValue",
+      "@type": "@id"
+    },
+    "autobinTemporalAxis": {
+      "@id": "observeinc:autobinTemporalAxis",
+      "@type": "xsd:boolean"
+    },
+    "xBinSize": {
+      "@id": "observeinc:xBinSize",
+      "@type": "xsd:decimal"
+    },
+    "yBinSize": {
+      "@id": "observeinc:yBinSize",
+      "@type": "xsd:decimal"
+    },
+    "useLogColorScale": {
+      "@id": "observeinc:useLogColorScale",
+      "@type": "xsd:boolean"
+    },
+    "useReverseColorScale": {
+      "@id": "observeinc:useReverseColorScale",
+      "@type": "xsd:boolean"
+    },
+    "showValueText": {
+      "@id": "observeinc:showValueText",
+      "@type": "xsd:boolean"
+    },
+    "aggregate": {
+      "@id": "observeinc:aggregate",
+      "@type": "xsd:string"
+    },
+    "valueFormattingConfig": {
+      "@id": "observeinc:valueFormattingConfig",
+      "@type": "@id"
+    },
+    "TopValueConfig": "observeinc:TopValueConfig",
+    "format": {
+      "@id": "observeinc:format",
+      "@type": "@id"
+    },
+    "showAxis": {
+      "@id": "observeinc:showAxis",
+      "@type": "xsd:boolean"
+    },
+    "TopListOptions": "observeinc:TopListOptions",
+    "key": {
+      "@id": "observeinc:key",
+      "@type": "@id"
+    },
+    "viewConfig": {
+      "@id": "observeinc:viewConfig"
+    },
+    "keyConfig": {
+      "@id": "observeinc:keyConfig"
+    },
+    "valueConfig": {
+      "@id": "observeinc:valueConfig",
+      "@type": "@id"
+    },
+    "ChangeOverTimeOptions": "observeinc:ChangeOverTimeOptions",
+    "AnomalyOptions": "observeinc:AnomalyOptions",
+    "redPointField": {
+      "@id": "observeinc:redPointField",
+      "@type": "@id"
+    },
+    "seriesField": {
+      "@id": "observeinc:seriesField",
+      "@type": "@id"
+    },
+    "CustomVegaOptions": "observeinc:CustomVegaOptions",
+    "spec": {
+      "@id": "observeinc:spec"
+    },
+    "prompt": {
+      "@id": "observeinc:prompt",
+      "@type": "xsd:string"
+    },
+    "CustomVegaLiteOptions": "observeinc:CustomVegaLiteOptions",
+    "PieOptions": "observeinc:PieOptions",
+    "pieConfig": {
+      "@id": "observeinc:pieConfig"
+    },
+    "LegacyD3Options": "observeinc:LegacyD3Options",
+    "VisualizationOptions": "observeinc:VisualizationOptions",
+    "line": {
+      "@id": "observeinc:line",
+      "@type": "@id"
+    },
+    "bar": {
+      "@id": "observeinc:bar",
+      "@type": "@id"
+    },
+    "area": {
+      "@id": "observeinc:area",
+      "@type": "@id"
+    },
+    "scatter": {
+      "@id": "observeinc:scatter",
+      "@type": "@id"
+    },
+    "table": {
+      "@id": "observeinc:table",
+      "@type": "@id"
+    },
+    "singleStat": {
+      "@id": "observeinc:singleStat",
+      "@type": "@id"
+    },
+    "heatmap": {
+      "@id": "observeinc:heatmap",
+      "@type": "@id"
+    },
+    "topList": {
+      "@id": "observeinc:topList",
+      "@type": "@id"
+    },
+    "changeOverTime": {
+      "@id": "observeinc:changeOverTime",
+      "@type": "@id"
+    },
+    "anomaly": {
+      "@id": "observeinc:anomaly",
+      "@type": "@id"
+    },
+    "customVega": {
+      "@id": "observeinc:customVega",
+      "@type": "@id"
+    },
+    "customVegaLite": {
+      "@id": "observeinc:customVegaLite",
+      "@type": "@id"
+    },
+    "pie": {
+      "@id": "observeinc:pie",
+      "@type": "@id"
+    },
+    "legacyD3": {
+      "@id": "observeinc:legacyD3",
+      "@type": "@id"
+    },
+    "Visualization": "observeinc:Visualization",
+    "x": {
+      "@id": "observeinc:x",
+      "@type": "@id"
+    },
+    "y": {
+      "@id": "observeinc:y",
+      "@container": "@list"
+    },
+    "groupBy": {
+      "@id": "observeinc:groupBy",
+      "@container": "@list"
+    },
+    "legend": {
+      "@id": "observeinc:legend",
+      "@type": "@id"
+    },
+    "annotations": {
+      "@id": "observeinc:annotations",
+      "@container": "@list"
+    },
+    "tableConfig": {
+      "@id": "observeinc:tableConfig",
+      "@type": "@id"
+    },
+    "LinkTargetUrl": "observeinc:LinkTargetUrl",
+    "url": {
+      "@id": "observeinc:url",
+      "@type": "xsd:string"
+    },
+    "icon": {
+      "@id": "observeinc:icon",
+      "@type": "xsd:string"
+    },
+    "LinkTargetDashboard": "observeinc:LinkTargetDashboard",
+    "targetDashboardId": {
+      "@id": "observeinc:targetDashboardId",
+      "@type": "@id"
+    },
+    "targetDashboardName": {
+      "@id": "observeinc:targetDashboardName",
+      "@type": "xsd:string"
+    },
+    "LinkTargetLogExplorer": "observeinc:LinkTargetLogExplorer",
+    "targetDatasetName": {
+      "@id": "observeinc:targetDatasetName",
+      "@type": "xsd:string"
+    },
+    "LinkTargetTraceExplorer": "observeinc:LinkTargetTraceExplorer",
+    "LinkTargetMetricsExplorer": "observeinc:LinkTargetMetricsExplorer",
+    "targetMetricName": {
+      "@id": "observeinc:targetMetricName",
+      "@type": "xsd:string"
+    },
+    "LinkTargetServiceExplorer": "observeinc:LinkTargetServiceExplorer",
+    "LinkTarget": "observeinc:LinkTarget",
+    "dashboard": {
+      "@id": "observeinc:dashboard",
+      "@type": "@id"
+    },
+    "logExplorer": {
+      "@id": "observeinc:logExplorer",
+      "@type": "@id"
+    },
+    "traceExplorer": {
+      "@id": "observeinc:traceExplorer",
+      "@type": "@id"
+    },
+    "metricsExplorer": {
+      "@id": "observeinc:metricsExplorer",
+      "@type": "@id"
+    },
+    "serviceExplorer": {
+      "@id": "observeinc:serviceExplorer",
+      "@type": "@id"
+    },
+    "DrilldownTimeRange": "observeinc:DrilldownTimeRange",
+    "DrilldownSourceParameter": "observeinc:DrilldownSourceParameter",
+    "sourceName": {
+      "@id": "observeinc:sourceName",
+      "@type": "xsd:string"
+    },
+    "DrilldownSourceGrouping": "observeinc:DrilldownSourceGrouping",
+    "DrilldownSourceCustom": "observeinc:DrilldownSourceCustom",
+    "DrilldownSourceSelectionResource": "observeinc:DrilldownSourceSelectionResource",
+    "DrilldownSourceSelectionTag": "observeinc:DrilldownSourceSelectionTag",
+    "DrilldownSource": "observeinc:DrilldownSource",
+    "grouping": {
+      "@id": "observeinc:grouping",
+      "@type": "@id"
+    },
+    "selectionResource": {
+      "@id": "observeinc:selectionResource",
+      "@type": "@id"
+    },
+    "selectionTag": {
+      "@id": "observeinc:selectionTag",
+      "@type": "@id"
+    },
+    "DrilldownParameter": "observeinc:DrilldownParameter",
+    "destinationName": {
+      "@id": "observeinc:destinationName",
+      "@type": "xsd:string"
+    },
+    "isRequiredCorrelationTag": {
+      "@id": "observeinc:isRequiredCorrelationTag",
+      "@type": "xsd:boolean"
+    },
+    "isColumnFilter": {
+      "@id": "observeinc:isColumnFilter",
+      "@type": "xsd:boolean"
+    },
+    "Drilldown": "observeinc:Drilldown",
+    "trigger": {
+      "@id": "observeinc:trigger",
+      "@type": "xsd:string"
+    },
+    "timeRange": {
+      "@id": "observeinc:timeRange",
+      "@type": "@id"
+    },
+    "includeFilteredDataset": {
+      "@id": "observeinc:includeFilteredDataset",
+      "@type": "xsd:boolean"
+    },
+    "openInNewTab": {
+      "@id": "observeinc:openInNewTab",
+      "@type": "xsd:boolean"
+    },
+    "Query": "observeinc:Query",
+    "content": {
+      "@id": "observeinc:content",
+      "@type": "@id"
+    },
+    "visualization": {
+      "@id": "observeinc:visualization",
+      "@type": "@id"
+    },
+    "multiVisualization": {
+      "@id": "observeinc:multiVisualization",
+      "@container": "@list"
+    },
+    "drilldowns": {
+      "@id": "observeinc:drilldowns",
+      "@container": "@list"
+    },
+    "ui": {
+      "@id": "observeinc:ui"
+    },
+    "Geometry": "observeinc:Geometry",
+    "w": {
+      "@id": "observeinc:w",
+      "@type": "xsd:integer"
+    },
+    "h": {
+      "@id": "observeinc:h",
+      "@type": "xsd:integer"
+    },
+    "MarkdownCard": "observeinc:MarkdownCard",
+    "title": {
+      "@id": "observeinc:title",
+      "@type": "xsd:string"
+    },
+    "body": {
+      "@id": "observeinc:body",
+      "@type": "xsd:string"
+    },
+    "ImageCard": "observeinc:ImageCard",
+    "stretch": {
+      "@id": "observeinc:stretch",
+      "@type": "xsd:boolean"
+    },
+    "resizeBehavior": {
+      "@id": "observeinc:resizeBehavior",
+      "@type": "xsd:string"
+    },
+    "backgroundFillColor": {
+      "@id": "observeinc:backgroundFillColor",
+      "@type": "xsd:string"
+    },
+    "Card": "observeinc:Card",
+    "geometry": {
+      "@id": "observeinc:geometry",
+      "@type": "@id"
+    },
+    "query": {
+      "@id": "observeinc:query",
+      "@type": "@id"
+    },
+    "markdown": {
+      "@id": "observeinc:markdown",
+      "@type": "@id"
+    },
+    "image": {
+      "@id": "observeinc:image",
+      "@type": "@id"
+    },
+    "Section": "observeinc:Section",
+    "collapsed": {
+      "@id": "observeinc:collapsed",
+      "@type": "xsd:boolean"
+    },
+    "hideParameter": {
+      "@id": "observeinc:hideParameter",
+      "@type": "xsd:string"
+    },
+    "cards": {
+      "@id": "observeinc:cards",
+      "@container": "@list"
+    },
+    "Layout": "observeinc:Layout",
+    "sections": {
+      "@id": "observeinc:sections",
+      "@container": "@list"
+    },
+    "DashboardContent": "observeinc:DashboardContent",
+    "defaultTimeRange": {
+      "@id": "observeinc:defaultTimeRange",
+      "@type": "@id"
+    },
+    "hiddenParameters": {
+      "@id": "observeinc:hiddenParameters",
+      "@container": "@list"
+    },
+    "hiddenQueries": {
+      "@id": "observeinc:hiddenQueries",
+      "@container": "@list"
+    },
+    "Dashboard-CreateRequest": "observeinc:Dashboard-CreateRequest",
+    "schemaVersion": {
+      "@id": "observeinc:schemaVersion",
+      "@type": "xsd:integer"
+    },
+    "visibility": {
+      "@id": "observeinc:visibility",
+      "@type": "xsd:string"
+    },
+    "objectTags": {
+      "@id": "observeinc:objectTags",
+      "@type": "@id"
+    },
+    "definition": {
+      "@id": "observeinc:definition",
+      "@type": "@id"
+    },
+    "Dashboard-Resource": "observeinc:Dashboard-Resource",
+    "DatasetQueryFilter-Resource": "observeinc:DatasetQueryFilter-Resource",
+    "filter": {
+      "@id": "observeinc:filter",
+      "@type": "xsd:string"
+    },
+    "errors": {
+      "@id": "observeinc:errors",
+      "@container": "@list"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Observe API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Observe's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-13) from openapi/observeinc-openapi.yml.",
+  "dcterms:created": "2026-10-13",
+  "dcterms:source": [
+    "openapi/observeinc-openapi.yml"
+  ]
+}

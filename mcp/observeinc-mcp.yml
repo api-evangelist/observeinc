@@ -1,0 +1,21 @@
+generated: '2026-10-13'
+method: searched
+source: https://docs.observeinc.com/docs/model-context-protocol
+name: Observe by Snowflake MCP Server
+description: Tenant-hosted MCP server that lets AI agents investigate incidents, explore logs, metrics and traces, search Datasets, list alerts and monitors, generate OPAL queries and inspect APM service maps. OAuth (IdP login) by default; API token for headless/service-account use. The per-tenant endpoint is configured from the Observe UI and is not published in the docs.
+deployment:
+  mode: remote
+  endpoint: https://docs.observeinc.com/mcp
+  auth: none
+  verified: probed
+  note: endpoint is the public docs/API-reference MCP server (ReadMe-hosted, tools/list answered 200 unauthenticated). The product MCP server is per tenant with OAuth; its URL is not published.
+tools:
+- name: list-endpoints
+- name: get-endpoint
+- name: search-endpoints
+- name: execute-request
+- name: get-server-variables
+- name: search
+- name: fetch
+listings:
+- https://cursor.com/marketplace/snowflake/observe

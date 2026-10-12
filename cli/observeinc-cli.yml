@@ -1,0 +1,28 @@
+generated: '2026-10-13'
+method: searched
+source: https://docs.observeinc.com/reference/observe-by-snowflake-cli
+name: Observe by Snowflake CLI
+binary: observe
+repository: https://github.com/observeinc/cli
+install:
+- method: shell script
+  command: curl -fsSL https://raw.githubusercontent.com/observeinc/cli/main/install.sh | bash
+auth:
+- observe auth login (browser OAuth, default)
+- observe auth login --useDeviceCode --url <customerId>.observeinc.com
+- observe auth configure --domain observeinc --customerId <id> --token <api-token>
+commands:
+- group: auth
+  commands:
+  - login
+  - configure
+- group: skill
+  commands:
+  - install --all
+  - --user-defined
+capabilities:
+- search Datasets and metrics
+- run OPAL
+- inspect alerts
+- manage Datastreams
+- install AI agent skills into coding agents

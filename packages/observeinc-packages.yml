@@ -1,0 +1,14 @@
+generated: '2026-10-13'
+method: searched
+source: https://docs.observeinc.com/reference/observe-terraform-provider
+packages:
+- name: observeinc/observe
+  registry: terraform
+  url: https://registry.terraform.io/providers/observeinc/observe/latest/docs
+  language: hcl
+  official: true
+- name: observe (CLI)
+  registry: github
+  url: https://github.com/observeinc/cli
+  language: typescript
+  official: true

@@ -1,0 +1,18 @@
+generated: '2026-10-13'
+method: none
+source:
+- https://zapier.com/apps/observeinc/integrations
+- https://zapier.com/apps/observe/integrations
+- https://n8n.io/integrations/observeinc/
+- https://composio.dev/toolkits/observeinc
+- https://monid.ai/tools/observeinc
+checked:
+- https://composio.dev/toolkits/observeinc
+- https://monid.ai/tools/observeinc
+- https://n8n.io/integrations/observeinc/
+- https://zapier.com/apps/observe/integrations
+- https://zapier.com/apps/observeinc/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

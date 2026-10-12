@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/observeinc/main/json-schema/observeinc-dataset-query-filter-resource-schema.json",
+  "title": "DatasetQueryFilter",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/observeinc-openapi.yml#/components/schemas/DatasetQueryFilter-Resource",
+  "type": "object",
+  "required": [
+    "id",
+    "label",
+    "filter",
+    "pipeline",
+    "disabled",
+    "createdBy",
+    "createdAt",
+    "updatedBy",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/ObjectId"
+    },
+    "label": {
+      "type": "string",
+      "description": "Human-readable name for the filter",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "string",
+      "description": "Long-form description of the filter"
+    },
+    "filter": {
+      "type": "string",
+      "description": "Legacy OPAL boolean expression string for the filter predicate (without the leading `filter` verb).\n\nDeprecated in favor of `pipeline` and may be removed in a future API version. When creating or updating a filter, clients must provide exactly one of `filter` or `pipeline`.\nAPI responses always include both `filter` and `pipeline`; clients should consume `pipeline`.\n",
+      "minLength": 1
+    },
+    "pipeline": {
+      "type": "string",
+      "description": "Canonical OPAL pipeline snippet for the filter. May contain only filter verbs (and comments).\n\nWhen creating or updating a filter, clients must provide exactly one of `filter` or `pipeline`.\nAPI responses always include both `filter` and `pipeline`; clients should consume `pipeline`.\n",
+      "minLength": 1
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the filter is disabled by the user"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of error messages if the filter has issues (omitted if no errors)"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User",
+      "description": "User who created the filter"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the filter was created"
+    },
+    "updatedBy": {
+      "$ref": "#/$defs/User",
+      "description": "User who last updated the filter"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the filter was last updated"
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Activation window start time (inclusive). If omitted, the filter applies from negative infinity (unbounded from the past)."
+    },
+    "endTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Activation window end time (exclusive). If omitted, the filter applies to positive infinity (unbounded to the future)."
+    },
+    "layout": {
+      "type": "string",
+      "description": "UI layout/metadata for the filter builder. This field is used by the Observe UI and should be omitted by other clients."
+    }
+  },
+  "$defs": {
+    "ObjectId": {
+      "type": "string",
+      "format": "ObjectId"
+    },
+    "User": {
+      "title": "User",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "User Identifier",
+          "$ref": "#/$defs/ObjectId"
+        },
+        "label": {
+          "title": "User Label",
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

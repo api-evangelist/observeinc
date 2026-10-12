@@ -1,0 +1,34 @@
+generated: '2026-10-13'
+method: searched
+source: https://docs.observeinc.com/reference/observe-api-rate-limits
+name: Observe API rate limits
+limits:
+- name: Reads (GET) per user
+  scope: per user
+  window: 1 second
+  max: 18
+  burst: 1400
+  limit_text: 18 requests/second
+  burst_text: 1,400 requests
+- name: Reads (GET) per customer
+  scope: per customer
+  window: 1 second
+  max: 20
+  burst: 1500
+  limit_text: 20 requests/second
+  burst_text: 1,500 requests
+- name: Writes (POST/PUT/PATCH/DELETE) per user
+  scope: per user
+  window: 1 second
+  max: 8
+  burst: 120
+  limit_text: 8 requests/second
+  burst_text: 120 requests
+- name: Writes (POST/PUT/PATCH/DELETE) per customer
+  scope: per customer
+  window: 1 second
+  max: 10
+  burst: 130
+  limit_text: 10 requests/second
+  burst_text: 130 requests
+notes: Contact your Observe by Snowflake representative if you need to increase any of these limits.

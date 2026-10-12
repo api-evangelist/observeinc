@@ -1,0 +1,14 @@
+generated: '2026-10-13'
+method: derived
+source: openapi/observeinc-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: |
+    Authorization: Bearer <customerid> <apitoken>
+  sources:
+  - openapi/observeinc-openapi.yml

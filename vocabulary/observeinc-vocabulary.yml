@@ -1,0 +1,449 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/observeinc-openapi.yml
+vocabulary:
+  name: Observe Domain Vocabulary
+  description: 'Terms declared by Observe''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-13'
+  terms:
+  - term: ServiceAccounts
+    definition: Manage service accounts and api tokens. Learn more about [service accounts](https://docs.observeinc.com/docs/service-accounts).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Dataset Query Filter
+    definition: Manage dataset query filters. Learn more about [dataset query filters](https://docs.observeinc.com/docs/dataset-query-filters).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Drop Filters
+    definition: Manage drop filters used to reduce ingest volume by dropping a configurable fraction of observations matching an OPAL predicate.
+      Learn more about [drop filters](https://docs.observeinc.com/docs/drop-filters).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Monitor
+    definition: Manage monitors. Learn more about [monitors](https://docs.observeinc.com/en/latest/content/monitors/MonitorsIntro.html).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: MonitorMute
+    definition: Manage monitor mute rules. Mute rules suppress alert notifications for one or more monitors during a defined time window. Learn
+      more about [monitor mute rules](https://docs.observeinc.com/docs/mute-a-monitor).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: ReferenceTables
+    definition: Manage reference tables. Learn more about [reference tables](https://docs.observeinc.com/en/latest/content/reference/ReferenceTables.html).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Skills
+    definition: Manage custom AI agent skills for the AI-SRE agent.
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Export
+    definition: Export query results from Observe.
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Login
+    definition: Manage api tokens. Learn more about [api tokens](https://docs.observeinc.com/en/latest/content/reference/ObserveAPIAuth.html).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Alert
+    definition: Query monitor alerts. Learn more about [alerts](https://docs.observeinc.com/docs/work-with-alerts).
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Dataset
+    definition: Manage datasets. Learn more about [datasets](https://docs.observeinc.com/en/latest/content/reference/ObserveKeyConcepts.html#datasets)..
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Dataset Legacy
+    definition: Legacy dataset endpoints. Will be deprecated in the future.
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: Documentation
+    definition: Semantic search across Observe's built-in documentation.
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: ObjectTags
+    definition: Search for object tags on objects such as dashboards, datasets, worksheets, etc.
+    tags:
+    - Resource Group
+    source: openapi/observeinc-openapi.yml
+  - term: User
+    definition: 'Object declared by the contract with fields: id, label, timezone, locale.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/User
+  - term: ErrorMessage
+    definition: 'Object declared by the contract with fields: type, message.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ErrorMessage
+  - term: ApiTokenScope
+    definition: 'Enumeration declared by the contract with values: api:read, api:write, unscoped.'
+    tags:
+    - Enumeration
+    source: openapi/observeinc-openapi.yml#/components/schemas/ApiTokenScope
+  - term: ApiTokenObject
+    definition: 'Object declared by the contract with fields: id, label, description, expiration, createdBy, createdAt, updatedBy, updatedAt,
+      disabled, scopes, secret.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ApiToken-Resource
+  - term: ApiTokenCreateRequest
+    definition: 'Object declared by the contract with fields: label, description, lifetimeHours, scopes.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ApiToken-CreateRequest
+  - term: ObjectRef
+    definition: 'A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when
+      expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`)
+      are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if '
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ObjectRef
+  - term: ObjectBrief
+    definition: 'Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset,
+      dashboard, monitor) may be added in the future as needed.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ObjectBrief
+  - term: FrontendTimeRangePreset
+    definition: 'Object declared by the contract with fields: presetType.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FrontendTimeRangePreset
+  - term: FrontendTimeRangeRelative
+    definition: 'Object declared by the contract with fields: millisFromCurrentTime.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FrontendTimeRangeRelative
+  - term: FrontendTimeRangeAbsolute
+    definition: 'Object declared by the contract with fields: startTime, endTime.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FrontendTimeRangeAbsolute
+  - term: FrontendTimeRange
+    definition: 'A time range, expressed in one of three ways. `kind` selects which of `preset`, `relative`, or `absolute` is present; the other
+      two are absent. Preset: `{ "kind": "preset", "preset": { "presetType": "PAST_15_MINUTES" } }` Relative: `{ "kind": "relative", "relative":
+      { "millisFromCurrentTime": 900000 } }` Absolute: `{ "kind": "absolute", "absolute": { "startTime": "2024-04-30T00:00:00.000Z", "endTi'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FrontendTimeRange
+  - term: ColumnLink
+    definition: The foreign key of a link column. Describes how this dataset joins to the dataset the link points at, so the rule can filter through
+      the link.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ColumnLink
+  - term: ColumnRef
+    definition: A reference to a column the rule filters on.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ColumnRef
+  - term: FilterVerb
+    definition: 'How the predicate is quantified over time. The default, `filter`, keeps individual matching rows and is what event data normally
+      wants. The other verbs quantify the predicate over each interval or resource lifetime, keeping a whole interval or not at all: - filter
+      — keep each matching row (default) - ever — the predicate matched at least once during the interval - always — the predicate matched fo'
+    tags:
+    - Enumeration
+    source: openapi/observeinc-openapi.yml#/components/schemas/FilterVerb
+  - term: IncludeExcludeValues
+    definition: 'A list of discrete values, each either included or excluded. Every value is carried as a string: write numbers as decimal strings
+      (which keeps full int64 precision) and booleans as `"true"` / `"false"`. Values are cast back to the column''s type when the filter runs.
+      A JSON `null` value matches the OPAL null.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/IncludeExcludeValues
+  - term: PredicateValues
+    definition: Match the column against a list of discrete values.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateValues
+  - term: PredicateText
+    definition: Match text against the column, or across the whole row when `FilterRule.column` is absent. `match` chooses the syntax — substring,
+      glob, regular expression, free-text search, or token lookup — and with it the OPAL function the rule compiles to. `match` is always stored
+      explicitly and is never guessed from the shape of the terms.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateText
+  - term: PredicateFilterCondition
+    definition: A raw OPAL boolean condition, for filters the other predicates cannot express. The condition is stored as an opaque string and
+      is not parsed or validated here. Supply the boolean expression on its own, without a surrounding filter verb — the verb comes from the enclosing
+      `FilterRule`.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateFilterCondition
+  - term: PredicateRange
+    definition: Keep rows whose column value falls in a numeric, time, or duration range. `start` and `end` are inclusive by default; either may
+      be null for an open-ended range.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateRange
+  - term: PredicateCidr
+    definition: Match an IPv4 address column against CIDR ranges. Each `value` is a CIDR string, and each may be included or excluded.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateCidr
+  - term: PredicateJsonValues
+    definition: Match values at one or more JSON paths inside an object, variant, or JSON column. Values listed under the same path are OR-ed
+      together; `combine` controls how the separate paths combine with each other.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateJsonValues
+  - term: PredicateMultiColumn
+    definition: Filter on combinations of several columns or paths at once. Each entry in `rows` is one allowed combination — or, with `exclude`,
+      one disallowed combination — whose values line up positionally with `fields`.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateMultiColumn
+  - term: PredicateResourceInstance
+    definition: Narrow the results to specific resource instances. Each instance is identified by its primary-key column/value pairs.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateResourceInstance
+  - term: PredicateParameter
+    definition: Bind a column filter to one or more dashboard or worksheet parameters. The values to filter on come from those parameters at query
+      time, so the filter follows whatever a viewer selects.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateParameter
+  - term: PredicateTag
+    definition: Filter on the values of a correlation tag. Name the tag with `tagName`, `tagId`, or both. To negate the filter, mark the individual
+      entries in `values` as excluded.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateTag
+  - term: JoinField
+    definition: 'Object declared by the contract with fields: columnId, path.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/JoinField
+  - term: JoinKey
+    definition: 'Join specification for an `exists` predicate: `srcFields` on this dataset map positionally to `dstFields` on the joined input.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/JoinKey
+  - term: PredicateExists
+    definition: Keep only rows that have a matching row in another dataset. A row is kept when it joins, on `joinKey`, to the input named by `inputLabel`.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicateExists
+  - term: PredicatePattern
+    definition: Filter by log or data pattern cluster. Each `value` is a pattern identifier produced by an earlier pattern-extraction stage in
+      the pipeline.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PredicatePattern
+  - term: FilterPredicate
+    definition: The filter operation. `operator` selects which variant body is populated.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FilterPredicate
+  - term: FilterRule
+    definition: 'One filter rule: apply `predicate` to `column`, quantified by `verb`. Set `enabled: false` to keep a rule in the document but
+      leave it out of the query.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FilterRule
+  - term: DatasetFilter
+    definition: A filterable dataset that acts as a cross-card filter source. Cards reference it via `Input.source.datasetFilter`. The current
+      UI allows creating at most one per dashboard.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/DatasetFilter
+  - term: ValueKindResource
+    definition: 'A resource-instance parameter: the viewer picks one specific resource — a row identified by its primary key — from a dataset.
+      `datasetId` may be absent for a parameter not yet bound to a dataset; such a parameter is stored as-is, but cannot resolve a value until
+      a dataset is set.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueKindResource
+  - term: ValueSourceCustom
+    definition: A fixed list of values, authored by hand.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueSourceCustom
+  - term: ValueSourceDataset
+    definition: Values are the distinct entries of a column in a dataset.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueSourceDataset
+  - term: ValueSourceCard
+    definition: Values are the distinct entries of a column in another card's result.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueSourceCard
+  - term: ValueSource
+    definition: 'Object declared by the contract with fields: source, custom, dataset, card.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueSource
+  - term: ValueKindScalar
+    definition: Scalar value parameter. The user enters or selects a simple value (string, number, or boolean).
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueKindScalar
+  - term: ValueKindCorrelationTag
+    definition: Correlation tag parameter. The user selects one or more values of a named correlation tag (e.g. `k8s.pod.name`). Expressions bind
+      to this parameter via `FilterParameter` actions.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueKindCorrelationTag
+  - term: ValueKind
+    definition: 'Object declared by the contract with fields: kind, resource, scalar, correlationTag.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ValueKind
+  - term: ParameterDefaultValueDatasetRef
+    definition: 'Object declared by the contract with fields: datasetId, datasetPath, stageId.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ParameterDefaultValueDatasetRef
+  - term: ParameterDefaultValueCell
+    definition: 'Object declared by the contract with fields: bool, float64, int64, string, timestamp, duration, datasetref, nullValueType.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ParameterDefaultValueCell
+  - term: ParameterDefaultValue
+    definition: 'Object declared by the contract with fields: bool, float64, int64, string, timestamp, duration, array, link, datasetref, nullValueType.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ParameterDefaultValue
+  - term: Parameter
+    definition: A viewer-controllable value that cards reference from OPAL as `$parameterId`. `valueKind` fixes what sort of value it holds and
+      `viewType` chooses the input control. Dashboards can place a parameter on the grid as a card; worksheets cannot.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/Parameter
+  - term: InputSourceDataset
+    definition: A dataset binding. Normally identified by `id`, but `id` may be absent for a by-name binding — a mode where the input references
+      a dataset only by `name`/`path` (e.g. an input resolved across tenants, where IDs differ but names match) — in which case `name` or `path`
+      carries the reference.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/InputSourceDataset
+  - term: InputSourceDatasetFilter
+    definition: 'A binding to one of the additional dataset filters carried in `ui.additionalDatasetFilters`, named by `id`. The primary `definition.datasetFilter`
+      needs no body: an input binds it by setting `type: datasetFilter` and omitting this object.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/InputSourceDatasetFilter
+  - term: InputSource
+    definition: 'Object declared by the contract with fields: type, dataset, card, datasetFilter.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/InputSource
+  - term: Input
+    definition: A named data source for a card's pipeline, bound in OPAL as `@name`. The data itself can come from a dataset, another card's result,
+      or the document's dataset filter.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/Input
+  - term: CardContent
+    definition: 'A card''s query: the OPAL pipeline, the data it runs over, and — for cards built with the visual query builder — the builder''s
+      state.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/CardContent
+  - term: VizType
+    definition: The chart type. Also selects which `VisualizationOptions` variant applies — `Visualization.type` and `VisualizationOptions.type`
+      always match. Types suffixed `_deprecated` are superseded by a current type of the same shape (for example `line` supersedes `timeseries_deprecated`)
+      and SHOULD NOT be used in new content. The types listed after them are specialized charts that have no current equivalent
+    tags:
+    - Enumeration
+    source: openapi/observeinc-openapi.yml#/components/schemas/VizType
+  - term: FieldRefNested
+    definition: A field addressed by id and nested path.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FieldRefNested
+  - term: FieldRefTag
+    definition: A correlation-tag reference.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FieldRefTag
+  - term: FieldRefSrcField
+    definition: 'Object declared by the contract with fields: type, column, nested.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FieldRefSrcField
+  - term: FieldRefLink
+    definition: A link/resource field composed of one or more source fields, with an optional display label.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FieldRefLink
+  - term: FieldRefPrimaryKey
+    definition: A primary key composed of one or more source fields.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FieldRefPrimaryKey
+  - term: FieldRef
+    definition: Reference to a column / field. The `column` variant is a plain column id; the others cover nested paths, correlation tags, link/resource
+      source fields, and primary keys.
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/FieldRef
+  - term: LegendConfig
+    definition: 'Object declared by the contract with fields: visible, layout, tableAggregates.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/LegendConfig
+  - term: Threshold
+    definition: 'Object declared by the contract with fields: value, op, color, label, fillRegion.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/Threshold
+  - term: PointAnnotation
+    definition: 'Object declared by the contract with fields: at, label, color.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/PointAnnotation
+  - term: RangeAnnotation
+    definition: 'Object declared by the contract with fields: from, to, label, color.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/RangeAnnotation
+  - term: Annotation
+    definition: 'Object declared by the contract with fields: type, point, range.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/Annotation
+  - term: AxisBounds
+    definition: 'Object declared by the contract with fields: start, end.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/AxisBounds
+  - term: SequentialColorScale
+    definition: 'Enumeration declared by the contract with values: Blues, Greens, Greys, Oranges, Purples, Reds, BuGn, BuPu, GnBu, OrRd, PuBu,
+      PuBuGn. (15 more)'
+    tags:
+    - Enumeration
+    source: openapi/observeinc-openapi.yml#/components/schemas/SequentialColorScale
+  - term: DivergingColorScale
+    definition: 'Enumeration declared by the contract with values: BrBG, PRGn, PiYG, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, Spectral.'
+    tags:
+    - Enumeration
+    source: openapi/observeinc-openapi.yml#/components/schemas/DivergingColorScale
+  - term: DivergingScaleMidpoint
+    definition: 'Object declared by the contract with fields: type, preset, value.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/DivergingScaleMidpoint
+  - term: ColorScaleConfig
+    definition: 'Object declared by the contract with fields: colorScaleType, bounds, sequentialColorScale, divergingColorScale, divergingScaleMidpoint,
+      reverseColors, target, ignoreMinimum.'
+    tags:
+    - Object
+    source: openapi/observeinc-openapi.yml#/components/schemas/ColorScaleConfig

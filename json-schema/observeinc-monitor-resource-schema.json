@@ -1,0 +1,1698 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/observeinc/main/json-schema/observeinc-monitor-resource-schema.json",
+  "title": "MonitorResource",
+  "description": "One monitor in full: the fields `GET /v1/monitors` returns for it, plus the query and rules that define it. Every field is required; one that can be absent comes back as an explicit null.\n",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/observeinc-openapi.yml#/components/schemas/Monitor-Resource",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "description",
+    "disabled",
+    "ruleKind",
+    "monitorVersion",
+    "createdBy",
+    "createdAt",
+    "updatedBy",
+    "updatedAt",
+    "disabledDetail",
+    "scheduled",
+    "rollupStatus",
+    "health",
+    "governorState",
+    "alertState",
+    "aiTriagingMode",
+    "muteState",
+    "mutedUntil",
+    "muteCount",
+    "lastErrorTime",
+    "lastAlarmTime",
+    "lastWarnTime",
+    "managedBy",
+    "lookbackSeconds",
+    "dataStabilizationDelaySeconds",
+    "maxAlertsPerHour",
+    "scheduling",
+    "inputQuery",
+    "valueColumn",
+    "aggregation",
+    "baseline",
+    "rules",
+    "groupBy",
+    "serviceBindings",
+    "actions",
+    "customVariables"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/ObjectId"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the monitor, unique within its workspace."
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Monitor description. Null when no description is configured."
+    },
+    "disabled": {
+      "type": "boolean",
+      "description": "Whether the monitor is currently disabled, either by a user or automatically by the system on exceeding its alert rate or cost limit.\n"
+    },
+    "ruleKind": {
+      "$ref": "#/$defs/Monitor-RuleKind"
+    },
+    "monitorVersion": {
+      "type": "string",
+      "format": "int64",
+      "description": "Version of the monitor's current definition, as a Unix nanosecond timestamp — currently identical to `updatedAt`, and so it advances on every save. Alerts record the version they were evaluated against, so this identifies which definition produced a given alert. Carried as a string because it exceeds the JSON safe-integer range.\n"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "createdAt": {
+      "$ref": "#/$defs/Time"
+    },
+    "updatedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "updatedAt": {
+      "$ref": "#/$defs/Time"
+    },
+    "disabledDetail": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Monitor-DisabledDetail"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Why the monitor is disabled. Null when it is enabled.\n"
+    },
+    "scheduled": {
+      "type": "boolean",
+      "description": "Whether the monitor runs on a cron, i.e. `scheduling.cron` is set.\n"
+    },
+    "rollupStatus": {
+      "$ref": "#/$defs/Monitor-RollupStatus"
+    },
+    "health": {
+      "$ref": "#/$defs/Monitor-Health"
+    },
+    "governorState": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Monitor-GovernorState"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Cost-governor state. Null when no spend limit is configured for the monitor, which is the common case. `health` already folds this in; read it directly only to distinguish \"no limit\" from `Normal`.\n"
+    },
+    "alertState": {
+      "$ref": "#/$defs/Monitor-AlertState"
+    },
+    "aiTriagingMode": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Monitor-AiTriagingMode"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Whether AI auto-investigation runs when this monitor alerts. Null when the stored mode is not one this API declares. Not reported as `None`, because the filter compares the stored value and `aiTriagingMode == \"None\"` would not select these rows.\n"
+    },
+    "muteState": {
+      "$ref": "#/$defs/Monitor-MuteState"
+    },
+    "mutedUntil": {
+      "$ref": "#/$defs/NullableTime",
+      "description": "When the mute covering this monitor expires. Null when the monitor is not muted, or is muted indefinitely — use `muteState` to tell those apart.\n"
+    },
+    "muteCount": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Number of mute rules currently covering this monitor."
+    },
+    "lastErrorTime": {
+      "$ref": "#/$defs/NullableTime",
+      "description": "When the monitor last logged a fatal error. Null if it never has.\n"
+    },
+    "lastAlarmTime": {
+      "$ref": "#/$defs/NullableTime",
+      "description": "When the monitor last raised an alert. Null if it never has."
+    },
+    "lastWarnTime": {
+      "$ref": "#/$defs/NullableTime",
+      "description": "When the monitor last logged a non-fatal warning. Null if it never has.\n"
+    },
+    "managedBy": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "App that manages this monitor, or null when it is user-managed. Returned id-only; request the app separately for its metadata.\n"
+    },
+    "lookbackSeconds": {
+      "type": "number",
+      "format": "double",
+      "description": "Window of data each evaluation considers, in seconds."
+    },
+    "dataStabilizationDelaySeconds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "double",
+      "description": "How long evaluation waits for late data before judging a window, in seconds. Null when the monitor takes the server default.\n"
+    },
+    "maxAlertsPerHour": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "int64",
+      "description": "Alerts per hour after which the monitor disables itself. Null when the monitor takes the server default.\n"
+    },
+    "scheduling": {
+      "$ref": "#/$defs/Monitor-Scheduling"
+    },
+    "inputQuery": {
+      "$ref": "#/$defs/Monitor-MultiStageQuery"
+    },
+    "valueColumn": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Column of the query output the monitor watches. Null for `Count`, `Promote` and `Composite`.\n"
+    },
+    "aggregation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Monitor-ValueAggregation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "How `valueColumn` is reduced over each window before the rules compare it. Null unless `ruleKind` is `Threshold`.\n"
+    },
+    "baseline": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Monitor-Baseline"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "What an anomaly monitor compares `valueColumn` against. Null unless `ruleKind` is `Anomaly`. A composite's constituents and condition are read from `GET /v1/composite-monitors/{id}`.\n"
+    },
+    "rules": {
+      "type": "array",
+      "description": "When the monitor alerts, one rule per severity, including a `NoData` rule when the monitor alerts on missing data. Empty for `Composite` monitors, whose condition and level are read from `GET /v1/composite-monitors/{id}`.\n",
+      "items": {
+        "$ref": "#/$defs/Monitor-Rule"
+      }
+    },
+    "groupBy": {
+      "type": "array",
+      "description": "Dimensions the rules are evaluated per; each distinct combination of values alerts independently. Empty for a single global alert.\n",
+      "items": {
+        "$ref": "#/$defs/Monitor-Grouping"
+      }
+    },
+    "serviceBindings": {
+      "type": "array",
+      "description": "The service the monitor's alerts are attributed to. At most one entry; empty when the monitor is not bound to a service.\n",
+      "items": {
+        "$ref": "#/$defs/Monitor-ServiceBinding"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "description": "The actions this monitor notifies through, and when each fires. Empty when it notifies nothing.\n",
+      "items": {
+        "$ref": "#/$defs/Monitor-ActionRule"
+      }
+    },
+    "customVariables": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true,
+      "description": "Free-form values the monitor author defined for substitution into action templates. Null when there are none.\n"
+    }
+  },
+  "$defs": {
+    "DatasetBrief": {
+      "title": "DatasetBrief",
+      "type": "object",
+      "description": "Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "contentType"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/$defs/DatasetContentType",
+          "description": "The type of data the referenced dataset contains — Resource, Log,\nMetric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset's\nkind and interface bindings.\n"
+        }
+      }
+    },
+    "DatasetContentType": {
+      "title": "DatasetContentType",
+      "type": "string",
+      "description": "The type of data a dataset contains. For Resource datasets, this is\ndetermined by the dataset kind. For other kinds, it is derived from the\ndataset's interface bindings. Returns Unknown if no recognized interface\nis found.\n",
+      "enum": [
+        "Unknown",
+        "Resource",
+        "Log",
+        "Metric",
+        "OTelSpan",
+        "OTelTrace"
+      ]
+    },
+    "DatasetRef": {
+      "title": "DatasetRef",
+      "type": "object",
+      "description": "A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/DatasetBrief"
+        }
+      }
+    },
+    "Monitor-ActionRule": {
+      "title": "MonitorActionRule",
+      "type": "object",
+      "description": "Binds one action to the monitor, and says when it fires.",
+      "required": [
+        "action",
+        "levels",
+        "conditions",
+        "sendEndNotifications",
+        "sendRemindersIntervalSeconds"
+      ],
+      "properties": {
+        "action": {
+          "$ref": "#/$defs/MonitorAction-Ref"
+        },
+        "levels": {
+          "type": "array",
+          "description": "Severities that fire this action. Empty means every severity.",
+          "items": {
+            "$ref": "#/$defs/Monitor-AlarmLevel"
+          }
+        },
+        "conditions": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-ComparisonExpression"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Condition on the alert's values, so one monitor can route different groups to different actions. Null to fire for every alert at `levels`.\n"
+        },
+        "sendEndNotifications": {
+          "type": "boolean",
+          "description": "Whether the action also fires when an alert resolves."
+        },
+        "sendRemindersIntervalSeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double",
+          "description": "How often to re-notify while an alert stays open, in seconds. Null to notify once.\n"
+        }
+      }
+    },
+    "Monitor-AiTriagingMode": {
+      "title": "MonitorAiTriagingMode",
+      "type": "string",
+      "description": "Whether AI auto-investigation runs when this monitor alerts. `None` disables it; `Triage` runs it.\n",
+      "enum": [
+        "None",
+        "Triage"
+      ]
+    },
+    "Monitor-AlarmLevel": {
+      "title": "MonitorAlarmLevel",
+      "type": "string",
+      "description": "Severity of an alert. `NoData` comes from a no-data rule rather than a comparison.\n",
+      "enum": [
+        "Critical",
+        "Error",
+        "Informational",
+        "NoData",
+        "None",
+        "Warning"
+      ]
+    },
+    "Monitor-AlarmMode": {
+      "title": "MonitorAlarmMode",
+      "type": "string",
+      "description": "How alerts span consecutive cron runs. `PerRun` raises a separate alert per firing run. `Ongoing` extends one alert across consecutive runs that fire for the same group and severity.\n",
+      "enum": [
+        "Ongoing",
+        "PerRun"
+      ]
+    },
+    "Monitor-AlertState": {
+      "title": "MonitorAlertState",
+      "type": "string",
+      "description": "Whether the monitor is alerting now, has alerted before, or never has. `Triggering` means an alarm is open, or one was raised since the last evaluation; a monitor that is turned off is never `Triggering` because it cannot evaluate. `Previous` means it has alerted at some point but is not now — the same set as `lastAlarmTime != null` minus the triggering ones.\n",
+      "enum": [
+        "Never",
+        "Previous",
+        "Triggering"
+      ]
+    },
+    "Monitor-Baseline": {
+      "title": "MonitorBaseline",
+      "type": "object",
+      "description": "The baseline an anomaly monitor compares `valueColumn` against, and how far a value must stray from it. Exactly one of `basicAlgorithm` and `seasonalAlgorithm` is set.\n",
+      "required": [
+        "compareFn",
+        "computationWindowSeconds",
+        "frequencySeconds",
+        "basicAlgorithm",
+        "seasonalAlgorithm"
+      ],
+      "properties": {
+        "compareFn": {
+          "$ref": "#/$defs/Monitor-BoundComparisonFunction"
+        },
+        "computationWindowSeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double",
+          "description": "How much history the baseline is computed over, in seconds. Null when the monitor takes the server default.\n"
+        },
+        "frequencySeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double",
+          "description": "How often the baseline is recomputed, in seconds. Null when the monitor takes the server default.\n"
+        },
+        "basicAlgorithm": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-BasicAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Set when the monitor uses the standard-deviation algorithm."
+        },
+        "seasonalAlgorithm": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-SeasonalAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Set when the monitor uses the seasonal algorithm."
+        }
+      }
+    },
+    "Monitor-BasicAlgorithm": {
+      "title": "MonitorBasicAlgorithm",
+      "type": "object",
+      "description": "Baseline as a mean, with anomalies a number of standard deviations away.",
+      "required": [
+        "numStandardDeviations"
+      ],
+      "properties": {
+        "numStandardDeviations": {
+          "type": "integer",
+          "format": "int64",
+          "description": "How many standard deviations from the mean count as anomalous."
+        }
+      }
+    },
+    "Monitor-BooleanOperator": {
+      "title": "MonitorBooleanOperator",
+      "type": "string",
+      "description": "How a set of conditions combine.",
+      "enum": [
+        "And",
+        "Or"
+      ]
+    },
+    "Monitor-BoundComparisonFunction": {
+      "title": "MonitorBoundComparisonFunction",
+      "type": "string",
+      "description": "Which side of the baseline counts as anomalous.",
+      "enum": [
+        "Above",
+        "AboveOrBelow",
+        "Below"
+      ]
+    },
+    "Monitor-ColumnFilter": {
+      "title": "MonitorColumnFilter",
+      "type": "object",
+      "description": "A test on one column: its `columnComparisons`, combined by `operator`. The column is named as in `groupBy`: exactly one of `column`, `link` and `tag`.\n",
+      "required": [
+        "column",
+        "path",
+        "link",
+        "tag",
+        "operator",
+        "columnComparisons"
+      ],
+      "properties": {
+        "column": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A column of the query output. Null for a link or tag."
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Dotted path into `column`. Null for the whole column."
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A link column. Null unless comparing on a link."
+        },
+        "tag": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Correlation tag, without the `#`. Null unless comparing on a tag."
+        },
+        "operator": {
+          "$ref": "#/$defs/Monitor-BooleanOperator",
+          "description": "How `columnComparisons` combine: `Or` matches when any holds, `And` when all do. Always returned. A monitor saved without one gets `And` when any comparison is `NotEqual`, `NotContains`, `NotStartsWith` or `IsNotNull`, and `Or` otherwise.\n"
+        },
+        "columnComparisons": {
+          "type": "array",
+          "description": "Comparisons applied to the column's value.",
+          "items": {
+            "$ref": "#/$defs/Monitor-Comparison"
+          }
+        }
+      }
+    },
+    "Monitor-ColumnPath": {
+      "title": "MonitorColumnPath",
+      "type": "object",
+      "description": "A column, optionally a field within it.",
+      "required": [
+        "name",
+        "path"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The column's name within its dataset."
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Dotted path into the column. Null for the whole column."
+        }
+      }
+    },
+    "Monitor-Comparison": {
+      "title": "MonitorComparison",
+      "type": "object",
+      "description": "One comparison applied to a value.",
+      "required": [
+        "compareFn",
+        "compareValue",
+        "valueType"
+      ],
+      "properties": {
+        "compareFn": {
+          "$ref": "#/$defs/Monitor-ComparisonFunction"
+        },
+        "compareValue": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The right-hand side as a string, in the form `valueType` names. Null\nfor `IsNull` and `IsNotNull`, and for a stored null.\n\nNumbers are base-10, booleans `true`/`false`, timestamps RFC 3339 in\nUTC, and **durations a count of nanoseconds** -- the one place in this\nschema a duration is not in seconds.\n"
+        },
+        "valueType": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-ValueType"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Type of `compareValue`. Null when the comparison has no operand (`IsNull`, `IsNotNull`).\n"
+        }
+      }
+    },
+    "Monitor-ComparisonExpression": {
+      "title": "MonitorComparisonExpression",
+      "type": "object",
+      "description": "Boolean tree over column comparisons: `operator` combines this node's `compareTerms` and `subExpressions`.\n",
+      "required": [
+        "operator",
+        "compareTerms",
+        "subExpressions"
+      ],
+      "properties": {
+        "operator": {
+          "$ref": "#/$defs/Monitor-BooleanOperator"
+        },
+        "compareTerms": {
+          "type": "array",
+          "description": "This node's own comparisons.",
+          "items": {
+            "$ref": "#/$defs/Monitor-ComparisonTerm"
+          }
+        },
+        "subExpressions": {
+          "type": "array",
+          "description": "Nested expressions. Empty at a leaf.",
+          "items": {
+            "$ref": "#/$defs/Monitor-ComparisonExpression"
+          }
+        }
+      }
+    },
+    "Monitor-ComparisonFunction": {
+      "title": "MonitorComparisonFunction",
+      "type": "string",
+      "description": "How a value is compared. `IsNull` and `IsNotNull` take no right-hand side; the rest require one.\n",
+      "enum": [
+        "Contains",
+        "Equal",
+        "Greater",
+        "GreaterOrEqual",
+        "IsNotNull",
+        "IsNull",
+        "Less",
+        "LessOrEqual",
+        "NotContains",
+        "NotEqual",
+        "NotStartsWith",
+        "StartsWith"
+      ]
+    },
+    "Monitor-ComparisonTerm": {
+      "title": "MonitorComparisonTerm",
+      "type": "object",
+      "description": "One comparison against one column, named as in `groupBy`: exactly one of `column`, `link` and `tag`.\n",
+      "required": [
+        "column",
+        "path",
+        "link",
+        "tag",
+        "comparison"
+      ],
+      "properties": {
+        "column": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A column of the query output. Null for a link or tag."
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Dotted path into `column`. Null for the whole column."
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A link column. Null unless comparing on a link."
+        },
+        "tag": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Correlation tag, without the `#`. Null unless comparing on a tag."
+        },
+        "comparison": {
+          "$ref": "#/$defs/Monitor-Comparison"
+        }
+      }
+    },
+    "Monitor-CronSchedule": {
+      "title": "MonitorCronSchedule",
+      "type": "object",
+      "description": "Evaluation on a wall-clock cron.",
+      "required": [
+        "rawCron",
+        "timezone",
+        "alarmMode"
+      ],
+      "properties": {
+        "rawCron": {
+          "type": "string",
+          "description": "Crontab expression for when to evaluate."
+        },
+        "timezone": {
+          "type": "string",
+          "description": "IANA timezone the cron is interpreted in."
+        },
+        "alarmMode": {
+          "$ref": "#/$defs/Monitor-AlarmMode"
+        }
+      }
+    },
+    "Monitor-DisabledByAlertRateLimit": {
+      "title": "MonitorDisabledByAlertRateLimit",
+      "type": "object",
+      "description": "Detail for a monitor disabled for exceeding its alert rate limit.",
+      "required": [
+        "alertRateLimit",
+        "alertsGenerated",
+        "lookbackSeconds"
+      ],
+      "properties": {
+        "alertRateLimit": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The monitor's configured maximum alerts per hour."
+        },
+        "alertsGenerated": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Alerts generated within the lookback window, which exceeded `alertRateLimit` and triggered the disable.\n"
+        },
+        "lookbackSeconds": {
+          "type": "number",
+          "description": "Length of the window over which alerts were counted."
+        }
+      }
+    },
+    "Monitor-DisabledByCost": {
+      "title": "MonitorDisabledByCost",
+      "type": "object",
+      "description": "Detail for a monitor the cost governor disabled.",
+      "required": [
+        "creditLimitPerDay"
+      ],
+      "properties": {
+        "creditLimitPerDay": {
+          "type": "number",
+          "description": "The daily credit limit the monitor exceeded."
+        }
+      }
+    },
+    "Monitor-DisabledByResultTooBig": {
+      "title": "MonitorDisabledByResultTooBig",
+      "type": "object",
+      "description": "Detail for a monitor disabled because a run result was too large. Either the bytes pair or the rows pair is set; the other is null.\n",
+      "required": [
+        "bytesRead",
+        "bytesLimit",
+        "rowsRead",
+        "rowsLimit"
+      ],
+      "properties": {
+        "bytesRead": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Bytes read. Null for a row-limit disable."
+        },
+        "bytesLimit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Byte limit exceeded. Null for a row-limit disable."
+        },
+        "rowsRead": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Rows read. Null for a byte-limit disable."
+        },
+        "rowsLimit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Row limit exceeded. Null for a byte-limit disable."
+        }
+      }
+    },
+    "Monitor-DisabledByUser": {
+      "title": "MonitorDisabledByUser",
+      "type": "object",
+      "description": "Detail for a monitor a user explicitly disabled.",
+      "required": [
+        "disabledBy"
+      ],
+      "properties": {
+        "disabledBy": {
+          "$ref": "#/$defs/User"
+        }
+      }
+    },
+    "Monitor-DisabledCause": {
+      "title": "MonitorDisabledCause",
+      "type": "string",
+      "description": "Why a monitor was disabled.",
+      "enum": [
+        "AlertRateLimit",
+        "Cost",
+        "ResultTooBig",
+        "User"
+      ]
+    },
+    "Monitor-DisabledDetail": {
+      "title": "MonitorDisabledDetail",
+      "type": "object",
+      "description": "Why the monitor is disabled. Exactly one of the cause-specific fields is populated, matching `cause`; the others are null.\n",
+      "required": [
+        "cause",
+        "cost",
+        "alertRateLimit",
+        "user",
+        "resultTooBig"
+      ],
+      "properties": {
+        "cause": {
+          "$ref": "#/$defs/Monitor-DisabledCause"
+        },
+        "cost": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-DisabledByCost"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "alertRateLimit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-DisabledByAlertRateLimit"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "user": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-DisabledByUser"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "resultTooBig": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-DisabledByResultTooBig"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Monitor-GovernorState": {
+      "title": "MonitorGovernorState",
+      "type": "string",
+      "description": "Where the monitor sits against its configured spend limit. `Normal` is within budget, `GracePeriod` is over it but still evaluating, and `CostDisabled` means the limit has turned it off.\n",
+      "enum": [
+        "CostDisabled",
+        "GracePeriod",
+        "Normal"
+      ]
+    },
+    "Monitor-Grouping": {
+      "title": "MonitorGrouping",
+      "type": "object",
+      "description": "One dimension the rules are evaluated per. Exactly one of `column`, `link` and `tag` is set; `path` only accompanies `column`.\n",
+      "required": [
+        "column",
+        "path",
+        "link",
+        "tag",
+        "meta"
+      ],
+      "properties": {
+        "column": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A column of the query output. Null for a link or tag."
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Dotted path into `column`. Null for the whole column."
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A link column, grouping by the linked resource. Null otherwise."
+        },
+        "tag": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Correlation tag, without the `#`. Null otherwise."
+        },
+        "meta": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-GroupingMeta"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "What `link` or `tag` resolved to when the monitor was saved. Read-only. Null for a plain `column`.\n"
+        }
+      }
+    },
+    "Monitor-GroupingMeta": {
+      "title": "MonitorGroupingMeta",
+      "type": "object",
+      "description": "The physical columns a link or correlation tag resolves to.",
+      "required": [
+        "srcFields",
+        "dstFields",
+        "targetDataset"
+      ],
+      "properties": {
+        "srcFields": {
+          "type": "array",
+          "description": "Columns of this dataset the link or tag reads.",
+          "items": {
+            "$ref": "#/$defs/Monitor-ColumnPath"
+          }
+        },
+        "dstFields": {
+          "type": "array",
+          "description": "Columns of the target dataset a link resolves to. Empty for a tag.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "targetDataset": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DatasetRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Dataset a link points at. Null for a tag."
+        }
+      }
+    },
+    "Monitor-Health": {
+      "title": "MonitorHealth",
+      "type": "string",
+      "description": "The monitor's operating state as one value, which is what the monitors\nlist shows in its Health column and facets on.\n\n`rollupStatus` answers a narrower question — how the last evaluation\nwent — so it reports `Running` for a monitor that is turned off, over its\nspend limit, or on a passive cluster. `health` ranks those causes above\nthe run outcome, highest first:\n\n| Value | Meaning |\n|---|---|\n| `CostDisabled` | Turned off after exceeding its spend limit. |\n| `AlertRateLimitDisabled` | Turned off after exceeding its alert rate. |\n| `Disabled` | Turned off by a user. |\n| `ClusterPassive` | Its customer's monitoring is not active on this cluster, so nothing evaluates. Set for every monitor of that customer at once. |\n| `AtRisk` | Inside the grace period before its spend limit disables it. |\n| `Failed` | An error was logged since the last run, less than a week ago. |\n| `Warnings` | Likewise a warning. |\n| `Initializing` | An anomaly monitor that has not yet produced its output dataset, so it cannot evaluate. |\n| `Running` | None of the above. |\n\nA monitor can satisfy several; only the highest is reported, and the\nranking may change. `Initializing` is only partially reachable — see the\nnote under the list operation's `filter` for the warm-up tail this\nendpoint cannot see.\n",
+      "enum": [
+        "AlertRateLimitDisabled",
+        "AtRisk",
+        "ClusterPassive",
+        "CostDisabled",
+        "Disabled",
+        "Failed",
+        "Initializing",
+        "Running",
+        "Warnings"
+      ]
+    },
+    "Monitor-InputRole": {
+      "title": "MonitorInputRole",
+      "type": "string",
+      "description": "How a stage uses an input: `Data` is queried, `Reference` is only joined against.\n",
+      "enum": [
+        "Data",
+        "Reference"
+      ]
+    },
+    "Monitor-IntervalSchedule": {
+      "title": "MonitorIntervalSchedule",
+      "type": "object",
+      "description": "Evaluation on a fixed interval.",
+      "required": [
+        "intervalSeconds"
+      ],
+      "properties": {
+        "intervalSeconds": {
+          "type": "number",
+          "format": "double",
+          "description": "How often the monitor evaluates, in seconds."
+        }
+      }
+    },
+    "Monitor-MultiStageQuery": {
+      "title": "MonitorMultiStageQuery",
+      "type": "object",
+      "description": "The OPAL query the rules are evaluated over, as a pipeline of stages.",
+      "required": [
+        "outputStage",
+        "stages"
+      ],
+      "properties": {
+        "outputStage": {
+          "type": "string",
+          "description": "`id` of the stage the rules read."
+        },
+        "stages": {
+          "type": "array",
+          "description": "The stages, in definition order.",
+          "items": {
+            "$ref": "#/$defs/Monitor-StageQuery"
+          }
+        }
+      }
+    },
+    "Monitor-MuteState": {
+      "title": "MonitorMuteState",
+      "type": "string",
+      "description": "Whether mute rules currently suppress this monitor's notifications. `PartiallyMuted` means every covering rule is scoped to particular alert groupings, so some alerts still notify.\n",
+      "enum": [
+        "Muted",
+        "NotMuted",
+        "PartiallyMuted"
+      ]
+    },
+    "Monitor-RollupStatus": {
+      "title": "MonitorRollupStatus",
+      "type": "string",
+      "description": "Single health summary, derived from the monitor's other fields and resolved by priority, highest first: `Disabled` (by a user or a limit), `Failed` (an error logged since the last run and less than a week old), `Warnings` (likewise a warning), `Initializing` (an anomaly monitor that has not yet produced its output dataset, so it cannot evaluate yet), `Running` (the default). A monitor can satisfy more than one — only the highest is reported, and the ranking may change. See the note under the list operation's `filter` for the part of `Initializing` this endpoint cannot see.\n",
+      "enum": [
+        "Disabled",
+        "Failed",
+        "Initializing",
+        "Running",
+        "Warnings"
+      ]
+    },
+    "Monitor-Rule": {
+      "title": "MonitorRule",
+      "type": "object",
+      "description": "One alert condition at one severity: the monitor triggers an alert at `level` when every entry in `triggerComparisons` holds, for the groups (or rows) every entry in the filters matches. `ruleKind` decides which fields are used; the lists it does not use are empty:\n| Rule | Fields used | |---|---| | `Count`, `Threshold`, `Anomaly` | `triggerComparisons`, `groupFilters` | | `Promote` | `rowFilters` | | `level: NoData` | `expirationSeconds` (`Threshold` only) |\nA `NoData` rule alerts when no data arrives for a full lookback window. Only `Threshold` and `Anomaly` monitors have one, at most one each, and it watches the same `valueColumn` as the other rules.\n",
+      "required": [
+        "level",
+        "triggerComparisons",
+        "groupFilters",
+        "rowFilters",
+        "expirationSeconds"
+      ],
+      "properties": {
+        "level": {
+          "$ref": "#/$defs/Monitor-AlarmLevel"
+        },
+        "triggerComparisons": {
+          "type": "array",
+          "description": "Comparisons that trigger the alert, all of which must hold (so two\nentries express a range). What they compare depends on `ruleKind`:\n\n| `ruleKind` | Compared value |\n|---|---|\n| `Count` | Number of rows in each group over the window |\n| `Threshold` | `valueColumn`, reduced over the window by `aggregation` |\n| `Anomaly` | Percentage (0-100) of the window outside `baseline` |\n",
+          "items": {
+            "$ref": "#/$defs/Monitor-Comparison"
+          }
+        },
+        "groupFilters": {
+          "type": "array",
+          "description": "Restricts the rule to groups matching every entry. Each entry tests one of the `groupBy` columns. Empty when the rule applies to every group.\n",
+          "items": {
+            "$ref": "#/$defs/Monitor-ColumnFilter"
+          }
+        },
+        "rowFilters": {
+          "type": "array",
+          "description": "Rows of the query output to promote to an alert at this level: a row is promoted when it matches every entry. Empty promotes every row.\n",
+          "items": {
+            "$ref": "#/$defs/Monitor-ColumnFilter"
+          }
+        },
+        "expirationSeconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double",
+          "description": "How long a no-data alert stays open before resolving itself, in seconds. Set only on a `Threshold` monitor's `NoData` rule, where null means the server default. Always null otherwise, including for `Anomaly`, whose no-data alerts always close after a fixed time.\n"
+        }
+      }
+    },
+    "Monitor-RuleKind": {
+      "title": "MonitorRuleKind",
+      "type": "string",
+      "description": "The evaluation rule kind of the monitor. `Composite` is the one kind that inspects no query: it alerts on a boolean condition over whether other monitors are currently alerting, correlated per group.\n",
+      "enum": [
+        "Anomaly",
+        "Composite",
+        "Count",
+        "Promote",
+        "Threshold"
+      ]
+    },
+    "Monitor-Scheduling": {
+      "title": "MonitorScheduling",
+      "type": "object",
+      "description": "When the monitor evaluates. `automatic` is always returned, `true` or `false`. Alongside it, one of `interval`, `transform` and `cron` is set: the schedule the monitor actually runs on, with the server's defaults filled in. All three are null only for a monitor that is saved but not yet running and asked for no schedule; the server picks one when it starts the monitor.\n",
+      "required": [
+        "automatic",
+        "interval",
+        "transform",
+        "cron"
+      ],
+      "properties": {
+        "automatic": {
+          "type": "boolean",
+          "description": "Whether the server chose this schedule, rather than the monitor setting one. An automatic schedule is re-chosen whenever the monitor is saved, so it follows changes to the query and lookback. Always `true` for `Anomaly` and `Composite` monitors, which cannot set one.\n"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-IntervalSchedule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Evaluation on a fixed interval. Chosen by the server, not requested: anomaly and composite monitors always run this way, as does a monitor whose query cannot be accelerated.\n"
+        },
+        "transform": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-TransformSchedule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Evaluation each time the input dataset's transform runs."
+        },
+        "cron": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-CronSchedule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Evaluation on a wall-clock cron."
+        }
+      }
+    },
+    "Monitor-SeasonalAlgorithm": {
+      "title": "MonitorSeasonalAlgorithm",
+      "type": "object",
+      "description": "Baseline that models daily and weekly cycles, so a regular nightly trough is not read as an anomaly.\n",
+      "required": [
+        "sensitivity",
+        "dailyPeriods",
+        "weeklyPeriods"
+      ],
+      "properties": {
+        "sensitivity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Monitor-SeasonalSensitivity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "How readily a departure from the baseline alerts. Null when the monitor takes the server default.\n"
+        },
+        "dailyPeriods": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Daily cycles the model fits. Null when the monitor takes the server default.\n"
+        },
+        "weeklyPeriods": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "int64",
+          "description": "Weekly cycles the model fits. Null when the monitor takes the server default.\n"
+        }
+      }
+    },
+    "Monitor-SeasonalSensitivity": {
+      "title": "MonitorSeasonalSensitivity",
+      "type": "string",
+      "description": "How readily a departure from a seasonal baseline alerts, from `Low` (fewest alerts) to `VeryHigh`.\n",
+      "enum": [
+        "High",
+        "Low",
+        "Medium",
+        "VeryHigh"
+      ]
+    },
+    "Monitor-ServiceBinding": {
+      "title": "MonitorServiceBinding",
+      "type": "object",
+      "description": "A service a monitor's alerts are attributed to, as its three identifying dimensions.\n",
+      "required": [
+        "serviceName",
+        "environment",
+        "serviceNamespace"
+      ],
+      "properties": {
+        "serviceName": {
+          "$ref": "#/$defs/Monitor-ServiceBindingValue"
+        },
+        "environment": {
+          "$ref": "#/$defs/Monitor-ServiceBindingValue"
+        },
+        "serviceNamespace": {
+          "$ref": "#/$defs/Monitor-ServiceBindingValue"
+        }
+      }
+    },
+    "Monitor-ServiceBindingMatchMode": {
+      "title": "MonitorServiceBindingMatchMode",
+      "type": "string",
+      "description": "How a binding dimension is matched. `Exact` matches `value`. `Wildcard` takes each alert's value from the monitor's `groupBy` columns or the input dataset's correlation tags.\n",
+      "enum": [
+        "Exact",
+        "Wildcard"
+      ]
+    },
+    "Monitor-ServiceBindingValue": {
+      "title": "MonitorServiceBindingValue",
+      "type": "object",
+      "description": "One dimension of a service binding.",
+      "required": [
+        "value",
+        "matchMode"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The value this dimension matches. Null when `matchMode` is `Wildcard`."
+        },
+        "matchMode": {
+          "$ref": "#/$defs/Monitor-ServiceBindingMatchMode"
+        }
+      }
+    },
+    "Monitor-StageInput": {
+      "title": "MonitorStageInput",
+      "type": "object",
+      "description": "One source a stage reads: a dataset (by `dataset` or `datasetPath`), an earlier stage, or a parameter. The fields it does not use are null.\n",
+      "required": [
+        "inputName",
+        "inputRole",
+        "dataset",
+        "datasetPath",
+        "stageId",
+        "parameterId"
+      ],
+      "properties": {
+        "inputName": {
+          "type": "string",
+          "description": "The `@name` OPAL refers to this input by, without the `@`."
+        },
+        "inputRole": {
+          "$ref": "#/$defs/Monitor-InputRole"
+        },
+        "dataset": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DatasetRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Dataset this input reads. Null when it reads something else."
+        },
+        "datasetPath": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The dataset as `Workspace.path/Name`, when it was saved that way. Null otherwise.\n"
+        },
+        "stageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "`id` of an earlier stage of this query. Null when not reading a stage.\n"
+        },
+        "parameterId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Parameter the dataset is taken from. Null when not reading a parameter.\n"
+        }
+      }
+    },
+    "Monitor-StageQuery": {
+      "title": "MonitorStageQuery",
+      "type": "object",
+      "description": "One stage of a monitor's input query.",
+      "required": [
+        "id",
+        "input",
+        "pipeline"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifies the stage within this query. `outputStage` and other stages' `input[].stageId` refer to it by this value.\n"
+        },
+        "input": {
+          "type": "array",
+          "description": "What this stage reads.",
+          "items": {
+            "$ref": "#/$defs/Monitor-StageInput"
+          }
+        },
+        "pipeline": {
+          "type": "string",
+          "description": "The stage's OPAL."
+        }
+      }
+    },
+    "Monitor-TransformSchedule": {
+      "title": "MonitorTransformSchedule",
+      "type": "object",
+      "description": "Evaluation driven by the input dataset's transform.",
+      "required": [
+        "freshnessGoalSeconds"
+      ],
+      "properties": {
+        "freshnessGoalSeconds": {
+          "type": "number",
+          "format": "double",
+          "description": "How stale the monitor's data may get, in seconds."
+        }
+      }
+    },
+    "Monitor-ValueAggregation": {
+      "title": "MonitorValueAggregation",
+      "type": "string",
+      "description": "How the values in a window are reduced before comparison: `Max`, `Min`, `AvgOf` and `SumOf` compare the largest, smallest, mean or total. The older `AllOf` and `AnyOf` require every or at least one value to match; new monitors use `Min` or `Max` instead.\n",
+      "enum": [
+        "AllOf",
+        "AnyOf",
+        "AvgOf",
+        "Max",
+        "Min",
+        "SumOf"
+      ]
+    },
+    "Monitor-ValueType": {
+      "title": "MonitorValueType",
+      "type": "string",
+      "description": "The type of a comparison's right-hand side.",
+      "enum": [
+        "Bool",
+        "Duration",
+        "Float64",
+        "Int64",
+        "String",
+        "Timestamp"
+      ]
+    },
+    "MonitorAction-Brief": {
+      "title": "MonitorActionBrief",
+      "type": "object",
+      "description": "A bound action, with enough of its configuration to read it back and send it again.\n",
+      "required": [
+        "label",
+        "type",
+        "inline",
+        "email",
+        "webhook"
+      ],
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The action's name. An inline action's is generated rather than chosen. Null when the action has none.\n"
+        },
+        "type": {
+          "$ref": "#/$defs/MonitorAction-Type"
+        },
+        "inline": {
+          "type": "boolean",
+          "description": "Whether the action belongs to this monitor alone rather than being shared."
+        },
+        "email": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MonitorAction-Email"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The email payload. Set when `type` is `Email`."
+        },
+        "webhook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MonitorAction-Webhook"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The webhook payload. Set when `type` is `Webhook`, `Slack` or `PagerDuty`, all of which post a webhook.\n"
+        }
+      }
+    },
+    "MonitorAction-Email": {
+      "title": "MonitorActionEmail",
+      "type": "object",
+      "description": "An email notification's payload.",
+      "required": [
+        "users",
+        "addresses",
+        "subject",
+        "body",
+        "fragments"
+      ],
+      "properties": {
+        "users": {
+          "type": "array",
+          "description": "Users to notify.",
+          "items": {
+            "$ref": "#/$defs/User"
+          }
+        },
+        "addresses": {
+          "type": "array",
+          "description": "Email addresses to notify.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "subject": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Subject template. Null when the action sets none."
+        },
+        "body": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Body template. Null when the action sets none."
+        },
+        "fragments": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true,
+          "description": "Named template fragments the subject and body can include. Null when the action defines none.\n"
+        }
+      }
+    },
+    "MonitorAction-HttpMethod": {
+      "title": "MonitorActionHttpMethod",
+      "type": "string",
+      "description": "HTTP method a webhook action posts with.",
+      "enum": [
+        "Post",
+        "Put"
+      ]
+    },
+    "MonitorAction-Ref": {
+      "title": "MonitorActionRef",
+      "type": "object",
+      "description": "Reference to a monitor action; `record` is populated only with `expand=true`. Actions have no endpoint of their own yet, so read one through a monitor that binds it.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/MonitorAction-Brief"
+        }
+      }
+    },
+    "MonitorAction-Type": {
+      "title": "MonitorActionType",
+      "type": "string",
+      "description": "How an action notifies. `PagerDuty` and `Slack` are webhooks posted to those services.\n",
+      "enum": [
+        "Email",
+        "PagerDuty",
+        "Slack",
+        "Webhook"
+      ]
+    },
+    "MonitorAction-Webhook": {
+      "title": "MonitorActionWebhook",
+      "type": "object",
+      "description": "A webhook notification's payload, also used for PagerDuty and Slack. A PagerDuty routing key is part of the `body` template, not a field of its own.\n",
+      "required": [
+        "url",
+        "method",
+        "headers",
+        "body",
+        "fragments"
+      ],
+      "properties": {
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Endpoint to post to. Null when the action sets none."
+        },
+        "method": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MonitorAction-HttpMethod"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "HTTP method. Null when the action sets none."
+        },
+        "headers": {
+          "type": "array",
+          "description": "Headers sent with the request.",
+          "items": {
+            "$ref": "#/$defs/MonitorAction-WebhookHeader"
+          }
+        },
+        "body": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Request-body template. Null when the action sets none."
+        },
+        "fragments": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true,
+          "description": "Named template fragments the body can include. Null when the action defines none.\n"
+        }
+      }
+    },
+    "MonitorAction-WebhookHeader": {
+      "title": "MonitorActionWebhookHeader",
+      "type": "object",
+      "required": [
+        "header",
+        "value"
+      ],
+      "properties": {
+        "header": {
+          "type": "string",
+          "description": "Header name."
+        },
+        "value": {
+          "type": "string",
+          "description": "Header value template."
+        }
+      }
+    },
+    "NullableTime": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "RFC3339"
+    },
+    "ObjectBrief": {
+      "title": "ObjectBrief",
+      "type": "object",
+      "description": "Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "managedBy"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "managedBy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager's brief."
+        }
+      }
+    },
+    "ObjectId": {
+      "type": "string",
+      "format": "ObjectId"
+    },
+    "ObjectRef": {
+      "title": "ObjectRef",
+      "type": "object",
+      "description": "A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/ObjectBrief"
+        }
+      }
+    },
+    "Time": {
+      "type": "string",
+      "format": "RFC3339"
+    },
+    "User": {
+      "title": "User",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "User Identifier",
+          "$ref": "#/$defs/ObjectId"
+        },
+        "label": {
+          "title": "User Label",
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

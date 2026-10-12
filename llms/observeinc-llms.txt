@@ -1,0 +1,992 @@
+# Guides Documentation
+
+> Observe by Snowflake product documentation.
+
+## User Guides: Welcome to Observe
+- [Welcome to Observe by Snowflake](https://docs.observeinc.com/docs/welcome.md): This page will help you get started with Observe by Snowflake. You'll be up and running in a jiffy!
+- [Get help](https://docs.observeinc.com/docs/get-help.md): This page summarizes the ways you can get help using Observe by Snowflake.
+  - [Terms of support](https://docs.observeinc.com/docs/terms-of-support.md): This page summarizes Observe by Snowflake's terms of support.
+  - [Report an incident](https://docs.observeinc.com/docs/reporting-an-incident.md): This page describes how to report an incident.
+  - [Escalate an issue](https://docs.observeinc.com/docs/escalate-an-issue.md)
+  - [View your requests](https://docs.observeinc.com/docs/view-your-requests.md)
+  - [Share requests with your team](https://docs.observeinc.com/docs/share-requests-with-your-team.md)
+  - [Observe by Snowflake system user](https://docs.observeinc.com/docs/observe-system-user.md): What is the Observe by Snowflake system user?
+  - [Observe support holiday calendar](https://docs.observeinc.com/docs/observe-support-holiday-calendar.md)
+  - [Observe by Snowflake helpful hints](https://docs.observeinc.com/docs/other-helpful-hints.md)
+    - [How do I change the name of my Observe Instance?](https://docs.observeinc.com/docs/how-do-i-change-the-name-of-my-observe-instance.md)
+    - [Where do I find my customer ID?](https://docs.observeinc.com/docs/where-do-i-find-my-customer-id.md)
+    - [How do I create and use formulas?](https://docs.observeinc.com/docs/how-do-i-create-and-use-formulas.md)
+    - [How many Monitors am I using?](https://docs.observeinc.com/docs/how-many-monitors-am-i-using.md)
+    - [How many queries am I using?](https://docs.observeinc.com/docs/how-many-queries-am-i-using.md)
+    - [How much ingest and transform are we using?](https://docs.observeinc.com/docs/how-much-ingest-and-transform-are-we-using.md)
+    - [How do I make a service appear in the Service Explorer?](https://docs.observeinc.com/docs/how-do-i-make-a-service-appear-in-the-service-explorer.md)
+    - [What is the System Datastream?](https://docs.observeinc.com/docs/what-is-the-system-datastream.md)
+  - [Give documentation feedback](https://docs.observeinc.com/docs/documentation-feedback.md)
+  - [o11y AI Help](https://docs.observeinc.com/docs/o11y-gpt.md)
+  - [Connect your AI agents with the Observe by Snowflake documentation](https://docs.observeinc.com/docs/connect-your-ai-agents-with-the-observe-documentation.md): Learn how your AI agents can consume Observe by Snowflake's documentation.
+- [AI data security](https://docs.observeinc.com/docs/ai-data-security.md)
+- [Accidental ingestion of sensitive data](https://docs.observeinc.com/docs/accidental-ingestion-of-sensitive-data.md): What happens if sensitive data is accidentally ingested by Observe by Snowflake?
+- [Dataset query filters](https://docs.observeinc.com/docs/dataset-query-filters.md)
+- [Free trial](https://docs.observeinc.com/docs/free-trial.md): Get started with Observe by Snowflake's 14-day free trial.
+
+## User Guides: Add Data
+- [Get started](https://docs.observeinc.com/docs/get-started.md)
+- [Observe Agent](https://docs.observeinc.com/docs/what-is-the-observe-agent.md): Learn about the Observe Agent.
+  - [Observe Agent versioning](https://docs.observeinc.com/docs/observe-agent-versioning.md): This page describes the versioning matrix used for the Observe Agent.
+    - [Breaking changes when upgrading to version 2.0.0](https://docs.observeinc.com/docs/breaking-changes-when-upgrading-to-version-200.md)
+    - [Breaking changes when upgrading to version 1.0.0](https://docs.observeinc.com/docs/breaking-changes-when-upgrading-to-version-100.md)
+  - [Install Docker image](https://docs.observeinc.com/docs/install-the-observe-agent-as-a-docker-image-1.md)
+  - [Install on a host](https://docs.observeinc.com/docs/install-on-a-host.md)
+    - [Use AI to Install the Observe Agent on a host](https://docs.observeinc.com/docs/use-ai-to-install-the-observe-agent-on-a-host.md): Use AI skills to install and troubleshoot the Observe Agent on a host machine.
+    - [Install on Linux](https://docs.observeinc.com/docs/linux-1.md)
+    - [Install on Windows](https://docs.observeinc.com/docs/windows.md)
+    - [Install on macOS](https://docs.observeinc.com/docs/macos.md)
+    - [Configure the Observe Agent on Linux, Windows, and macOS](https://docs.observeinc.com/docs/configure-the-observe-agent-on-linux-windows-and-macos.md)
+  - [Install on Kubernetes](https://docs.observeinc.com/docs/kubernetes.md)
+    - [Use AI to install the Observe Agent on Kubernetes](https://docs.observeinc.com/docs/use-ai-to-install-the-observe-agent-on-kubernetes.md): Use AI skills to install and troubleshoot the Observe Agent on Kubernetes.
+    - [Helm Chart components](https://docs.observeinc.com/docs/observe-agent-components.md)
+    - [Collect annotations and labels](https://docs.observeinc.com/docs/collect-annotations-and-labels.md)
+    - [Add and delete attributes](https://docs.observeinc.com/docs/add-and-delete-attributes.md)
+    - [Prometheus autodiscovery](https://docs.observeinc.com/docs/prometheus-autodiscovery.md)
+    - [Application RED metrics](https://docs.observeinc.com/docs/application-red-metrics.md)
+      - [Filter logs and metrics](https://docs.observeinc.com/docs/filter-logs-and-metrics.md)
+    - [Handle multiline log records](https://docs.observeinc.com/docs/handle-multiline-log-records.md)
+    - [Mask sensitive data](https://docs.observeinc.com/docs/mask-sensitive-data.md)
+    - [Collect StatsD metrics](https://docs.observeinc.com/docs/collect-statsd-metrics.md)
+    - [Collect StatsD metrics using UDS](https://docs.observeinc.com/docs/collect-statsd-metrics-using-uds.md)
+    - [Collect StatsD metrics (legacy)](https://docs.observeinc.com/docs/collect-statsd-metrics-legacy.md)
+    - [Collect StatsD metrics using UDS (legacy)](https://docs.observeinc.com/docs/collect-statsd-metrics-using-uds-legacy.md)
+    - [Node affinity, taints, and tolerations](https://docs.observeinc.com/docs/node-affinity-taints-and-tolerations.md)
+    - [Deploy in a custom namespace](https://docs.observeinc.com/docs/deploy-in-a-custom-namespace.md)
+    - [Deploy to multiple clusters using Rancher](https://docs.observeinc.com/docs/deploy-to-multiple-clusters-using-rancher.md)
+    - [Deploy to multiple clusters using Rancher (legacy)](https://docs.observeinc.com/docs/deploy-to-multiple-clusters-using-rancher-legacy.md)
+    - [Deploy to a serverless EKS Fargate cluster ](https://docs.observeinc.com/docs/deploy-to-a-serverless-kubernetes-cluster.md)
+    - [Deploy to a GKE Autopilot cluster](https://docs.observeinc.com/docs/deploy-to-a-serverless-gke-autopilot-cluster.md)
+    - [Tune service resource requests and limits](https://docs.observeinc.com/docs/tune-service-resource-requests-and-limits.md)
+    - [Trace tail sampling](https://docs.observeinc.com/docs/trace-tail-sampling.md)
+    - [Deploy to an AWS Auto Mode Cluster](https://docs.observeinc.com/docs/deploy-to-an-aws-auto-mode-cluster.md)
+    - [Prometheus Target Allocator](https://docs.observeinc.com/docs/prometheus-target-allocator.md)
+  - [Install on Red Hat OpenShift](https://docs.observeinc.com/docs/install-on-red-hat-openshift.md)
+    - [Example OpenShift configuration](https://docs.observeinc.com/docs/example-openshift-configuration.md)
+  - [Install on Amazon ECS](https://docs.observeinc.com/docs/install-on-amazon-ecs.md)
+    - [Install on Amazon ECS (EC2)](https://docs.observeinc.com/docs/amazon-ecs-ec2.md)
+    - [Install on Amazon ECS (Fargate)](https://docs.observeinc.com/docs/amazon-ecs-fargate.md)
+    - [Install on Amazon ECS (Fargate - Sidecar Pattern)](https://docs.observeinc.com/docs/install-on-amazon-ecs-fargate-sidecar-pattern.md)
+  - [Install on Ansible](https://docs.observeinc.com/docs/data-centers.md)
+    - [Install on Ansible for Linux](https://docs.observeinc.com/docs/ansible-on-linux.md)
+    - [Install on Ansible for Windows](https://docs.observeinc.com/docs/ansible-on-windows.md)
+  - [Fleet Management](https://docs.observeinc.com/docs/fleet-explorer.md): Manage the Observe Agent instances across your infrastructure from a single place.
+  - [Manage application data volume](https://docs.observeinc.com/docs/manage-application-data-volume.md)
+  - [Troubleshoot the Observe Agent](https://docs.observeinc.com/docs/troubleshooting.md)
+- [APM instrumentation](https://docs.observeinc.com/docs/apm-instrumentation.md)
+  - [Instrument your applications using AI skills](https://docs.observeinc.com/docs/using-ai-skills.md): Use Observe by Snowflake's AI skills from an agentic coding tool to add, fix, and validate OpenTelemetry instrumentation for your applications.
+  - [APM runtime metrics](https://docs.observeinc.com/docs/apm-runtime-metrics.md)
+  - [Associate infrastructure metrics with services](https://docs.observeinc.com/docs/associate-infrastructure-metrics-with-services.md)
+  - [Send Java application data to Observe by Snowflake](https://docs.observeinc.com/docs/send-java-application-data-to-observe.md)
+    - [Supported Java libraries and frameworks](https://docs.observeinc.com/docs/supported-java-libraries-and-frameworks.md)
+  - [Send .NET application data to Observe](https://docs.observeinc.com/docs/send-net-application-data-to-observe.md)
+    - [Supported .NET libraries and frameworks](https://docs.observeinc.com/docs/supported-net-libraries-and-frameworks.md)
+  - [Send Node.js application data to Observe by Snowflake](https://docs.observeinc.com/docs/send-nodejs-application-data-to-observe.md)
+    - [Supported Node.js libraries and frameworks](https://docs.observeinc.com/docs/supported-nodejs-libraries-and-frameworks.md)
+  - [Send Python application data to Observe by Snowflake](https://docs.observeinc.com/docs/send-python-application-data-to-observe.md)
+    - [Supported Python libraries and frameworks](https://docs.observeinc.com/docs/supported-python-libraries-and-frameworks.md)
+  - [Send Ruby application data to Observe by Snowflake](https://docs.observeinc.com/docs/send-ruby-application-data-to-observe.md)
+    - [Supported Ruby frameworks and libraries](https://docs.observeinc.com/docs/supported-ruby-frameworks-and-libraries.md)
+  - [Send PHP application data to Observe](https://docs.observeinc.com/docs/send-php-application-data-to-observe.md)
+  - [Troubleshoot APM instrumentation](https://docs.observeinc.com/docs/troubleshoot-apm-instrumentation.md)
+  - [Auto-instrumentation with OpenTelemetry Operator in Kubernetes](https://docs.observeinc.com/docs/auto-instrumentation-with-opentelemetry-operator-in-kubernetes.md)
+- [LLM instrumentation](https://docs.observeinc.com/docs/llm-instrumentation.md)
+  - [Use Node.js (server) instrumentation for LLM observability](https://docs.observeinc.com/docs/use-nodejs-server-instrumentation-for-llm-observability.md)
+  - [Use Python instrumentation for LLM observability](https://docs.observeinc.com/docs/use-python-instrumentation-for-llm-observability.md)
+  - [Other instrumentation for LLM observability](https://docs.observeinc.com/docs/other-instrumentation-for-llm-observability.md)
+- [Cloud integrations](https://docs.observeinc.com/docs/add-data-portal.md)
+  - [Get AWS data into Observe by Snowflake](https://docs.observeinc.com/docs/get-aws-data-into-observe.md)
+    - [What is FileDrop?](https://docs.observeinc.com/docs/what-is-filedrop.md)
+    - [AWS-at-scale data ingestion ](https://docs.observeinc.com/docs/aws-at-scale-data-ingestion.md)
+    - [AWS data collection](https://docs.observeinc.com/docs/aws-data-collection.md): Learn how to get your AWS data into Observe by Snowflake.
+    - [Uninstall an AWS integration](https://docs.observeinc.com/docs/uninstall-an-aws-integration.md)
+    - [Troubleshoot AWS Integrations](https://docs.observeinc.com/docs/troubleshooting-aws-integrations.md)
+    - [Configure an AWS integration](https://docs.observeinc.com/docs/configure-an-aws-integration.md)
+  - [Get Microsoft Azure data into Observe by Snowflake](https://docs.observeinc.com/docs/azure.md)
+    - [Install and configure the Microsoft Azure app](https://docs.observeinc.com/docs/install-and-configure-the-microsoft-azure-app.md)
+    - [Azure resource configuration](https://docs.observeinc.com/docs/azure-resource-configuration.md)
+    - [Azure Active Directory (AD)](https://docs.observeinc.com/docs/azure-active-directory-ad.md)
+    - [Azure App Services](https://docs.observeinc.com/docs/azure-app-services.md)
+    - [Azure Cognitive Services](https://docs.observeinc.com/docs/azure-cognitive-services.md)
+    - [Azure Functions](https://docs.observeinc.com/docs/azure-functions.md)
+    - [Azure Kubernetes Service (AKS)](https://docs.observeinc.com/docs/azure-kubernetes-service-aks.md)
+    - [Azure SQL Database](https://docs.observeinc.com/docs/azure-sql-databases.md)
+    - [Azure SQL Managed Instances](https://docs.observeinc.com/docs/azure-sql-managed-instances.md)
+    - [Azure storage account](https://docs.observeinc.com/docs/azure-storage-account.md)
+    - [Azure virtual machines](https://docs.observeinc.com/docs/azure-virtual-machines.md)
+    - [Uninstall the Microsoft Azure app](https://docs.observeinc.com/docs/uninstall-the-microsoft-azure-app.md)
+    - [Troubleshoot Azure](https://docs.observeinc.com/docs/troubleshoot-azure.md)
+  - [Get Google Cloud data into Observe by Snowflake](https://docs.observeinc.com/docs/google-cloud.md)
+    - [Configure your GCP project ](https://docs.observeinc.com/docs/install.md)
+    - [Install the Google Cloud Platform Quickstart app](https://docs.observeinc.com/docs/google-cloud-platform-quickstart-1.md)
+    - [View GCP data in Observe by Snowflake](https://docs.observeinc.com/docs/google-cloud-platform-quickstart.md)
+    - [Uninstall the Google Cloud Platform Quickstart app](https://docs.observeinc.com/docs/uninstall-the-google-cloud-platform-quickstart-app.md)
+- [Observe by Snowflake integrations](https://docs.observeinc.com/docs/integrations.md)
+  - [Observe by Snowflake apps](https://docs.observeinc.com/docs/observe-apps-1.md)
+  - [Fastly](https://docs.observeinc.com/docs/fastly.md)
+    - [Install the Fastly app](https://docs.observeinc.com/docs/install-the-fastly-app.md)
+    - [View Fastly data in Observe by Snowflake](https://docs.observeinc.com/docs/view-fastly-data-in-observe.md)
+    - [Uninstall the Fastly app](https://docs.observeinc.com/docs/uninstall-the-fastly-app.md)
+  - [GitHub](https://docs.observeinc.com/docs/github-1.md)
+    - [Install the GitHub app](https://docs.observeinc.com/docs/install-the-github-app.md)
+    - [View GitHub data in Observe](https://docs.observeinc.com/docs/view-github-data-in-observe.md)
+    - [Uninstall the GitHub app](https://docs.observeinc.com/docs/uninstall-the-github-app.md)
+  - [GitLab](https://docs.observeinc.com/docs/gitlab.md)
+    - [Install the GitLab app](https://docs.observeinc.com/docs/install-the-gitlab-app.md)
+    - [View GitLab data in Observe by Snowflake](https://docs.observeinc.com/docs/view-gitlab-data-in-observe.md)
+    - [Uninstall the GitLab app](https://docs.observeinc.com/docs/uninstall-the-gitlab-app.md)
+  - [MongoDB Atlas](https://docs.observeinc.com/docs/mongodb-atlas.md)
+    - [Install the MongoDB Atlas app](https://docs.observeinc.com/docs/install-the-mongodb-atlas-app.md)
+    - [View MongoDB Atlas data in Observe by Snowflake](https://docs.observeinc.com/docs/view-mongodb-atlas-data-in-observe.md)
+    - [Update the MongoDB Atlas app](https://docs.observeinc.com/docs/update-the-mongodb-atlas-app.md)
+    - [Uninstall the MongoDB Atlas app](https://docs.observeinc.com/docs/uninstall-the-mongodb-atlas-app.md)
+  - [MySQL](https://docs.observeinc.com/docs/mysql.md)
+    - [Install the MySQL app](https://docs.observeinc.com/docs/install-the-mysql-app.md)
+    - [View MySQL data in Observe by Snowflake](https://docs.observeinc.com/docs/view-mysql-data-in-observe.md)
+    - [Uninstall the MySQL app](https://docs.observeinc.com/docs/uninstall-the-mysql-app.md)
+  - [Orca Security](https://docs.observeinc.com/docs/orca-security.md)
+    - [Install the Orca Security app](https://docs.observeinc.com/docs/install-the-orca-security-app.md)
+    - [View Orca Security data in Observe by Snowflake](https://docs.observeinc.com/docs/view-orca-security-data-in-observe.md)
+  - [PagerDuty](https://docs.observeinc.com/docs/pagerduty.md)
+  - [PostgreSQL](https://docs.observeinc.com/docs/postgresql-database-service.md)
+  - [Prometheus metrics](https://docs.observeinc.com/docs/prometheus-metrics.md)
+    - [Install the Prometheus Metrics app](https://docs.observeinc.com/docs/install-the-prometheus-metrics-app.md)
+    - [View Prometheus metrics in Observe by Snowflake](https://docs.observeinc.com/docs/view-prometheus-metrics-in-observe.md)
+  - [Prometheus Node Exporter](https://docs.observeinc.com/docs/prometheus-node-exporter.md)
+  - [Security Onion](https://docs.observeinc.com/docs/security-onion.md)
+    - [Install the Security Onion app](https://docs.observeinc.com/docs/install-the-security-onion-app.md)
+    - [View Security Onion data in Observe by Snowflake](https://docs.observeinc.com/docs/view-security-onion-data-in-observe.md)
+  - [Service Level Objectives (SLO)](https://docs.observeinc.com/docs/service-level-objectives.md)
+  - [Threat Intel (Basic)](https://docs.observeinc.com/docs/threat-intel-basic.md)
+    - [Install the Threat Intel (Basic) app](https://docs.observeinc.com/docs/install-the-threat-intel-basic-app.md)
+    - [View Threat Intel (Basic) data in Observe by Snowflake](https://docs.observeinc.com/docs/view-threat-intel-basic-data-in-observe.md)
+    - [Example: Use unified hosts-domains and URL threatlists ](https://docs.observeinc.com/docs/example-use-unified-hosts-domains-and-url-threatlists.md)
+    - [Example: Use unified IPv4 threatlists](https://docs.observeinc.com/docs/example-use-unified-ipv4-threatlists.md)
+    - [Example: Use unified IPv4 IAAS providers list](https://docs.observeinc.com/docs/example-use-unified-ipv4-iaas-providers-list.md)
+- [Custom data ingestion](https://docs.observeinc.com/docs/data-ingestion.md): This page summarizes the ways you can get data into Observe by Snowflake.
+  - [Datastreams](https://docs.observeinc.com/docs/datastreams.md)
+  - [Sources](https://docs.observeinc.com/docs/sources.md)
+    - [GitHub](https://docs.observeinc.com/docs/github.md)
+    - [Google Workspace audit logs](https://docs.observeinc.com/docs/google-workspace-audit-logs.md)
+    - [Jira tickets](https://docs.observeinc.com/docs/jira-tickets.md)
+    - [Webhook](https://docs.observeinc.com/docs/webhook.md)
+    - [Windows servers](https://docs.observeinc.com/docs/windows-servers.md)
+    - [Zendesk tickets](https://docs.observeinc.com/docs/zendesk-tickets.md)
+  - [Forwarders](https://docs.observeinc.com/docs/forwarders.md)
+    - [Elastic Beats](https://docs.observeinc.com/docs/elastic-beats.md)
+    - [Fluent Bit](https://docs.observeinc.com/docs/fluent-bit.md)
+    - [Fluentd](https://docs.observeinc.com/docs/fluentd.md)
+    - [Log4j](https://docs.observeinc.com/docs/log4j.md)
+    - [Logstash](https://docs.observeinc.com/docs/logstash.md)
+    - [Observe Lambda](https://docs.observeinc.com/docs/observe-lambda.md)
+    - [Prometheus](https://docs.observeinc.com/docs/prometheus-1.md)
+    - [Telegraf](https://docs.observeinc.com/docs/telegraf.md)
+  - [Endpoints](https://docs.observeinc.com/docs/endpoints.md)
+    - [Datadog metrics](https://docs.observeinc.com/docs/datadog-metrics.md)
+    - [Elasticsearch](https://docs.observeinc.com/docs/elasticsearch.md)
+    - [HTTP](https://docs.observeinc.com/docs/http.md)
+    - [Kinesis](https://docs.observeinc.com/docs/kinesis.md)
+    - [OpenTelemetry](https://docs.observeinc.com/docs/opentelemetry.md)
+    - [Prometheus](https://docs.observeinc.com/docs/prometheus.md)
+  - [Troubleshoot data ingestion](https://docs.observeinc.com/docs/troubleshooting-data-ingestion.md)
+- [OSS OpenTelemetry](https://docs.observeinc.com/docs/oss-opentelemetry.md): Learn how you can configure your own OTel agent to get data into Observe without the Observe Agent.
+  - [Configure your own OTel collector on Kubernetes](https://docs.observeinc.com/docs/configure-your-own-otel-collector.md)
+    - [Full Kubernetes example](https://docs.observeinc.com/docs/full-kubernetes-example.md)
+  - [Configure your own OTel collector without Kubernetes](https://docs.observeinc.com/docs/configure-your-own-otel-collector-in-a-non-kubernetes-environment.md): Learn how to configure your own OTel collector to send trace data to Observe by Snowflake from any environment.
+    - [Full host example](https://docs.observeinc.com/docs/full-host-example.md)
+- [Buffer and retry OpenTelemetry exports during outages](https://docs.observeinc.com/docs/buffer-and-retry-opentelemetry-exports-during-outages.md): Learn how to configure your OTel collector to minimize data loss during outages.
+- [Route your data to a specific Dataset](https://docs.observeinc.com/docs/route-your-data-to-a-specific-dataset.md): Learn how to configure routing to ingest your data and direct it to the desired Dataset.
+
+## User Guides: Products
+- [Observe by Snowflake AI](https://docs.observeinc.com/docs/ai.md): Learn about the AI capabilities of the Observe by Snowflake platform.
+  - [AI SRE](https://docs.observeinc.com/docs/ai-sre.md): Learn how to use the AI SRE observability assistant.
+    - [AI SRE settings](https://docs.observeinc.com/docs/ai-sre-settings.md)
+      - [AI SRE connectors](https://docs.observeinc.com/docs/configure-ai-sre-connectors.md): Learn how to connect your Notion and Atlassian environments to AI SRE.
+      - [AI SRE rules and guidelines](https://docs.observeinc.com/docs/ai-sre-rules-and-guidelines.md): Learn how to add information to help AI SRE understand your environment and preferences.
+      - [AI SRE persistent memories](https://docs.observeinc.com/docs/ai-sre-persistent-memories.md): Learn about how to enable or disable persistent memories for AI SRE sessions.
+    - [AI SRE permissions and access](https://docs.observeinc.com/docs/ai-sre-permissions-and-access.md): Learn what AI SRE can access, and how you can control who has access to AI SRE.
+    - [Share AI SRE sessions](https://docs.observeinc.com/docs/share-ai-sre-sessions.md): Learn how to share your AI SRE sessions with other Observe users.
+  - [MCP Server](https://docs.observeinc.com/docs/model-context-protocol.md): Learn how to configure Observe's MCP server to connect to your AI tools.
+  - [AI skills](https://docs.observeinc.com/docs/create-skills-for-ai-sre.md): Learn about the AI skills available with Observe by Snowflake, and how you can create your own.
+  - [Onboard data using AI](https://docs.observeinc.com/docs/onboard-data-using-ai.md): Use agentic coding tools to onboard data and instrument your applications with Observe's AI skills.
+  - [AI data governance](https://docs.observeinc.com/docs/ai-data-governance.md)
+    - [Where does your data go?](https://docs.observeinc.com/docs/where-does-your-data-go.md)
+    - [Data security](https://docs.observeinc.com/docs/data-security-1.md)
+    - [Monitor your AI usage](https://docs.observeinc.com/docs/monitor-your-ai-usage.md)
+- [Log management](https://docs.observeinc.com/docs/log-management.md)
+  - [Log Explorer](https://docs.observeinc.com/docs/log-explorer.md)
+    - [Use live mode in Log Explorer](https://docs.observeinc.com/docs/use-live-mode-in-logs-explorer.md)
+    - [Add new Datasets to Log Explorer](https://docs.observeinc.com/docs/add-new-datasets-to-log-explorer.md)
+  - [Log correlation](https://docs.observeinc.com/docs/log-correlation.md)
+  - [Unified search syntax](https://docs.observeinc.com/docs/unified-search-syntax.md)
+  - [Query history](https://docs.observeinc.com/docs/query-history.md)
+- [APM observability](https://docs.observeinc.com/docs/application-performance-monitoring.md)
+  - [Discover and map your services](https://docs.observeinc.com/docs/service-management.md): Learn how to investigate and troubleshoot your services, databases, message brokers, and uninstrumented services.
+  - [Search and inspect your traces](https://docs.observeinc.com/docs/trace-explorer.md): Learn how you can inspect trace data in the Trace Explorer.
+  - [APM observability use cases and examples](https://docs.observeinc.com/docs/apm-observability-use-cases-and-examples.md)
+    - [Monitor and track new deployments on your service](https://docs.observeinc.com/docs/monitor-and-track-new-deployments-on-your-service.md): Learn how to track new deployments in your environment.
+    - [Troubleshoot slow databases and n+1 issues](https://docs.observeinc.com/docs/troubleshoot-slow-databases-and-n1-issues.md): This example describes how you can troubleshoot slow databases and n+1 issues using Observe by Snowflake.
+    - [View logs associated with a trace](https://docs.observeinc.com/docs/view-logs-associated-with-a-trace.md)
+    - [Service monitoring workflow](https://docs.observeinc.com/docs/service-monitoring-workflow.md)
+  - [APM observability reference](https://docs.observeinc.com/docs/apm-reference.md)
+- [LLM observability](https://docs.observeinc.com/docs/llm-observability.md)
+  - [LLM telemetry reference](https://docs.observeinc.com/docs/llm-telemetry-reference.md)
+- [Snowflake observability](https://docs.observeinc.com/docs/snowflake.md)
+  - [Observe for Snowflake components](https://docs.observeinc.com/docs/observe-for-snowflake-components.md)
+  - [Prepare Observe to receive data from Snowflake](https://docs.observeinc.com/docs/prepare-observe-to-receive-data-from-snowflake.md)
+  - [Create a virtual warehouse to run Observe for Snowflake](https://docs.observeinc.com/docs/create-a-virtual-warehouse-to-run-observe-for-snowflake.md)
+  - [Install the Observe for Snowflake app ](https://docs.observeinc.com/docs/install-the-observe-for-snowflake-app.md)
+  - [Configure the Observe for Snowflake app](https://docs.observeinc.com/docs/configure-the-observe-for-snowflake-app.md)
+  - [Send data from Snowflake to Observe by Snowflake](https://docs.observeinc.com/docs/send-data-from-snowflake-to-observe.md)
+  - [Snowflake data in Observe by Snowflake](https://docs.observeinc.com/docs/snowflake-data-in-observe.md)
+  - [Use Observe by Snowflake to manage Snowflake](https://docs.observeinc.com/docs/use-observe-to-manage-snowflake.md)
+- [Kubernetes observability](https://docs.observeinc.com/docs/kubernetes-observability.md)
+  - [Kubernetes visibility](https://docs.observeinc.com/docs/kubernetes-visibility.md)
+  - [Kubernetes resource utilization](https://docs.observeinc.com/docs/kubernetes-resource-utilization.md)
+  - [Kubernetes data collection and agent interface](https://docs.observeinc.com/docs/kubernetes-data-collection-and-agent-interface.md)
+- [Metrics](https://docs.observeinc.com/docs/metrics.md)
+  - [Collect and use metrics](https://docs.observeinc.com/docs/collect-and-use-metrics.md)
+  - [Metrics Explorer](https://docs.observeinc.com/docs/metrics-explorer.md)
+  - [Add custom metric Datasets](https://docs.observeinc.com/docs/add-custom-metric-datasets.md)
+  - [Add metrics using the Metrics Expression Builder](https://docs.observeinc.com/docs/add-metrics-using-the-metrics-expression-builder.md)
+  - [Metrics tutorials](https://docs.observeinc.com/docs/metrics-tutorials.md)
+    - [Shape host system metrics](https://docs.observeinc.com/docs/shape-metrics.md)
+    - [Shape aggregated metrics](https://docs.observeinc.com/docs/shape-aggregated-metrics.md)
+  - [Metrics reference](https://docs.observeinc.com/docs/metrics-reference.md)
+    - [AWS metrics](https://docs.observeinc.com/docs/aws-metrics.md)
+    - [APM metrics](https://docs.observeinc.com/docs/apm-metrics.md)
+    - [Infrastructure metrics (Kubernetes)](https://docs.observeinc.com/docs/infrastructure-metrics.md)
+    - [Infrastructure metrics (hosts)](https://docs.observeinc.com/docs/infrastructure-metrics-hosts.md)
+  - [Log-derived metrics](https://docs.observeinc.com/docs/log-derived-metrics.md): Learn how you can extract metrics directly from your logs.
+
+## User Guides: Platform Capabilities
+- [Observe by Snowflake on Iceberg](https://docs.observeinc.com/docs/observe-on-iceberg.md): Learn how to use Observe by Snowflake with your own data in Apache Iceberg tables.
+- [Dashboards](https://docs.observeinc.com/docs/create-and-share-dashboards.md): Learn about Observe by Snowflake dashboards.
+  - [Dashboard Explorer](https://docs.observeinc.com/docs/dashboard-explorer.md): Learn how to view and find dashboards in Observe by Snowflake.
+  - [Create dashboards](https://docs.observeinc.com/docs/create-dashboards.md): Learn how you can begin creating dashboards in Observe by Snowflake and configure their visibility.
+    - [Add cards to a dashboard](https://docs.observeinc.com/docs/add-cards-to-a-dashboard.md): Learn how to add, manage, and pivot from dashboard cards in Observe by Snowflake.
+    - [Customize time ranges](https://docs.observeinc.com/docs/customize-time-ranges.md): Learn how to configure custom time ranges in your dashboard cards.
+    - [Add dashboard parameters](https://docs.observeinc.com/docs/add-dashboard-parameters.md): Learn how to add dashboard parameters to filter the content in your dashboard cards.
+    - [Customize dashboard parameters](https://docs.observeinc.com/docs/customize-dashboard-parameters.md): Learn how you can add more complex filters to your dashboard cards.
+    - [Create dashboard links](https://docs.observeinc.com/docs/create-dashboard-links-1.md): Learn how to create dashboard links to pivot from your dashboard cards to other destinations.
+  - [Set dashboard visibility](https://docs.observeinc.com/docs/set-dashboard-visibility.md): Learn how to configure whether or not your dashbaord is searchable by other users.
+  - [Generate dashboard reports](https://docs.observeinc.com/docs/generate-dashboard-reports.md): Learn how to generate and schedule dashboard reports.
+  - [Export and share dashboards](https://docs.observeinc.com/docs/export-and-share-dashboards.md): Learn how to export, share, and start other workflows form your dashboard.
+  - [Presentation mode](https://docs.observeinc.com/docs/presentation-mode.md)
+- [Monitors and alerts](https://docs.observeinc.com/docs/monitors-and-alerts.md)
+  - [Manage your Monitors](https://docs.observeinc.com/docs/manage-your-monitors.md): Introduction to the Monitor Explorer.
+  - [Types of Monitors](https://docs.observeinc.com/docs/types-of-monitors.md): Begin learning about the different types of Monitors you can create in Observe by Snowflake.
+  - [Create Monitors workflow](https://docs.observeinc.com/docs/create-monitors.md): This page describes how to create Monitors.
+  - [Create Monitors examples](https://docs.observeinc.com/docs/create-monitors-examples.md)
+    - [Negative Monitor example: Monitor the health of your front-end proxy ingest spans](https://docs.observeinc.com/docs/monitor-the-health-of-your-front-end-proxy-ingest-spans.md): Learn how to build a negative monitor for the health of your front-end proxy ingest spans.
+    - [Anomaly Monitor example: High number of APM service exceptions](https://docs.observeinc.com/docs/high-number-of-apm-service-exceptions.md): Learn how to build an anomaly Monitor to look for high numbers of service exceptions.
+    - [Seasonal Anomaly Monitor example: Observe by Snowflake user queries](https://docs.observeinc.com/docs/seasonal-anomaly-monitor-example.md): Learn how to create a Seasonal Anomaly Monitor.
+    - [Threshold Monitor example: Check for CrashLoopBackOff](https://docs.observeinc.com/docs/check-for-crashloopbackoff.md): Learn how to use AI SRE to check for Kubernetes container restarts.
+  - [Mute a Monitor](https://docs.observeinc.com/docs/mute-a-monitor.md)
+  - [Configure shared actions](https://docs.observeinc.com/docs/shared-actions.md)
+    - [Customize alert messages](https://docs.observeinc.com/docs/customize-alert-messages.md)
+    - [Mustache template reference](https://docs.observeinc.com/docs/mustache-template-reference.md)
+    - [Sample action for Microsoft Teams](https://docs.observeinc.com/docs/sample-action-for-microsoft-teams.md)
+    - [Sample action for PagerDuty](https://docs.observeinc.com/docs/sample-action-for-pagerduty-1.md)
+  - [Work with alerts](https://docs.observeinc.com/docs/work-with-alerts.md)
+    - [Example using alerts and shared actions](https://docs.observeinc.com/docs/example-using-alerts-and-shared-actions.md)
+  - [Negative monitoring](https://docs.observeinc.com/docs/negative-monitoring.md)
+  - [Monitor anti-patterns](https://docs.observeinc.com/docs/monitor-anti-patterns.md)
+  - [Review a Monitor's data lineage](https://docs.observeinc.com/docs/review-a-monitors-data-lineage.md)
+- [Worksheets](https://docs.observeinc.com/docs/create-and-share-worksheets.md)
+  - [Worksheets Explorer](https://docs.observeinc.com/docs/worksheet-explorer.md): Learn how to view and find Worksheets in Observe by Snowflake.
+  - [Create Worksheets](https://docs.observeinc.com/docs/create-worksheets.md): Learn how you can create Worksheets in Observe by Snowflake.
+  - [Set Worksheet visibility](https://docs.observeinc.com/docs/set-worksheet-visibility.md): Learn how to configure whether or not your Worksheet is searchable by other users.
+  - [Create new objects from Worksheets](https://docs.observeinc.com/docs/create-new-objects-from-worksheets.md)
+  - [Worksheet tutorial](https://docs.observeinc.com/docs/worksheet-tutorial.md): Learn how to search, filter, and visualize your data in a new Worksheet.
+  - [Export and share Worksheets](https://docs.observeinc.com/docs/export-and-share-worksheets.md)
+- [Create and share Datasets](https://docs.observeinc.com/docs/create-and-share-datasets.md)
+- [Explore data](https://docs.observeinc.com/docs/explorers-and-worksheets.md): This page will help you get started with exploring your data in Explorers and Worksheets in Observe by Snowflake.
+  - [Conditional formatting](https://docs.observeinc.com/docs/conditional-formatting.md)
+  - [Pivot between data types](https://docs.observeinc.com/docs/pivot-between-data-types.md)
+  - [Work with data formats and types](https://docs.observeinc.com/docs/work-with-data-formats-and-types.md)
+  - [Data export](https://docs.observeinc.com/docs/data-export.md)
+    - [Configure your S3 bucket to receive data from Observe by Snowflake](https://docs.observeinc.com/docs/configure-your-s3-bucket-to-receive-data-from-observe.md)
+    - [Create a data export job](https://docs.observeinc.com/docs/create-a-data-export-job.md)
+- [Correlation tags](https://docs.observeinc.com/docs/correlation-tags.md): Learn how to use correlation tags to link data together in Observe by Snowflake.
+  - [Manage correlation tags](https://docs.observeinc.com/docs/manage-correlation-tags.md): Learn how you can view and manage all the correlation tags in your tenant.
+- [Object tags](https://docs.observeinc.com/docs/object-tags.md): Learn how to use Object tags to label and organize your content in Observe by Snowflake.
+  - [Required object tags](https://docs.observeinc.com/docs/required-object-tags.md): Learn how you can enforce tagging for entities in Observe by Snowflake.
+- [Resources](https://docs.observeinc.com/docs/resources.md)
+
+## User Guides: Manage Observe by Snowflake
+- [Select light and dark mode settings](https://docs.observeinc.com/docs/select-light-and-dark-mode-settings.md): Learn how to set the light and dark mode settings for your Observe by Snowflake instance.
+- [Workspace settings](https://docs.observeinc.com/docs/workspace-settings.md)
+  - [Configure name, icon, and query settings](https://docs.observeinc.com/docs/configure-name-icon-and-query-settings.md): Learn how to configure your Workspace name, icon, and query settings.
+  - [Set default permissions using RBAC](https://docs.observeinc.com/docs/set-permissions-using-rbac.md): Learn how to use RBAC to control access to Observe by Snowflake actions and objects.
+    - [Configure RBAC using Terraform](https://docs.observeinc.com/docs/configure-rbac-using-terraform.md)
+  - [Instance settings](https://docs.observeinc.com/docs/instance-settings.md)
+- [Manage users and access](https://docs.observeinc.com/docs/authentication-and-authorization.md)
+  - [Manage local users](https://docs.observeinc.com/docs/manage-users.md)
+  - [Manage local authentication policies](https://docs.observeinc.com/docs/manage-local-authentication-policies.md)
+  - [Manage groups and members](https://docs.observeinc.com/docs/manage-groups.md)
+  - [Permission manager](https://docs.observeinc.com/docs/permission-manager-copy.md): Learn how to apply access permissions for objects in your Observe by Snowflake instance.
+  - [Configure single sign-on](https://docs.observeinc.com/docs/single-sign-on.md)
+    - [Configure Microsoft Entra ID SSO](https://docs.observeinc.com/docs/configure-microsoft-entra-id-sso.md)
+    - [Configure ADFS SSO](https://docs.observeinc.com/docs/configure-adfs-sso.md)
+    - [Configure Google Workspace for SAML and SSO](https://docs.observeinc.com/docs/configure-google-workspace-for-saml-and-sso.md)
+    - [Configure Okta for SAML and SSO](https://docs.observeinc.com/docs/configure-okta-for-saml-and-sso.md)
+    - [Configure OneLogin for SSO](https://docs.observeinc.com/docs/configure-onelogin-for-sso.md)
+    - [Configure Ping Identity PingOne for SSO](https://docs.observeinc.com/docs/configure-ping-identity-pingone-for-sso.md)
+  - [Manage service accounts](https://docs.observeinc.com/docs/service-accounts.md)
+    - [Manage service account using the API](https://docs.observeinc.com/docs/manage-service-account-using-the-api.md)
+    - [Manage service accounts using the UI](https://docs.observeinc.com/docs/manage-service-accounts-using-the-ui.md)
+  - [Track user activity with audit trails](https://docs.observeinc.com/docs/audit-trail.md): This page describes Observe by Snowflake audit logs for CRUD operations.
+- [Manage credits and usage](https://docs.observeinc.com/docs/manage-credits-and-usage.md)
+  - [Acceleration Manager](https://docs.observeinc.com/docs/acceleration-manager.md)
+  - [Credit Manager](https://docs.observeinc.com/docs/credit-manager.md)
+    - [Configure Credit Manager settings using Terraform](https://docs.observeinc.com/docs/configure-credit-manager-settings-using-terraform.md)
+    - [View your data ingest usage in the License Dashboard](https://docs.observeinc.com/docs/view-your-ingest-usage-in-the-license-dashboard.md)
+    - [View your compute credit usage in the Usage Dashboard](https://docs.observeinc.com/docs/view-your-occ-usage-in-the-usage-dashboard.md)
+  - [Usage attribution](https://docs.observeinc.com/docs/usage-attribution.md): Learn how you can get insights into your Observe by Snowflake usage.
+    - [Auto-discovered attributes](https://docs.observeinc.com/docs/auto-discovered-attributes.md)
+  - [Manage invoices](https://docs.observeinc.com/docs/manage-invoices.md)
+  - [Drop filters](https://docs.observeinc.com/docs/drop-filters.md)
+- [Customize the Home page](https://docs.observeinc.com/docs/customize-the-home-page.md): Learn how to cureate your starting experience in Observe by Snowflake
+- [Uploaded documents](https://docs.observeinc.com/docs/uploaded-documents.md)
+
+## User Guides: OPAL Reference
+- [What is OPAL?](https://docs.observeinc.com/docs/what-is-opal.md)
+  - [OPAL syntax](https://docs.observeinc.com/docs/opal-syntax.md)
+  - [OPAL data types and operators](https://docs.observeinc.com/docs/opal-data-types-and-operators.md)
+  - [OPAL examples](https://docs.observeinc.com/docs/opal-examples.md)
+  - [Parse time strings on OPAL](https://docs.observeinc.com/docs/parse-time-strings-on-opal.md)
+- [OPAL functions and verbs](https://docs.observeinc.com/docs/opal-functions-and-verbs.md)
+  - [OPAL Functions](https://docs.observeinc.com/docs/function.md)
+    - [abs](https://docs.observeinc.com/docs/function-abs.md)
+    - [any](https://docs.observeinc.com/docs/function-any.md)
+    - [any_not_null](https://docs.observeinc.com/docs/function-any_not_null.md)
+    - [any_null (deprecated)](https://docs.observeinc.com/docs/function-any_null.md)
+    - [append_item](https://docs.observeinc.com/docs/function-append_item.md)
+    - [arccos_deg](https://docs.observeinc.com/docs/function-arccos_deg.md)
+    - [arccos_rad](https://docs.observeinc.com/docs/function-arccos_rad.md)
+    - [arcsin_deg](https://docs.observeinc.com/docs/function-arcsin_deg.md)
+    - [arcsin_rad](https://docs.observeinc.com/docs/function-arcsin_rad.md)
+    - [arctan_deg](https://docs.observeinc.com/docs/function-arctan_deg.md)
+    - [arctan_rad](https://docs.observeinc.com/docs/function-arctan_rad.md)
+    - [array](https://docs.observeinc.com/docs/function-array.md)
+    - [array_agg](https://docs.observeinc.com/docs/function-array_agg.md)
+    - [array_agg_distinct](https://docs.observeinc.com/docs/function-array_agg_distinct.md)
+    - [array_contains](https://docs.observeinc.com/docs/function-array_contains.md)
+    - [array_distinct](https://docs.observeinc.com/docs/function-array_distinct.md)
+    - [array_length](https://docs.observeinc.com/docs/function-array_length.md)
+    - [array_max](https://docs.observeinc.com/docs/function-array_max.md)
+    - [array_min](https://docs.observeinc.com/docs/function-array_min.md)
+    - [array_null](https://docs.observeinc.com/docs/function-array_null.md)
+    - [array_pivot (deprecated)](https://docs.observeinc.com/docs/function-array_pivot.md)
+    - [array_to_string](https://docs.observeinc.com/docs/function-array_to_string.md)
+    - [array_union_agg](https://docs.observeinc.com/docs/function-array_union_agg.md)
+    - [array_unpivot (deprecated)](https://docs.observeinc.com/docs/function-array_unpivot.md)
+    - [arrays_overlap](https://docs.observeinc.com/docs/function-arrays_overlap.md)
+    - [asc](https://docs.observeinc.com/docs/function-asc.md)
+    - [avg](https://docs.observeinc.com/docs/function-avg.md)
+    - [bin_end_time](https://docs.observeinc.com/docs/function-bin_end_time.md)
+    - [bin_size](https://docs.observeinc.com/docs/function-bin_size.md)
+    - [bin_start_time](https://docs.observeinc.com/docs/function-bin_start_time.md)
+    - [bool](https://docs.observeinc.com/docs/function-bool.md)
+    - [bool_null](https://docs.observeinc.com/docs/function-bool_null.md)
+    - [case](https://docs.observeinc.com/docs/function-case.md)
+    - [ceil](https://docs.observeinc.com/docs/function-ceil.md)
+    - [check_json](https://docs.observeinc.com/docs/function-check_json.md)
+    - [coalesce](https://docs.observeinc.com/docs/function-coalesce.md)
+    - [concat_arrays](https://docs.observeinc.com/docs/function-concat_arrays.md)
+    - [concat_strings](https://docs.observeinc.com/docs/function-concat_strings.md): Aliases: `strcat` (deprecated), `string_concat` (deprecated).
+    - [contains](https://docs.observeinc.com/docs/function-contains.md)
+    - [cos_deg](https://docs.observeinc.com/docs/function-cos_deg.md)
+    - [cos_rad](https://docs.observeinc.com/docs/function-cos_rad.md)
+    - [count](https://docs.observeinc.com/docs/function-count.md)
+    - [count_distinct](https://docs.observeinc.com/docs/function-count_distinct.md): Aliases: `countdistinct` (deprecated).
+    - [count_distinct_exact](https://docs.observeinc.com/docs/function-count_distinct_exact.md): Aliases: `countdistinctexact` (deprecated).
+    - [count_regex_matches](https://docs.observeinc.com/docs/function-count_regex_matches.md)
+    - [countdistinct (deprecated)](https://docs.observeinc.com/docs/function-countdistinct.md)
+    - [countdistinctexact (deprecated)](https://docs.observeinc.com/docs/function-countdistinctexact.md)
+    - [decode_base64](https://docs.observeinc.com/docs/function-decode_base64.md): Aliases: `decodebase64` (deprecated).
+    - [decode_uri](https://docs.observeinc.com/docs/function-decode_uri.md)
+    - [decode_uri_component](https://docs.observeinc.com/docs/function-decode_uri_component.md)
+    - [decodebase64 (deprecated)](https://docs.observeinc.com/docs/function-decodebase64.md)
+    - [degrees](https://docs.observeinc.com/docs/function-degrees.md)
+    - [delta](https://docs.observeinc.com/docs/function-delta.md)
+    - [delta_monotonic](https://docs.observeinc.com/docs/function-delta_monotonic.md)
+    - [dense_rank](https://docs.observeinc.com/docs/function-dense_rank.md): Aliases: `denserank` (deprecated).
+    - [denserank (deprecated)](https://docs.observeinc.com/docs/function-denserank.md)
+    - [deriv](https://docs.observeinc.com/docs/function-deriv.md)
+    - [desc](https://docs.observeinc.com/docs/function-desc.md)
+    - [detect_browser](https://docs.observeinc.com/docs/function-detect_browser.md)
+    - [drop_fields](https://docs.observeinc.com/docs/function-drop_fields.md)
+    - [duration](https://docs.observeinc.com/docs/function-duration.md)
+    - [duration_hr](https://docs.observeinc.com/docs/function-duration_hr.md)
+    - [duration_min](https://docs.observeinc.com/docs/function-duration_min.md)
+    - [duration_ms](https://docs.observeinc.com/docs/function-duration_ms.md)
+    - [duration_null](https://docs.observeinc.com/docs/function-duration_null.md)
+    - [duration_sec](https://docs.observeinc.com/docs/function-duration_sec.md)
+    - [editdistance](https://docs.observeinc.com/docs/function-editdistance.md)
+    - [embed_sql_params](https://docs.observeinc.com/docs/function-embed_sql_params.md)
+    - [encode_base64](https://docs.observeinc.com/docs/function-encode_base64.md): Aliases: `encodebase64` (deprecated).
+    - [encode_uri](https://docs.observeinc.com/docs/function-encode_uri.md)
+    - [encode_uri_component](https://docs.observeinc.com/docs/function-encode_uri_component.md)
+    - [encodebase64 (deprecated)](https://docs.observeinc.com/docs/function-encodebase64.md)
+    - [ends_with](https://docs.observeinc.com/docs/function-ends_with.md): Aliases: `endswith` (deprecated).
+    - [endswith (deprecated)](https://docs.observeinc.com/docs/function-endswith.md)
+    - [eq](https://docs.observeinc.com/docs/function-eq.md)
+    - [ewma](https://docs.observeinc.com/docs/function-ewma.md)
+    - [exp](https://docs.observeinc.com/docs/function-exp.md)
+    - [exponential_histogram_null](https://docs.observeinc.com/docs/function-exponential_histogram_null.md)
+    - [first](https://docs.observeinc.com/docs/function-first.md)
+    - [first_not_null](https://docs.observeinc.com/docs/function-first_not_null.md)
+    - [float64](https://docs.observeinc.com/docs/function-float64.md)
+    - [float64_null](https://docs.observeinc.com/docs/function-float64_null.md)
+    - [floor](https://docs.observeinc.com/docs/function-floor.md)
+    - [format_time](https://docs.observeinc.com/docs/function-format_time.md)
+    - [frame](https://docs.observeinc.com/docs/function-frame.md)
+    - [frame_exact](https://docs.observeinc.com/docs/function-frame_exact.md)
+    - [frame_following](https://docs.observeinc.com/docs/function-frame_following.md)
+    - [frame_preceding](https://docs.observeinc.com/docs/function-frame_preceding.md)
+    - [from_milliseconds](https://docs.observeinc.com/docs/function-from_milliseconds.md): Aliases: `timestamp_ms`, `milliseconds` (deprecated).
+    - [from_nanoseconds](https://docs.observeinc.com/docs/function-from_nanoseconds.md): Aliases: `timestamp_ns`, `nanoseconds` (deprecated).
+    - [from_seconds](https://docs.observeinc.com/docs/function-from_seconds.md): Aliases: `timestamp_s`, `seconds` (deprecated).
+    - [get_field](https://docs.observeinc.com/docs/function-get_field.md)
+    - [get_item](https://docs.observeinc.com/docs/function-get_item.md)
+    - [get_jmespath](https://docs.observeinc.com/docs/function-get_jmespath.md)
+    - [get_regex](https://docs.observeinc.com/docs/function-get_regex.md)
+    - [get_regex_all](https://docs.observeinc.com/docs/function-get_regex_all.md): Aliases: `match_regex_all` (deprecated).
+    - [group_by](https://docs.observeinc.com/docs/function-group_by.md): Aliases: `groupby` (deprecated).
+    - [groupby (deprecated)](https://docs.observeinc.com/docs/function-groupby.md)
+    - [gt](https://docs.observeinc.com/docs/function-gt.md)
+    - [gte](https://docs.observeinc.com/docs/function-gte.md)
+    - [hash](https://docs.observeinc.com/docs/function-hash.md)
+    - [hash_agg](https://docs.observeinc.com/docs/function-hash_agg.md)
+    - [hash_agg_distinct](https://docs.observeinc.com/docs/function-hash_agg_distinct.md)
+    - [haversine_distance_km](https://docs.observeinc.com/docs/function-haversine_distance_km.md)
+    - [histogram_combine](https://docs.observeinc.com/docs/function-histogram_combine.md)
+    - [histogram_fraction](https://docs.observeinc.com/docs/function-histogram_fraction.md)
+    - [histogram_null](https://docs.observeinc.com/docs/function-histogram_null.md)
+    - [histogram_quantile](https://docs.observeinc.com/docs/function-histogram_quantile.md)
+    - [if](https://docs.observeinc.com/docs/function-if.md)
+    - [if_null](https://docs.observeinc.com/docs/function-if_null.md): Aliases: `ifnull` (deprecated).
+    - [ifnull (deprecated)](https://docs.observeinc.com/docs/function-ifnull.md)
+    - [in](https://docs.observeinc.com/docs/function-in.md)
+    - [index_of_item](https://docs.observeinc.com/docs/function-index_of_item.md)
+    - [insert_item](https://docs.observeinc.com/docs/function-insert_item.md)
+    - [int64](https://docs.observeinc.com/docs/function-int64.md)
+    - [int64_null](https://docs.observeinc.com/docs/function-int64_null.md)
+    - [int64_to_ipv4](https://docs.observeinc.com/docs/function-int64_to_ipv4.md)
+    - [int_div](https://docs.observeinc.com/docs/function-int_div.md)
+    - [intersect_arrays](https://docs.observeinc.com/docs/function-intersect_arrays.md)
+    - [ipv4](https://docs.observeinc.com/docs/function-ipv4.md)
+    - [ipv4_address_in_network](https://docs.observeinc.com/docs/function-ipv4_address_in_network.md)
+    - [ipv4_network_int64](https://docs.observeinc.com/docs/function-ipv4_network_int64.md)
+    - [ipv4_to_int64](https://docs.observeinc.com/docs/function-ipv4_to_int64.md)
+    - [is_null](https://docs.observeinc.com/docs/function-is_null.md): Aliases: `isnull` (deprecated).
+    - [isnull (deprecated)](https://docs.observeinc.com/docs/function-isnull.md)
+    - [label](https://docs.observeinc.com/docs/function-label.md)
+    - [lag](https://docs.observeinc.com/docs/function-lag.md)
+    - [lag_not_null](https://docs.observeinc.com/docs/function-lag_not_null.md)
+    - [last](https://docs.observeinc.com/docs/function-last.md)
+    - [last_not_null](https://docs.observeinc.com/docs/function-last_not_null.md)
+    - [lead](https://docs.observeinc.com/docs/function-lead.md)
+    - [lead_not_null](https://docs.observeinc.com/docs/function-lead_not_null.md)
+    - [left](https://docs.observeinc.com/docs/function-left.md)
+    - [like](https://docs.observeinc.com/docs/function-like.md)
+    - [ln](https://docs.observeinc.com/docs/function-ln.md)
+    - [log](https://docs.observeinc.com/docs/function-log.md)
+    - [lower](https://docs.observeinc.com/docs/function-lower.md)
+    - [lpad](https://docs.observeinc.com/docs/function-lpad.md)
+    - [lt](https://docs.observeinc.com/docs/function-lt.md)
+    - [lte](https://docs.observeinc.com/docs/function-lte.md)
+    - [ltrim](https://docs.observeinc.com/docs/function-ltrim.md)
+    - [m](https://docs.observeinc.com/docs/function-m.md)
+    - [m_exponential_histogram](https://docs.observeinc.com/docs/function-m_exponential_histogram.md)
+    - [m_histogram](https://docs.observeinc.com/docs/function-m_histogram.md)
+    - [m_object](https://docs.observeinc.com/docs/function-m_object.md)
+    - [m_tdigest](https://docs.observeinc.com/docs/function-m_tdigest.md)
+    - [make_array](https://docs.observeinc.com/docs/function-make_array.md)
+    - [make_array_range](https://docs.observeinc.com/docs/function-make_array_range.md)
+    - [make_fields](https://docs.observeinc.com/docs/function-make_fields.md)
+    - [make_object](https://docs.observeinc.com/docs/function-make_object.md): Aliases: `makeobject` (deprecated).
+    - [makeobject (deprecated)](https://docs.observeinc.com/docs/function-makeobject.md)
+    - [match_regex](https://docs.observeinc.com/docs/function-match_regex.md): Aliases: `regex_match` (deprecated).
+    - [match_regex_all (deprecated)](https://docs.observeinc.com/docs/function-match_regex_all.md)
+    - [max](https://docs.observeinc.com/docs/function-max.md)
+    - [median](https://docs.observeinc.com/docs/function-median.md)
+    - [median_exact](https://docs.observeinc.com/docs/function-median_exact.md): Aliases: `medianexact` (deprecated).
+    - [medianexact (deprecated)](https://docs.observeinc.com/docs/function-medianexact.md)
+    - [merge_objects](https://docs.observeinc.com/docs/function-merge_objects.md)
+    - [metric](https://docs.observeinc.com/docs/function-metric.md)
+    - [milliseconds (deprecated)](https://docs.observeinc.com/docs/function-milliseconds.md)
+    - [min](https://docs.observeinc.com/docs/function-min.md)
+    - [mod](https://docs.observeinc.com/docs/function-mod.md)
+    - [nanoseconds (deprecated)](https://docs.observeinc.com/docs/function-nanoseconds.md)
+    - [ne](https://docs.observeinc.com/docs/function-ne.md)
+    - [now](https://docs.observeinc.com/docs/function-now.md)
+    - [nullsfirst](https://docs.observeinc.com/docs/function-nullsfirst.md)
+    - [nullslast](https://docs.observeinc.com/docs/function-nullslast.md)
+    - [numeric_null](https://docs.observeinc.com/docs/function-numeric_null.md)
+    - [object](https://docs.observeinc.com/docs/function-object.md)
+    - [object_agg](https://docs.observeinc.com/docs/function-object_agg.md)
+    - [object_keys](https://docs.observeinc.com/docs/function-object_keys.md)
+    - [object_null](https://docs.observeinc.com/docs/function-object_null.md)
+    - [on](https://docs.observeinc.com/docs/function-on.md)
+    - [options](https://docs.observeinc.com/docs/function-options.md)
+    - [order_by](https://docs.observeinc.com/docs/function-order_by.md): Aliases: `orderby` (deprecated).
+    - [orderby (deprecated)](https://docs.observeinc.com/docs/function-orderby.md)
+    - [otel_exponential_histogram_quantile](https://docs.observeinc.com/docs/function-otel_exponential_histogram_quantile.md)
+    - [otel_exponential_histogram_sum](https://docs.observeinc.com/docs/function-otel_exponential_histogram_sum.md)
+    - [otel_histogram_quantile](https://docs.observeinc.com/docs/function-otel_histogram_quantile.md)
+    - [otel_histogram_sum](https://docs.observeinc.com/docs/function-otel_histogram_sum.md)
+    - [parse_csv](https://docs.observeinc.com/docs/function-parse_csv.md)
+    - [parse_duration](https://docs.observeinc.com/docs/function-parse_duration.md)
+    - [parse_hex](https://docs.observeinc.com/docs/function-parse_hex.md): Aliases: `parsehex` (deprecated).
+    - [parse_ip](https://docs.observeinc.com/docs/function-parse_ip.md): Aliases: `parseip` (deprecated).
+    - [parse_isotime](https://docs.observeinc.com/docs/function-parse_isotime.md): Aliases: `parseisotime` (deprecated).
+    - [parse_json](https://docs.observeinc.com/docs/function-parse_json.md): Aliases: `parsejson` (deprecated).
+    - [parse_kvs](https://docs.observeinc.com/docs/function-parse_kvs.md): Aliases: `parsekvs` (deprecated).
+    - [parse_timestamp](https://docs.observeinc.com/docs/function-parse_timestamp.md)
+    - [parse_url](https://docs.observeinc.com/docs/function-parse_url.md): Aliases: `parseurl` (deprecated).
+    - [parsehex (deprecated)](https://docs.observeinc.com/docs/function-parsehex.md)
+    - [parseip (deprecated)](https://docs.observeinc.com/docs/function-parseip.md)
+    - [parseisotime (deprecated)](https://docs.observeinc.com/docs/function-parseisotime.md)
+    - [parsejson (deprecated)](https://docs.observeinc.com/docs/function-parsejson.md)
+    - [parsekvs (deprecated)](https://docs.observeinc.com/docs/function-parsekvs.md)
+    - [parseurl (deprecated)](https://docs.observeinc.com/docs/function-parseurl.md)
+    - [path_exists](https://docs.observeinc.com/docs/function-path_exists.md)
+    - [percentile](https://docs.observeinc.com/docs/function-percentile.md)
+    - [percentile_cont](https://docs.observeinc.com/docs/function-percentile_cont.md): Aliases: `percentilecont` (deprecated).
+    - [percentile_disc](https://docs.observeinc.com/docs/function-percentile_disc.md): Aliases: `percentiledisc` (deprecated).
+    - [percentilecont (deprecated)](https://docs.observeinc.com/docs/function-percentilecont.md)
+    - [percentiledisc (deprecated)](https://docs.observeinc.com/docs/function-percentiledisc.md)
+    - [pi](https://docs.observeinc.com/docs/function-pi.md)
+    - [pick_fields](https://docs.observeinc.com/docs/function-pick_fields.md)
+    - [pivot_array](https://docs.observeinc.com/docs/function-pivot_array.md): Aliases: `array_pivot` (deprecated).
+    - [pk](https://docs.observeinc.com/docs/function-pk.md)
+    - [position](https://docs.observeinc.com/docs/function-position.md)
+    - [pow](https://docs.observeinc.com/docs/function-pow.md)
+    - [prepend_item](https://docs.observeinc.com/docs/function-prepend_item.md)
+    - [primary_key](https://docs.observeinc.com/docs/function-primary_key.md): Aliases: `pk`, `primarykey` (deprecated).
+    - [primarykey (deprecated)](https://docs.observeinc.com/docs/function-primarykey.md)
+    - [prom_quantile](https://docs.observeinc.com/docs/function-prom_quantile.md)
+    - [query_end_time](https://docs.observeinc.com/docs/function-query_end_time.md): Aliases: `queryendtime` (deprecated).
+    - [query_start_time](https://docs.observeinc.com/docs/function-query_start_time.md): Aliases: `querystarttime` (deprecated).
+    - [queryendtime (deprecated)](https://docs.observeinc.com/docs/function-queryendtime.md)
+    - [querystarttime (deprecated)](https://docs.observeinc.com/docs/function-querystarttime.md)
+    - [radians](https://docs.observeinc.com/docs/function-radians.md)
+    - [rank](https://docs.observeinc.com/docs/function-rank.md)
+    - [rate](https://docs.observeinc.com/docs/function-rate.md)
+    - [regex](https://docs.observeinc.com/docs/function-regex.md)
+    - [regex_match (deprecated)](https://docs.observeinc.com/docs/function-regex_match.md)
+    - [regex_replace (deprecated)](https://docs.observeinc.com/docs/function-regex_replace.md)
+    - [replace](https://docs.observeinc.com/docs/function-replace.md)
+    - [replace_regex](https://docs.observeinc.com/docs/function-replace_regex.md): Aliases: `regex_replace` (deprecated).
+    - [right](https://docs.observeinc.com/docs/function-right.md)
+    - [round](https://docs.observeinc.com/docs/function-round.md)
+    - [row_end_time](https://docs.observeinc.com/docs/function-row_end_time.md): Aliases: `row_endtime` (deprecated).
+    - [row_endtime (deprecated)](https://docs.observeinc.com/docs/function-row_endtime.md)
+    - [row_number](https://docs.observeinc.com/docs/function-row_number.md): Aliases: `rownumber` (deprecated).
+    - [row_start_time](https://docs.observeinc.com/docs/function-row_start_time.md)
+    - [row_timestamp](https://docs.observeinc.com/docs/function-row_timestamp.md): Aliases: `row_start_time`.
+    - [rownumber (deprecated)](https://docs.observeinc.com/docs/function-rownumber.md)
+    - [rpad](https://docs.observeinc.com/docs/function-rpad.md)
+    - [rtrim](https://docs.observeinc.com/docs/function-rtrim.md)
+    - [same](https://docs.observeinc.com/docs/function-same.md)
+    - [search](https://docs.observeinc.com/docs/function-search.md)
+    - [seconds (deprecated)](https://docs.observeinc.com/docs/function-seconds.md)
+    - [sha2](https://docs.observeinc.com/docs/function-sha2.md)
+    - [sin_deg](https://docs.observeinc.com/docs/function-sin_deg.md)
+    - [sin_rad](https://docs.observeinc.com/docs/function-sin_rad.md)
+    - [slice_array](https://docs.observeinc.com/docs/function-slice_array.md)
+    - [sort_array](https://docs.observeinc.com/docs/function-sort_array.md)
+    - [split](https://docs.observeinc.com/docs/function-split.md)
+    - [split_part](https://docs.observeinc.com/docs/function-split_part.md)
+    - [sqrt](https://docs.observeinc.com/docs/function-sqrt.md)
+    - [starts_with](https://docs.observeinc.com/docs/function-starts_with.md): Aliases: `startswith` (deprecated).
+    - [startswith (deprecated)](https://docs.observeinc.com/docs/function-startswith.md)
+    - [stddev](https://docs.observeinc.com/docs/function-stddev.md)
+    - [strcat (deprecated)](https://docs.observeinc.com/docs/function-strcat.md)
+    - [string](https://docs.observeinc.com/docs/function-string.md)
+    - [string_agg](https://docs.observeinc.com/docs/function-string_agg.md)
+    - [string_agg_distinct](https://docs.observeinc.com/docs/function-string_agg_distinct.md)
+    - [string_concat (deprecated)](https://docs.observeinc.com/docs/function-string_concat.md)
+    - [string_null](https://docs.observeinc.com/docs/function-string_null.md)
+    - [strlen](https://docs.observeinc.com/docs/function-strlen.md)
+    - [substring](https://docs.observeinc.com/docs/function-substring.md)
+    - [sum](https://docs.observeinc.com/docs/function-sum.md)
+    - [tags](https://docs.observeinc.com/docs/function-tags.md)
+    - [tan_deg](https://docs.observeinc.com/docs/function-tan_deg.md)
+    - [tan_rad](https://docs.observeinc.com/docs/function-tan_rad.md)
+    - [tdigest](https://docs.observeinc.com/docs/function-tdigest.md)
+    - [tdigest_agg](https://docs.observeinc.com/docs/function-tdigest_agg.md)
+    - [tdigest_combine](https://docs.observeinc.com/docs/function-tdigest_combine.md)
+    - [tdigest_null](https://docs.observeinc.com/docs/function-tdigest_null.md)
+    - [tdigest_quantile](https://docs.observeinc.com/docs/function-tdigest_quantile.md)
+    - [timestamp_ms](https://docs.observeinc.com/docs/function-timestamp_ms.md)
+    - [timestamp_ns](https://docs.observeinc.com/docs/function-timestamp_ns.md)
+    - [timestamp_null](https://docs.observeinc.com/docs/function-timestamp_null.md)
+    - [timestamp_s](https://docs.observeinc.com/docs/function-timestamp_s.md)
+    - [to_days](https://docs.observeinc.com/docs/function-to_days.md)
+    - [to_hours](https://docs.observeinc.com/docs/function-to_hours.md)
+    - [to_milliseconds](https://docs.observeinc.com/docs/function-to_milliseconds.md)
+    - [to_minutes](https://docs.observeinc.com/docs/function-to_minutes.md)
+    - [to_nanoseconds](https://docs.observeinc.com/docs/function-to_nanoseconds.md)
+    - [to_seconds](https://docs.observeinc.com/docs/function-to_seconds.md)
+    - [to_weeks](https://docs.observeinc.com/docs/function-to_weeks.md)
+    - [tokenize](https://docs.observeinc.com/docs/function-tokenize.md)
+    - [tokenize_part](https://docs.observeinc.com/docs/function-tokenize_part.md)
+    - [topk_agg](https://docs.observeinc.com/docs/function-topk_agg.md)
+    - [trim](https://docs.observeinc.com/docs/function-trim.md)
+    - [tuple](https://docs.observeinc.com/docs/function-tuple.md)
+    - [uniform](https://docs.observeinc.com/docs/function-uniform.md)
+    - [unpivot_array](https://docs.observeinc.com/docs/function-unpivot_array.md): Aliases: `array_unpivot` (deprecated).
+    - [upper](https://docs.observeinc.com/docs/function-upper.md)
+    - [valid_for](https://docs.observeinc.com/docs/function-valid_for.md): Aliases: `validfor` (deprecated).
+    - [validfor (deprecated)](https://docs.observeinc.com/docs/function-validfor.md)
+    - [variant_null](https://docs.observeinc.com/docs/function-variant_null.md): Aliases: `any_null` (deprecated).
+    - [variant_type_name](https://docs.observeinc.com/docs/function-variant_type_name.md)
+    - [width_bucket](https://docs.observeinc.com/docs/function-width_bucket.md)
+    - [window](https://docs.observeinc.com/docs/function-window.md)
+    - [zipf](https://docs.observeinc.com/docs/function-zipf.md)
+  - [OPAL Verbs](https://docs.observeinc.com/docs/verb.md)
+    - [add_key](https://docs.observeinc.com/docs/verb-add_key.md): Aliases: `addkey` (deprecated).
+    - [addfk (deprecated)](https://docs.observeinc.com/docs/verb-addfk.md)
+    - [addkey (deprecated)](https://docs.observeinc.com/docs/verb-addkey.md)
+    - [addmetric (deprecated)](https://docs.observeinc.com/docs/verb-addmetric.md)
+    - [aggregate](https://docs.observeinc.com/docs/verb-aggregate.md): Aliases: `reaggregate` (deprecated).
+    - [align](https://docs.observeinc.com/docs/verb-align.md)
+    - [always](https://docs.observeinc.com/docs/verb-always.md)
+    - [bottomk](https://docs.observeinc.com/docs/verb-bottomk.md)
+    - [bucketize](https://docs.observeinc.com/docs/verb-bucketize.md)
+    - [changelog (deprecated)](https://docs.observeinc.com/docs/verb-changelog.md)
+    - [coldrop (deprecated)](https://docs.observeinc.com/docs/verb-coldrop.md)
+    - [colenum (deprecated)](https://docs.observeinc.com/docs/verb-colenum.md)
+    - [colimmutable (deprecated)](https://docs.observeinc.com/docs/verb-colimmutable.md)
+    - [colmake (deprecated)](https://docs.observeinc.com/docs/verb-colmake.md)
+    - [colpick (deprecated)](https://docs.observeinc.com/docs/verb-colpick.md)
+    - [colregex (deprecated)](https://docs.observeinc.com/docs/verb-colregex.md)
+    - [colrename (deprecated)](https://docs.observeinc.com/docs/verb-colrename.md)
+    - [colshow (deprecated)](https://docs.observeinc.com/docs/verb-colshow.md)
+    - [dedup](https://docs.observeinc.com/docs/verb-dedup.md): Aliases: `distinct`.
+    - [distinct](https://docs.observeinc.com/docs/verb-distinct.md)
+    - [drop_col](https://docs.observeinc.com/docs/verb-drop_col.md): Aliases: `coldrop` (deprecated).
+    - [drop_interface](https://docs.observeinc.com/docs/verb-drop_interface.md)
+    - [droptime (deprecated)](https://docs.observeinc.com/docs/verb-droptime.md)
+    - [ever](https://docs.observeinc.com/docs/verb-ever.md)
+    - [exists](https://docs.observeinc.com/docs/verb-exists.md)
+    - [extract_regex](https://docs.observeinc.com/docs/verb-extract_regex.md): Aliases: `colregex` (deprecated).
+    - [fill](https://docs.observeinc.com/docs/verb-fill.md)
+    - [filter](https://docs.observeinc.com/docs/verb-filter.md)
+    - [filter_last](https://docs.observeinc.com/docs/verb-filter_last.md)
+    - [fkdrop (deprecated)](https://docs.observeinc.com/docs/verb-fkdrop.md)
+    - [flatten](https://docs.observeinc.com/docs/verb-flatten.md)
+    - [flatten_all](https://docs.observeinc.com/docs/verb-flatten_all.md): Aliases: `flattenall` (deprecated).
+    - [flatten_leaves](https://docs.observeinc.com/docs/verb-flatten_leaves.md): Aliases: `flattenleaves` (deprecated).
+    - [flatten_single](https://docs.observeinc.com/docs/verb-flatten_single.md): Aliases: `flattensingle` (deprecated).
+    - [flattenall (deprecated)](https://docs.observeinc.com/docs/verb-flattenall.md)
+    - [flattenleaves (deprecated)](https://docs.observeinc.com/docs/verb-flattenleaves.md)
+    - [flattensingle (deprecated)](https://docs.observeinc.com/docs/verb-flattensingle.md)
+    - [follow](https://docs.observeinc.com/docs/verb-follow.md)
+    - [follow_not](https://docs.observeinc.com/docs/verb-follow_not.md)
+    - [fulljoin](https://docs.observeinc.com/docs/verb-fulljoin.md)
+    - [histogram](https://docs.observeinc.com/docs/verb-histogram.md)
+    - [interface](https://docs.observeinc.com/docs/verb-interface.md)
+    - [join](https://docs.observeinc.com/docs/verb-join.md)
+    - [leftjoin](https://docs.observeinc.com/docs/verb-leftjoin.md)
+    - [limit](https://docs.observeinc.com/docs/verb-limit.md)
+    - [lookup](https://docs.observeinc.com/docs/verb-lookup.md)
+    - [lookup_ip_info](https://docs.observeinc.com/docs/verb-lookup_ip_info.md)
+    - [make_col](https://docs.observeinc.com/docs/verb-make_col.md): Aliases: `colmake` (deprecated).
+    - [make_event](https://docs.observeinc.com/docs/verb-make_event.md): Aliases: `changelog` (deprecated).
+    - [make_interval](https://docs.observeinc.com/docs/verb-make_interval.md)
+    - [make_metric](https://docs.observeinc.com/docs/verb-make_metric.md)
+    - [make_reference](https://docs.observeinc.com/docs/verb-make_reference.md)
+    - [make_resource](https://docs.observeinc.com/docs/verb-make_resource.md): Aliases: `makeresource` (deprecated).
+    - [make_session](https://docs.observeinc.com/docs/verb-make_session.md): Aliases: `makesession` (deprecated).
+    - [make_table](https://docs.observeinc.com/docs/verb-make_table.md): Aliases: `droptime` (deprecated).
+    - [makeresource (deprecated)](https://docs.observeinc.com/docs/verb-makeresource.md)
+    - [makesession (deprecated)](https://docs.observeinc.com/docs/verb-makesession.md)
+    - [merge_event (deprecated)](https://docs.observeinc.com/docs/verb-merge_event.md)
+    - [merge_events](https://docs.observeinc.com/docs/verb-merge_events.md)
+    - [mergeevent (deprecated)](https://docs.observeinc.com/docs/verb-mergeevent.md)
+    - [never](https://docs.observeinc.com/docs/verb-never.md)
+    - [not_exists](https://docs.observeinc.com/docs/verb-not_exists.md)
+    - [pick_col](https://docs.observeinc.com/docs/verb-pick_col.md): Aliases: `colpick` (deprecated).
+    - [pivot](https://docs.observeinc.com/docs/verb-pivot.md)
+    - [reaggregate (deprecated)](https://docs.observeinc.com/docs/verb-reaggregate.md)
+    - [rename_col](https://docs.observeinc.com/docs/verb-rename_col.md): Aliases: `colrename` (deprecated).
+    - [rollup](https://docs.observeinc.com/docs/verb-rollup.md)
+    - [set_col_enum](https://docs.observeinc.com/docs/verb-set_col_enum.md): Aliases: `colenum` (deprecated).
+    - [set_col_immutable](https://docs.observeinc.com/docs/verb-set_col_immutable.md): Aliases: `colimmutable` (deprecated).
+    - [set_col_searchable](https://docs.observeinc.com/docs/verb-set_col_searchable.md)
+    - [set_col_visible](https://docs.observeinc.com/docs/verb-set_col_visible.md): Aliases: `colshow` (deprecated).
+    - [set_label](https://docs.observeinc.com/docs/verb-set_label.md): Aliases: `setlabel` (deprecated).
+    - [set_link](https://docs.observeinc.com/docs/verb-set_link.md): Aliases: `addfk` (deprecated).
+    - [set_metric](https://docs.observeinc.com/docs/verb-set_metric.md): Aliases: `addmetric` (deprecated).
+    - [set_metric_metadata](https://docs.observeinc.com/docs/verb-set_metric_metadata.md)
+    - [set_pk](https://docs.observeinc.com/docs/verb-set_pk.md)
+    - [set_primary_key](https://docs.observeinc.com/docs/verb-set_primary_key.md): Aliases: `set_pk`, `setpk` (deprecated).
+    - [set_timestamp](https://docs.observeinc.com/docs/verb-set_timestamp.md)
+    - [set_valid_from](https://docs.observeinc.com/docs/verb-set_valid_from.md): Aliases: `setvf` (deprecated).
+    - [set_valid_to](https://docs.observeinc.com/docs/verb-set_valid_to.md): Aliases: `setvt` (deprecated).
+    - [setlabel (deprecated)](https://docs.observeinc.com/docs/verb-setlabel.md)
+    - [setpk (deprecated)](https://docs.observeinc.com/docs/verb-setpk.md)
+    - [setvf (deprecated)](https://docs.observeinc.com/docs/verb-setvf.md)
+    - [setvt (deprecated)](https://docs.observeinc.com/docs/verb-setvt.md)
+    - [sort](https://docs.observeinc.com/docs/verb-sort.md)
+    - [statsby](https://docs.observeinc.com/docs/verb-statsby.md)
+    - [surrounding](https://docs.observeinc.com/docs/verb-surrounding.md)
+    - [timechart](https://docs.observeinc.com/docs/verb-timechart.md): Aliases: `bucketize`.
+    - [timeshift](https://docs.observeinc.com/docs/verb-timeshift.md)
+    - [timestats](https://docs.observeinc.com/docs/verb-timestats.md)
+    - [timewrap](https://docs.observeinc.com/docs/verb-timewrap.md)
+    - [topk](https://docs.observeinc.com/docs/verb-topk.md)
+    - [union](https://docs.observeinc.com/docs/verb-union.md)
+    - [unpivot](https://docs.observeinc.com/docs/verb-unpivot.md)
+    - [unset_all_links](https://docs.observeinc.com/docs/verb-unset_all_links.md)
+    - [unset_keys](https://docs.observeinc.com/docs/verb-unset_keys.md)
+    - [unset_link](https://docs.observeinc.com/docs/verb-unset_link.md): Aliases: `fkdrop` (deprecated).
+    - [unsort](https://docs.observeinc.com/docs/verb-unsort.md)
+    - [update_resource](https://docs.observeinc.com/docs/verb-update_resource.md): Aliases: `mergeevent` (deprecated), `merge_event` (deprecated).
+- [OPAL tutorials](https://docs.observeinc.com/docs/tutorials-1.md)
+  - [Get started with OPAL](https://docs.observeinc.com/docs/get-started-with-opal.md)
+  - [Shape your data using stages](https://docs.observeinc.com/docs/shape-your-data-using-stages.md)
+- [OPAL performance cookbook](https://docs.observeinc.com/docs/performance-cookbook.md)
+  - [Use approximate values when feasible](https://docs.observeinc.com/docs/use-approximate-values-when-feasible.md)
+  - [Avoid large JSON blobs](https://docs.observeinc.com/docs/avoid-large-json-blobs.md)
+  - [Cast data columns extracted from JSON](https://docs.observeinc.com/docs/cast-data-columns-extracted-from-json.md)
+  - [Create intermediate Datasets](https://docs.observeinc.com/docs/create-intermediate-datasets.md)
+  - [Filter earlier in OPAL scripts](https://docs.observeinc.com/docs/filter-earlier-in-opal-scripts.md)
+  - [Use filter instead of ever](https://docs.observeinc.com/docs/use-filter-instead-of-ever.md)
+  - [Flatten less first](https://docs.observeinc.com/docs/flatten-less-first.md)
+  - [Limit worksheet time windows](https://docs.observeinc.com/docs/limit-worksheet-time-windows.md)
+  - [Limit resource time windows](https://docs.observeinc.com/docs/limit-resource-time-windows.md)
+  - [Limit valid event time windows](https://docs.observeinc.com/docs/limit-valid-event-time-windows.md)
+  - [Look for hidden columns](https://docs.observeinc.com/docs/look-for-hidden-columns.md)
+  - [Use make_events before window functions](https://docs.observeinc.com/docs/use-make_events-before-window-functions.md)
+  - [Mark immutable resource columns](https://docs.observeinc.com/docs/mark-immutable-resource-columns.md)
+  - [Make Resources from multiple Datasets](https://docs.observeinc.com/docs/make-resources-from-multiple-datasets.md)
+  - [Prefer join over lookup](https://docs.observeinc.com/docs/prefer-join-over-lookup.md)
+  - [Prefer lead and lag over first and last](https://docs.observeinc.com/docs/prefer-lead-and-lag-over-first-and-last.md)
+  - [Prefer timechart over timestats](https://docs.observeinc.com/docs/prefer-timechart-over-timestats.md)
+  - [Limit query time windows](https://docs.observeinc.com/docs/limit-query-time-windows.md)
+  - [Define stricter time filters in queries](https://docs.observeinc.com/docs/define-stricter-time-filters-in-queries.md)
+  - [Reduce columns earlier in OPAL scripts](https://docs.observeinc.com/docs/reduce-columns-earlier-in-opal-scripts.md)
+  - [Extract from JSON instead of flattening](https://docs.observeinc.com/docs/extract-from-json-instead-of-flattening.md)
+  - [Type data columns](https://docs.observeinc.com/docs/type-data-columns.md)
+  - [Use interval for ephemeral things](https://docs.observeinc.com/docs/use-interval-for-ephemeral-things.md)
+- [OPAL helpful hints](https://docs.observeinc.com/docs/helpful-hints.md)
+  - [How should I aggregate data?](https://docs.observeinc.com/docs/how-should-i-aggregate-data.md)
+  - [How do I find a weighted average?](https://docs.observeinc.com/docs/how-do-i-find-a-weighted-average.md)
+  - [How do I use time window functions?](https://docs.observeinc.com/docs/how-do-i-use-time-window-functions.md)
+  - [How can I make a standard deviation anomaly detection monitor?](https://docs.observeinc.com/docs/how-can-i-make-a-standard-deviation-anomaly-detection-monitor.md)
+  - [How do I find the average of values over time?](https://docs.observeinc.com/docs/how-do-i-find-the-average-of-values-over-time.md)
+  - [How do I change a field type?](https://docs.observeinc.com/docs/how-do-i-change-a-field-type.md)
+  - [How do I compare time ranges?](https://docs.observeinc.com/docs/how-do-i-compare-time-ranges.md)
+  - [How do I create an array from existing columns?](https://docs.observeinc.com/docs/how-do-i-create-an-array-from-existing-columns.md)
+  - [How do I compute a cumulative count over any interval grouped by multiple fields?](https://docs.observeinc.com/docs/how-do-i-compute-a-cumulative-count-over-any-interval-grouped-by-multiple-fields.md)
+  - [Convert to and from time durations](https://docs.observeinc.com/docs/time-duration-conversion.md)
+  - [Convert to and from timestamps](https://docs.observeinc.com/docs/opal-timestamp-conversion.md)
+  - [How do I filter by a list of terms?](https://docs.observeinc.com/docs/how-do-i-filter-by-a-list-of-terms.md)
+  - [How do I filter out unwanted data?](https://docs.observeinc.com/docs/how-do-i-filter-out-unwanted-data.md)
+  - [How do I test for multiple values in a dashboard parameter?](https://docs.observeinc.com/docs/how-do-i-test-for-multiple-values-in-a-dashboard-parameter.md)
+  - [How do I find the size of a column?](https://docs.observeinc.com/docs/how-do-i-find-the-size-of-a-column.md)
+  - [How do I format large numbers for readability?](https://docs.observeinc.com/docs/how-do-i-format-large-numbers-for-readability.md)
+  - [How do I measure drift in a metric over time?](https://docs.observeinc.com/docs/how-do-i-measure-drift-in-a-metric-over-time.md)
+  - [How do I measure drift in a resource over time?](https://docs.observeinc.com/docs/how-do-i-measure-drift-in-a-resource-over-time.md)
+  - [How do I sort dates by time when they are sorted alphabetically?](https://docs.observeinc.com/docs/how-do-i-sort-dates-by-time-when-they-are-sorted-alphabetically.md)
+  - [How do I sort digits numerically when they are sorted alphabetically?](https://docs.observeinc.com/docs/how-do-i-sort-digits-numerically-when-they-are-sorted-alphabetically.md)
+  - [How do I map fields to each other?](https://docs.observeinc.com/docs/how-do-i-map-fields-to-each-other.md)
+  - [How do I pivot a Dataset?](https://docs.observeinc.com/docs/how-do-i-pivot-a-dataset.md)
+  - [How do I unpivot data?](https://docs.observeinc.com/docs/how-do-i-unpivot-data.md)
+  - [Can I use OPAL to rename a Dataset?](https://docs.observeinc.com/docs/can-i-use-opal-to-rename-a-dataset.md)
+  - [Best practices for OPAL field extraction](https://docs.observeinc.com/docs/best-practices-for-opal-field-extraction.md)
+  - [Best practices for case statements in OPAL](https://docs.observeinc.com/docs/best-practices-for-case-statements-in-opal.md)
+  - [Best practices for field naming in OPAL](https://docs.observeinc.com/docs/best-practices-for-field-naming-in-opal.md)
+  - [Best practices for managing the schema interface between Datasets](https://docs.observeinc.com/docs/best-practices-for-managing-the-schema-interface-between-datasets.md)
+  - [Best practices for using durations in OPAL](https://docs.observeinc.com/docs/best-practices-for-using-durations-in-opal.md)
+  - [OPAL case-sensitive filtering with contains](https://docs.observeinc.com/docs/opal-case-sensitive-filtering-with-contains.md)
+  - [OPAL case-sensitive filtering with equals](https://docs.observeinc.com/docs/opal-case-sensitive-filtering-with-equals.md)
+  - [OPAL case-sensitive filtering with match_regex](https://docs.observeinc.com/docs/opal-case-sensitive-filtering-with-match_regex.md)
+  - [OPAL case sensitive-filtering with tilde and regex](https://docs.observeinc.com/docs/opal-case-sensitive-filtering-with-tilde-and-regex.md)
+  - [OPAL case-sensitive filtering with tilde](https://docs.observeinc.com/docs/opal-case-sensitive-filtering-with-tilde.md)
+  - [How do I compare values in OPAL?](https://docs.observeinc.com/docs/how-do-i-compare-values-in-opal.md)
+  - [How do I extract the numeric parts of a message?](https://docs.observeinc.com/docs/how-do-i-extract-the-numeric-parts-of-a-message.md)
+  - [How do I extract URL parameters?](https://docs.observeinc.com/docs/how-do-i-extract-url-parameters.md)
+  - [How do I prevent lost columns?](https://docs.observeinc.com/docs/how-do-i-prevent-lost-columns.md)
+  - [How should I rollup aggregated data?](https://docs.observeinc.com/docs/how-should-i-rollup-aggregated-data.md)
+  - [How do I search by time?](https://docs.observeinc.com/docs/how-do-i-search-by-time.md)
+  - [How do I set a column type?](https://docs.observeinc.com/docs/how-do-i-set-a-column-type.md)
+  - [How do I split a field?](https://docs.observeinc.com/docs/how-do-i-split-a-field.md)
+  - [How do I calculate a running standard deviation?](https://docs.observeinc.com/docs/how-do-i-calculate-a-running-standard-deviation.md)
+  - [What are streamable and unstreamable verbs and functions?](https://docs.observeinc.com/docs/what-are-streamable-and-unstreamable-verbs-and-functions.md)
+  - [What characters are allowed in field names?](https://docs.observeinc.com/docs/what-characters-are-allowed-in-field-names.md)
+  - [How do I avoid the 5,000 row limitation for grouping operations?](https://docs.observeinc.com/docs/how-do-i-avoid-the-5000-row-limitation-for-grouping-operations.md)
+
+## User Guides: Knowledge Base
+- [Key terms and concepts](https://docs.observeinc.com/docs/key-terms-and-concepts.md)
+  - [Important concepts](https://docs.observeinc.com/docs/important-concepts.md)
+  - [Key terminology](https://docs.observeinc.com/docs/key-concepts.md): Understand some of the key terms you will see throughout Observe by Snowflake.
+  - [Queries and on-demand acceleration](https://docs.observeinc.com/docs/queries-and-on-demand-acceleration.md)
+  - [Datasets and time](https://docs.observeinc.com/docs/datasets-and-time.md)
+  - [Reference tables](https://docs.observeinc.com/docs/reference-tables.md)
+    - [Create reference tables using the API](https://docs.observeinc.com/docs/create-reference-tables-using-the-api.md)
+    - [Create reference tables using the UI](https://docs.observeinc.com/docs/create-reference-tables-using-the-ui.md)
+  - [Visualization types](https://docs.observeinc.com/docs/visualization-types.md)
+    - [Customize and configure your visualizations](https://docs.observeinc.com/docs/customize-and-configure-your-visualizations.md): This page describes the ways you can customize your visualizations in Observe by Snowflake.
+    - [Bar chart](https://docs.observeinc.com/docs/bar-chart.md)
+    - [Change over time](https://docs.observeinc.com/docs/change-over-time.md)
+    - [Choropleth map](https://docs.observeinc.com/docs/choropleth-map.md)
+    - [Directed acyclic graph](https://docs.observeinc.com/docs/directed-acyclic-graph.md)
+    - [Geographic map](https://docs.observeinc.com/docs/geographic-map.md)
+    - [Heatmap](https://docs.observeinc.com/docs/heatmap.md)
+    - [Hex grid](https://docs.observeinc.com/docs/hex-grid.md)
+    - [Histogram](https://docs.observeinc.com/docs/histogram.md)
+    - [Line chart](https://docs.observeinc.com/docs/line-chart.md)
+    - [Pie chart](https://docs.observeinc.com/docs/pie-chart.md)
+    - [Scatter plot](https://docs.observeinc.com/docs/scatter-plot.md)
+    - [Single stat](https://docs.observeinc.com/docs/single-stat.md)
+    - [Stacked area](https://docs.observeinc.com/docs/stacked-area.md)
+    - [Top list](https://docs.observeinc.com/docs/top-list.md)
+    - [Waterfall chart](https://docs.observeinc.com/docs/waterfall-chart.md)
+  - [Observe UI icons](https://docs.observeinc.com/docs/observe-ui-icons-1.md): Learn about the important icons in the Observe UI
+- [Deployment regions](https://docs.observeinc.com/docs/regions.md): This page summrizes the geographical locations of Observe by Snowflake's deployments.
+- [Keyboard shortcuts](https://docs.observeinc.com/docs/keyboard-shortcuts.md)
+- [Units of measurement](https://docs.observeinc.com/docs/units-of-measurement.md)
+- [Observe by Snowflake tutorials](https://docs.observeinc.com/docs/observe-tutorials.md)
+  - [Model weather data](https://docs.observeinc.com/docs/model-weather-data.md)
+  - [Search for improbable travel](https://docs.observeinc.com/docs/search-for-improbable-travel.md)
+  - [Batch data ingestion](https://docs.observeinc.com/docs/batch-ingestion.md)
+
+## Developer Docs: Observe by Snowflake API
+- [API changelog](https://docs.observeinc.com/reference/api-changelog.md): See the latest breaking changes and version updates in the REST API.
+  - [Use the Observe-Api-Version header](https://docs.observeinc.com/reference/use-the-observe-api-version-header.md)
+  - [2026-10-07](https://docs.observeinc.com/reference/2026-10-07.md)
+  - [2026-09-09](https://docs.observeinc.com/reference/2026-09-09.md)
+  - [2026-08-26](https://docs.observeinc.com/reference/2026-08-26.md)
+- [Observe by Snowflake API authentication](https://docs.observeinc.com/reference/observe-api-authentication.md): Learn how to generate tokens to manage the Observe ny Snowflake platform using the API.
+- [Observe by Snowflake tokens](https://docs.observeinc.com/reference/observe-api-tokens.md): Learn about the different types of tokens in Observe by Snowflake and how to use each type of token.
+- [How you can interact with the Observe by Snowflake API](https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api.md): Learn about the different ways you can interact with the Observe by Snowflake API.
+- [Observe by Snowflake API rate limits](https://docs.observeinc.com/reference/observe-api-rate-limits.md)
+- [Execute an OPAL query](https://docs.observeinc.com/reference/exportquery.md): Execute an OPAL query.  Results can be returned as CSV or NDJSON. * Set Accept header to `text/csv` or `application/x-ndjson` * Default: CSV  Either two of `startTime`, `endTime`, and `interval` or…
+- [Fetch a page of query results](https://docs.observeinc.com/reference/exportquerypage.md): Fetch the results of a paginated "/v1/meta/export/query" request.  Note that paginate must be set to true and rowCount should be set high enough to contain the total expected result set.  This…
+- [Export a worksheet](https://docs.observeinc.com/reference/exportworksheet.md): Export data used by a worksheet.  Results are limited to a maximum of 100,000 rows.  Results can be returned as CSV or NDJSON. * Set Accept header to `text/csv` or `application/x-ndjson` * Default:…
+- [Generate an API token](https://docs.observeinc.com/reference/generateapitoken.md): Given an email address and a password, generate an API authorization token. This token can be used with Bearer authorization when used together with the customer ID. (The customer ID is the same as…
+- [Start an Observe authtoken creation flow](https://docs.observeinc.com/reference/startdelegatedlogin.md): This endpoint starts an authorization flow that lets an Observe user generate an authorization token to use for external tools and scripts. This token will have the same powers as the user…
+- [Poll the status of a pending login request](https://docs.observeinc.com/reference/polldelegatedlogin.md): This endpoint polls the status of a pending login request. The serverToken is returned from the initial request, and is used to identify the request.
+- [List datasets (legacy)](https://docs.observeinc.com/reference/listdatasets.md): List datasets, optionally matching:  * Name substring * Workspace ID * Dataset type * Interface binding
+- [Get a dataset (legacy)](https://docs.observeinc.com/reference/getdatasetbyid.md): Get information about one dataset by id. Does not query the data inside the dataset.
+- [Get a list of datasets](https://docs.observeinc.com/reference/listdatasets-1.md): Returns a paginated list of datasets the caller has read access to, optionally filtered and ordered with a CEL expression. Default page size is 50; maximum is 100. Default ordering is by `id`…
+- [Get the full dataset graph](https://docs.observeinc.com/reference/listdatasetgraph.md): > **Beta — schema may still change; breaking changes are coordinated > with affected customers. Suitable for evaluation, not production > reliance.**  Returns a lean per-dataset projection —…
+- [Get dataset attribute statistics](https://docs.observeinc.com/reference/getdatasetstats.md): Returns aggregated statistics — distinct value count and the top-K most frequent value/count pairs — for one or more dataset attributes, optionally restricted to a CEL-filtered subset of datasets.…
+- [Get a dataset](https://docs.observeinc.com/reference/getdataset.md): Returns a single dataset by ID. The response body is the same `Dataset-Resource` shape returned by the list endpoint.  Set `expand=true` to inline reference fields (`createdBy`, `updatedBy`,…
+- [Get the lineage graph neighborhood around a focal dataset](https://docs.observeinc.com/reference/getdatasetgraph.md): Returns the BFS-nearest lineage neighborhood around the focal dataset id, walking transform data-input edges (`InputRole=Data`) in both directions over the default-filtered dataset set (excludes…
+- [List alerts](https://docs.observeinc.com/reference/listalerts.md): List monitor alerts, optionally filtering and sorting the response. Filters are specified in the [CEL query language](https://cel.dev). Supported orderBy fields: id, level, status, start, monitor.id,…
+- [Get an alert by id](https://docs.observeinc.com/reference/getalert.md): Get a single alert by its unique id. Unlike the list endpoint, this lookup is not time-windowed: it returns the alert regardless of how long ago it fired. Returns 404 if no alert with the given id…
+- [Update a MonitorV2](https://docs.observeinc.com/reference/updatemonitor.md): Partially updates a monitor. Only **PATCH** is supported for this URL.  **Top-level merge:** The server reads the current monitor, then for each of these properties—`name`, `disabled`, `description`,…
+- [Delete a MonitorV2](https://docs.observeinc.com/reference/deletemonitor.md)
+- [Create a new MonitorV2 and bind to actions](https://docs.observeinc.com/reference/createmonitor.md): Creates a monitor. The `201` body is the default shape of `GET /v1/monitors/{id}`, not `Monitor-Resource`: this endpoint ignores `Observe-Api-Version`.
+- [Get a MonitorV2 Mute Rule](https://docs.observeinc.com/reference/getmonitormuterule.md)
+- [Delete a MonitorV2 Mute Rule](https://docs.observeinc.com/reference/deletemonitormuterule.md)
+- [Create a new MonitorV2 Mute Rule](https://docs.observeinc.com/reference/createmonitormuterule.md)
+- [List MonitorV2 Mute Rules with optional filters](https://docs.observeinc.com/reference/listmonitormuterules.md)
+- [List monitors](https://docs.observeinc.com/reference/listmonitors-1.md): This operation has two response shapes, chosen per request by the `Observe-Api-Version` header.  **Default — stable.** Omit the header and the response is a plain JSON array of monitors. This is the…
+- [List monitor mutes](https://docs.observeinc.com/reference/listmonitormutes.md): Returns a paginated list of monitor mute rules, optionally filtered by a CEL expression.
+- [Create a monitor mute](https://docs.observeinc.com/reference/createmonitormute.md)
+- [Get a monitor mute](https://docs.observeinc.com/reference/getmonitormute.md): Retrieve a specific monitor mute rule by ID.
+- [Update a monitor mute](https://docs.observeinc.com/reference/updatemonitormute.md): Partially updates a monitor mute rule using JSON Merge Patch semantics. Only provided fields are updated; omitted fields remain unchanged. `target.kind` is immutable after creation; sending a…
+- [Delete a monitor mute](https://docs.observeinc.com/reference/deletemonitormute.md)
+- [Get a reference table](https://docs.observeinc.com/reference/getreferencetable.md): Retrieve a specific reference table by ID.
+- [Update metadata of a reference table](https://docs.observeinc.com/reference/updatereferencetablemetadata.md): Updates the metadata of a reference table with the specified ID.
+- [Delete a reference table](https://docs.observeinc.com/reference/deletereferencetable.md): Deletes a reference table with the specified ID.
+- [Replace a reference table](https://docs.observeinc.com/reference/updatereferencetable.md): Replaces a reference table with the specified ID.
+- [Query reference tables](https://docs.observeinc.com/reference/queryreferencetables.md): Search for reference tables with optional filters (label, createdBy) and pagination.
+- [Create a new reference table](https://docs.observeinc.com/reference/createreferencetable.md): Creates a new reference table with the specified parameters and uploaded data.
+- [Get a list of service accounts](https://docs.observeinc.com/reference/listserviceaccounts.md): Get a list of all service accounts
+- [Create a service account](https://docs.observeinc.com/reference/createserviceaccount.md)
+- [Get a service account](https://docs.observeinc.com/reference/getserviceaccount.md): Retrieve a specific service account by ID
+- [Update a service account](https://docs.observeinc.com/reference/updateserviceaccount.md)
+- [Delete a service account](https://docs.observeinc.com/reference/deleteserviceaccount.md)
+- [Get a list of API tokens for this service account](https://docs.observeinc.com/reference/listapitokens.md): Get a list of all API tokens for this service account
+- [Create an API token](https://docs.observeinc.com/reference/createapitoken.md)
+- [Get an API token](https://docs.observeinc.com/reference/getapitoken.md): Retrieve a specific API token by ID
+- [Update an API token](https://docs.observeinc.com/reference/updateapitoken.md)
+- [Delete an API token](https://docs.observeinc.com/reference/deleteapitoken.md)
+- [Create a drop filter](https://docs.observeinc.com/reference/createingestfilter.md): Creates a drop filter. The OPAL pipeline is compiled against the source dataset's schema; if compilation fails the request is rejected with a 400 whose error body details the compiler errors.  A…
+- [List drop filters](https://docs.observeinc.com/reference/listingestfilters.md): List drop filters for the calling customer. Default ordering is by `id` ascending. Pagination is offset/limit with `limit` defaulting to 100 and capped at 1000. The `expand` flag will populate the…
+- [Validate a drop filter expression](https://docs.observeinc.com/reference/validateingestfilterexpression.md): Compile the given OPAL pipeline against the source dataset's schema without persisting anything. Always returns 200 if the request body is well-formed; the response `errors` array is empty when the…
+- [List datasets eligible for drop filtering](https://docs.observeinc.com/reference/listfilterabledatasets.md): Returns the source datasets eligible to have drop filters attached. A dataset becomes ineligible once it reaches the per-dataset cap of 100 drop filters.
+- [Get a drop filter](https://docs.observeinc.com/reference/getingestfilter.md): Get a drop filter by its ID.
+- [Update a drop filter](https://docs.observeinc.com/reference/updateingestfilter.md): Merge-patch update of a drop filter. Only fields explicitly present in the body are changed; the source dataset cannot be changed. To toggle the filter, send `{"enabled": true}` or `{"enabled":…
+- [Delete a drop filter](https://docs.observeinc.com/reference/deleteingestfilter.md): Delete a drop filter. Filters with a non-null `managedBy` are owned by an app or other managing object and cannot be deleted through this endpoint.
+- [Search object tag keys](https://docs.observeinc.com/reference/searchobjecttagkeys.md): Returns unique tag keys used across objects such as dashboards, datasets, worksheets, etc. Results are sorted by object count (descending), then alphabetically. Filter performs case-insensitive…
+- [Search values for an object tag key](https://docs.observeinc.com/reference/searchobjecttagvalues.md): Returns unique values for a specific tag key across objects such as dashboards, datasets, worksheets, etc. Results are sorted by object count (descending), then alphabetically. Filter performs…
+- [Get a list of dataset query filters](https://docs.observeinc.com/reference/listdatasetqueryfilters.md): Get a list of all query filters for a specific dataset
+- [Create a new dataset query filter](https://docs.observeinc.com/reference/createdatasetqueryfilter.md): Create a new query filter for a specific dataset
+- [Get a dataset query filter by ID](https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md): Retrieve a specific query filter by its ID
+- [Update a dataset query filter](https://docs.observeinc.com/reference/updatedatasetqueryfilter.md): Update an existing query filter using JSON Merge Patch semantics
+- [Delete a dataset query filter](https://docs.observeinc.com/reference/deletedatasetqueryfilter.md): Delete an existing query filter
+- [Search documentation](https://docs.observeinc.com/reference/searchdocumentation.md): Semantic search across Observe's built-in documentation. Given a natural-language query, returns the most relevant documentation chunks ranked by cosine similarity.  Results are returned at the chunk…
+- [List metrics](https://docs.observeinc.com/reference/listmetrics.md): List metrics defined by, or auto-discovered in, the customer's metric datasets that the user has read access to. Default page size is 100; maximum is 1000. Default ordering is by `name` ascending,…
+- [Create an ingest route.](https://docs.observeinc.com/reference/createingestroute.md): > **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**  Creates an ingest route. The destination ID must be…
+- [List ingest routes](https://docs.observeinc.com/reference/listingestroutes.md): > **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**  List ingest routes for a type. Routes are returned…
+- [Update ingest route priorities](https://docs.observeinc.com/reference/updateingestroutepriorities.md): > **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**  Reorder the ingest routes for a type. Send an…
+- [Get an ingest route](https://docs.observeinc.com/reference/getingestroute.md): > **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**  Get a single ingest route by its ID.
+- [Update an ingest route](https://docs.observeinc.com/reference/updateingestroute.md): > **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**  Update an ingest route configuration. The…
+- [Delete an ingest route](https://docs.observeinc.com/reference/deleteingestroute.md): > **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**  Delete an ingest route. The default route for a type…
+- [List tags](https://docs.observeinc.com/reference/listdatasettags.md): Returns a paginated list of tags (both correlation and metric kinds) defined across the tenant's datasets. Each entry groups all per-dataset definitions of a single `(name, kind)` pair.  Use `GET…
+- [Search tag values](https://docs.observeinc.com/reference/searchtagvalues.md): Returns tag values matching the query. Use `Regex` to interpret `query` as a regular expression, or `Semantic` for semantic similarity search.
+- [List APM services with RED metrics](https://docs.observeinc.com/reference/listapmservices.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Lists services, one row per service, each carrying a closed RED…
+- [List APM environments](https://docs.observeinc.com/reference/listapmenvironments.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Lists environments and the service namespaces with active…
+- [Get the APM service invocation graph](https://docs.observeinc.com/reference/getapminvocationgraph.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Returns the service dependency graph for a time window: the…
+- [Snowflake outbound sharing](https://docs.observeinc.com/reference/snowflake-outbound-sharing.md)
+- [URL query parameters](https://docs.observeinc.com/reference/url-query-parameters.md)
+- [Observe by Snowflake CLI](https://docs.observeinc.com/reference/observe-by-snowflake-cli.md): Learn how to install and configue the Observe by Snowflake CLI.
+- [Observe by Snowflake Terraform provider](https://docs.observeinc.com/reference/observe-terraform-provider.md)
+- [Export query results](https://docs.observeinc.com/reference/export-query-results.md)
+
+## Developer Docs: Apache Polaris and Apache Iceberg REST Catalog API
+- [Get started with the Apache Polaris and Apache Iceberg REST catalog API](https://docs.observeinc.com/reference/base-url.md)
+
+## Developer Docs: Observe API
+- [Get monitor attribute statistics](https://docs.observeinc.com/reference/getmonitorstats.md): Counts monitors by one or more fields. No monitors are returned. Each entry in `attributes` is a field to group by, and the response carries one block per entry: that field's distinct-value count,…
+- [Get a monitor](https://docs.observeinc.com/reference/getmonitor-1.md): > **⚠️ Alpha — the versioned response is under active development and > may change without notice. The default response is stable.**  Returns one monitor in full: what `GET /v1/monitors` returns for…
+- [List skills](https://docs.observeinc.com/reference/listskills.md): Get a paginated list of skills. Returns metadata only by default; use expand=true to include content.
+- [Create a skill](https://docs.observeinc.com/reference/createskill.md): Create a new skill with the given metadata and content.
+- [Get a skill](https://docs.observeinc.com/reference/getskill.md): Retrieve a specific skill by ID.
+- [Update a skill](https://docs.observeinc.com/reference/updateskill.md): Update an existing skill using JSON Merge Patch semantics.
+- [Delete a skill](https://docs.observeinc.com/reference/deleteskill.md): Delete a skill.
+- [List dashboards](https://docs.observeinc.com/reference/listdashboards.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Returns a paginated list of dashboards the caller can read.…
+- [Create a dashboard](https://docs.observeinc.com/reference/createdashboard.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Create a dashboard. The server assigns `id`, `createdAt`,…
+- [Get a dashboard by id](https://docs.observeinc.com/reference/getdashboard.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Return the full dashboard document (envelope metadata plus…
+- [Update a dashboard](https://docs.observeinc.com/reference/updatedashboard.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Merge-patch update ([RFC…
+- [Delete a dashboard](https://docs.observeinc.com/reference/deletedashboard.md): > **Beta — may change; breaking changes are coordinated with affected > customers. Suitable for evaluation, not production reliance.**  Delete a dashboard by its id.
+- [List ingest tokens](https://docs.observeinc.com/reference/listingesttokens.md): When `expand=true`, each token's `stats` (ingest health metrics) are included. A token that has not yet ingested any data has no metrics to report, so `stats` is omitted for it until it is first used.
+- [Create an ingest token](https://docs.observeinc.com/reference/createingesttoken.md): Creates an ingest token. The secret is returned exactly once in the response and cannot be retrieved again.  **Quota:** A customer can hold at most a fixed number of ingest tokens (default 5000).…
+- [Get an ingest token](https://docs.observeinc.com/reference/getingesttoken.md)
+- [Update an ingest token](https://docs.observeinc.com/reference/updateingesttoken.md): Merge-patch (RFC 7396). Omitted fields are unchanged.
+- [Delete an ingest token](https://docs.observeinc.com/reference/deleteingesttoken.md): Returns 204 on success, 403 if the caller lacks permission to delete the token, 404 if the token does not exist or is not visible to the caller.
+
+## Recipes
+- [Create a monitor that pages PagerDuty](https://docs.observeinc.com/recipes/create-a-monitor-bound-to-a-shared-action.md)
+- [Create a service account and API token](https://docs.observeinc.com/recipes/create-a-service-account-and-api-token.md)
+- [Find a Dataset and export query results](https://docs.observeinc.com/recipes/find-a-dataset-and-export-query-results.md)
+- [List active critical alerts](https://docs.observeinc.com/recipes/list-active-critical-alerts.md)
+- [Mute Monitors during a maintenance window](https://docs.observeinc.com/recipes/mute-monitors-during-a-maintenance-window.md)
+
+## Changelog
+- [New feature status](https://docs.observeinc.com/changelog/new-feature-status.md)
+- [2026-10-07](https://docs.observeinc.com/changelog/2026-10-06.md)
+- [2026-09-30](https://docs.observeinc.com/changelog/2026-10-01.md)
+- [2026-09-23](https://docs.observeinc.com/changelog/2026-09-23.md)
+- [2026-09-16](https://docs.observeinc.com/changelog/2026-09-16.md)
+- [2026-09-09](https://docs.observeinc.com/changelog/2026-09-09.md)
+- [2026-09-02](https://docs.observeinc.com/changelog/2026-09-02.md)
+- [2026-08-26](https://docs.observeinc.com/changelog/2026-08-26.md)
+- [2026-08-19](https://docs.observeinc.com/changelog/2026-08-19.md)
+- [2026-08-12](https://docs.observeinc.com/changelog/2026-08-12.md)

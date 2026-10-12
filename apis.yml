@@ -1,23 +1,150 @@
 aid: observeinc
 name: Observe
-description: 'Observe is a company surfaced via the API Evangelist harvest backlog (source: market-layer-gap)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://www.snowflake.com/content/dam/snowflake-site/general/technical/default-og-image/snowflake-social-share.png
+description: 'Observe (Observe, Inc., now "Observe by Snowflake" following its acquisition by Snowflake; www.observeinc.com redirects to snowflake.com/en/product/observe) is an observability platform for logs, metrics, traces and APM built on a data lake and the OPAL query language. Its developer surface lives on docs.observeinc.com: a tenant-scoped REST API (https://{customerid}.observeinc.com/v1, bearer "<customerid> <token>") covering monitors, datasets, ingest and API tokens, reference tables, service accounts and query export, with date-based Observe-Api-Version response versioning; a read-only Apache Iceberg REST Catalog endpoint; a tenant MCP server; a CLI; and a Terraform provider. Snowflake''s own APIs are not credited here.'
 url: https://raw.githubusercontent.com/api-evangelist/observeinc/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:market-layer-gap
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-13 (local-v5; was harvest)
 specificationVersion: '0.20'
 created: '2026-10-13'
 modified: '2026-10-13'
 tags:
 - Company
-apis: []
+- Observability
+- Monitoring
+- Logs
+- Metrics
+- Traces
+- APM
+- Snowflake
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Deprecation
+  url: lifecycle/observeinc-lifecycle.yml
+- type: AgenticAccess
+  url: agentic-access/observeinc-agentic-access.yml
+- type: RateLimits
+  url: rate-limits/observeinc-rate-limits.yml
+- type: Spectral
+  url: rules/observeinc-rules.yml
+- type: JSONLD
+  url: json-ld/observeinc-context.jsonld
+- type: Vocabulary
+  url: vocabulary/observeinc-vocabulary.yml
+- type: DataModel
+  url: data-model/observeinc-data-model.yml
+- type: CLI
+  url: cli/observeinc-cli.yml
+- type: ChangeLog
+  url: changelog/observeinc-changelog.yml
+- type: Lifecycle
+  url: lifecycle/observeinc-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/observeinc-problem-types.yml
+- type: Conformance
+  url: conformance/observeinc-conformance.yml
+- type: LLMsTxt
+  url: llms/observeinc-llms.txt
+- type: MCPServer
+  url: mcp/observeinc-mcp.yml
+- type: SecurityTxt
+  url: well-known/observeinc-www-security.txt
+- type: SecurityTxt
+  url: well-known/observeinc-status-security.txt
+- type: WellKnown
+  url: well-known/observeinc-well-known.yml
+- type: Hosts
+  url: hosts/observeinc-hosts.yml
+- type: Vendors
+  url: vendors/observeinc-vendors.yml
+- type: SDKs
+  url: packages/observeinc-packages.yml
+- type: Packages
+  url: packages/observeinc-packages.yml
+- type: TrustCenter
+  url: https://trust.snowflake.com/
+- type: Newsroom
+  url: https://www.snowflake.com/en/news/
+- type: GettingStarted
+  url: https://docs.observeinc.com/docs/google-cloud-platform-quickstart-1
+- type: Authentication
+  url: authentication/observeinc-authentication.yml
+- type: DomainSecurity
+  url: security/observeinc-domain-security.yml
 - type: Website
   url: https://www.observeinc.com
+- type: Documentation
+  url: https://docs.observeinc.com/
+- type: APIReference
+  url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+- type: TermsOfService
+  url: https://www.observeinc.com/legal/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.snowflake.com/en/legal/privacy/privacy-policy/
+- type: Support
+  url: https://www.snowflake.com/en/support/
+- type: StatusPage
+  url: https://status.snowflake.com/
+- type: Pricing
+  url: https://www.snowflake.com/en/pricing-options/
+- type: SignUp
+  url: https://signup.snowflake.com/
+- type: GitHubOrganization
+  url: https://github.com/observeinc
+- type: Blog
+  url: https://www.snowflake.com/en/blog/product-and-technology/?tags=blog%2Fproduct-and-technology%2Fobservability
+apis:
+- aid: observeinc:observe-api
+  name: Observe API
+  description: 'Tenant-scoped REST API for the Observe by Snowflake platform: monitors, datasets, ingest tokens, API tokens, service accounts, reference tables, query export and authentication flows. 88 operations documented in the ReadMe API reference.'
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Observability
+  - Monitoring
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:iceberg-rest-catalog
+  name: Observe Apache Iceberg REST Catalog API
+  description: Read-only subset of the Apache Iceberg REST Catalog protocol served under /v1/iceberg/catalog on each Observe tenant, authenticated with the same Observe API token. Implements the Apache Iceberg spec; no Observe-specific contract is published.
+  humanURL: https://docs.observeinc.com/reference/base-url
+  baseURL: https://{customerid}.observeinc.com/v1/iceberg/catalog
+  tags:
+  - Apache Iceberg
+  - Data Catalog
+  properties:
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/base-url
+x-parent-company: snowflake
+x-enrichment:
+  date: '2026-10-13'
+  status: enriched
+  artifacts_added: 37
+  pass: local-v5

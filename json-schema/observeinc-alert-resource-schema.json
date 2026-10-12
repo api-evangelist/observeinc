@@ -1,0 +1,821 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/observeinc/main/json-schema/observeinc-alert-resource-schema.json",
+  "title": "AlertResource",
+  "description": "A monitor alert representing a detected condition.",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/observeinc-openapi.yml#/components/schemas/Alert-Resource",
+  "type": "object",
+  "required": [
+    "id",
+    "start",
+    "end",
+    "detectedStart",
+    "detectedEnd",
+    "status",
+    "level",
+    "groupingHash",
+    "capturedValues",
+    "context",
+    "monitorVersion",
+    "monitor",
+    "muted"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the alert"
+    },
+    "start": {
+      "$ref": "#/$defs/Time",
+      "description": "When the alert condition first occurred"
+    },
+    "end": {
+      "$ref": "#/$defs/NullableTime",
+      "description": "When the alert condition ended. Null for active alerts."
+    },
+    "detectedStart": {
+      "$ref": "#/$defs/NullableTime",
+      "description": "When the alert start was detected by the monitoring system. Null when not yet detected."
+    },
+    "detectedEnd": {
+      "$ref": "#/$defs/NullableTime",
+      "description": "When the alert end was detected by the monitoring system. Null for active alerts."
+    },
+    "status": {
+      "$ref": "#/$defs/Alert-Status"
+    },
+    "level": {
+      "$ref": "#/$defs/Alert-Level"
+    },
+    "groupingHash": {
+      "type": "string",
+      "format": "int64",
+      "description": "Hash of the grouping values for this alert"
+    },
+    "capturedValues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Alert-CapturedValue"
+      }
+    },
+    "context": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Alert-ContextEntry"
+      }
+    },
+    "monitorVersion": {
+      "type": "string",
+      "format": "int64",
+      "description": "Version of the monitor when this alert was created"
+    },
+    "monitor": {
+      "$ref": "#/$defs/Monitor-Ref",
+      "description": "Reference to the monitor that generated this alert. Always carries\nthe id; the `record` field is populated only when expand=true.\n"
+    },
+    "muted": {
+      "type": "boolean",
+      "description": "Whether the alert is currently muted by active mute rules."
+    },
+    "aiChats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Chat-Resource"
+      },
+      "description": "Optional field tied to a feature under development. Where that\nfeature is not enabled the key is omitted from the response\nentirely, rather than returned as an empty array; it becomes\nrequired once the feature is generally available.\n\nAI investigations for this alert, newest first; empty when it has\nnever been investigated. An investigation is started either\nautomatically, when the alert's monitor has AI triaging enabled, or\nby a user from the alert.\n"
+    },
+    "automaticInvestigation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Alert-AutomaticInvestigation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "The current state or terminal result of the automatic AI\ninvestigation attempt for this alert. Null when automatic\ninvestigation was not enabled or no attempt was made.\n\nOptional field tied to a feature under development. Where that\nfeature is not enabled the key is omitted from the response,\nmatching `aiChats`.\n"
+    },
+    "resolvedServiceBinding": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Alert-ResolvedServiceBinding"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Resolved (service.name, deployment.environment.name,\nservice.namespace) triplet this alert is attributed to.\nOmitted only when the alert's monitor has no service binding\ndeclared. When a binding wildcard does not resolve to a value\nfor this alert, that dimension is an empty string.\n"
+    },
+    "stats": {
+      "$ref": "#/$defs/Alert-ActionStats",
+      "description": "Action statistics for this alert. Only included when expand=true."
+    }
+  },
+  "$defs": {
+    "Alert-ActionStats": {
+      "title": "AlertActionStats",
+      "type": "object",
+      "description": "Statistics about notification actions taken for this alert",
+      "required": [
+        "numNotifsDiscarded",
+        "numNotifsMuted",
+        "numNotifsSent",
+        "numErrors",
+        "lastMutedAt",
+        "lastSentAt",
+        "lastErroredAt"
+      ],
+      "properties": {
+        "numNotifsDiscarded": {
+          "type": "string",
+          "format": "int64"
+        },
+        "numNotifsMuted": {
+          "type": "string",
+          "format": "int64"
+        },
+        "lastMutedAt": {
+          "$ref": "#/$defs/NullableTime",
+          "description": "When the alert was last muted. Null if never muted."
+        },
+        "numNotifsSent": {
+          "type": "string",
+          "format": "int64"
+        },
+        "lastSentAt": {
+          "$ref": "#/$defs/NullableTime",
+          "description": "When a notification was last sent. Null if never sent."
+        },
+        "numErrors": {
+          "type": "string",
+          "format": "int64"
+        },
+        "lastErroredAt": {
+          "$ref": "#/$defs/NullableTime",
+          "description": "When the last notification error occurred. Null if no errors."
+        }
+      }
+    },
+    "Alert-AutomaticInvestigation": {
+      "title": "AlertAutomaticInvestigation",
+      "type": "object",
+      "required": [
+        "outcome",
+        "chat"
+      ],
+      "properties": {
+        "outcome": {
+          "$ref": "#/$defs/Alert-AutomaticInvestigationOutcome"
+        },
+        "chat": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Chat-Ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The automatically created investigation chat. Non-null when\noutcome is `Started` or `Completed`.\n"
+        }
+      }
+    },
+    "Alert-AutomaticInvestigationOutcome": {
+      "title": "AlertAutomaticInvestigationOutcome",
+      "type": "string",
+      "description": "Current state or terminal result of an automatic AI investigation attempt.",
+      "enum": [
+        "Started",
+        "Completed",
+        "RateLimitedPerMonitor",
+        "RateLimitedPerCustomer",
+        "SkippedAlertMuted",
+        "SkippedAlertLevelNotSelected",
+        "FailedNoValidUser",
+        "FailedInternalError"
+      ]
+    },
+    "Alert-CapturedValue": {
+      "title": "AlertCapturedValue",
+      "type": "object",
+      "description": "A value captured at the time the alert was triggered",
+      "required": [
+        "types",
+        "column",
+        "value"
+      ],
+      "properties": {
+        "types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Alert-CapturedValueType"
+          }
+        },
+        "column": {
+          "$ref": "#/$defs/Alert-Column"
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The captured cell value. Null when the cell had no value."
+        }
+      }
+    },
+    "Alert-CapturedValueType": {
+      "title": "AlertCapturedValueType",
+      "type": "string",
+      "enum": [
+        "Aggregation",
+        "GroupBy",
+        "LinkSourceField"
+      ]
+    },
+    "Alert-Column": {
+      "title": "AlertColumn",
+      "type": "object",
+      "description": "A column reference, either a direct column path, a link column, or a\ncorrelation tag. Exactly one of `linkColumn`, `columnPath`, or\n`correlationTag` is non-null.\n",
+      "required": [
+        "linkColumn",
+        "columnPath",
+        "correlationTag"
+      ],
+      "properties": {
+        "linkColumn": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Alert-LinkColumn"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "columnPath": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Alert-ColumnPath"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "correlationTag": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Alert-CorrelationTag"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Alert-ColumnPath": {
+      "title": "AlertColumnPath",
+      "type": "object",
+      "required": [
+        "name",
+        "path"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The column's identifier within its dataset. This is the programmatic\nname used to look up the column, not a display label.\n"
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional dotted path into a nested column. Null when absent."
+        }
+      }
+    },
+    "Alert-ContextEntry": {
+      "title": "AlertContextEntry",
+      "type": "object",
+      "description": "A context entry representing a grouping value for which the alert triggered",
+      "required": [
+        "column",
+        "value"
+      ],
+      "properties": {
+        "column": {
+          "$ref": "#/$defs/Alert-Column"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "Alert-CorrelationTag": {
+      "title": "AlertCorrelationTag",
+      "type": "object",
+      "description": "A correlation tag reference. The tag identifier is the canonical\nname; the resolved backing column(s) are server-side details and\nnot part of the wire shape.\n",
+      "required": [
+        "tag"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string",
+          "description": "Canonical correlation tag identifier."
+        }
+      }
+    },
+    "Alert-Level": {
+      "title": "AlertLevel",
+      "type": "string",
+      "description": "Severity level of the alert",
+      "enum": [
+        "Critical",
+        "Error",
+        "Warning",
+        "Informational",
+        "NoData",
+        "None"
+      ]
+    },
+    "Alert-LinkColumn": {
+      "title": "AlertLinkColumn",
+      "type": "object",
+      "required": [
+        "name",
+        "meta"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The link column's identifier. This is the programmatic name used to\nlook up the column, not a display label.\n"
+        },
+        "meta": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Alert-LinkColumnMeta"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Alert-LinkColumnMeta": {
+      "title": "AlertLinkColumnMeta",
+      "type": "object",
+      "required": [
+        "srcFields",
+        "dstFields",
+        "targetDataset"
+      ],
+      "properties": {
+        "srcFields": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/Alert-ColumnPath"
+          }
+        },
+        "dstFields": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "targetDataset": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "Alert-ResolvedServiceBinding": {
+      "title": "AlertResolvedServiceBinding",
+      "type": "object",
+      "description": "Service-binding triplet for an alert. Present whenever the alert's\nmonitor has a service binding declared; a dimension that does not\nresolve to a value is an empty string. Omitted only when the\nmonitor has no service binding declared.\n",
+      "required": [
+        "serviceName",
+        "environment",
+        "serviceNamespace"
+      ],
+      "properties": {
+        "serviceName": {
+          "type": "string",
+          "description": "Value of the `service.name` correlation tag."
+        },
+        "environment": {
+          "type": "string",
+          "description": "Value of the `deployment.environment.name` correlation tag."
+        },
+        "serviceNamespace": {
+          "type": "string",
+          "description": "Value of the `service.namespace` correlation tag."
+        }
+      }
+    },
+    "Alert-Status": {
+      "title": "AlertStatus",
+      "type": "string",
+      "description": "Current status of the alert",
+      "enum": [
+        "Active",
+        "Ended",
+        "Retracted"
+      ]
+    },
+    "Chat-Alert": {
+      "title": "ChatAlert",
+      "type": "object",
+      "description": "Reference to the alert that triggered this chat.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/UUID",
+          "description": "ID of the alert (monitor_v2_alarm)."
+        }
+      }
+    },
+    "Chat-Brief": {
+      "title": "ChatBrief",
+      "type": "object",
+      "description": "Brief chat metadata included when a reference is expanded.",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 255,
+          "description": "Human-visible title. Null when the chat has no title."
+        }
+      }
+    },
+    "Chat-FullMessage": {
+      "title": "ChatFullMessage",
+      "description": "A message within a chat including the actual message \"parts\".\nMessage parts may e.g. contain image data and be quite big, but\noften also just contain a text snippet.\n",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Chat-Message-ReadOnly"
+        },
+        {
+          "$ref": "#/$defs/Chat-FullMessage-CreateRequest"
+        }
+      ]
+    },
+    "Chat-FullMessage-CreateRequest": {
+      "title": "ChatFullMessageCreateRequest",
+      "description": "A message within a chat including message parts.\nMessage parts may e.g. contain image data and be quite big.\n",
+      "type": "object",
+      "required": [
+        "parts"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "system",
+            "user",
+            "assistant",
+            "data"
+          ]
+        },
+        "metadata": {
+          "$ref": "#/$defs/Chat-MessageMetadata"
+        },
+        "id": {
+          "type": "string",
+          "description": "Client-generated message id scoped to the chat."
+        },
+        "indexedText": {
+          "description": "The full text contained in `parts` for full text indexing.\n\nSince the schema of the message parts is not fully known to\nthe API server, the client needs to fill this field with the logically\ncontained text.\n\nThe contents of this field are not shown to the user --\nthe UI uses the more structured information in the `parts` field for\nthat.\n",
+          "type": "string"
+        },
+        "parts": {
+          "type": "array",
+          "maxLength": 256,
+          "description": "The message parts as defined by the AI SDK. Potentially large.",
+          "items": {
+            "$ref": "#/$defs/Chat-UIMessagePart"
+          }
+        }
+      }
+    },
+    "Chat-Message-ReadOnly": {
+      "title": "ChatMessageReadOnly",
+      "type": "object",
+      "description": "The readonly server fields of a message within a chat.",
+      "required": [
+        "index",
+        "chatRevision",
+        "createdBy",
+        "createdAt",
+        "updatedBy",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Client-generated message id scoped to the chat."
+        },
+        "index": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 0,
+          "description": "Zero-based index of the message within the chat. Output only.",
+          "readOnly": true
+        },
+        "chatRevision": {
+          "type": "integer",
+          "format": "int64",
+          "minimum": 0,
+          "description": "The chat revision that includes the last update of this message. Output only.",
+          "readOnly": true
+        },
+        "createdBy": {
+          "$ref": "#/$defs/User"
+        },
+        "createdAt": {
+          "$ref": "#/$defs/Time",
+          "readOnly": true
+        },
+        "updatedBy": {
+          "$ref": "#/$defs/User"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/Time",
+          "readOnly": true
+        }
+      }
+    },
+    "Chat-MessageMetadata": {
+      "title": "ChatMessageMetadata",
+      "type": "object",
+      "description": "Free-form metadata associated with the message (timings, etc.).",
+      "additionalProperties": true
+    },
+    "Chat-Ref": {
+      "title": "ChatRef",
+      "type": "object",
+      "description": "Reference to a chat. Always carries the `id`. The `record` field is\npopulated with brief metadata only when `expand=true`.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/UUID",
+          "description": "Uniquely identifies a chat."
+        },
+        "record": {
+          "$ref": "#/$defs/Chat-Brief"
+        }
+      }
+    },
+    "Chat-Resource": {
+      "title": "ChatResource",
+      "type": "object",
+      "description": "A chat resource - a conversation with the LLM agent.\n\nThe content of the conversation is in separate messages which\ncan be inlined into the resource for some operations with `?expand=true`.\n",
+      "required": [
+        "id",
+        "revision",
+        "createdBy",
+        "createdAt",
+        "updatedBy",
+        "updatedAt",
+        "activeStreamId",
+        "alert"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/UUID",
+          "description": "Uniquely identifies a chat. Output only.",
+          "readOnly": true
+        },
+        "revision": {
+          "type": "integer",
+          "format": "int64",
+          "minimum": 0,
+          "description": "Monotonically increasing with every update to the chat or its messages. Output only.",
+          "readOnly": true
+        },
+        "createdBy": {
+          "$ref": "#/$defs/User",
+          "readOnly": true
+        },
+        "createdAt": {
+          "$ref": "#/$defs/Time",
+          "readOnly": true
+        },
+        "updatedBy": {
+          "$ref": "#/$defs/User",
+          "readOnly": true
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/Time",
+          "readOnly": true
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "description": "Optional human visible title"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096,
+          "description": "Optional chat summary"
+        },
+        "activeStreamId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 255,
+          "description": "ID of the currently active stream, or null when no stream is active.\nUsed to determine whether the chat is in-progress (streaming) or idle/completed.\n"
+        },
+        "alert": {
+          "description": "The alert that triggered this chat, or null if not alert-triggered.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Chat-Alert"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "messages": {
+          "type": "array",
+          "description": "Present only when `expand=true`. Output only.",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/$defs/Chat-FullMessage"
+          }
+        }
+      }
+    },
+    "Chat-UIMessagePart": {
+      "title": "ChatUIMessagePart",
+      "description": "A message part. The schema is provided by the AI SDK, see\nhttps://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message#uimessagepart-types\n\nThis commonly embeds image data, so it can be quite big, but\noften also just contains a snippet of text.\n\nThe backend itself does NOT validate the contents of any part\nexcept requiring a string type field.\n\nThis field is not part of the explicit schema since not all code\ngenerators support a required type field and capturing additional\nproperties in a catch-all field.\n\nThe client must validate this field for validity before use.\n",
+      "type": "object",
+      "additionalProperties": true
+    },
+    "Monitor-Brief": {
+      "title": "MonitorBrief",
+      "type": "object",
+      "description": "Brief monitor metadata included when a reference is expanded.",
+      "required": [
+        "name",
+        "label",
+        "description"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the monitor, unique within its workspace.\n"
+        },
+        "label": {
+          "type": "string",
+          "deprecated": true,
+          "description": "Same as `name`. Deprecated; read `name` instead."
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The monitor's description. Null when no description is configured."
+        }
+      }
+    },
+    "Monitor-Ref": {
+      "title": "MonitorRef",
+      "type": "object",
+      "description": "Reference to a monitor. Always carries the `id`. The `record` field is\npopulated with brief metadata only when `expand=true`.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/Monitor-Brief"
+        }
+      }
+    },
+    "NullableTime": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "RFC3339"
+    },
+    "ObjectBrief": {
+      "title": "ObjectBrief",
+      "type": "object",
+      "description": "Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.\n",
+      "required": [
+        "label",
+        "description",
+        "iconUrl",
+        "managedBy"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "managedBy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager's brief."
+        }
+      }
+    },
+    "ObjectId": {
+      "type": "string",
+      "format": "ObjectId"
+    },
+    "ObjectRef": {
+      "title": "ObjectRef",
+      "type": "object",
+      "description": "A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.\n",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/ObjectId"
+        },
+        "record": {
+          "$ref": "#/$defs/ObjectBrief"
+        }
+      }
+    },
+    "Time": {
+      "type": "string",
+      "format": "RFC3339"
+    },
+    "UUID": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "User": {
+      "title": "User",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "User Identifier",
+          "$ref": "#/$defs/ObjectId"
+        },
+        "label": {
+          "title": "User Label",
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
