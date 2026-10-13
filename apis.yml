@@ -144,7 +144,7 @@ apis:
     url: https://docs.observeinc.com/reference/base-url
 x-parent-company: snowflake
 x-enrichment:
-  date: '2026-10-13'
   status: enriched
-  artifacts_added: 37
   pass: local-v5
+  date: '2026-10-13'
+  artifacts_added: 37
