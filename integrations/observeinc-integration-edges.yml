@@ -14,6 +14,7 @@ checked:
 - https://n8n.io/integrations/observeinc/
 - https://zapier.com/apps/observe/integrations
 - https://zapier.com/apps/observeinc/integrations
+- okta/integrations/okta-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
@@ -40,4 +41,29 @@ edges:
     detected: '2026-10-13'
   detected_by: sweep-observability.py
   detected: '2026-10-13'
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/observeinc/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Observe
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Automation
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - CREATE
+  - DEACTIVATE
+  - IDENTITY_SECURITY_POSTURE_MANAGEMENT
+  - SAML
+  - UPDATE
 templates: []
