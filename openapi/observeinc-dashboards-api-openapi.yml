@@ -1,0 +1,4093 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Dashboards API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Dashboards across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Dashboards
+paths:
+  /v1/dashboards:
+    post:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Create a dashboard
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Create a dashboard. The server assigns `id`, `createdAt`, `updatedAt`,
+
+        `createdBy`, and `updatedBy`.'
+      operationId: CreateDashboard
+      tags:
+      - Dashboards
+      parameters:
+      - $ref: '#/components/parameters/ExpandParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dashboard-CreateRequest'
+      responses:
+        '201':
+          description: Dashboard created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '409':
+          $ref: '#/components/responses/ErrorResponse-409'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: List dashboards
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Returns a paginated list of dashboards the caller can read. List items
+
+        include envelope metadata only (no `definition`). Default page size is
+
+        100; maximum is 100. Default ordering is `name` ascending, then `id`
+
+        ascending.
+
+
+        Set `expand=true` to populate display fields on `createdBy` and
+
+        `updatedBy`, and `record` on `managedBy`. Without `expand`, references
+
+        contain only `id`.'
+      operationId: ListDashboards
+      tags:
+      - Dashboards
+      parameters:
+      - in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        description: '[Common Expression Language (CEL)](https://cel.dev) expression that
+
+          each dashboard must match. It must evaluate to a boolean.
+
+
+          **Identity and content:** `id` (int in CEL, string in JSON), `name`,
+
+          `description` (string), `visibility` (`Listed` or `Hidden`).
+
+
+          **Audit:** `createdAt`, `updatedAt` (timestamp); `createdBy.id`,
+
+          `updatedBy.id` (user id, int).
+
+
+          **Owner reference:** `managedBy.id` (int); `managedBy.record.label`,
+
+          `managedBy.record.description` (string). These are filterable even
+
+          without `expand=true` — `expand` controls what is *returned*, not
+
+          what can be filtered.
+
+
+          **Facets (filter-only, not sortable):**
+
+
+          | Field | CEL type | Notes |
+
+          |---|---|---|
+
+          | `objectTags` | `map(string, list(string))` | User-applied tags, as a map of tag key to a list of values. |
+
+          | `parameters.correlationTags` | `list(string)` | Correlation-tag names picked by the dashboard''s `correlationTag`-kind parameters. |
+
+          | `parameters.resources.ids` | `list(int)` | Dataset ids picked by the dashboard''s `resource`-kind parameters. |
+
+          | `parameters.resources.names` | `list(string)` | Dataset names for the same `resource`-kind parameters. |
+
+          | `queries.inputs.ids` | `list(int)` | Dataset ids bound to the dashboard''s query-card inputs. |
+
+          | `queries.inputs.names` | `list(string)` | Dataset names for the same query-card inputs. |
+
+          | `datasetFilter.id` | `int`, nullable | The primary dataset filter''s dataset id, when set. |
+
+          | `datasetFilter.name` | `string`, nullable | The primary dataset filter''s dataset name, when set. |
+
+
+          Supports `matches()` for regex. Example: `name.matches("prod.*")`.
+
+          '
+      - in: query
+        name: orderBy
+        required: false
+        schema:
+          type: string
+        description: 'CSV list of [CEL](https://cel.dev) expressions, each producing a
+
+          comparable value. Prefix an item with `-` for descending order.
+
+          Default sort is `name` ascending, then `id` ascending.
+
+
+          Sortable fields: `id`, `name`, `description`, `visibility`,
+
+          `createdAt`, `updatedAt`, `createdBy.id`, `updatedBy.id`, `managedBy.id`.
+
+          Facet fields (`objectTags`, `parameters.*`, `queries.*`,
+
+          `datasetFilter.*`) cannot be sorted.
+
+
+          CSV-escape first, then URL-encode. Wrap an item in `"` if it contains
+
+          a comma or `"`; double a literal `"` to `""` inside a quoted item.
+
+          '
+        examples:
+          defaultSort:
+            summary: Default name then id ascending (explicit)
+            value: name,id
+          nameDesc:
+            summary: Name descending, then id descending
+            value: -name,-id
+          csvQuotedExpression:
+            summary: Multi-key sort with a CSV-quoted conditional CEL expression
+            value: '"managedBy != null ? managedBy.record.label : name",-id'
+      - name: offset
+        in: query
+        description: Number of items to skip before starting to collect the result set.
+        schema:
+          type: integer
+          format: int64
+          minimum: 0
+      - name: limit
+        in: query
+        description: Maximum number of items to return in the response. Capped at 100.
+        schema:
+          type: integer
+          format: int64
+          minimum: 1
+          maximum: 100
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Dashboards queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/dashboards/{id}:
+    delete:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Delete a dashboard
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Delete a dashboard by its id.'
+      operationId: DeleteDashboard
+      tags:
+      - Dashboards
+      parameters:
+      - $ref: '#/components/parameters/Dashboard-Id'
+      responses:
+        '204':
+          description: Dashboard deleted successfully
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '422':
+          $ref: '#/components/responses/ErrorResponse-422'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Get a dashboard by id
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Return the full dashboard document (envelope metadata plus `definition`).
+
+
+        Set `expand=true` to populate display fields on `createdBy` and
+
+        `updatedBy`, and `record` on `managedBy`. Without `expand`, references
+
+        contain only `id`.'
+      operationId: GetDashboard
+      tags:
+      - Dashboards
+      parameters:
+      - $ref: '#/components/parameters/Dashboard-Id'
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Dashboard found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Update a dashboard
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Merge-patch update (RFC 7396).
+
+        Omitted fields are unchanged. When `definition` is present it replaces the
+
+        whole document (not a deep merge).
+
+
+        `description` is the only field that accepts a JSON `null`, which clears
+
+        it. Sending `null` for `schemaVersion`, `name`, `visibility`,
+
+        `objectTags`, or `definition` is rejected; omit the field instead to
+
+        leave it unchanged.'
+      operationId: UpdateDashboard
+      tags:
+      - Dashboards
+      parameters:
+      - $ref: '#/components/parameters/Dashboard-Id'
+      - $ref: '#/components/parameters/ExpandParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dashboard-UpdateRequest'
+      responses:
+        '200':
+          description: Dashboard updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '409':
+          $ref: '#/components/responses/ErrorResponse-409'
+        '422':
+          $ref: '#/components/responses/ErrorResponse-422'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  schemas:
+    FieldRef:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      description: 'Reference to a column / field. The `column` variant is a plain
+
+        column id; the others cover nested paths, correlation tags,
+
+        link/resource source fields, and primary keys.
+
+        '
+      properties:
+        type:
+          type: string
+          enum:
+          - column
+          - nested
+          - tag
+          - link
+          - primaryKey
+        column:
+          type: string
+          description: Column id. Populated when `type` is `column`; absent otherwise.
+        nested:
+          $ref: '#/components/schemas/FieldRefNested'
+          description: Populated when `type` is `nested`; absent otherwise.
+        tag:
+          $ref: '#/components/schemas/FieldRefTag'
+          description: Populated when `type` is `tag`; absent otherwise.
+        link:
+          $ref: '#/components/schemas/FieldRefLink'
+          description: Populated when `type` is `link`; absent otherwise.
+        primaryKey:
+          $ref: '#/components/schemas/FieldRefPrimaryKey'
+          description: Populated when `type` is `primaryKey`; absent otherwise.
+    AnomalyOptions:
+      type: object
+      additionalProperties: false
+      description: 'Settings for the anomaly chart: which column marks anomalous
+
+        points, which one separates the series, and how the two axes
+
+        are drawn.
+
+
+        This chart type is read-only. The product has no editor for
+
+        it, and only the monitor view produces one. Preserve these
+
+        settings when updating a dashboard that already has one, but
+
+        do not author them.
+
+        '
+      properties:
+        redPointField:
+          $ref: '#/components/schemas/FieldRef'
+        seriesField:
+          $ref: '#/components/schemas/FieldRef'
+        xConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        yConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        curve:
+          $ref: '#/components/schemas/LineCurveType'
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    Dashboard-CreateRequest:
+      title: DashboardCreateRequest
+      type: object
+      additionalProperties: false
+      required:
+      - schemaVersion
+      - name
+      - definition
+      description: 'Request body for creating a dashboard. Identity and audit fields are
+
+        assigned by the server.
+
+        '
+      properties:
+        schemaVersion:
+          type: integer
+          enum:
+          - 2
+          description: Must be `2`.
+        name:
+          type: string
+          minLength: 1
+        description:
+          type:
+          - string
+          - 'null'
+        visibility:
+          type: string
+          enum:
+          - Listed
+          - Hidden
+          description: Default `Listed` when omitted.
+        objectTags:
+          $ref: '#/components/schemas/ObjectTags'
+        definition:
+          $ref: '#/components/schemas/DashboardContent'
+    Dashboard-Resource:
+      title: DashboardResource
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - schemaVersion
+      - name
+      - description
+      - createdAt
+      - updatedAt
+      - createdBy
+      - updatedBy
+      - managedBy
+      - visibility
+      - objectTags
+      - definition
+      description: 'Full dashboard resource returned by Get, Create, and Update. Includes
+
+        all envelope fields from the list item plus `definition`.
+
+
+        When `expand=true`, `createdBy` and `updatedBy` include display
+
+        fields (e.g. `label`); `managedBy.record` is populated. Without
+
+        `expand`, references contain only `id`.
+
+        '
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+        schemaVersion:
+          type: integer
+          enum:
+          - 2
+          description: Dashboard document schema version. Always `2` on the wire.
+        name:
+          type: string
+          minLength: 1
+        description:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+        createdBy:
+          $ref: '#/components/schemas/User'
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'The app or other object that manages this dashboard, or `null` when
+
+            it is not managed. Returned only — it cannot be set through this
+
+            API.
+
+            '
+        visibility:
+          type: string
+          enum:
+          - Listed
+          - Hidden
+        objectTags:
+          $ref: '#/components/schemas/ObjectTags'
+        definition:
+          $ref: '#/components/schemas/DashboardContent'
+    ColumnRef:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      description: A reference to a column the rule filters on.
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          description: 'The column''s OPAL type (e.g. `string`, `int64`, `link`). Used to
+
+            cast the rule''s values to the column''s type when the filter is
+
+            compiled to OPAL. Optional: omit to compare the values without
+
+            casting them.
+
+            '
+        path:
+          type: string
+          description: 'Dotted path within an object/variant/JSON column (e.g.
+
+            `data.user.status`). Omit for a whole-column reference.
+
+            '
+        link:
+          $ref: '#/components/schemas/ColumnLink'
+          description: Present when the column is a foreign-key / link column.
+    ValueKindScalar:
+      type: object
+      additionalProperties: false
+      required:
+      - scalarType
+      description: 'Scalar value parameter. The user enters or selects a simple
+
+        value (string, number, or boolean).
+
+        '
+      properties:
+        scalarType:
+          type: string
+          enum:
+          - string
+          - number
+          - bool
+        valueSource:
+          $ref: '#/components/schemas/ValueSource'
+          description: 'For select parameters (viewType `singleSelect` / `multiSelect`),
+
+            where the dropdown''s candidate values come from. Absent for
+
+            free-entry (`textInput` / `numberInput`) parameters.
+
+            '
+    LinkTargetUrl:
+      type: object
+      additionalProperties: false
+      required:
+      - url
+      description: A link to an arbitrary URL.
+      properties:
+        url:
+          type: string
+        icon:
+          type: string
+          description: 'Icon name for the URL link in card chrome. Default `link`.
+
+            Omit when default.
+
+            '
+    DrilldownSourceParameter:
+      type: object
+      additionalProperties: false
+      required:
+      - sourceName
+      properties:
+        sourceName:
+          type: string
+          description: Name of the source dashboard parameter.
+    LinkTargetMetricsExplorer:
+      type: object
+      additionalProperties: false
+      properties:
+        targetDatasetId:
+          $ref: '#/components/schemas/ObjectId'
+        targetDatasetName:
+          type: string
+        targetMetricName:
+          type: string
+          description: Optional metric to preselect in the metrics explorer.
+    PredicateValues:
+      type: object
+      additionalProperties: false
+      required:
+      - values
+      description: Match the column against a list of discrete values.
+      properties:
+        values:
+          $ref: '#/components/schemas/IncludeExcludeValues'
+    FrontendTimeRangeRelative:
+      type: object
+      additionalProperties: false
+      required:
+      - millisFromCurrentTime
+      properties:
+        millisFromCurrentTime:
+          type: number
+          format: double
+          description: Custom relative window length in milliseconds.
+    ValueSource:
+      type: object
+      additionalProperties: false
+      required:
+      - source
+      properties:
+        source:
+          type: string
+          enum:
+          - custom
+          - dataset
+          - card
+        custom:
+          $ref: '#/components/schemas/ValueSourceCustom'
+          description: Populated when `source` is `custom`; absent otherwise.
+        dataset:
+          $ref: '#/components/schemas/ValueSourceDataset'
+          description: Populated when `source` is `dataset`; absent otherwise.
+        card:
+          $ref: '#/components/schemas/ValueSourceCard'
+          description: Populated when `source` is `card`; absent otherwise.
+    TimeNano:
+      type: string
+      format: RFC3339Nano
+    SingleStatOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        yConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            domain:
+              type: object
+              additionalProperties: false
+              properties:
+                range:
+                  $ref: '#/components/schemas/AxisBounds'
+            format:
+              $ref: '#/components/schemas/CellNumberFormat'
+            color:
+              $ref: '#/components/schemas/ColorConfig'
+            showRaw:
+              type: boolean
+        style:
+          type: object
+          additionalProperties: false
+          properties:
+            textMode:
+              type: string
+              enum:
+              - value
+              - name
+            textAlignment:
+              type: string
+              enum:
+              - center
+            colorMode:
+              type: string
+              enum:
+              - value
+              - none
+            chartMode:
+              type: string
+              enum:
+              - none
+              - line
+            showPercentChange:
+              type: boolean
+            label:
+              type: string
+            valueFontSize:
+              type: number
+              format: double
+            groupFontSize:
+              type: number
+              format: double
+        facet:
+          type: object
+          additionalProperties: false
+          properties:
+            sort:
+              type: string
+              enum:
+              - value-ascending
+              - value-descending
+              - name-ascending
+              - name-descending
+            limit:
+              type: integer
+              minimum: 1
+        aggregation:
+          type: string
+          enum:
+          - last-non-null
+          - last
+          - first-non-null
+          - first
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    Layout:
+      type: object
+      additionalProperties: false
+      required:
+      - sections
+      description: 'Sections are laid out in a 12-column grid. The grid width is a
+
+        fixed UI convention, not a stored field.
+
+        '
+      properties:
+        sections:
+          type: array
+          items:
+            $ref: '#/components/schemas/Section'
+    TextMatchTerms:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        required:
+        - term
+        properties:
+          term:
+            type: string
+            description: 'The match text: a substring, a glob, a regex, a search term, or a
+
+              single token, per the enclosing `match`.
+
+              '
+          exclude:
+            type: boolean
+            description: 'Exclude rows matching this term instead of keeping them. Default
+
+              `false`. Must be `false` for the `contains` and `tokens` matches,
+
+              which support inclusion only.
+
+              '
+    CellNumberFormat:
+      type: object
+      additionalProperties: false
+      description: 'Number formatting for a value axis or table cell. `options`
+
+        extends `Intl.NumberFormat` options with Observe metric units.
+
+        '
+      properties:
+        options:
+          type: object
+          additionalProperties: true
+          description: 'Intl.NumberFormat options (notation, maximumSignificantDigits,
+
+            etc.) plus `metricUnit`, `metricUnitPrecision`, `isCustomUnit`.
+
+            '
+        locale:
+          type: string
+        colorScale:
+          $ref: '#/components/schemas/ColorScaleConfig'
+        thresholds:
+          $ref: '#/components/schemas/ThresholdsConfig'
+    TopValueConfig:
+      type: object
+      additionalProperties: false
+      description: Value-axis config for TopList / ChangeOverTime.
+      properties:
+        range:
+          $ref: '#/components/schemas/AxisBounds'
+        scaleType:
+          $ref: '#/components/schemas/LogScale'
+        format:
+          $ref: '#/components/schemas/CellNumberFormat'
+        color:
+          $ref: '#/components/schemas/ColorConfig'
+        showAxis:
+          type: boolean
+        label:
+          type: string
+        aggregate:
+          type: string
+          description: Optional aggregate op (TopList only).
+    ObjectId:
+      type: string
+      format: ObjectId
+    CustomVegaOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        spec:
+          type: object
+          additionalProperties: true
+          description: Full Vega specification (JSON).
+        prompt:
+          type: string
+          description: Editor metadata; renderers ignore it.
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    ParameterDefaultValueCell:
+      type: object
+      additionalProperties: false
+      properties:
+        bool:
+          type: boolean
+        float64:
+          type: number
+          format: double
+        int64:
+          description: 'A 64-bit integer. Normally a decimal string, which preserves
+
+            full precision; may also be a JSON number or `null`.
+
+            '
+          type:
+          - string
+          - number
+          - 'null'
+        string:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          $ref: '#/components/schemas/TimeNano'
+        duration:
+          $ref: '#/components/schemas/DurationNanoseconds'
+        datasetref:
+          $ref: '#/components/schemas/ParameterDefaultValueDatasetRef'
+        nullValueType:
+          type: string
+    TopListOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        key:
+          $ref: '#/components/schemas/FieldRef'
+        value:
+          $ref: '#/components/schemas/FieldRef'
+        viewConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            useSingleStatOnSingleGroup:
+              type: boolean
+        keyConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            label:
+              type: string
+            order:
+              type: string
+              enum:
+              - descending
+              - ascending
+            showOthers:
+              type: boolean
+            limit:
+              type: integer
+              minimum: 1
+        valueConfig:
+          $ref: '#/components/schemas/TopValueConfig'
+        barConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            bandSize:
+              type: number
+              format: double
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    PredicateMultiColumn:
+      type: object
+      additionalProperties: false
+      required:
+      - fields
+      - rows
+      description: 'Filter on combinations of several columns or paths at once. Each entry in
+
+        `rows` is one allowed combination — or, with `exclude`, one disallowed
+
+        combination — whose values line up positionally with `fields`.
+
+        '
+      properties:
+        fields:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - columnId
+            properties:
+              columnId:
+                type: string
+              path:
+                type: string
+        rows:
+          type: array
+          items:
+            type: array
+            items:
+              type:
+              - string
+              - 'null'
+        exclude:
+          type: boolean
+          description: Exclude the listed tuples instead of including them. Default `false`.
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    ColumnLink:
+      type: object
+      additionalProperties: false
+      required:
+      - label
+      description: 'The foreign key of a link column. Describes how this dataset joins to
+
+        the dataset the link points at, so the rule can filter through the link.
+
+        '
+      properties:
+        label:
+          type: string
+          description: Foreign-key label, used as the linked-column name in OPAL.
+        targetDatasetId:
+          $ref: '#/components/schemas/ObjectId'
+          description: Dataset the link points at.
+        linkType:
+          type: string
+          description: Foreign-key type (e.g. `linked`).
+        srcFields:
+          type: array
+          items:
+            type: string
+          description: Source-side key fields on this dataset.
+        dstFields:
+          type: array
+          items:
+            type: string
+          description: Destination-side key fields on the target dataset.
+        targetStageLabel:
+          type: string
+          description: Label of the target stage the link resolves against. Usually empty.
+    InputSourceDataset:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      description: 'A dataset binding. Normally identified by `id`, but `id` may be absent
+
+        for a by-name binding — a mode where the input references a dataset only
+
+        by `name`/`path` (e.g. an input resolved across tenants, where IDs
+
+        differ but names match) — in which case `name` or `path` carries the
+
+        reference.
+
+        '
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+          description: 'Human-readable dataset name. Optional but
+
+            encouraged — aids cross-tenant migration where
+
+            IDs differ but names match.
+
+            '
+        path:
+          type: string
+          description: 'Slash-delimited dataset path, e.g.
+
+            "kubernetes/Pod". Optional but encouraged.
+
+            '
+    BarOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        x2:
+          $ref: '#/components/schemas/FieldRef'
+        xConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        yConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        colorConfig:
+          $ref: '#/components/schemas/ColorConfig'
+        barConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            showValues:
+              type: boolean
+            areaFillType:
+              $ref: '#/components/schemas/ChartAreaFillType'
+            horizontal:
+              type: boolean
+            grouped:
+              type: boolean
+        stack:
+          $ref: '#/components/schemas/StackMode'
+        histogram:
+          type: boolean
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    Input:
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      - source
+      description: 'A named data source for a card''s pipeline, bound in OPAL as `@name`.
+
+        The data itself can come from a dataset, another card''s result, or the
+
+        document''s dataset filter.
+
+        '
+      properties:
+        name:
+          type: string
+        role:
+          type: string
+          enum:
+          - Data
+          - Reference
+          description: 'How the pipeline uses this input. `Data` (the default; omit) is a
+
+            primary stream of rows. `Reference` is a lookup binding — a
+
+            dataset joined in to enrich the data rather than queried
+
+            directly.
+
+            '
+        isUserInput:
+          type: boolean
+          description: 'Whether a user added this input explicitly, rather than it being
+
+            generated from the pipeline. Editor state only — it does not
+
+            affect how the query runs. Default `false`; omit for generated
+
+            inputs.
+
+            '
+        source:
+          $ref: '#/components/schemas/InputSource'
+    DrilldownTimeRange:
+      type: string
+      enum:
+      - current
+      - default
+      - none
+      description: 'Which time range the destination opens with. `current` (the default)
+
+        carries over the source card''s selected range. `default` uses the
+
+        target dashboard''s own default range. `none` sends no time range at
+
+        all. Omit when `current`.
+
+        '
+    RangeAnnotation:
+      type: object
+      additionalProperties: false
+      required:
+      - from
+      - to
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        label:
+          type: string
+        color:
+          type: string
+    FilterPredicate:
+      type: object
+      additionalProperties: false
+      required:
+      - operator
+      description: 'The filter operation. `operator` selects which variant body is
+
+        populated.
+
+        '
+      properties:
+        operator:
+          type: string
+          enum:
+          - values
+          - text
+          - range
+          - cidr
+          - jsonValues
+          - multiColumn
+          - resourceInstance
+          - parameter
+          - tag
+          - exists
+          - pattern
+          - filterCondition
+        values:
+          $ref: '#/components/schemas/PredicateValues'
+        text:
+          $ref: '#/components/schemas/PredicateText'
+        filterCondition:
+          $ref: '#/components/schemas/PredicateFilterCondition'
+        range:
+          $ref: '#/components/schemas/PredicateRange'
+        cidr:
+          $ref: '#/components/schemas/PredicateCidr'
+        jsonValues:
+          $ref: '#/components/schemas/PredicateJsonValues'
+        multiColumn:
+          $ref: '#/components/schemas/PredicateMultiColumn'
+        resourceInstance:
+          $ref: '#/components/schemas/PredicateResourceInstance'
+        parameter:
+          $ref: '#/components/schemas/PredicateParameter'
+        tag:
+          $ref: '#/components/schemas/PredicateTag'
+        exists:
+          $ref: '#/components/schemas/PredicateExists'
+        pattern:
+          $ref: '#/components/schemas/PredicatePattern'
+    CustomVegaLiteOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        spec:
+          type: object
+          additionalProperties: true
+          description: Full Vega-Lite specification (JSON).
+        prompt:
+          type: string
+          description: Editor metadata; renderers ignore it.
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    FrontendTimeRangeAbsolute:
+      type: object
+      additionalProperties: false
+      required:
+      - startTime
+      - endTime
+      properties:
+        startTime:
+          $ref: '#/components/schemas/Time'
+          description: Window start, as a UTC RFC 3339 timestamp.
+        endTime:
+          $ref: '#/components/schemas/Time'
+          description: Window end, as a UTC RFC 3339 timestamp.
+    LinkTargetServiceExplorer:
+      type: object
+      additionalProperties: false
+      properties:
+        targetDatasetId:
+          $ref: '#/components/schemas/ObjectId'
+        targetDatasetName:
+          type: string
+    FrontendTimeRange:
+      type: object
+      additionalProperties: false
+      required:
+      - kind
+      description: "A time range, expressed in one of three ways. `kind` selects which of\n`preset`, `relative`, or `absolute` is present; the other two are\nabsent.\n  Preset:   `{ \"kind\": \"preset\", \"preset\": { \"presetType\": \"PAST_15_MINUTES\" } }`\n  Relative: `{ \"kind\": \"relative\", \"relative\": { \"millisFromCurrentTime\": 900000 } }`\n  Absolute: `{ \"kind\": \"absolute\", \"absolute\": { \"startTime\": \"2024-04-30T00:00:00.000Z\", \"endTime\": \"2024-05-01T00:00:00.000Z\" } }`\nKnown preset types include:\n  PAST_5_MINUTES, PAST_10_MINUTES, PAST_15_MINUTES,\n  PAST_30_MINUTES, PAST_60_MINUTES, PAST_2_HOURS,\n  PAST_4_HOURS, PAST_6_HOURS, PAST_12_HOURS,\n  PAST_24_HOURS, PAST_2_DAYS, PAST_3_DAYS, PAST_4_DAYS,\n  PAST_7_DAYS, PAST_14_DAYS, PAST_30_DAYS,\n  TODAY, YESTERDAY, THIS_DAY_LAST_WEEK, LAST_WEEK, LAST_MONTH.\nFor presets, `millisFromCurrentTime` is derivable and is not stored.\n"
+      properties:
+        kind:
+          type: string
+          enum:
+          - preset
+          - relative
+          - absolute
+        preset:
+          $ref: '#/components/schemas/FrontendTimeRangePreset'
+          description: Populated when `kind` is `preset`; absent otherwise.
+        relative:
+          $ref: '#/components/schemas/FrontendTimeRangeRelative'
+          description: Populated when `kind` is `relative`; absent otherwise.
+        absolute:
+          $ref: '#/components/schemas/FrontendTimeRangeAbsolute'
+          description: Populated when `kind` is `absolute`; absent otherwise.
+    PieOptions:
+      type: object
+      additionalProperties: false
+      description: 'Pie / donut chart options. `key` picks the column that divides the
+
+        circle into slices and `value` the column that sizes them, so the
+
+        encoding is the key/value pair TopList uses rather than x/y.
+
+        '
+      properties:
+        key:
+          $ref: '#/components/schemas/FieldRef'
+        value:
+          $ref: '#/components/schemas/FieldRef'
+        keyConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            order:
+              type: string
+              enum:
+              - descending
+              - ascending
+            showOthers:
+              type: boolean
+              description: 'Collapse the slices beyond `limit` into a single
+
+                "Other" slice instead of dropping them.
+
+                '
+            limit:
+              type: integer
+              minimum: 1
+            color:
+              $ref: '#/components/schemas/ColorConfig'
+        valueConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            format:
+              $ref: '#/components/schemas/CellNumberFormat'
+        pieConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            innerRadius:
+              type: number
+              format: double
+              description: 'Hole size as a fraction of the outer radius. `0`
+
+                (the default) is a full pie; any larger value
+
+                renders a donut.
+
+                '
+            showValues:
+              type: boolean
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    ObjectRef:
+      title: ObjectRef
+      type: object
+      description: 'A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/ObjectBrief'
+    LineOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        xConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        yConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        colorConfig:
+          $ref: '#/components/schemas/ColorConfig'
+        lineConfig:
+          $ref: '#/components/schemas/LineConfig'
+        horizontal:
+          type: boolean
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    ExtensionsBag:
+      type: object
+      additionalProperties: true
+      description: 'An escape hatch for visualization settings that do not yet have
+
+        a typed field of their own. Contents are stored and returned
+
+        unchanged and are not validated, so newer clients can round-trip
+
+        settings this version of the schema does not name.
+
+        '
+    FrontendTimeRangePreset:
+      type: object
+      additionalProperties: false
+      required:
+      - presetType
+      properties:
+        presetType:
+          type: string
+          description: 'Named Observe preset. Not a closed enum so newly added
+
+            presets can round-trip without a schema bump.
+
+            '
+    InputSourceDatasetFilter:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      description: 'A binding to one of the additional dataset filters carried in
+
+        `ui.additionalDatasetFilters`, named by `id`. The primary
+
+        `definition.datasetFilter` needs no body: an input binds it by setting
+
+        `type: datasetFilter` and omitting this object.
+
+        '
+      properties:
+        id:
+          type: string
+          description: Id of an entry in `ui.additionalDatasetFilters`.
+    FieldRefPrimaryKey:
+      type: object
+      additionalProperties: false
+      required:
+      - srcFields
+      description: A primary key composed of one or more source fields.
+      properties:
+        srcFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldRefSrcField'
+    ObjectTags:
+      title: ObjectTags
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          type: string
+      description: 'User-applied tags for organization and discovery, as a map of tag key
+
+        to a list of values. For example: {"env": ["prod", "staging"], "team": ["platform"]}.
+
+        '
+    PredicateCidr:
+      type: object
+      additionalProperties: false
+      required:
+      - values
+      description: 'Match an IPv4 address column against CIDR ranges. Each `value` is a
+
+        CIDR string, and each may be included or excluded.
+
+        '
+      properties:
+        values:
+          $ref: '#/components/schemas/IncludeExcludeValues'
+    DurationNanoseconds:
+      type: string
+      format: int64 nanoseconds
+    Dashboard-UpdateRequest:
+      title: DashboardUpdateRequest
+      type: object
+      additionalProperties: false
+      description: 'Merge-patch (RFC 7396) body for a dashboard. Only fields present are
+
+        applied. When `definition` is present it replaces the whole document.
+
+        '
+      properties:
+        schemaVersion:
+          type: integer
+          enum:
+          - 2
+          description: Must be `2` when sent.
+        name:
+          type: string
+          minLength: 1
+        description:
+          type:
+          - string
+          - 'null'
+        visibility:
+          type: string
+          enum:
+          - Listed
+          - Hidden
+        objectTags:
+          $ref: '#/components/schemas/ObjectTags'
+        definition:
+          $ref: '#/components/schemas/DashboardContent'
+    PredicateFilterCondition:
+      type: object
+      additionalProperties: false
+      required:
+      - condition
+      description: 'A raw OPAL boolean condition, for filters the other predicates cannot
+
+        express. The condition is stored as an opaque string and is not parsed
+
+        or validated here. Supply the boolean expression on its own, without a
+
+        surrounding filter verb — the verb comes from the enclosing
+
+        `FilterRule`.
+
+        '
+      properties:
+        condition:
+          type: string
+          description: OPAL boolean expression, without a surrounding filter verb.
+        disabledCondition:
+          type: string
+          description: 'A condition that is currently turned off, retained in the document
+
+            so it can be restored later.
+
+            '
+    Threshold:
+      type: object
+      additionalProperties: false
+      required:
+      - value
+      - color
+      properties:
+        value:
+          type: number
+          format: double
+        op:
+          type: string
+          enum:
+          - gt
+          - lt
+          description: Default `gt`. Omit when default.
+        color:
+          type: string
+        label:
+          type: string
+        fillRegion:
+          type: boolean
+          description: Default `false`. Omit when default.
+    DivergingScaleMidpoint:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      properties:
+        type:
+          type: string
+          enum:
+          - preset
+          - value
+        preset:
+          type: string
+          enum:
+          - average
+          - zero
+          - midpointLowerUpper
+          description: Populated when `type` is `preset`; absent otherwise.
+        value:
+          type: number
+          format: double
+          description: Populated when `type` is `value`; absent otherwise.
+    ValueKind:
+      type: object
+      additionalProperties: false
+      required:
+      - kind
+      properties:
+        kind:
+          type: string
+          enum:
+          - resource
+          - scalar
+          - correlationTag
+        resource:
+          $ref: '#/components/schemas/ValueKindResource'
+          description: Populated when `kind` is `resource`; absent otherwise.
+        scalar:
+          $ref: '#/components/schemas/ValueKindScalar'
+          description: Populated when `kind` is `scalar`; absent otherwise.
+        correlationTag:
+          $ref: '#/components/schemas/ValueKindCorrelationTag'
+          description: Populated when `kind` is `correlationTag`; absent otherwise.
+    ColorSelection:
+      type: string
+      description: A named swatch color or an arbitrary CSS color string.
+    AxisConfig:
+      type: object
+      additionalProperties: false
+      description: 'Configuration for a single axis: whether it is shown, its label,
+
+        bounds, scale, and number formatting. On a value axis
+
+        `valueFormat` uses all of `CellNumberFormat`; on category and
+
+        time axes only its `options` apply.
+
+        '
+      properties:
+        show:
+          type: boolean
+        label:
+          type: string
+        domain:
+          type: object
+          additionalProperties: false
+          properties:
+            range:
+              $ref: '#/components/schemas/AxisBounds'
+            type:
+              type: string
+              enum:
+              - Query Window
+              - Fit to Data
+        scaleType:
+          $ref: '#/components/schemas/LogScale'
+        valueFormat:
+          $ref: '#/components/schemas/CellNumberFormat'
+        hideGridLines:
+          type: boolean
+        orient:
+          type: string
+          enum:
+          - left
+          - right
+          - top
+          - bottom
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    JoinKey:
+      type: object
+      additionalProperties: false
+      required:
+      - srcFields
+      - dstFields
+      description: 'Join specification for an `exists` predicate: `srcFields` on this dataset
+
+        map positionally to `dstFields` on the joined input.
+
+        '
+      properties:
+        srcFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/JoinField'
+        dstFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/JoinField'
+    LinkTargetTraceExplorer:
+      type: object
+      additionalProperties: false
+      properties:
+        targetDatasetId:
+          $ref: '#/components/schemas/ObjectId'
+        targetDatasetName:
+          type: string
+    ParameterDefaultValueDatasetRef:
+      type: object
+      additionalProperties: false
+      properties:
+        datasetId:
+          $ref: '#/components/schemas/ObjectId'
+        datasetPath:
+          type: string
+        stageId:
+          type: string
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    ScatterOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        xConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        yConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        colorConfig:
+          $ref: '#/components/schemas/ColorConfig'
+        labelConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            field:
+              $ref: '#/components/schemas/FieldRef'
+        radiusConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            field:
+              $ref: '#/components/schemas/FieldRef'
+            range:
+              $ref: '#/components/schemas/AxisBounds'
+            scaleType:
+              type: string
+              enum:
+              - log
+              - linear
+            fillType:
+              type: string
+              enum:
+              - solid
+              - none
+              - translucent
+        horizontal:
+          type: boolean
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    LinkTargetDashboard:
+      type: object
+      additionalProperties: false
+      required:
+      - targetDashboardId
+      properties:
+        targetDashboardId:
+          $ref: '#/components/schemas/ObjectId'
+        targetDashboardName:
+          type: string
+          description: 'Cached display name of the destination dashboard. Optional but
+
+            encouraged — used as the chrome label when `Drilldown.name` is
+
+            omitted.
+
+            '
+    ValueKindCorrelationTag:
+      type: object
+      additionalProperties: false
+      required:
+      - tagName
+      description: 'Correlation tag parameter. The user selects one or more values
+
+        of a named correlation tag (e.g. `k8s.pod.name`). Expressions
+
+        bind to this parameter via `FilterParameter` actions.
+
+        '
+      properties:
+        tagName:
+          type: string
+    VisualizationOptions:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      properties:
+        type:
+          $ref: '#/components/schemas/VizType'
+        line:
+          $ref: '#/components/schemas/LineOptions'
+        bar:
+          $ref: '#/components/schemas/BarOptions'
+        area:
+          $ref: '#/components/schemas/AreaOptions'
+        scatter:
+          $ref: '#/components/schemas/ScatterOptions'
+        table:
+          $ref: '#/components/schemas/TableOptions'
+        singleStat:
+          $ref: '#/components/schemas/SingleStatOptions'
+        heatmap:
+          $ref: '#/components/schemas/HeatmapOptions'
+        topList:
+          $ref: '#/components/schemas/TopListOptions'
+        changeOverTime:
+          $ref: '#/components/schemas/ChangeOverTimeOptions'
+        anomaly:
+          $ref: '#/components/schemas/AnomalyOptions'
+        customVega:
+          $ref: '#/components/schemas/CustomVegaOptions'
+        customVegaLite:
+          $ref: '#/components/schemas/CustomVegaLiteOptions'
+        pie:
+          $ref: '#/components/schemas/PieOptions'
+        legacyD3:
+          $ref: '#/components/schemas/LegacyD3Options'
+          description: 'Populated for every deprecated / D3-only `type`
+
+            (timeseries_deprecated, histogram, gantt, ...).
+
+            '
+    DrilldownSource:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      properties:
+        type:
+          type: string
+          enum:
+          - parameter
+          - grouping
+          - custom
+          - selection-resource
+          - selection-tag
+        parameter:
+          $ref: '#/components/schemas/DrilldownSourceParameter'
+        grouping:
+          $ref: '#/components/schemas/DrilldownSourceGrouping'
+        custom:
+          $ref: '#/components/schemas/DrilldownSourceCustom'
+        selectionResource:
+          $ref: '#/components/schemas/DrilldownSourceSelectionResource'
+        selectionTag:
+          $ref: '#/components/schemas/DrilldownSourceSelectionTag'
+    DrilldownSourceGrouping:
+      type: object
+      additionalProperties: false
+      required:
+      - columnId
+      properties:
+        columnId:
+          type: string
+          description: Column name (or dataset id for resource groupings).
+    PredicateJsonValues:
+      type: object
+      additionalProperties: false
+      required:
+      - paths
+      description: 'Match values at one or more JSON paths inside an object, variant, or
+
+        JSON column. Values listed under the same path are OR-ed together;
+
+        `combine` controls how the separate paths combine with each other.
+
+        '
+      properties:
+        combine:
+          type: string
+          enum:
+          - and
+          - or
+          description: How to combine across paths. Default `and`.
+        paths:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - path
+            - values
+            properties:
+              path:
+                type: string
+              excludePath:
+                type: boolean
+                description: Exclude (negate) this whole path. Default `false`.
+              values:
+                $ref: '#/components/schemas/IncludeExcludeValues'
+    FilterRule:
+      type: object
+      additionalProperties: false
+      required:
+      - predicate
+      description: 'One filter rule: apply `predicate` to `column`, quantified by `verb`.
+
+        Set `enabled: false` to keep a rule in the document but leave it out of
+
+        the query.
+
+        '
+      properties:
+        column:
+          $ref: '#/components/schemas/ColumnRef'
+          description: 'Target column. Absent for predicates that carry their own targets
+
+            (`multiColumn`, `resourceInstance`, `exists`) or that run globally
+
+            (a `text` match with no column).
+
+            '
+        verb:
+          $ref: '#/components/schemas/FilterVerb'
+        enabled:
+          type: boolean
+          description: Default `true`. Omit when enabled.
+        predicate:
+          $ref: '#/components/schemas/FilterPredicate'
+    LinkTargetLogExplorer:
+      type: object
+      additionalProperties: false
+      properties:
+        targetDatasetId:
+          $ref: '#/components/schemas/ObjectId'
+        targetDatasetName:
+          type: string
+    ValueSourceCard:
+      type: object
+      additionalProperties: false
+      required:
+      - cardId
+      description: 'Values are the distinct entries of a column in another card''s
+
+        result.
+
+        '
+      properties:
+        cardId:
+          type: string
+        columnId:
+          type: string
+    ParameterDefaultValue:
+      type: object
+      additionalProperties: false
+      properties:
+        bool:
+          type: boolean
+        float64:
+          type: number
+          format: double
+        int64:
+          description: 'A 64-bit integer. Normally a decimal string, which preserves
+
+            full precision; may also be a JSON number or `null`.
+
+            '
+          type:
+          - string
+          - number
+          - 'null'
+        string:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          $ref: '#/components/schemas/TimeNano'
+        duration:
+          $ref: '#/components/schemas/DurationNanoseconds'
+        array:
+          description: 'A list of values. JSON `null` means empty. Otherwise an object
+
+            with a `value` array — not a bare JSON array. Items are scalar
+
+            cells; nested arrays and resource links are not allowed.
+
+            '
+          type:
+          - object
+          - 'null'
+          additionalProperties: false
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/ParameterDefaultValueCell'
+        link:
+          description: 'A resource-instance value, or JSON `null` when unset.
+
+            '
+          type:
+          - object
+          - 'null'
+          additionalProperties: false
+          properties:
+            datasetId:
+              $ref: '#/components/schemas/ObjectId'
+            storedLabel:
+              type: string
+            primaryKeyValue:
+              type: array
+              items:
+                type: object
+                additionalProperties: false
+                required:
+                - name
+                properties:
+                  name:
+                    type: string
+                  value:
+                    $ref: '#/components/schemas/ParameterDefaultValueCell'
+        datasetref:
+          $ref: '#/components/schemas/ParameterDefaultValueDatasetRef'
+        nullValueType:
+          type: string
+    DashboardContent:
+      type: object
+      additionalProperties: false
+      required:
+      - layout
+      description: 'The dashboard body — what the dashboard shows — kept separate
+
+        from the identity, audit, and governance metadata on the
+
+        dashboard itself so the two can evolve independently. This is
+
+        the object governed by `schemaVersion`.
+
+        '
+      properties:
+        defaultTimeRange:
+          $ref: '#/components/schemas/FrontendTimeRange'
+        datasetFilter:
+          $ref: '#/components/schemas/DatasetFilter'
+          description: 'Optional filterable dataset that acts as a cross-card filter
+
+            source. Cards reference it via `Input.source.datasetFilter`.
+
+            The current UI allows at most one per dashboard.
+
+            '
+        hiddenParameters:
+          type: array
+          description: 'Parameters that are not placed on the grid as a
+
+            parameter card in any section. They still drive the
+
+            dashboard''s queries. This is separate from
+
+            `Parameter.hidden`, which hides the input control of a
+
+            parameter that *is* placed.
+
+            '
+          items:
+            $ref: '#/components/schemas/Parameter'
+        hiddenQueries:
+          type: array
+          description: 'Data-only query cards that are not displayed in any section.
+
+            Typically shared base queries referenced as inputs by visible
+
+            cards. Each must have an `id` so other cards can reference it.
+
+            '
+          items:
+            $ref: '#/components/schemas/Query'
+        ui:
+          type: object
+          additionalProperties: true
+          description: 'Opaque dashboard-level UI state, stored and returned
+
+            unchanged. Must be a JSON object; its contents are not
+
+            validated. Recognized keys include
+
+            `liveMode` (auto-refresh enabled), `autoPack`,
+
+            `selectedCardId`, and `additionalDatasetFilters`, which
+
+            holds any filterable datasets beyond the primary
+
+            `datasetFilter`.
+
+            '
+        layout:
+          $ref: '#/components/schemas/Layout'
+    IncludeExcludeValues:
+      type: array
+      description: 'A list of discrete values, each either included or excluded. Every value
+
+        is carried as a string: write numbers as decimal strings (which keeps
+
+        full int64 precision) and booleans as `"true"` / `"false"`. Values are
+
+        cast back to the column''s type when the filter runs. A JSON `null` value
+
+        matches the OPAL null.
+
+        '
+      items:
+        type: object
+        additionalProperties: false
+        required:
+        - value
+        - exclude
+        properties:
+          value:
+            type:
+            - string
+            - 'null'
+          exclude:
+            type: boolean
+    DrilldownSourceSelectionResource:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+    Visualization:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      description: 'How a query card''s results are rendered. `type` picks the chart
+
+        type; `x`, `y`, and `groupBy` map result columns onto the
+
+        chart''s axes and series; `legend`, `thresholds`, and
+
+        `annotations` apply to every chart type; and `options` carries
+
+        the settings specific to the chosen `type`.
+
+        '
+      properties:
+        type:
+          $ref: '#/components/schemas/VizType'
+        x:
+          $ref: '#/components/schemas/FieldRef'
+          description: 'The result column plotted on the x-axis. Usually a plain
+
+            column id (`{type: column, column: "<id>"}`); use the
+
+            `link` form when the axis groups by a link or resource
+
+            rather than a single column.
+
+            '
+        y:
+          type: array
+          description: 'The result column or columns plotted on the y-axis.
+
+            Usually plain column ids
+
+            (`{type: column, column: "<id>"}`); an entry may use the
+
+            `link` form to address a link or resource by its source
+
+            fields.
+
+            '
+          items:
+            $ref: '#/components/schemas/FieldRef'
+        groupBy:
+          type: array
+          items:
+            type: string
+        legend:
+          $ref: '#/components/schemas/LegendConfig'
+        thresholds:
+          type: array
+          items:
+            $ref: '#/components/schemas/Threshold'
+        annotations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Annotation'
+        tableConfig:
+          $ref: '#/components/schemas/TableConfig'
+          description: Meaningful only when `type == "table"`.
+        options:
+          $ref: '#/components/schemas/VisualizationOptions'
+          description: 'Settings specific to the chosen chart type — axis, color,
+
+            line, and bar configuration and so on. `options.type`
+
+            selects the variant and always matches
+
+            `Visualization.type`.
+
+
+            Anything that applies to every chart type lives at the
+
+            top level instead and is not repeated here: the `x`,
+
+            `y`, and `groupBy` encodings and the `legend`,
+
+            `thresholds`, and `annotations` settings. Each variant
+
+            also carries an `extensions` object for settings that do
+
+            not yet have a typed field.
+
+            '
+    FieldRefLink:
+      type: object
+      additionalProperties: false
+      required:
+      - srcFields
+      description: 'A link/resource field composed of one or more source fields, with
+
+        an optional display label.
+
+        '
+      properties:
+        label:
+          type: string
+        srcFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldRefSrcField'
+    LegendConfig:
+      type: object
+      additionalProperties: false
+      properties:
+        visible:
+          type: boolean
+          description: Default `true`. Omit when default.
+        layout:
+          type: string
+          enum:
+          - list
+          - table
+          description: Default `list`. Omit when default.
+        tableAggregates:
+          type: array
+          items:
+            type: string
+          description: 'For `layout: table`, the per-series summary columns shown in
+
+            the legend, in order (e.g. "Last", "Min", "Max", "Avg",
+
+            "Sum"). Absent when the legend shows no summary columns.
+
+            '
+    HeatmapOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        fieldValue:
+          $ref: '#/components/schemas/FieldRef'
+        autobinTemporalAxis:
+          type: boolean
+        xBinSize:
+          type: number
+          format: double
+        yBinSize:
+          type: number
+          format: double
+        useLogColorScale:
+          type: boolean
+        colorScale:
+          $ref: '#/components/schemas/SequentialColorScale'
+        useReverseColorScale:
+          type: boolean
+        showValueText:
+          type: boolean
+        aggregate:
+          type: string
+          description: Vega-Lite non-arg aggregate op (e.g. "count", "sum", "mean").
+        valueFormattingConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    ImageCard:
+      type: object
+      additionalProperties: false
+      description: 'A static image card. Renders the image at `url` inside the
+
+        card''s grid placement.
+
+        '
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+          description: Image source URL.
+        stretch:
+          type: boolean
+          description: 'When `true`, the image stretches to fill the card. Default
+
+            `false`. Omit when default.
+
+            '
+        resizeBehavior:
+          type: string
+          enum:
+          - height
+          - width
+          - fill
+          - contain
+          description: How the image is fitted within the card bounds.
+        backgroundFillColor:
+          type: string
+          description: CSS color painted behind the image (letterboxing).
+    ValueSourceDataset:
+      type: object
+      additionalProperties: false
+      required:
+      - datasetId
+      description: 'Values are the distinct entries of a column in a dataset.
+
+        '
+      properties:
+        datasetId:
+          $ref: '#/components/schemas/ObjectId'
+        columnId:
+          type: string
+    PredicateResourceInstance:
+      type: object
+      additionalProperties: false
+      required:
+      - instances
+      description: 'Narrow the results to specific resource instances. Each instance is
+
+        identified by its primary-key column/value pairs.
+
+        '
+      properties:
+        instances:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - resourceId
+            properties:
+              resourceId:
+                type: array
+                items:
+                  type: object
+                  additionalProperties: false
+                  required:
+                  - name
+                  - value
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type:
+                      - string
+                      - 'null'
+              exclude:
+                type: boolean
+                description: Exclude this instance instead of including it. Default `false`.
+    Time:
+      type: string
+      format: RFC3339
+    CardContent:
+      type: object
+      additionalProperties: false
+      required:
+      - pipeline
+      - inputs
+      description: 'A card''s query: the OPAL pipeline, the data it runs over, and — for
+
+        cards built with the visual query builder — the builder''s state.
+
+        '
+      properties:
+        pipeline:
+          type: array
+          items:
+            type: string
+          description: 'OPAL source, as an array of lines (one statement / line per
+
+            element; join with newline to reconstruct the source).
+
+            Newlines are significant in OPAL, so the array form avoids
+
+            embedded escape sequences and produces clean diffs.
+
+            Canonical when `builderDef` is absent. Derived (read-only)
+
+            when `builderDef` is present.
+
+            '
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Input'
+          description: 'Data sources for this card''s pipeline. Each input provides
+
+            a named binding accessible via `@name` in OPAL.
+
+            '
+        builderDef:
+          type: object
+          additionalProperties: false
+          description: 'State for the visual query builder. This version of the schema
+
+            does not give the builder''s expression surface a typed shape; it
+
+            is carried opaquely under `ui`.
+
+
+            When `builderDef` is present the builder is the source of truth
+
+            and `pipeline` is only a rendering of it, so clients MUST NOT
+
+            edit `pipeline` directly. When `builderDef` is absent, `pipeline`
+
+            is the source of truth.
+
+            '
+          properties:
+            ui:
+              type: object
+              additionalProperties: true
+              description: 'The builder definition. Opaque: stored and returned
+
+                unchanged, and its contents are not validated.
+
+                '
+    PredicatePattern:
+      type: object
+      additionalProperties: false
+      required:
+      - values
+      description: 'Filter by log or data pattern cluster. Each `value` is a pattern
+
+        identifier produced by an earlier pattern-extraction stage in the
+
+        pipeline.
+
+        '
+      properties:
+        values:
+          $ref: '#/components/schemas/IncludeExcludeValues'
+    FieldRefTag:
+      type: object
+      additionalProperties: false
+      required:
+      - tagId
+      description: A correlation-tag reference.
+      properties:
+        tagId:
+          type: string
+    PredicateParameter:
+      type: object
+      additionalProperties: false
+      required:
+      - parameters
+      description: 'Bind a column filter to one or more dashboard or worksheet parameters.
+
+        The values to filter on come from those parameters at query time, so the
+
+        filter follows whatever a viewer selects.
+
+        '
+      properties:
+        parameters:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - parameterId
+            properties:
+              parameterId:
+                type: string
+              columnPath:
+                type: string
+                description: Filter against a path within an object/variant column.
+              resourceInstanceField:
+                type: string
+                description: 'For a resource-instance parameter, filter against one of its
+
+                  key fields rather than the whole instance.
+
+                  '
+        tagId:
+          type: string
+          description: Correlation-tag id, when the bound filter targets a tag.
+        datasetKind:
+          type: string
+          description: 'Kind of the dataset being filtered (e.g. `Event`, `Resource`). The
+
+            rule picks its OPAL filter verb from this, because a resource
+
+            dataset filters differently than an event dataset. Omit for a
+
+            plain row filter.
+
+            '
+        castToColumnType:
+          type: boolean
+          description: 'Whether to cast the bound parameter value to the column''s type
+
+            before comparing. Set `false` to compare the value as it is, with no
+
+            type coercion. Default `true`. Omit when default.
+
+            '
+    ObjectBrief:
+      title: ObjectBrief
+      type: object
+      description: 'Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - managedBy
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager''s brief.'
+    Card:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      - geometry
+      properties:
+        type:
+          type: string
+          enum:
+          - query
+          - parameter
+          - markdown
+          - image
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+        query:
+          $ref: '#/components/schemas/Query'
+          description: Populated when `type` is `query`; absent otherwise.
+        parameter:
+          $ref: '#/components/schemas/Parameter'
+          description: 'The parameter definition rendered as an input control.
+
+            Populated when `type` is `parameter`; absent otherwise.
+
+            '
+        markdown:
+          $ref: '#/components/schemas/MarkdownCard'
+          description: Populated when `type` is `markdown`; absent otherwise.
+        image:
+          $ref: '#/components/schemas/ImageCard'
+          description: Populated when `type` is `image`; absent otherwise.
+    Query:
+      type: object
+      additionalProperties: false
+      required:
+      - content
+      description: 'A query card: an OPAL pipeline run over one or more data inputs and
+
+        rendered as a visualization. This is the default card type in both
+
+        dashboards and worksheets.
+
+
+        A card carries either a single `visualization` or, when each
+
+        expression in the query is charted separately, a `multiVisualization`
+
+        array. Exactly one of the two is present.
+
+        '
+      properties:
+        type:
+          const: query
+          description: Default `query`. May be omitted.
+        id:
+          type: string
+          minLength: 1
+          description: 'Optional. Required only when another card references this one
+
+            as an input (`Input.source.card`), or when it appears in a
+
+            dashboard''s `hiddenQueries`. Any non-empty string; the format
+
+            is not constrained. Ids are stored exactly as sent, so
+
+            references to them from inside the opaque
+
+            `content.builderDef.ui` stay valid.
+
+            '
+        label:
+          type: string
+          minLength: 1
+          description: 'Optional. User-authored card title. Omit when the card is
+
+            unnamed; clients synthesize a display name (e.g. "Untitled
+
+            Stage N") and must not persist that placeholder. Empty
+
+            string is invalid — absence is omission. Hidden / base
+
+            queries are identified by `id`, not by label. (Grid
+
+            placement lives on the wrapping `Card.geometry`, not here.)
+
+            '
+        timeRange:
+          $ref: '#/components/schemas/FrontendTimeRange'
+        content:
+          $ref: '#/components/schemas/CardContent'
+        visualization:
+          $ref: '#/components/schemas/Visualization'
+        multiVisualization:
+          type: array
+          description: 'One visualization per expression, for a card whose query has
+
+            several expressions and charts each one separately. Each entry
+
+            pairs an expression id (`A`, `B`, ...) with its visualization —
+
+            for example a dual-axis chart where `A` is a line and `B` is a
+
+            bar. Present instead of `visualization`.
+
+            '
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - expression
+            - visualization
+            properties:
+              expression:
+                type: string
+                description: The expression id this visualization renders.
+              visualization:
+                $ref: '#/components/schemas/Visualization'
+        drilldowns:
+          type: array
+          items:
+            $ref: '#/components/schemas/Drilldown'
+        ui:
+          type: object
+          description: 'Opaque card-level UI state, stored and returned unchanged. Must be
+
+            a JSON object; its contents are not validated.
+
+            '
+          additionalProperties: true
+    Dashboard-ListResponse:
+      title: DashboardListResponse
+      type: object
+      additionalProperties: false
+      required:
+      - dashboards
+      - meta
+      - errors
+      properties:
+        dashboards:
+          type: array
+          description: 'This page of results. Empty when the filter matches nothing or the
+
+            offset is past the end.
+
+            '
+          items:
+            $ref: '#/components/schemas/Dashboard-ListItem'
+        meta:
+          $ref: '#/components/schemas/Meta'
+        errors:
+          type: array
+          description: 'Items that could not be returned. Each entry identifies the dashboard
+
+            by `id` and includes a `type`/`message` explaining why it was omitted.
+
+            Empty when all items were returned successfully.
+
+            '
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - id
+            - type
+            - message
+            properties:
+              id:
+                $ref: '#/components/schemas/ObjectId'
+              type:
+                type: string
+                description: Stable machine-readable error type.
+              message:
+                type: string
+                description: Human-readable explanation of why this item was omitted.
+    ValueKindResource:
+      type: object
+      additionalProperties: false
+      description: 'A resource-instance parameter: the viewer picks one specific
+
+        resource — a row identified by its primary key — from a dataset.
+
+        `datasetId` may be absent for a parameter not yet bound to a
+
+        dataset; such a parameter is stored as-is, but cannot resolve a
+
+        value until a dataset is set.
+
+        '
+      properties:
+        datasetId:
+          $ref: '#/components/schemas/ObjectId'
+    FieldRefSrcField:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      properties:
+        type:
+          type: string
+          enum:
+          - column
+          - nested
+        column:
+          type: string
+          description: Column id. Populated when `type` is `column`; absent otherwise.
+        nested:
+          $ref: '#/components/schemas/FieldRefNested'
+          description: Populated when `type` is `nested`; absent otherwise.
+    ColorScaleConfig:
+      type: object
+      additionalProperties: false
+      required:
+      - colorScaleType
+      properties:
+        colorScaleType:
+          type: string
+          enum:
+          - Sequential
+          - Diverging
+        bounds:
+          $ref: '#/components/schemas/AxisBounds'
+        sequentialColorScale:
+          $ref: '#/components/schemas/SequentialColorScale'
+        divergingColorScale:
+          $ref: '#/components/schemas/DivergingColorScale'
+        divergingScaleMidpoint:
+          $ref: '#/components/schemas/DivergingScaleMidpoint'
+        reverseColors:
+          type: boolean
+        target:
+          type: string
+          enum:
+          - text
+          - fill
+          - pill
+          description: Cell color target (table / single-stat contexts).
+        ignoreMinimum:
+          type: boolean
+    Drilldown:
+      type: object
+      additionalProperties: false
+      required:
+      - trigger
+      - target
+      description: 'A link from a card to somewhere else — another dashboard, one of the
+
+        explorers, or an external URL — optionally carrying the card''s time
+
+        range and parameter values across to the destination.
+
+        '
+      properties:
+        trigger:
+          type: string
+          enum:
+          - card
+          - row
+          description: 'What the viewer interacts with to follow the link.
+
+            `card` — a link offered on the card itself.
+
+            `row`  — a drilldown from clicking a data point or table row.
+
+            '
+        target:
+          $ref: '#/components/schemas/LinkTarget'
+        name:
+          type: string
+          minLength: 1
+          description: 'Authored label for the link. Omit when unnamed; clients may fall
+
+            back to naming the destination (URL, dashboard name, explorer
+
+            dataset). Empty string is invalid — absence is omission.
+
+            '
+        timeRange:
+          $ref: '#/components/schemas/DrilldownTimeRange'
+        includeFilteredDataset:
+          type: boolean
+          description: 'When `true`, explorer destinations also receive the source
+
+            document''s current dataset-filter query params. Default `false`.
+
+            Omit when default.
+
+            '
+        openInNewTab:
+          type: boolean
+          description: Default `true`. Omit when default.
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/DrilldownParameter'
+    DrilldownSourceSelectionTag:
+      type: object
+      additionalProperties: false
+      required:
+      - tag
+      properties:
+        tag:
+          type: string
+    AreaOptions:
+      type: object
+      additionalProperties: false
+      description: Stacked-area chart options.
+      properties:
+        xConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        yConfig:
+          $ref: '#/components/schemas/AxisConfig'
+        colorConfig:
+          $ref: '#/components/schemas/ColorConfig'
+        areaConfig:
+          $ref: '#/components/schemas/LineConfig'
+        horizontal:
+          type: boolean
+        stack:
+          $ref: '#/components/schemas/StackMode'
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    ChangeOverTimeOptions:
+      type: object
+      additionalProperties: false
+      properties:
+        key:
+          $ref: '#/components/schemas/FieldRef'
+        value:
+          $ref: '#/components/schemas/FieldRef'
+        keyConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            label:
+              type: string
+            order:
+              type: string
+              enum:
+              - descending
+              - ascending
+        valueConfig:
+          $ref: '#/components/schemas/TopValueConfig'
+        barConfig:
+          type: object
+          additionalProperties: false
+          properties:
+            bandSize:
+              type: number
+              format: double
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    Annotation:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      properties:
+        type:
+          type: string
+          enum:
+          - point
+          - range
+        point:
+          $ref: '#/components/schemas/PointAnnotation'
+          description: Populated when `type` is `point`; absent otherwise.
+        range:
+          $ref: '#/components/schemas/RangeAnnotation'
+          description: Populated when `type` is `range`; absent otherwise.
+    AxisBounds:
+      type: object
+      additionalProperties: false
+      properties:
+        start:
+          type: number
+          format: double
+        end:
+          type: number
+          format: double
+    LineConfig:
+      type: object
+      additionalProperties: false
+      description: Line / area drawing options.
+      properties:
+        showPoints:
+          type: boolean
+        showValues:
+          type: boolean
+        curve:
+          $ref: '#/components/schemas/LineCurveType'
+        areaFillType:
+          $ref: '#/components/schemas/ChartAreaFillType'
+    DatasetFilter:
+      type: object
+      additionalProperties: false
+      required:
+      - datasetId
+      description: 'A filterable dataset that acts as a cross-card filter source.
+
+        Cards reference it via `Input.source.datasetFilter`. The
+
+        current UI allows creating at most one per dashboard.
+
+        '
+      properties:
+        id:
+          type: string
+          description: 'Stable identity of this dataset filter, used by a card input that
+
+            binds to one specific filter rather than to the primary one.
+
+            Optional for a document with a single, primary dataset filter.
+
+            '
+        datasetId:
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+          description: Human-readable dataset name. Optional but encouraged.
+        path:
+          type: string
+          description: Slash-delimited dataset path. Optional but encouraged.
+        filterActions:
+          type: array
+          description: 'The constraints this filter applies, each a `FilterRule`. These are
+
+            the filters a viewer sees and can change in the filter bar.
+
+            '
+          items:
+            $ref: '#/components/schemas/FilterRule'
+        preFilterActions:
+          type: array
+          description: 'Constraints applied to the dataset before `filterActions`. Same
+
+            `FilterRule` shape, but these are fixed by the document''s author and
+
+            are not shown in the filter bar.
+
+            '
+          items:
+            $ref: '#/components/schemas/FilterRule'
+        autoApply:
+          type: boolean
+          description: 'When `true`, the filter is automatically applied to new
+
+            cards added to the dashboard. Default `true`. Omit when
+
+            default.
+
+            '
+    JoinField:
+      type: object
+      additionalProperties: false
+      required:
+      - columnId
+      properties:
+        columnId:
+          type: string
+        path:
+          type: string
+          description: Dotted path within the column, when the join key is a nested field.
+    LineCurveType:
+      type: string
+      enum:
+      - Linear
+      - Curve
+      - Step
+    ColumnFormatting:
+      type: object
+      additionalProperties: false
+      description: Formatting rules for a single column.
+      properties:
+        valueColors:
+          type: array
+          description: Map specific values to colors.
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - value
+            - color
+            properties:
+              value:
+                type: string
+              color:
+                type: string
+        colorTarget:
+          type: string
+          enum:
+          - pill
+          - text
+          - fill
+          description: 'Where to apply value colors. Default `pill`. Omit when
+
+            default.
+
+            '
+        colorScale:
+          $ref: '#/components/schemas/ColorScaleConfig'
+          description: 'Continuous color scale for numeric cells in this column.
+
+            Uses the shared `ColorScaleConfig` so both the sequential
+
+            and diverging scale selections, the diverging midpoint,
+
+            bounds, and the `reverseColors` / `ignoreMinimum` toggles
+
+            round-trip losslessly.
+
+            '
+        numberFormat:
+          type: object
+          additionalProperties: true
+          description: 'Intl.NumberFormat options for the column (e.g. notation,
+
+            maximumSignificantDigits).
+
+            '
+        thresholds:
+          $ref: '#/components/schemas/ThresholdsConfig'
+          description: 'Banded conditional coloring for numeric cells in this column.
+
+            '
+        prefix:
+          type: string
+        suffix:
+          type: string
+    TableConfig:
+      type: object
+      additionalProperties: false
+      properties:
+        viewType:
+          type: string
+          enum:
+          - auto
+          - flexible
+          - compact
+          - log
+          description: 'Row density and layout of the table. Default `auto`,
+
+            which picks a density based on the result. Omit when
+
+            default.
+
+            '
+        columnWidths:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+            minimum: 1
+        columnVisibility:
+          type: object
+          additionalProperties:
+            type: boolean
+        columnOrder:
+          type: array
+          items:
+            type: string
+        conditionalFormatting:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ColumnFormatting'
+          description: 'Per-column conditional formatting rules. Keys are column
+
+            names. Absent columns have no special formatting.
+
+            '
+        sort:
+          type: array
+          description: 'How the table''s rows are sorted. Each entry sorts by one
+
+            result column, and earlier entries take precedence. This
+
+            sorts the presented result and does not change the card''s
+
+            OPAL pipeline. Omit to leave the result in its natural
+
+            order.
+
+            '
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - column
+            - ascending
+            properties:
+              column:
+                type: string
+              ascending:
+                type: boolean
+        limit:
+          type: integer
+          minimum: 1
+          description: 'Maximum number of rows to show. This limits the presented
+
+            result and does not add a `limit` verb to the card''s OPAL
+
+            pipeline. Omit to use the view default.
+
+            '
+    StackMode:
+      type: string
+      enum:
+      - zero
+      - center
+      - normalize
+    Dashboard-ListItem:
+      title: DashboardListItem
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - schemaVersion
+      - name
+      - createdAt
+      - updatedAt
+      - createdBy
+      - description
+      - updatedBy
+      - managedBy
+      - visibility
+      - objectTags
+      description: 'Dashboard envelope metadata returned by list. Does not include `definition`.
+
+
+        When `expand=true`, `createdBy` and `updatedBy` include display
+
+        fields (e.g. `label`); `managedBy.record` is populated. Without
+
+        `expand`, references contain only `id`.
+
+        '
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+        schemaVersion:
+          type: integer
+          enum:
+          - 2
+          description: Dashboard document schema version. Always `2` on the wire.
+        name:
+          type: string
+          minLength: 1
+        description:
+          type:
+          - string
+          - 'null'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+        createdBy:
+          $ref: '#/components/schemas/User'
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'The app or other object that manages this dashboard, or `null` when
+
+            it is not managed. Returned only — it cannot be set through this
+
+            API.
+
+            '
+        visibility:
+          type: string
+          enum:
+          - Listed
+          - Hidden
+        objectTags:
+          $ref: '#/components/schemas/ObjectTags'
+    PredicateRange:
+      type: object
+      additionalProperties: false
+      description: 'Keep rows whose column value falls in a numeric, time, or duration
+
+        range. `start` and `end` are inclusive by default; either may be null
+
+        for an open-ended range.
+
+        '
+      properties:
+        start:
+          type:
+          - number
+          - 'null'
+        end:
+          type:
+          - number
+          - 'null'
+        startUnit:
+          type: string
+          description: OPAL duration unit for `start` on duration columns (e.g. `ns`).
+        endUnit:
+          type: string
+          description: OPAL duration unit for `end` on duration columns.
+        startExclusive:
+          type: boolean
+          description: Use `>` instead of `>=` for `start`. Default `false`.
+        endExclusive:
+          type: boolean
+          description: Use `<` instead of `<=` for `end`. Default `false`.
+        invert:
+          type: boolean
+          description: Filter out the range instead (wraps in `not (...)`). Default `false`.
+        toColumnId:
+          type: string
+          description: 'Second column, for comparing one interval against another — for
+
+            example filtering on a resource''s validity window, where the range
+
+            spans from `column` to `toColumnId`.
+
+            '
+    TableOptions:
+      type: object
+      additionalProperties: false
+      description: 'Table presentation lives in `Visualization.tableConfig`; this
+
+        variant only carries the extensions escape hatch.
+
+        '
+      properties:
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+    MarkdownCard:
+      type: object
+      additionalProperties: false
+      description: A text card. Renders formatted prose rather than data.
+      required:
+      - body
+      properties:
+        title:
+          type: string
+        body:
+          type: string
+          description: CommonMark text rendered in the card.
+    PredicateText:
+      type: object
+      additionalProperties: false
+      required:
+      - match
+      - terms
+      description: 'Match text against the column, or across the whole row when
+
+        `FilterRule.column` is absent. `match` chooses the syntax — substring,
+
+        glob, regular expression, free-text search, or token lookup — and with
+
+        it the OPAL function the rule compiles to. `match` is always stored
+
+        explicitly and is never guessed from the shape of the terms.
+
+        '
+      properties:
+        match:
+          type: string
+          enum:
+          - contains
+          - glob
+          - regex
+          - search
+          - tokens
+          description: '- contains — substring via `contains()` (case-sensitive) or `search()` (see `caseSensitive`)
+
+            - glob     — glob `~` / `!~`
+
+            - regex    — regular expression
+
+            - search   — free-text `search()` term (unified search)
+
+            - tokens   — token-index lookup
+
+            '
+        caseSensitive:
+          type: boolean
+          description: Only for the `contains` match. Default `true`.
+        terms:
+          $ref: '#/components/schemas/TextMatchTerms'
+        paths:
+          type: array
+          description: 'Term groups scoped to individual JSON paths. Only for
+
+            `match: regex` and `match: search`; each entry applies its terms to
+
+            one path within the column instead of the column as a whole.
+
+            '
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - path
+            - terms
+            properties:
+              path:
+                type: string
+              terms:
+                $ref: '#/components/schemas/TextMatchTerms'
+    DrilldownSourceCustom:
+      type: object
+      additionalProperties: false
+      required:
+      - value
+      properties:
+        value:
+          type: string
+    ValueSourceCustom:
+      type: object
+      additionalProperties: false
+      required:
+      - values
+      description: A fixed list of values, authored by hand.
+      properties:
+        values:
+          type: object
+          additionalProperties:
+            type: string
+          description: Map of value -> display label.
+    ThresholdsConfig:
+      type: object
+      additionalProperties: false
+      required:
+      - startingColor
+      description: 'Banded coloring driven by numeric thresholds: each band colors
+
+        values above its `value`. This is separate from
+
+        `Visualization.thresholds[]`, which draws threshold lines and
+
+        regions on a chart.
+
+        '
+      properties:
+        startingColor:
+          $ref: '#/components/schemas/ColorSelection'
+        defaultColor:
+          $ref: '#/components/schemas/ColorSelection'
+        thresholds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - value
+            - exceedsColor
+            properties:
+              value:
+                type: number
+                format: double
+              exceedsColor:
+                $ref: '#/components/schemas/ColorSelection'
+        drawType:
+          type: string
+          enum:
+          - Lines
+          - Dashed lines
+          - Filled regions
+          - Filled regions & lines
+          - Filled regions & dashed lines
+        mode:
+          type: string
+          enum:
+          - Value
+          - Percentage
+        visible:
+          type: boolean
+        target:
+          type: string
+          enum:
+          - text
+          - fill
+          - pill
+          description: Cell color target (table contexts).
+    DrilldownParameter:
+      type: object
+      additionalProperties: false
+      required:
+      - destinationName
+      - source
+      properties:
+        destinationName:
+          type: string
+        isRequiredCorrelationTag:
+          type: boolean
+          description: 'When `true` and source is `parameter` pointing to a
+
+            correlation tag parameter, the destination will receive
+
+            a `requiredTag-` prefixed query parameter. Default `false`.
+
+            Omit when default.
+
+            '
+        isColumnFilter:
+          type: boolean
+          description: 'When `true`, generation serializes the mapping with a
+
+            `filter-<destinationName>=` query key instead of `tag-` /
+
+            `requiredTag-`. Used for column/resource filter mappings on
+
+            explorer destinations. Default `false`. Omit when default.
+
+            '
+        source:
+          $ref: '#/components/schemas/DrilldownSource'
+    SequentialColorScale:
+      type: string
+      enum:
+      - Blues
+      - Greens
+      - Greys
+      - Oranges
+      - Purples
+      - Reds
+      - BuGn
+      - BuPu
+      - GnBu
+      - OrRd
+      - PuBu
+      - PuBuGn
+      - PuRd
+      - RdPu
+      - YlGn
+      - YlGnBu
+      - YlOrBr
+      - YlOrRd
+      - Viridis
+      - Inferno
+      - Magma
+      - Plasma
+      - Warm
+      - Cool
+      - Cubehelix
+      - Turbo
+      - Cividis
+    PredicateTag:
+      type: object
+      additionalProperties: false
+      required:
+      - values
+      description: 'Filter on the values of a correlation tag. Name the tag with `tagName`,
+
+        `tagId`, or both. To negate the filter, mark the individual entries in
+
+        `values` as excluded.
+
+        '
+      properties:
+        tagName:
+          type: string
+        tagId:
+          type: string
+        values:
+          $ref: '#/components/schemas/IncludeExcludeValues'
+    PointAnnotation:
+      type: object
+      additionalProperties: false
+      required:
+      - at
+      properties:
+        at:
+          type: string
+        label:
+          type: string
+        color:
+          type: string
+    LogScale:
+      type: object
+      additionalProperties: false
+      properties:
+        use:
+          type: boolean
+        base:
+          type: number
+          format: double
+    Section:
+      type: object
+      additionalProperties: false
+      required:
+      - title
+      - cards
+      properties:
+        title:
+          type: string
+        collapsed:
+          type: boolean
+          description: Default `false`. Omit when default.
+        hideParameter:
+          type: string
+          description: 'Id of a parameter that controls this section''s visibility
+
+            (the "hide sections" feature). When that parameter has a
+
+            truthy value the section is hidden from viewers. Absent when
+
+            the section is always shown.
+
+            '
+        cards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Card'
+    ChartAreaFillType:
+      type: string
+      enum:
+      - SolidFill
+      - TranslucentFill
+      - GradientFill
+      - NoFill
+    DivergingColorScale:
+      type: string
+      enum:
+      - BrBG
+      - PRGn
+      - PiYG
+      - PuOr
+      - RdBu
+      - RdGy
+      - RdYlBu
+      - RdYlGn
+      - Spectral
+    Parameter:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - label
+      - valueKind
+      description: 'A viewer-controllable value that cards reference from OPAL as
+
+        `$parameterId`. `valueKind` fixes what sort of value it holds and
+
+        `viewType` chooses the input control. Dashboards can place a parameter
+
+        on the grid as a card; worksheets cannot.
+
+        '
+      properties:
+        id:
+          type: string
+          minLength: 1
+        label:
+          type: string
+          minLength: 1
+        viewType:
+          type: string
+          enum:
+          - resourceInput
+          - dropdown
+          - textInput
+          - numberInput
+          - singleSelect
+          - multiSelect
+          description: 'UI widget hint. Defaults vary by `valueKind.kind`:
+
+            - `resource` → `resourceInput`
+
+            - `scalar` with a `valueSource` → `singleSelect`
+
+            - `scalar` without → `textInput`
+
+            Omit when the default applies.
+
+            '
+        valueKind:
+          $ref: '#/components/schemas/ValueKind'
+        allowEmpty:
+          type: boolean
+          description: Default `true`. Omit when default.
+        hidden:
+          type: boolean
+          description: 'When `true`, the parameter''s input control is not rendered to
+
+            viewers; the parameter still drives queries and (per the
+
+            hide-sections feature) section visibility. Set only at creation
+
+            time. Default `false`. Omit when default.
+
+            '
+        defaultValue:
+          description: 'The parameter''s default value, as a tagged object with exactly
+
+            one key naming the value''s type. For a string parameter,
+
+            `{ "string": null }` means an empty control that encodes as OPAL
+
+            null, while `{ "string": "" }` encodes as an empty string. Omit
+
+            when there is no default.
+
+            '
+          $ref: '#/components/schemas/ParameterDefaultValue'
+        customEmptyValueLabel:
+          type:
+          - string
+          - 'null'
+    VizType:
+      type: string
+      description: 'The chart type. Also selects which `VisualizationOptions`
+
+        variant applies — `Visualization.type` and
+
+        `VisualizationOptions.type` always match.
+
+
+        Types suffixed `_deprecated` are superseded by a current type
+
+        of the same shape (for example `line` supersedes
+
+        `timeseries_deprecated`) and SHOULD NOT be used in new
+
+        content. The types listed after them are specialized charts
+
+        that have no current equivalent and are not deprecated.
+
+
+        `anomaly` is read-only. The product has no editor for it, and
+
+        only the monitor view produces one. Preserve it when updating
+
+        a dashboard that already has one, but do not author it.
+
+        '
+      enum:
+      - line
+      - bar
+      - area
+      - scatter
+      - table
+      - singleStat
+      - heatmap
+      - topList
+      - changeOverTime
+      - anomaly
+      - customVega
+      - customVegaLite
+      - pie
+      - timeseries_deprecated
+      - bar_deprecated
+      - stacked_area_deprecated
+      - singlevalue_deprecated
+      - list_deprecated
+      - valueovertime_deprecated
+      - stacked_bar_deprecated
+      - circular
+      - histogram
+      - gantt
+      - force_displacement
+      - dag
+      - geographic_map
+      - choropleth_map
+      - flame
+      - hex
+      - waterfall
+    ColorConfig:
+      type: object
+      additionalProperties: false
+      description: 'Color encoding. `field` selects the column driving color (often
+
+        the same series as `Visualization.groupBy`); `config` carries the
+
+        styling.
+
+        '
+      properties:
+        field:
+          $ref: '#/components/schemas/FieldRef'
+        config:
+          type: object
+          additionalProperties: false
+          properties:
+            colorConfigType:
+              type: string
+              enum:
+              - Color
+              - Threshold
+              - Mapping
+              - Range
+            color:
+              $ref: '#/components/schemas/ColorSelection'
+            thresholds:
+              $ref: '#/components/schemas/ThresholdsConfig'
+            colorMapping:
+              type: array
+              items:
+                type: object
+                additionalProperties: false
+                required:
+                - key
+                - color
+                properties:
+                  key:
+                    type:
+                    - string
+                    - 'null'
+                  color:
+                    $ref: '#/components/schemas/ColorSelection'
+                  matchType:
+                    type: string
+                    enum:
+                    - regex
+            colorScale:
+              $ref: '#/components/schemas/ColorScaleConfig'
+    InputSource:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      properties:
+        type:
+          type: string
+          enum:
+          - dataset
+          - card
+          - datasetFilter
+        dataset:
+          $ref: '#/components/schemas/InputSourceDataset'
+          description: Populated when `type` is `dataset`; absent otherwise.
+        card:
+          type: string
+          description: 'Populated when `type` is `card`; absent otherwise.
+
+            References another card''s `id`.
+
+            '
+        datasetFilter:
+          $ref: '#/components/schemas/InputSourceDatasetFilter'
+          description: 'Names which dataset filter to bind, for documents that have more
+
+            than one. Omit to bind the primary `definition.datasetFilter` —
+
+            in that case `type: datasetFilter` is enough on its own. Absent
+
+            for other types.
+
+            '
+    PredicateExists:
+      type: object
+      additionalProperties: false
+      required:
+      - joinKey
+      description: 'Keep only rows that have a matching row in another dataset. A row is
+
+        kept when it joins, on `joinKey`, to the input named by `inputLabel`.
+
+        '
+      properties:
+        joinKey:
+          $ref: '#/components/schemas/JoinKey'
+        inputLabel:
+          type: string
+          description: 'Name of the input holding the dataset to join against, as declared
+
+            in the card''s list of inputs.
+
+            '
+        streaming:
+          type: boolean
+          description: 'Evaluate the join as a streaming existence check. Default `false`.
+
+            Omit when default.
+
+            '
+    Geometry:
+      type: object
+      additionalProperties: false
+      description: 'A card''s placement within its section''s grid, measured from the
+
+        section''s top-left corner. `x` and `w` are in grid columns (the
+
+        grid is 12 columns wide); `y` and `h` are in grid rows.
+
+        '
+      required:
+      - x
+      - y
+      - w
+      - h
+      properties:
+        x:
+          type: integer
+          minimum: 0
+        y:
+          type: integer
+          minimum: 0
+        w:
+          type: integer
+          minimum: 1
+        h:
+          type: integer
+          minimum: 1
+    LinkTarget:
+      type: object
+      additionalProperties: false
+      required:
+      - kind
+      properties:
+        kind:
+          type: string
+          enum:
+          - link
+          - dashboard
+          - logExplorer
+          - traceExplorer
+          - metricsExplorer
+          - serviceExplorer
+        link:
+          $ref: '#/components/schemas/LinkTargetUrl'
+        dashboard:
+          $ref: '#/components/schemas/LinkTargetDashboard'
+        logExplorer:
+          $ref: '#/components/schemas/LinkTargetLogExplorer'
+        traceExplorer:
+          $ref: '#/components/schemas/LinkTargetTraceExplorer'
+        metricsExplorer:
+          $ref: '#/components/schemas/LinkTargetMetricsExplorer'
+        serviceExplorer:
+          $ref: '#/components/schemas/LinkTargetServiceExplorer'
+    FilterVerb:
+      type: string
+      enum:
+      - filter
+      - ever
+      - always
+      - never
+      - filterLast
+      description: "How the predicate is quantified over time. The default, `filter`, keeps\nindividual matching rows and is what event data normally wants. The\nother verbs quantify the predicate over each interval or resource\nlifetime, keeping a whole interval or not at all:\n  - filter     — keep each matching row (default)\n  - ever       — the predicate matched at least once during the interval\n  - always     — the predicate matched for the entire interval\n  - never      — the predicate never matched during the interval\n  - filterLast — the predicate matched at the interval's latest point\nOmit for `filter`.\n"
+    FieldRefNested:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - path
+      description: A field addressed by id and nested path.
+      properties:
+        id:
+          type: string
+        path:
+          type: string
+    LegacyD3Options:
+      type: object
+      additionalProperties: true
+      description: 'Options for the legacy chart types — both the deprecated
+
+        variants of a current chart type and the specialized charts
+
+        that have no current equivalent. These charts predate the typed
+
+        options above, so their settings vary by chart type and are
+
+        only loosely validated: whatever is sent is preserved
+
+        unchanged under `extensions`.
+
+
+        New content SHOULD NOT use a deprecated type. Where a current
+
+        equivalent exists (for example `line` in place of
+
+        `timeseries_deprecated`), author that instead.
+
+        '
+      properties:
+        extensions:
+          $ref: '#/components/schemas/ExtensionsBag'
+  responses:
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-422:
+      description: Unprocessable entity — a required query parameter was omitted (e.g. `missing_field`).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-409:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  parameters:
+    Dashboard-Id:
+      name: id
+      in: path
+      required: true
+      description: 'Unique identifier of the dashboard (numeric id serialized as a string).
+
+        '
+      schema:
+        type: string
+        format: int64
+      example: '41000001'
+    ExpandParam:
+      name: expand
+      in: query
+      description: Whether to expand resources referenced in the response to include additional fields
+      schema:
+        type: boolean
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

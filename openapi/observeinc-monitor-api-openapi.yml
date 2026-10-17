@@ -1,0 +1,3463 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Monitor API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Monitor across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Monitor
+  description: Manage monitors. Learn more about monitors.
+paths:
+  /v1/monitors:
+    post:
+      summary: Create a new MonitorV2 and bind to actions
+      description: 'Creates a monitor. The `201` body is the default shape of `GET /v1/monitors/{id}`, not `Monitor-Resource`: this endpoint ignores `Observe-Api-Version`.'
+      operationId: createMonitor
+      tags:
+      - Monitor
+      requestBody:
+        description: The MonitorV2 to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorV2'
+      responses:
+        '201':
+          description: The monitor was created
+          headers:
+            Location:
+              schema:
+                type: string
+              description: The URI to the newly created monitor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorV2'
+        '400':
+          description: Invalid request
+    get:
+      summary: List monitors
+      description: 'This operation has two response shapes, chosen per request by the
+
+        `Observe-Api-Version` header.
+
+
+        **Default — stable.** Omit the header and the response is a plain JSON
+
+        array of monitors. This is the long-standing behaviour that existing
+
+        callers receive, and it does not change. It is summarised here rather
+
+        than fully specified: the parameters and the response schema documented
+
+        on this page describe the versioned shape.
+
+
+        **Versioned — rolling out.** Send
+
+        `Observe-Api-Version: 2026-08-04` (or later) to get the paginated
+
+        `{monitors, meta}` envelope specified below, with CEL `filter`,
+
+        `limit`/`offset` paging, `orderBy` and `expand`. This shape is being
+
+        rolled out account by account; until it reaches your account, sending
+
+        the header returns `403`. An earlier or unparseable date selects the
+
+        default shape instead.'
+      operationId: ListMonitors
+      tags:
+      - Monitor
+      parameters:
+      - name: filter
+        in: query
+        description: 'CEL expression that returned monitors must match. Must evaluate to
+
+          `bool`, and must be URL-encoded.
+
+
+          Only the fields below are filterable. An expression that fails to
+
+          compile, or that references anything outside this table, is rejected
+
+          with `400`; the field set is fixed, so retrying with a different
+
+          spelling will not succeed. `createdBy.name` is a common example of a
+
+          reference that is rejected — only `.id` is exposed on a user.
+
+
+          | Field | CEL type | Notes |
+
+          |-------|----------|-------|
+
+          | `id` | `int` | Compare unquoted, even though `id` serializes as a string in JSON. The default ordering. |
+
+          | `name` | `string` | Supports `matches()` for an RE2 regex. |
+
+          | `label` | `string` | Deprecated alias of `name`. |
+
+          | `description` | `string` | Supports `matches()`. Compare against `""` for "no description" — the response renders it as `null`, but the filter sees the empty string. |
+
+          | `disabled` | `bool` | Turned off by a user, or by a limit. |
+
+          | `ruleKind` | `string` | A `MonitorRuleKind` value, e.g. `"Threshold"`. |
+
+          | `aiTriagingMode` | `string` | A `MonitorAiTriagingMode` value. `"Triage"` is the enabled state the list''s AI auto-investigate column shows. |
+
+          | `createdAt` | `timestamp` | Use `timestamp("2026-01-01T00:00:00Z")` to compare. |
+
+          | `updatedAt` | `timestamp` | |
+
+          | `createdBy.id` | `int` | Id of the creating user. |
+
+          | `updatedBy.id` | `int` | Id of the last user to update it. |
+
+          | `managedBy.id` | `int` | Id of the managing app. Null when no app manages it. |
+
+          | `managed` | `bool` | Whether an app manages this monitor. `managed == false` selects the user-managed monitors, which `managedBy.id == null` cannot express. |
+
+          | `scheduled` | `bool` | Whether it runs on its own schedule. |
+
+          | `disabledCause` | `string` | A `MonitorDisabledCause` value, e.g. `"AlertRateLimit"`. Null while enabled. |
+
+          | `governorState` | `string` | A `MonitorGovernorState` value: `"Normal"`, `"GracePeriod"` or `"CostDisabled"`. Null when no spend limit is configured. |
+
+          | `rollupStatus` | `string` | A `MonitorRollupStatus` value: the outcome of the monitor''s own last run. Not every documented value is reachable — see the note below. |
+
+          | `health` | `string` | A `MonitorHealth` value: one rollup of run outcome, disabled cause, spend-limit state and cluster failover state. This is the value the list''s Health column shows. Not every documented value is reachable — see the note below. |
+
+          | `alertState` | `string` | A `MonitorAlertState` value: `"Triggering"`, `"Previous"` or `"Never"`. |
+
+          | `muteState` | `string` | A `MonitorMuteState` value. |
+
+          | `muteCount` | `int` | Number of mute rules covering the monitor; `0` when unmuted. |
+
+          | `mutedUntil` | `timestamp` | Null when not muted, or muted indefinitely. |
+
+          | `lastAlarmTime` | `timestamp` | Null if it has never alerted. |
+
+          | `lastErrorTime` | `timestamp` | Null if it has never logged a fatal error. |
+
+          | `lastWarnTime` | `timestamp` | Null if it has never warned. |
+
+
+          Comparisons combine with `&&` and `||`. A nullable field is compared
+
+          with `== null` / `!= null`; write the field on the left, since
+
+          `null == lastAlarmTime` is not recognised as a null check.
+
+
+          When `filter` is used together with the deprecated `nameExact` or
+
+          `nameSubstring` parameters, every condition must match.
+
+          '
+        schema:
+          type: string
+        required: false
+        examples:
+          regexOnName:
+            summary: Regex match on the monitor name
+            value: name.matches("checkout.*")
+          enumAndBool:
+            summary: Enum and boolean fields combined
+            value: ruleKind == "Threshold" && disabled == false
+          byCreator:
+            summary: Integer field — `createdBy.id` is unquoted in CEL
+            value: createdBy.id == 40000123
+          healthAndMute:
+            summary: Failing and not silenced
+            value: rollupStatus == "Failed" && muteState == "NotMuted"
+          neverAlerted:
+            summary: Null check — write the field on the left
+            value: lastAlarmTime == null
+          userManaged:
+            summary: Not managed by an app
+            value: managed == false
+          costLimited:
+            summary: Over its cost budget
+            value: governorState == "CostDisabled"
+      - name: expand
+        in: query
+        description: 'When `true`, populates `label` on the `createdBy` and `updatedBy` references.
+
+          '
+        schema:
+          type: boolean
+        required: false
+      - name: limit
+        in: query
+        description: Maximum number of results to return. Defaults to 200, max 1000.
+        schema:
+          type: integer
+          format: int64
+          default: 200
+          minimum: 1
+          maximum: 1000
+        required: false
+      - name: offset
+        in: query
+        description: Number of results to skip for pagination. Defaults to 0.
+        schema:
+          type: integer
+          format: int64
+          default: 0
+          minimum: 0
+        required: false
+      - name: orderBy
+        in: query
+        description: 'Comma-separated fields to order by, each optionally prefixed with `-`
+
+          for descending. Defaults to `id`.
+
+
+          Orderable fields: `id`, `name` (or its deprecated alias `label`),
+
+          `description`, `ruleKind`,
+
+          `disabled`, `createdAt`, `updatedAt`, `createdBy`, `updatedBy`,
+
+          `managedBy`, `scheduled`, `muteState`, `rollupStatus`, `health`,
+
+          `alertState`, `aiTriagingMode`, `lastAlarmTime`, `lastErrorTime`,
+
+          `lastWarnTime`. Anything else is
+
+          rejected with `400` — this list is narrower than the filterable
+
+          fields, so check it rather than assuming a filterable field can also
+
+          be sorted on.
+
+
+          `health` and `alertState` sort by severity, not alphabetically.
+
+          `id` is appended as a final tiebreak so paging is deterministic.
+
+          '
+        schema:
+          type: string
+        required: false
+        examples:
+          mostRecentlyAlerted:
+            summary: Most recently alerting first
+            value: -lastAlarmTime
+          byLabel:
+            summary: Two keys
+            value: ruleKind,-label
+      - name: nameExact
+        in: query
+        deprecated: true
+        description: 'Deprecated since API version 2026-08-04: use `filter` with `label == "..."` instead. Retained for backward compatibility; limits results to an exact match on the monitor label. When combined with `filter`, both conditions must match.
+
+          '
+        schema:
+          type: string
+        required: false
+      - name: nameSubstring
+        in: query
+        deprecated: true
+        description: 'Deprecated since API version 2026-08-04: use `filter` with `label.matches("...")` instead. Retained for backward compatibility; limits results to a case-insensitive substring match on the monitor label. When combined with `filter`, both conditions must match.
+
+          '
+        schema:
+          type: string
+        required: false
+      - name: Observe-Api-Version
+        in: header
+        description: 'Selects the response shape by release date (YYYY-MM-DD). A date on or after `2026-08-04` returns the `{monitors, meta}` envelope documented below, and requires that shape to be enabled for your account (otherwise `403`). Omitting the header returns the legacy bare-array response, as does an earlier or unparseable date. The no-header default never changes.
+
+          '
+        schema:
+          type: string
+          pattern: ^\d{4}-\d{2}-\d{2}$
+        required: false
+      responses:
+        '200':
+          description: Monitors listed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Monitor-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/monitor-mute-rules:
+    post:
+      summary: Create a new MonitorV2 Mute Rule
+      operationId: createMonitorMuteRule
+      tags:
+      - Monitor
+      requestBody:
+        description: The MonitorV2 Mute Rule to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorV2MuteRule'
+      responses:
+        '201':
+          description: The mute rule was created
+          headers:
+            Location:
+              schema:
+                type: string
+              description: The URI to the newly created mute rule
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorV2MuteRule'
+        '400':
+          description: Invalid request
+    get:
+      summary: List MonitorV2 Mute Rules with optional filters
+      operationId: listMonitorMuteRules
+      tags:
+      - Monitor
+      parameters:
+      - name: nameExact
+        in: query
+        description: limit to an exact string match
+        schema:
+          type: string
+        required: false
+      - name: nameSubstring
+        in: query
+        description: limit to a substring match
+        schema:
+          type: string
+        required: false
+      responses:
+        '200':
+          description: 'An array of mute rule objects is returned
+
+            '
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MonitorV2MuteRuleTerse'
+        '400':
+          description: Invalid request
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/monitors/{id}:
+    delete:
+      summary: Delete a MonitorV2
+      operationId: deleteMonitor
+      tags:
+      - Monitor
+      parameters:
+      - name: id
+        required: true
+        schema:
+          type: integer
+        in: path
+        description: The Monitor object id
+      responses:
+        '204':
+          description: The object was deleted
+        '400':
+          description: Invalid request
+    get:
+      x-badges:
+      - name: alpha
+        position: before
+        color: '#FF6600'
+      summary: Get a monitor
+      description: '> **⚠️ Alpha — the versioned response is under active development and
+
+        > may change without notice. The default response is stable.**
+
+
+        Returns one monitor in full: what `GET /v1/monitors` returns for it,
+
+        plus the query and rules that define it.
+
+
+        The `Observe-Api-Version` header picks one of two response shapes.
+
+
+        **Default (no header).** The long-standing body — `id`, `name`,
+
+        `description`, `disabled`, `health`, `ruleKind`, `monitorVersion`,
+
+        `definition`, `actionRules` and `effectiveScheduling` — which does not
+
+        change. The schema on this page describes the versioned shape, not this
+
+        one.
+
+
+        **Versioned.** `Observe-Api-Version: 2026-10-06` or later returns the
+
+        `Monitor-Resource` below, which matches the list: the list''s audit and
+
+        health fields, durations in seconds, and no `definition` wrapper. It is rolling out
+
+        account by account; until it
+
+        reaches yours, the header returns `403`. An earlier or unparseable date
+
+        returns the default shape.
+
+
+        Only `GET` has the versioned shape so far. `PATCH` and `DELETE` ignore the
+
+        header, so a versioned `GET` body cannot yet be sent back as-is.'
+      operationId: GetMonitor
+      tags:
+      - Monitor
+      parameters:
+      - $ref: '#/components/parameters/Monitor-Id'
+      - name: expand
+        in: query
+        description: 'When `true`, populates `label` on the `createdBy` and `updatedBy` references, and `record` on each `actions[].action`, including `label` on an email action''s `users`.
+
+          '
+        schema:
+          type: boolean
+        required: false
+      - name: Observe-Api-Version
+        in: header
+        description: 'Picks the response shape by release date (YYYY-MM-DD). `2026-10-06` or later returns `Monitor-Resource`, if enabled for your account (otherwise `403`). No header, or an earlier or unparseable date, returns the default shape described above.
+
+          '
+        schema:
+          type: string
+          pattern: ^\d{4}-\d{2}-\d{2}$
+        required: false
+      responses:
+        '200':
+          description: The monitor
+          headers:
+            Observe-Api-Version:
+              schema:
+                type: string
+              description: The version this response was resolved against.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Monitor-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      summary: Update a MonitorV2
+      description: 'Partially updates a monitor. Only **PATCH** is supported for this URL.
+
+
+        **Top-level merge:** The server reads the current monitor, then for each of these
+
+        properties—`name`, `disabled`, `description`, `ruleKind`, `definition`, `actionRules`—uses
+
+        the request value if the key is present in the body, otherwise keeps the stored value.
+
+        Keys omitted from the body do not change.
+
+
+        **Replace entire subtrees:** If `definition` or `actionRules` appears in the body, it
+
+        **replaces the whole** stored `definition` or `actionRules` value. The server does **not**
+
+        deep-merge inside `definition`, inside individual action rules, or inside nested structures
+
+        (for example an action rule’s `definition`). To change part of the monitor definition or
+
+        action configuration, send the complete `definition` and/or full `actionRules` array you want
+
+        saved.
+
+
+        **Action rules:** when a rule''s `definition.inline` is `true` the action belongs to this
+
+        monitor, and sending the rule back updates that action in place, keeping its `actionId`.
+
+        To rotate a PagerDuty `routing_key`, which sits in `definition.webhook.body`, GET the
+
+        monitor, edit the key, and PATCH `actionRules` back. A rule pointing at a shared action
+
+        (`definition.inline` is `false`) is bound by `actionId` alone; change a shared action''s
+
+        payload on the action itself.
+
+
+        **Not controlled by the body:** Other monitor fields (such as `id` from the path, or
+
+        `monitorVersion`) are not updated from this JSON body using the merge rules above.
+
+
+        **Extra properties:** Any other top-level JSON properties in the body are ignored for this
+
+        merge (they are not written to the monitor).'
+      operationId: updateMonitor
+      tags:
+      - Monitor
+      parameters:
+      - name: id
+        required: true
+        schema:
+          type: integer
+        in: path
+        description: The Monitor object id
+      requestBody:
+        description: 'Any subset of patchable fields. Omitted keys among
+
+          `name`, `disabled`, `description`, `ruleKind`, `definition`, and `actionRules` leave the
+
+          corresponding stored values unchanged. When `definition` or `actionRules` is sent, it must
+
+          be the full replacement value for that field.
+
+          '
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorV2PatchRequest'
+      responses:
+        '204':
+          description: 'The object was updated
+
+            '
+        '400':
+          description: Invalid request
+        '404':
+          description: The object was not found
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/monitor-mute-rules/{id}:
+    delete:
+      summary: Delete a MonitorV2 Mute Rule
+      operationId: deleteMonitorMuteRule
+      tags:
+      - Monitor
+      parameters:
+      - name: id
+        required: true
+        schema:
+          type: integer
+        in: path
+        description: The Mute Rule object id
+      responses:
+        '204':
+          description: The object was deleted
+        '400':
+          description: Invalid request
+    get:
+      summary: Get a MonitorV2 Mute Rule
+      operationId: getMonitorMuteRule
+      tags:
+      - Monitor
+      parameters:
+      - name: id
+        required: true
+        schema:
+          type: integer
+        in: path
+        description: The Mute Rule object id
+      responses:
+        '200':
+          description: 'The object is returned
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorV2MuteRule'
+        '404':
+          description: The object was not found
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/monitors/stats:
+    get:
+      summary: Get monitor attribute statistics
+      description: 'Counts monitors by one or more fields. No monitors are returned. Each
+
+        entry in `attributes` is a field to group by, and the response carries one
+
+        block per entry: that field''s distinct-value count, and its most frequent
+
+        values with a count each. Grouping by `health` answers "how many monitors
+
+        are in each health state".
+
+
+        Fields are the ones `GET /v1/monitors` lists under `filter`, written the
+
+        same way. An entry may also be a CEL expression over them, for buckets no
+
+        single field provides: `aiTriagingMode == "Triage"` gives `"true"` and
+
+        `"false"` rather than one bucket per stored mode. The expression must yield
+
+        one scalar per monitor — that value becomes the bucket key — so a list or
+
+        object is rejected with `400`.
+
+
+        Keys come back as JSON strings whatever the field''s type: numbers as
+
+        decimal digits, bools as `"true"` or `"false"`, timestamps as RFC 3339.
+
+
+        `meta` reports `totalMonitors` (before the filter) and `filteredMonitors`
+
+        (after).
+
+
+        For example, facet counts for the list''s Health and Type columns:
+
+
+        ```
+
+        GET /v1/monitors/stats?attributes=health,ruleKind&topK=10
+
+        ```
+
+
+        The AI column''s two buckets, over enabled monitors only. Both values hold
+
+        quotes, so both are CSV-escaped — inner `"` doubled, the item wrapped —
+
+        then URL-encoded:
+
+
+        ```
+
+        GET /v1/monitors/stats
+
+        ?attributes="aiTriagingMode == ""Triage"""
+
+        &filter=disabled == false
+
+        ```'
+      operationId: GetMonitorStats
+      tags:
+      - Monitor
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: 'CEL expression restricting which monitors contribute to the
+
+          statistics. Must evaluate to `bool`. Must be URL-encoded. If omitted,
+
+          statistics cover every monitor the caller may read. See
+
+          `GET /v1/monitors` for the field list and examples.
+
+          '
+      - in: query
+        name: attributes
+        schema:
+          type: string
+        required: true
+        description: 'Comma-separated list of the fields to group by — a field name from
+
+          the `GET /v1/monitors` `filter` table, or a CEL expression over those
+
+          fields. One statistic is computed per entry. Maximum 20 entries; an
+
+          empty list returns `400`.
+
+
+          Because an expression may itself contain a comma or a quote, the list
+
+          is CSV: wrap an entry in `"` if it holds either, and double any
+
+          literal `"` inside a wrapped entry. CSV-escape first, URL-encode
+
+          second. A bare field name needs neither, so the common case is just
+
+          `attributes=health,ruleKind`.
+
+          '
+      - in: query
+        name: topK
+        schema:
+          type: integer
+          format: int64
+          minimum: 1
+          maximum: 100
+        required: true
+        description: 'Number of top values to return per attribute, sorted by count
+
+          descending. Range 1–100. Each attribute''s total distinct count is
+
+          reported in `distinctCount` regardless, so a caller can tell when
+
+          values were left out.
+
+          '
+      responses:
+        '200':
+          description: Monitor statistics retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Monitor-StatsResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  schemas:
+    MonitorAction-Ref:
+      title: MonitorActionRef
+      type: object
+      description: 'Reference to a monitor action; `record` is populated only with `expand=true`. Actions have no endpoint of their own yet, so read one through a monitor that binds it.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/MonitorAction-Brief'
+    Monitor-DisabledDetail:
+      title: MonitorDisabledDetail
+      type: object
+      description: 'Why the monitor is disabled. Exactly one of the cause-specific fields is populated, matching `cause`; the others are null.
+
+        '
+      required:
+      - cause
+      - cost
+      - alertRateLimit
+      - user
+      - resultTooBig
+      properties:
+        cause:
+          $ref: '#/components/schemas/Monitor-DisabledCause'
+        cost:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-DisabledByCost'
+          - type: 'null'
+        alertRateLimit:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-DisabledByAlertRateLimit'
+          - type: 'null'
+        user:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-DisabledByUser'
+          - type: 'null'
+        resultTooBig:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-DisabledByResultTooBig'
+          - type: 'null'
+    MonitorV2Comparison:
+      properties:
+        compareFn:
+          $ref: '#/components/schemas/MonitorV2ComparisonFunction'
+        compareValue:
+          $ref: '#/components/schemas/PrimitiveValue'
+    Monitor-AiTriagingMode:
+      title: MonitorAiTriagingMode
+      type: string
+      description: 'Whether AI auto-investigation runs when this monitor alerts. `None` disables it; `Triage` runs it.
+
+        '
+      enum:
+      - None
+      - Triage
+    MonitorV2CountRule:
+      type: object
+      required:
+      - compareValues
+      properties:
+        compareValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2Comparison'
+        compareGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2ColumnComparison'
+    Monitor-AlarmMode:
+      title: MonitorAlarmMode
+      type: string
+      description: 'How alerts span consecutive cron runs. `PerRun` raises a separate alert per firing run. `Ongoing` extends one alert across consecutive runs that fire for the same group and severity.
+
+        '
+      enum:
+      - Ongoing
+      - PerRun
+    MonitorV2MuteScheduleType:
+      type: string
+      enum:
+      - OneTime
+    MonitorV2RuleKind:
+      type: string
+      enum:
+      - Anomaly
+      - Count
+      - Promote
+      - Threshold
+    Monitor-Comparison:
+      title: MonitorComparison
+      type: object
+      description: One comparison applied to a value.
+      required:
+      - compareFn
+      - compareValue
+      - valueType
+      properties:
+        compareFn:
+          $ref: '#/components/schemas/Monitor-ComparisonFunction'
+        compareValue:
+          type:
+          - string
+          - 'null'
+          description: 'The right-hand side as a string, in the form `valueType` names. Null
+
+            for `IsNull` and `IsNotNull`, and for a stored null.
+
+
+            Numbers are base-10, booleans `true`/`false`, timestamps RFC 3339 in
+
+            UTC, and **durations a count of nanoseconds** -- the one place in this
+
+            schema a duration is not in seconds.
+
+            '
+        valueType:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-ValueType'
+          - type: 'null'
+          description: 'Type of `compareValue`. Null when the comparison has no operand (`IsNull`, `IsNotNull`).
+
+            '
+    StatValueCount:
+      title: StatValueCount
+      type: object
+      description: One distinct attribute value and the number of rows carrying it.
+      required:
+      - value
+      - count
+      properties:
+        value:
+          type: string
+          description: 'The attribute value, always a JSON string regardless of the expression''s
+
+            underlying type. Strings appear verbatim; ints as decimal digits (e.g.
+
+            `"41000234"`); bools as `"true"` or `"false"`; timestamps as RFC 3339
+
+            (e.g. `"2024-01-01T00:00:00Z"`).
+
+            '
+        count:
+          type: integer
+          format: int64
+          description: Number of rows with this value.
+    MonitorV2HttpType:
+      type: string
+      description: 'The http type describes the method or verb to use in http webhooks.
+
+        note: As a convenience, the values POST and PUT will be accepted, but converted
+
+        to the enumeration values Post and Put respectively.
+
+        '
+      enum:
+      - Post
+      - Put
+    MonitorV2ValueAggregation:
+      type: string
+      enum:
+      - AllOf
+      - AnyOf
+      - AvgOf
+      - SumOf
+    TimeNano:
+      type: string
+      format: RFC3339Nano
+    NullableTime:
+      type:
+      - string
+      - 'null'
+      format: RFC3339
+    Monitor-BooleanOperator:
+      title: MonitorBooleanOperator
+      type: string
+      description: How a set of conditions combine.
+      enum:
+      - And
+      - Or
+    Monitor-AlarmLevel:
+      title: MonitorAlarmLevel
+      type: string
+      description: 'Severity of an alert. `NoData` comes from a no-data rule rather than a comparison.
+
+        '
+      enum:
+      - Critical
+      - Error
+      - Informational
+      - NoData
+      - None
+      - Warning
+    ObjectId:
+      type: string
+      format: ObjectId
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    MonitorV2ThresholdRule:
+      type: object
+      required:
+      - compareValues
+      - valueColumnName
+      - aggregation
+      properties:
+        compareValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2Comparison'
+        valueColumnName:
+          type: string
+        aggregation:
+          $ref: '#/components/schemas/MonitorV2ValueAggregation'
+        compareGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2ColumnComparison'
+    Monitor-DisabledByUser:
+      title: MonitorDisabledByUser
+      type: object
+      description: Detail for a monitor a user explicitly disabled.
+      required:
+      - disabledBy
+      properties:
+        disabledBy:
+          $ref: '#/components/schemas/User'
+    MonitorV2:
+      type: object
+      required:
+      - id
+      - name
+      - definition
+      - ruleKind
+      properties:
+        id:
+          readOnly: true
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+        disabled:
+          readOnly: true
+          type: boolean
+        health:
+          readOnly: true
+          $ref: '#/components/schemas/MonitorV2Health'
+        ruleKind:
+          $ref: '#/components/schemas/MonitorV2RuleKind'
+        definition:
+          $ref: '#/components/schemas/MonitorV2Definition'
+        actionRules:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2ActionRule'
+        effectiveScheduling:
+          readOnly: true
+          description: 'The resolved scheduling mode the monitor is actually using, as determined by the backend. Always populated on GET responses. This may differ from definition.scheduling, which only reflects what the user explicitly configured. Ignored on POST/PATCH.
+
+            '
+          $ref: '#/components/schemas/MonitorV2Scheduling'
+    MonitorV2NoDataRule:
+      type: object
+      properties:
+        expiration:
+          $ref: '#/components/schemas/DurationNanoseconds'
+          description: 'How long the no-data alarm persists before auto-resolving. Omit for the backend default (~24 hours).
+
+            '
+        threshold:
+          $ref: '#/components/schemas/MonitorV2ThresholdRule'
+          description: 'Threshold configuration. valueColumnName and aggregation must match the monitor''s regular rules. compareValues must be empty.
+
+            '
+    MonitorV2ColumnComparison:
+      properties:
+        compareValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2Comparison'
+        column:
+          $ref: '#/components/schemas/MonitorV2Column'
+    MonitorV2ActionDefinition:
+      type: object
+      description: 'The configuration of an action. `type` selects which payload applies:
+
+        `Email` uses `email`, while `Webhook`, `Slack` and `PagerDuty` all use
+
+        `webhook`. A PagerDuty action is a webhook posted to the PagerDuty
+
+        Events API, so its routing key is a field of the JSON template in
+
+        `webhook.body` rather than a property of its own.
+
+        '
+      required:
+      - type
+      properties:
+        inline:
+          type: boolean
+          description: 'True when the action is private to its monitor, false when it is a
+
+            shared action bound by `actionId`. Only an inline action''s
+
+            definition is written by a monitor create or update.
+
+            '
+        name:
+          type: string
+          description: 'Names a shared action. An inline action is named internally: reads
+
+            do not return one and any value sent is replaced, so it may be
+
+            omitted for inline actions.
+
+            '
+        type:
+          $ref: '#/components/schemas/MonitorV2ActionType'
+        email:
+          $ref: '#/components/schemas/MonitorV2EmailAction'
+        webhook:
+          $ref: '#/components/schemas/MonitorV2WebhookAction'
+    InputDefinition:
+      type: object
+      required:
+      - inputName
+      properties:
+        inputName:
+          description: The @name used to reference this input in OPAL (without the @ sign)
+          type: string
+        inputRole:
+          description: Data or Reference, defaults to Data if not specified.
+          type: string
+        datasetId:
+          description: The dataset ID (as int64-string) to bind to this name.
+          type: string
+          format: int64
+        datasetPath:
+          description: The dataset name as Workspace.path/Name to bind to this name. datasetId takes precedence if both are set; on read, this is populated alongside datasetId as a portable reference.
+          type: string
+        stageId:
+          description: The stageID of the previously defined stage to reference, if it's a stage and not a dataset.
+          type: string
+        parameterId:
+          description: The parameter ID to take the input dataset reference from. (Advanced usage only)
+          type: string
+    MonitorV2MuteRule:
+      type: object
+      required:
+      - id
+      - name
+      - schedule
+      - validFrom
+      properties:
+        schedule:
+          $ref: '#/components/schemas/MonitorV2MuteRuleSchedule'
+        criteria:
+          $ref: '#/components/schemas/MonitorV2ComparisonExpression'
+        validFrom:
+          readOnly: true
+          $ref: '#/components/schemas/Time'
+        validTo:
+          readOnly: true
+          $ref: '#/components/schemas/Time'
+        monitorID:
+          $ref: '#/components/schemas/ObjectId'
+        monitor:
+          type: object
+          readOnly: true
+          properties:
+            id:
+              $ref: '#/components/schemas/ObjectId'
+            name:
+              type: string
+        id:
+          readOnly: true
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+        isGlobal:
+          type: boolean
+          readOnly: true
+        isConditional:
+          type: boolean
+          readOnly: true
+    MonitorV2CorrelationTag:
+      type: object
+      description: 'Marker on a `MonitorV2Column` indicating that the column is grouping by a
+
+        correlation tag (e.g. `service.name`) rather than a specific physical
+
+        column. The per-column struct carries the tag name and optional resolution
+
+        `meta`; the authoritative `(tag, backing-column)` mapping for every
+
+        correlation tag in the schema lives on `MonitorV2AlertSchema.correlationTags`.
+
+        '
+      properties:
+        tag:
+          type: string
+          description: 'Correlation tag name, without the leading `#`. The save-time resolver
+
+            expands this into the canonical primary backing column picked by the
+
+            OPAL coalesce ordering and records the `(tag, column)` pair on
+
+            `MonitorV2AlertSchema.correlationTags`; this column itself carries
+
+            only the tag identifier.
+
+            '
+        meta:
+          type: object
+          description: 'Optional resolution context surfaced for frontend preview/display: the
+
+            physical backing columns the tag resolves to.
+
+            '
+          properties:
+            srcFields:
+              type: array
+              items:
+                $ref: '#/components/schemas/MonitorV2ColumnPath'
+    DatasetRef:
+      title: DatasetRef
+      type: object
+      description: 'A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/DatasetBrief'
+    MonitorV2CronSchedule:
+      type: object
+      required:
+      - timezone
+      properties:
+        cronConfig:
+          type: string
+          description: Crontab configuration for wall-clock scheduled evaluation.
+        timezone:
+          type: string
+          description: IANA timezone for interpreting cronConfig on the wall clock.
+        alarmMode:
+          type: string
+          enum:
+          - PerRun
+          - Ongoing
+          description: 'Controls how alarms are emitted across consecutive monitor evaluations. PerRun (the default when omitted) emits an independent zero-duration alarm per firing evaluation. Ongoing causes consecutive evaluations that re-assert the same (group, level) to extend a single ongoing alarm. Setting the value to Ongoing is gated by a customer feature flag.
+
+            '
+    Monitor-StatsMeta:
+      title: MonitorStatsMeta
+      type: object
+      required:
+      - totalMonitors
+      - filteredMonitors
+      properties:
+        totalMonitors:
+          type: integer
+          format: int64
+          description: 'Monitors the caller may read, before `filter` is applied.
+
+            '
+        filteredMonitors:
+          type: integer
+          format: int64
+          description: 'Monitors the statistics were computed over, after `filter` is applied. Equal to `totalMonitors` when no filter was given.
+
+            '
+    MonitorAction-Email:
+      title: MonitorActionEmail
+      type: object
+      description: An email notification's payload.
+      required:
+      - users
+      - addresses
+      - subject
+      - body
+      - fragments
+      properties:
+        users:
+          type: array
+          description: Users to notify.
+          items:
+            $ref: '#/components/schemas/User'
+        addresses:
+          type: array
+          description: Email addresses to notify.
+          items:
+            type: string
+        subject:
+          type:
+          - string
+          - 'null'
+          description: Subject template. Null when the action sets none.
+        body:
+          type:
+          - string
+          - 'null'
+          description: Body template. Null when the action sets none.
+        fragments:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+          description: 'Named template fragments the subject and body can include. Null when the action defines none.
+
+            '
+    ObjectRef:
+      title: ObjectRef
+      type: object
+      description: 'A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/ObjectBrief'
+    MonitorV2WebhookHeader:
+      type: object
+      required:
+      - header
+      - value
+      properties:
+        header:
+          type: string
+        value:
+          type: string
+    MonitorV2BooleanOperator:
+      type: string
+      enum:
+      - And
+      - Or
+    MonitorV2LinkColumn:
+      properties:
+        name:
+          type: string
+        meta:
+          type: object
+          properties:
+            srcFields:
+              type: array
+              items:
+                $ref: '#/components/schemas/MonitorV2ColumnPath'
+            dstFields:
+              type: array
+              items:
+                type: string
+            targetDataset:
+              type: array
+              items:
+                $ref: '#/components/schemas/ObjectId'
+    Monitor-Rule:
+      title: MonitorRule
+      type: object
+      description: 'One alert condition at one severity: the monitor triggers an alert at `level` when every entry in `triggerComparisons` holds, for the groups (or rows) every entry in the filters matches. `ruleKind` decides which fields are used; the lists it does not use are empty:
+
+        | Rule | Fields used | |---|---| | `Count`, `Threshold`, `Anomaly` | `triggerComparisons`, `groupFilters` | | `Promote` | `rowFilters` | | `level: NoData` | `expirationSeconds` (`Threshold` only) |
+
+        A `NoData` rule alerts when no data arrives for a full lookback window. Only `Threshold` and `Anomaly` monitors have one, at most one each, and it watches the same `valueColumn` as the other rules.
+
+        '
+      required:
+      - level
+      - triggerComparisons
+      - groupFilters
+      - rowFilters
+      - expirationSeconds
+      properties:
+        level:
+          $ref: '#/components/schemas/Monitor-AlarmLevel'
+        triggerComparisons:
+          type: array
+          description: 'Comparisons that trigger the alert, all of which must hold (so two
+
+            entries express a range). What they compare depends on `ruleKind`:
+
+
+            | `ruleKind` | Compared value |
+
+            |---|---|
+
+            | `Count` | Number of rows in each group over the window |
+
+            | `Threshold` | `valueColumn`, reduced over the window by `aggregation` |
+
+            | `Anomaly` | Percentage (0-100) of the window outside `baseline` |
+
+            '
+          items:
+            $ref: '#/components/schemas/Monitor-Comparison'
+        groupFilters:
+          type: array
+          description: 'Restricts the rule to groups matching every entry. Each entry tests one of the `groupBy` columns. Empty when the rule applies to every group.
+
+            '
+          items:
+            $ref: '#/components/schemas/Monitor-ColumnFilter'
+        rowFilters:
+          type: array
+          description: 'Rows of the query output to promote to an alert at this level: a row is promoted when it matches every entry. Empty promotes every row.
+
+            '
+          items:
+            $ref: '#/components/schemas/Monitor-ColumnFilter'
+        expirationSeconds:
+          type:
+          - number
+          - 'null'
+          format: double
+          description: 'How long a no-data alert stays open before resolving itself, in seconds. Set only on a `Threshold` monitor''s `NoData` rule, where null means the server default. Always null otherwise, including for `Anomaly`, whose no-data alerts always close after a fixed time.
+
+            '
+    MonitorV2Definition:
+      type: object
+      required:
+      - inputQuery
+      - rules
+      properties:
+        inputQuery:
+          $ref: '#/components/schemas/MultiStageQuery'
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2Rule'
+        lookbackTime:
+          $ref: '#/components/schemas/DurationNanoseconds'
+        dataStabilizationDelay:
+          $ref: '#/components/schemas/DurationNanoseconds'
+        maxAlertsPerHour:
+          type: integer
+        groupings:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2Column'
+        scheduling:
+          description: 'User-specified scheduling preference. When read back via GET, this reflects only what the user explicitly set, not the scheduling mode the backend is actually using. Null or omitted means the system chooses the best mode automatically. To see the resolved scheduling mode, use the top-level effectiveScheduling field instead.
+
+            '
+          nullable: true
+          $ref: '#/components/schemas/MonitorV2Scheduling'
+        noDataRules:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2NoDataRule'
+          description: 'No-data rules that fire at NoData severity when no data arrives for the full lookback window. At most one entry for threshold monitors.
+
+            '
+    MonitorAction-HttpMethod:
+      title: MonitorActionHttpMethod
+      type: string
+      description: HTTP method a webhook action posts with.
+      enum:
+      - Post
+      - Put
+    PrimitiveValue:
+      properties:
+        bool:
+          type: boolean
+        float64:
+          type: number
+          format: double
+        int64:
+          type: string
+          format: int64
+        string:
+          type: string
+        timestamp:
+          $ref: '#/components/schemas/TimeNano'
+        duration:
+          $ref: '#/components/schemas/DurationNanoseconds'
+        array:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrimitiveValue'
+        link:
+          type: object
+          properties:
+            datasetId:
+              $ref: '#/components/schemas/ObjectId'
+            primaryKeyValue:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+            storedLabel:
+              type: string
+        datasetref:
+          type: object
+          properties:
+            datasetId:
+              $ref: '#/components/schemas/ObjectId'
+            datasetPath:
+              type: string
+            stageId:
+              type: string
+    Monitor-BoundComparisonFunction:
+      title: MonitorBoundComparisonFunction
+      type: string
+      description: Which side of the baseline counts as anomalous.
+      enum:
+      - Above
+      - AboveOrBelow
+      - Below
+    Monitor-ComparisonTerm:
+      title: MonitorComparisonTerm
+      type: object
+      description: 'One comparison against one column, named as in `groupBy`: exactly one of `column`, `link` and `tag`.
+
+        '
+      required:
+      - column
+      - path
+      - link
+      - tag
+      - comparison
+      properties:
+        column:
+          type:
+          - string
+          - 'null'
+          description: A column of the query output. Null for a link or tag.
+        path:
+          type:
+          - string
+          - 'null'
+          description: Dotted path into `column`. Null for the whole column.
+        link:
+          type:
+          - string
+          - 'null'
+          description: A link column. Null unless comparing on a link.
+        tag:
+          type:
+          - string
+          - 'null'
+          description: Correlation tag, without the `#`. Null unless comparing on a tag.
+        comparison:
+          $ref: '#/components/schemas/Monitor-Comparison'
+    DurationNanoseconds:
+      type: string
+      format: int64 nanoseconds
+    Monitor-ValueType:
+      title: MonitorValueType
+      type: string
+      description: The type of a comparison's right-hand side.
+      enum:
+      - Bool
+      - Duration
+      - Float64
+      - Int64
+      - String
+      - Timestamp
+    MonitorV2PatchRequest:
+      type: object
+      description: 'Request body for `PATCH .../monitors/{id}`. Every property is optional. Only these
+
+        top-level keys participate in the update; see the operation description for merge vs
+
+        whole-value replacement rules.
+
+        '
+      properties:
+        name:
+          type: string
+        disabled:
+          type: boolean
+        description:
+          type: string
+        ruleKind:
+          $ref: '#/components/schemas/MonitorV2RuleKind'
+        definition:
+          $ref: '#/components/schemas/MonitorV2Definition'
+        actionRules:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2ActionRule'
+    MultiStageQuery:
+      type: object
+      required:
+      - outputStage
+      - stages
+      properties:
+        outputStage:
+          type: string
+        stages:
+          type: array
+          items:
+            $ref: '#/components/schemas/StageQuery'
+    MonitorV2EmailAction:
+      type: object
+      required:
+      - subject
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectId'
+        addresses:
+          type: array
+          items:
+            type: string
+        subject:
+          type: string
+        body:
+          type: string
+        fragments:
+          type: object
+    Monitor-ValueAggregation:
+      title: MonitorValueAggregation
+      type: string
+      description: 'How the values in a window are reduced before comparison: `Max`, `Min`, `AvgOf` and `SumOf` compare the largest, smallest, mean or total. The older `AllOf` and `AnyOf` require every or at least one value to match; new monitors use `Min` or `Max` instead.
+
+        '
+      enum:
+      - AllOf
+      - AnyOf
+      - AvgOf
+      - Max
+      - Min
+      - SumOf
+    Monitor-ColumnFilter:
+      title: MonitorColumnFilter
+      type: object
+      description: 'A test on one column: its `columnComparisons`, combined by `operator`. The column is named as in `groupBy`: exactly one of `column`, `link` and `tag`.
+
+        '
+      required:
+      - column
+      - path
+      - link
+      - tag
+      - operator
+      - columnComparisons
+      properties:
+        column:
+          type:
+          - string
+          - 'null'
+          description: A column of the query output. Null for a link or tag.
+        path:
+          type:
+          - string
+          - 'null'
+          description: Dotted path into `column`. Null for the whole column.
+        link:
+          type:
+          - string
+          - 'null'
+          description: A link column. Null unless comparing on a link.
+        tag:
+          type:
+          - string
+          - 'null'
+          description: Correlation tag, without the `#`. Null unless comparing on a tag.
+        operator:
+          $ref: '#/components/schemas/Monitor-BooleanOperator'
+          description: 'How `columnComparisons` combine: `Or` matches when any holds, `And` when all do. Always returned. A monitor saved without one gets `And` when any comparison is `NotEqual`, `NotContains`, `NotStartsWith` or `IsNotNull`, and `Or` otherwise.
+
+            '
+        columnComparisons:
+          type: array
+          description: Comparisons applied to the column's value.
+          items:
+            $ref: '#/components/schemas/Monitor-Comparison'
+    Monitor-ListResponse:
+      title: MonitorListResponse
+      type: object
+      description: 'One page of monitors. `meta.totalCount` counts the monitors matching the request across all pages, not the page.
+
+        '
+      required:
+      - monitors
+      - meta
+      properties:
+        monitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Monitor-ListItem'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    Monitor-BasicAlgorithm:
+      title: MonitorBasicAlgorithm
+      type: object
+      description: Baseline as a mean, with anomalies a number of standard deviations away.
+      required:
+      - numStandardDeviations
+      properties:
+        numStandardDeviations:
+          type: integer
+          format: int64
+          description: How many standard deviations from the mean count as anomalous.
+    Monitor-DisabledCause:
+      title: MonitorDisabledCause
+      type: string
+      description: Why a monitor was disabled.
+      enum:
+      - AlertRateLimit
+      - Cost
+      - ResultTooBig
+      - User
+    MonitorV2ComparisonExpression:
+      type: object
+      properties:
+        operator:
+          $ref: '#/components/schemas/MonitorV2BooleanOperator'
+        subExpressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2ComparisonExpression'
+        compareTerms:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2ComparisonTerm'
+    Monitor-RollupStatus:
+      title: MonitorRollupStatus
+      type: string
+      description: 'Single health summary, derived from the monitor''s other fields and resolved by priority, highest first: `Disabled` (by a user or a limit), `Failed` (an error logged since the last run and less than a week old), `Warnings` (likewise a warning), `Initializing` (an anomaly monitor that has not yet produced its output dataset, so it cannot evaluate yet), `Running` (the default). A monitor can satisfy more than one — only the highest is reported, and the ranking may change. See the note under the list operation''s `filter` for the part of `Initializing` this endpoint cannot see.
+
+        '
+      enum:
+      - Disabled
+      - Failed
+      - Initializing
+      - Running
+      - Warnings
+    MonitorV2ActionType:
+      type: string
+      enum:
+      - Email
+      - PagerDuty
+      - Slack
+      - Webhook
+    MonitorV2MuteRuleScheduleTerse:
+      type: object
+      required:
+      - type
+      properties:
+        type:
+          $ref: '#/components/schemas/MonitorV2MuteScheduleType'
+    MonitorV2Rule:
+      type: object
+      properties:
+        level:
+          $ref: '#/components/schemas/MonitorV2AlarmLevel'
+        count:
+          $ref: '#/components/schemas/MonitorV2CountRule'
+        threshold:
+          $ref: '#/components/schemas/MonitorV2ThresholdRule'
+        promote:
+          $ref: '#/components/schemas/MonitorV2PromoteRule'
+    MonitorV2Scheduling:
+      type: object
+      description: 'Scheduling modes are mutually exclusive. Omit both transform and scheduled for service-chosen defaults. Set transform for continuous transform-driven evaluation, or scheduled for cron-based wall-clock evaluation.
+
+        '
+      properties:
+        transform:
+          $ref: '#/components/schemas/MonitorV2TransformSchedule'
+        scheduled:
+          $ref: '#/components/schemas/MonitorV2CronSchedule'
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    Monitor-DisabledByCost:
+      title: MonitorDisabledByCost
+      type: object
+      description: Detail for a monitor the cost governor disabled.
+      required:
+      - creditLimitPerDay
+      properties:
+        creditLimitPerDay:
+          type: number
+          description: The daily credit limit the monitor exceeded.
+    Monitor-IntervalSchedule:
+      title: MonitorIntervalSchedule
+      type: object
+      description: Evaluation on a fixed interval.
+      required:
+      - intervalSeconds
+      properties:
+        intervalSeconds:
+          type: number
+          format: double
+          description: How often the monitor evaluates, in seconds.
+    Monitor-StatsResponse:
+      title: MonitorStatsResponse
+      type: object
+      description: Aggregated stats for the requested monitor attributes.
+      required:
+      - attributes
+      - meta
+      properties:
+        attributes:
+          type: array
+          description: 'One entry per requested `attributes` expression, in request order.
+
+            '
+          items:
+            $ref: '#/components/schemas/AttributeStats'
+        meta:
+          $ref: '#/components/schemas/Monitor-StatsMeta'
+    DatasetBrief:
+      title: DatasetBrief
+      type: object
+      description: 'Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - contentType
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        contentType:
+          $ref: '#/components/schemas/DatasetContentType'
+          description: 'The type of data the referenced dataset contains — Resource, Log,
+
+            Metric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset''s
+
+            kind and interface bindings.
+
+            '
+    Monitor-Baseline:
+      title: MonitorBaseline
+      type: object
+      description: 'The baseline an anomaly monitor compares `valueColumn` against, and how far a value must stray from it. Exactly one of `basicAlgorithm` and `seasonalAlgorithm` is set.
+
+        '
+      required:
+      - compareFn
+      - computationWindowSeconds
+      - frequencySeconds
+      - basicAlgorithm
+      - seasonalAlgorithm
+      properties:
+        compareFn:
+          $ref: '#/components/schemas/Monitor-BoundComparisonFunction'
+        computationWindowSeconds:
+          type:
+          - number
+          - 'null'
+          format: double
+          description: 'How much history the baseline is computed over, in seconds. Null when the monitor takes the server default.
+
+            '
+        frequencySeconds:
+          type:
+          - number
+          - 'null'
+          format: double
+          description: 'How often the baseline is recomputed, in seconds. Null when the monitor takes the server default.
+
+            '
+        basicAlgorithm:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-BasicAlgorithm'
+          - type: 'null'
+          description: Set when the monitor uses the standard-deviation algorithm.
+        seasonalAlgorithm:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-SeasonalAlgorithm'
+          - type: 'null'
+          description: Set when the monitor uses the seasonal algorithm.
+    MonitorV2WebhookAction:
+      type: object
+      required:
+      - url
+      - method
+      - body
+      properties:
+        url:
+          type: string
+        method:
+          $ref: '#/components/schemas/MonitorV2HttpType'
+        headers:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2WebhookHeader'
+        body:
+          type: string
+        fragments:
+          type: object
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    Monitor-MultiStageQuery:
+      title: MonitorMultiStageQuery
+      type: object
+      description: The OPAL query the rules are evaluated over, as a pipeline of stages.
+      required:
+      - outputStage
+      - stages
+      properties:
+        outputStage:
+          type: string
+          description: '`id` of the stage the rules read.'
+        stages:
+          type: array
+          description: The stages, in definition order.
+          items:
+            $ref: '#/components/schemas/Monitor-StageQuery'
+    Monitor-MuteState:
+      title: MonitorMuteState
+      type: string
+      description: 'Whether mute rules currently suppress this monitor''s notifications. `PartiallyMuted` means every covering rule is scoped to particular alert groupings, so some alerts still notify.
+
+        '
+      enum:
+      - Muted
+      - NotMuted
+      - PartiallyMuted
+    AttributeStats:
+      title: AttributeStats
+      type: object
+      description: 'Aggregated statistics for one requested attribute expression: how many
+
+        distinct values it produced, plus the most frequent value/count pairs.
+
+        '
+      required:
+      - attribute
+      - distinctCount
+      - stats
+      properties:
+        attribute:
+          type: string
+          description: The attribute expression that was queried, verbatim from the request.
+        distinctCount:
+          type: integer
+          format: int64
+          description: Total distinct values, including those outside the returned top-K.
+        stats:
+          type: array
+          description: Top-K value/count pairs, sorted by count descending.
+          items:
+            $ref: '#/components/schemas/StatValueCount'
+    Monitor-ComparisonFunction:
+      title: MonitorComparisonFunction
+      type: string
+      description: 'How a value is compared. `IsNull` and `IsNotNull` take no right-hand side; the rest require one.
+
+        '
+      enum:
+      - Contains
+      - Equal
+      - Greater
+      - GreaterOrEqual
+      - IsNotNull
+      - IsNull
+      - Less
+      - LessOrEqual
+      - NotContains
+      - NotEqual
+      - NotStartsWith
+      - StartsWith
+    MonitorV2ActionRule:
+      type: object
+      description: 'Either the actionId or the definition must be present when setting.
+
+        The actionId references an existing shared action, while the
+
+        definition would be used to configure an inline (private to a monitor)
+
+        action. A read returns both: the actionId of the bound action and, for
+
+        an inline action, the definition that can be edited and sent back.
+
+        '
+      properties:
+        actionId:
+          $ref: '#/components/schemas/ObjectId'
+        levels:
+          $ref: '#/components/schemas/MonitorV2AlarmLevel'
+        conditions:
+          $ref: '#/components/schemas/MonitorV2ComparisonExpression'
+        sendEndNotifications:
+          type: boolean
+        sendRemindersInterval:
+          type: boolean
+        definition:
+          $ref: '#/components/schemas/MonitorV2ActionDefinition'
+    Monitor-RuleKind:
+      title: MonitorRuleKind
+      type: string
+      description: 'The evaluation rule kind of the monitor. `Composite` is the one kind that inspects no query: it alerts on a boolean condition over whether other monitors are currently alerting, correlated per group.
+
+        '
+      enum:
+      - Anomaly
+      - Composite
+      - Count
+      - Promote
+      - Threshold
+    StageQuery:
+      type: object
+      required:
+      - input
+      - pipeline
+      properties:
+        id:
+          type: string
+        input:
+          $ref: '#/components/schemas/InputDefinition'
+        pipeline:
+          type: string
+    MonitorAction-Brief:
+      title: MonitorActionBrief
+      type: object
+      description: 'A bound action, with enough of its configuration to read it back and send it again.
+
+        '
+      required:
+      - label
+      - type
+      - inline
+      - email
+      - webhook
+      properties:
+        label:
+          type:
+          - string
+          - 'null'
+          description: 'The action''s name. An inline action''s is generated rather than chosen. Null when the action has none.
+
+            '
+        type:
+          $ref: '#/components/schemas/MonitorAction-Type'
+        inline:
+          type: boolean
+          description: Whether the action belongs to this monitor alone rather than being shared.
+        email:
+          anyOf:
+          - $ref: '#/components/schemas/MonitorAction-Email'
+          - type: 'null'
+          description: The email payload. Set when `type` is `Email`.
+        webhook:
+          anyOf:
+          - $ref: '#/components/schemas/MonitorAction-Webhook'
+          - type: 'null'
+          description: 'The webhook payload. Set when `type` is `Webhook`, `Slack` or `PagerDuty`, all of which post a webhook.
+
+            '
+    Monitor-ServiceBindingMatchMode:
+      title: MonitorServiceBindingMatchMode
+      type: string
+      description: 'How a binding dimension is matched. `Exact` matches `value`. `Wildcard` takes each alert''s value from the monitor''s `groupBy` columns or the input dataset''s correlation tags.
+
+        '
+      enum:
+      - Exact
+      - Wildcard
+    Monitor-ComparisonExpression:
+      title: MonitorComparisonExpression
+      type: object
+      description: 'Boolean tree over column comparisons: `operator` combines this node''s `compareTerms` and `subExpressions`.
+
+        '
+      required:
+      - operator
+      - compareTerms
+      - subExpressions
+      properties:
+        operator:
+          $ref: '#/components/schemas/Monitor-BooleanOperator'
+        compareTerms:
+          type: array
+          description: This node's own comparisons.
+          items:
+            $ref: '#/components/schemas/Monitor-ComparisonTerm'
+        subExpressions:
+          type: array
+          description: Nested expressions. Empty at a leaf.
+          items:
+            $ref: '#/components/schemas/Monitor-ComparisonExpression'
+    Time:
+      type: string
+      format: RFC3339
+    Monitor-ServiceBindingValue:
+      title: MonitorServiceBindingValue
+      type: object
+      description: One dimension of a service binding.
+      required:
+      - value
+      - matchMode
+      properties:
+        value:
+          type:
+          - string
+          - 'null'
+          description: The value this dimension matches. Null when `matchMode` is `Wildcard`.
+        matchMode:
+          $ref: '#/components/schemas/Monitor-ServiceBindingMatchMode'
+    ObjectBrief:
+      title: ObjectBrief
+      type: object
+      description: 'Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - managedBy
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager''s brief.'
+    Monitor-Health:
+      title: MonitorHealth
+      type: string
+      description: 'The monitor''s operating state as one value, which is what the monitors
+
+        list shows in its Health column and facets on.
+
+
+        `rollupStatus` answers a narrower question — how the last evaluation
+
+        went — so it reports `Running` for a monitor that is turned off, over its
+
+        spend limit, or on a passive cluster. `health` ranks those causes above
+
+        the run outcome, highest first:
+
+
+        | Value | Meaning |
+
+        |---|---|
+
+        | `CostDisabled` | Turned off after exceeding its spend limit. |
+
+        | `AlertRateLimitDisabled` | Turned off after exceeding its alert rate. |
+
+        | `Disabled` | Turned off by a user. |
+
+        | `ClusterPassive` | Its customer''s monitoring is not active on this cluster, so nothing evaluates. Set for every monitor of that customer at once. |
+
+        | `AtRisk` | Inside the grace period before its spend limit disables it. |
+
+        | `Failed` | An error was logged since the last run, less than a week ago. |
+
+        | `Warnings` | Likewise a warning. |
+
+        | `Initializing` | An anomaly monitor that has not yet produced its output dataset, so it cannot evaluate. |
+
+        | `Running` | None of the above. |
+
+
+        A monitor can satisfy several; only the highest is reported, and the
+
+        ranking may change. `Initializing` is only partially reachable — see the
+
+        note under the list operation''s `filter` for the warm-up tail this
+
+        endpoint cannot see.
+
+        '
+      enum:
+      - AlertRateLimitDisabled
+      - AtRisk
+      - ClusterPassive
+      - CostDisabled
+      - Disabled
+      - Failed
+      - Initializing
+      - Running
+      - Warnings
+    Monitor-ListItem:
+      title: MonitorListItem
+      type: object
+      description: 'Monitor envelope and derived state, as returned by the collection endpoints. Does not include `inputQuery`, `rules` or `groupBy` -- read one monitor with `GET /v1/monitors/{id}` for those.
+
+        '
+      required:
+      - id
+      - name
+      - label
+      - description
+      - disabled
+      - ruleKind
+      - monitorVersion
+      - createdBy
+      - createdAt
+      - updatedBy
+      - updatedAt
+      - disabledDetail
+      - scheduled
+      - rollupStatus
+      - health
+      - governorState
+      - alertState
+      - aiTriagingMode
+      - muteState
+      - mutedUntil
+      - muteCount
+      - lastErrorTime
+      - lastAlarmTime
+      - lastWarnTime
+      - managedBy
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+          description: 'Name of the monitor, unique within its workspace.
+
+            '
+        label:
+          type: string
+          deprecated: true
+          description: Same as `name`. Deprecated; read `name` instead.
+        description:
+          type:
+          - string
+          - 'null'
+          description: Monitor description. Null when no description is configured.
+        disabled:
+          type: boolean
+          description: 'Whether the monitor is currently disabled, either by a user or automatically by the system on exceeding its alert rate or cost limit.
+
+            '
+        ruleKind:
+          $ref: '#/components/schemas/Monitor-RuleKind'
+        monitorVersion:
+          type: string
+          format: int64
+          description: 'Version of the monitor''s current definition, as a Unix nanosecond timestamp — currently identical to `updatedAt`, and so it advances on every save. Alerts record the version they were evaluated against, so this identifies which definition produced a given alert. Carried as a string because it exceeds the JSON safe-integer range.
+
+            '
+        createdBy:
+          $ref: '#/components/schemas/User'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+        disabledDetail:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-DisabledDetail'
+          - type: 'null'
+          description: 'Why the monitor is disabled. Null when it is enabled.
+
+            '
+        scheduled:
+          type: boolean
+          description: Whether the monitor runs on a cron.
+        rollupStatus:
+          $ref: '#/components/schemas/Monitor-RollupStatus'
+        health:
+          $ref: '#/components/schemas/Monitor-Health'
+        governorState:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-GovernorState'
+          - type: 'null'
+          description: 'Cost-governor state. Null when no spend limit is configured for the monitor, which is the common case. `health` already folds this in; read it directly only to distinguish "no limit" from `Normal`.
+
+            '
+        alertState:
+          $ref: '#/components/schemas/Monitor-AlertState'
+        aiTriagingMode:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-AiTriagingMode'
+          - type: 'null'
+          description: 'Whether AI auto-investigation runs when this monitor alerts. Null when the stored mode is not one this API declares. Not reported as `None`, because the filter compares the stored value and `aiTriagingMode == "None"` would not select these rows.
+
+            '
+        muteState:
+          $ref: '#/components/schemas/Monitor-MuteState'
+        mutedUntil:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'When the mute covering this monitor expires. Null when the monitor is not muted, or is muted indefinitely — use `muteState` to tell those apart.
+
+            '
+        muteCount:
+          type: integer
+          format: int64
+          description: Number of mute rules currently covering this monitor.
+        lastErrorTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'When the monitor last logged a fatal error. Null if it never has.
+
+            '
+        lastAlarmTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: When the monitor last raised an alert. Null if it never has.
+        lastWarnTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'When the monitor last logged a non-fatal warning. Null if it never has.
+
+            '
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'App that manages this monitor, or null when it is user-managed. Returned id-only; request the app separately for its metadata.
+
+            '
+    Monitor-Grouping:
+      title: MonitorGrouping
+      type: object
+      description: 'One dimension the rules are evaluated per. Exactly one of `column`, `link` and `tag` is set; `path` only accompanies `column`.
+
+        '
+      required:
+      - column
+      - path
+      - link
+      - tag
+      - meta
+      properties:
+        column:
+          type:
+          - string
+          - 'null'
+          description: A column of the query output. Null for a link or tag.
+        path:
+          type:
+          - string
+          - 'null'
+          description: Dotted path into `column`. Null for the whole column.
+        link:
+          type:
+          - string
+          - 'null'
+          description: A link column, grouping by the linked resource. Null otherwise.
+        tag:
+          type:
+          - string
+          - 'null'
+          description: Correlation tag, without the `#`. Null otherwise.
+        meta:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-GroupingMeta'
+          - type: 'null'
+          description: 'What `link` or `tag` resolved to when the monitor was saved. Read-only. Null for a plain `column`.
+
+            '
+    MonitorV2PromoteRule:
+      type: object
+      properties:
+        compareColumns:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorV2ColumnComparison'
+    Monitor-GroupingMeta:
+      title: MonitorGroupingMeta
+      type: object
+      description: The physical columns a link or correlation tag resolves to.
+      required:
+      - srcFields
+      - dstFields
+      - targetDataset
+      properties:
+        srcFields:
+          type: array
+          description: Columns of this dataset the link or tag reads.
+          items:
+            $ref: '#/components/schemas/Monitor-ColumnPath'
+        dstFields:
+          type: array
+          description: Columns of the target dataset a link resolves to. Empty for a tag.
+          items:
+            type: string
+        targetDataset:
+          anyOf:
+          - $ref: '#/components/schemas/DatasetRef'
+          - type: 'null'
+          description: Dataset a link points at. Null for a tag.
+    Monitor-StageInput:
+      title: MonitorStageInput
+      type: object
+      description: 'One source a stage reads: a dataset (by `dataset` or `datasetPath`), an earlier stage, or a parameter. The fields it does not use are null.
+
+        '
+      required:
+      - inputName
+      - inputRole
+      - dataset
+      - datasetPath
+      - stageId
+      - parameterId
+      properties:
+        inputName:
+          type: string
+          description: The `@name` OPAL refers to this input by, without the `@`.
+        inputRole:
+          $ref: '#/components/schemas/Monitor-InputRole'
+        dataset:
+          anyOf:
+          - $ref: '#/components/schemas/DatasetRef'
+          - type: 'null'
+          description: Dataset this input reads. Null when it reads something else.
+        datasetPath:
+          type:
+          - string
+          - 'null'
+          description: 'The dataset as `Workspace.path/Name`, when it was saved that way. Null otherwise.
+
+            '
+        stageId:
+          type:
+          - string
+          - 'null'
+          description: '`id` of an earlier stage of this query. Null when not reading a stage.
+
+            '
+        parameterId:
+          type:
+          - string
+          - 'null'
+          description: 'Parameter the dataset is taken from. Null when not reading a parameter.
+
+            '
+    MonitorV2Column:
+      description: 'Identifies a column in a monitor''s input pipeline. At most one of
+
+        `linkColumn`, `columnPath`, and `correlationTag` may be set; the
+
+        save-time validator rejects violations of this one-of contract.
+
+        '
+      properties:
+        linkColumn:
+          $ref: '#/components/schemas/MonitorV2LinkColumn'
+        columnPath:
+          $ref: '#/components/schemas/MonitorV2ColumnPath'
+        correlationTag:
+          $ref: '#/components/schemas/MonitorV2CorrelationTag'
+    Monitor-InputRole:
+      title: MonitorInputRole
+      type: string
+      description: 'How a stage uses an input: `Data` is queried, `Reference` is only joined against.
+
+        '
+      enum:
+      - Data
+      - Reference
+    Monitor-DisabledByAlertRateLimit:
+      title: MonitorDisabledByAlertRateLimit
+      type: object
+      description: Detail for a monitor disabled for exceeding its alert rate limit.
+      required:
+      - alertRateLimit
+      - alertsGenerated
+      - lookbackSeconds
+      properties:
+        alertRateLimit:
+          type: integer
+          format: int64
+          description: The monitor's configured maximum alerts per hour.
+        alertsGenerated:
+          type: integer
+          format: int64
+          description: 'Alerts generated within the lookback window, which exceeded `alertRateLimit` and triggered the disable.
+
+            '
+        lookbackSeconds:
+          type: number
+          description: Length of the window over which alerts were counted.
+    Monitor-DisabledByResultTooBig:
+      title: MonitorDisabledByResultTooBig
+      type: object
+      description: 'Detail for a monitor disabled because a run result was too large. Either the bytes pair or the rows pair is set; the other is null.
+
+        '
+      required:
+      - bytesRead
+      - bytesLimit
+      - rowsRead
+      - rowsLimit
+      properties:
+        bytesRead:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: Bytes read. Null for a row-limit disable.
+        bytesLimit:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: Byte limit exceeded. Null for a row-limit disable.
+        rowsRead:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: Rows read. Null for a byte-limit disable.
+        rowsLimit:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: Row limit exceeded. Null for a byte-limit disable.
+    Monitor-ActionRule:
+      title: MonitorActionRule
+      type: object
+      description: Binds one action to the monitor, and says when it fires.
+      required:
+      - action
+      - levels
+      - conditions
+      - sendEndNotifications
+      - sendRemindersIntervalSeconds
+      properties:
+        action:
+          $ref: '#/components/schemas/MonitorAction-Ref'
+        levels:
+          type: array
+          description: Severities that fire this action. Empty means every severity.
+          items:
+            $ref: '#/components/schemas/Monitor-AlarmLevel'
+        conditions:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-ComparisonExpression'
+          - type: 'null'
+          description: 'Condition on the alert''s values, so one monitor can route different groups to different actions. Null to fire for every alert at `levels`.
+
+            '
+        sendEndNotifications:
+          type: boolean
+          description: Whether the action also fires when an alert resolves.
+        sendRemindersIntervalSeconds:
+          type:
+          - number
+          - 'null'
+          format: double
+          description: 'How often to re-notify while an alert stays open, in seconds. Null to notify once.
+
+            '
+    Monitor-GovernorState:
+      title: MonitorGovernorState
+      type: string
+      description: 'Where the monitor sits against its configured spend limit. `Normal` is within budget, `GracePeriod` is over it but still evaluating, and `CostDisabled` means the limit has turned it off.
+
+        '
+      enum:
+      - CostDisabled
+      - GracePeriod
+      - Normal
+    Monitor-Scheduling:
+      title: MonitorScheduling
+      type: object
+      description: 'When the monitor evaluates. `automatic` is always returned, `true` or `false`. Alongside it, one of `interval`, `transform` and `cron` is set: the schedule the monitor actually runs on, with the server''s defaults filled in. All three are null only for a monitor that is saved but not yet running and asked for no schedule; the server picks one when it starts the monitor.
+
+        '
+      required:
+      - automatic
+      - interval
+      - transform
+      - cron
+      properties:
+        automatic:
+          type: boolean
+          description: 'Whether the server chose this schedule, rather than the monitor setting one. An automatic schedule is re-chosen whenever the monitor is saved, so it follows changes to the query and lookback. Always `true` for `Anomaly` and `Composite` monitors, which cannot set one.
+
+            '
+        interval:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-IntervalSchedule'
+          - type: 'null'
+          description: 'Evaluation on a fixed interval. Chosen by the server, not requested: anomaly and composite monitors always run this way, as does a monitor whose query cannot be accelerated.
+
+            '
+        transform:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-TransformSchedule'
+          - type: 'null'
+          description: Evaluation each time the input dataset's transform runs.
+        cron:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-CronSchedule'
+          - type: 'null'
+          description: Evaluation on a wall-clock cron.
+    MonitorV2TransformSchedule:
+      type: object
+      properties:
+        freshnessGoal:
+          $ref: '#/components/schemas/DurationNanoseconds'
+    Monitor-CronSchedule:
+      title: MonitorCronSchedule
+      type: object
+      description: Evaluation on a wall-clock cron.
+      required:
+      - rawCron
+      - timezone
+      - alarmMode
+      properties:
+        rawCron:
+          type: string
+          description: Crontab expression for when to evaluate.
+        timezone:
+          type: string
+          description: IANA timezone the cron is interpreted in.
+        alarmMode:
+          $ref: '#/components/schemas/Monitor-AlarmMode'
+    Monitor-Resource:
+      title: MonitorResource
+      type: object
+      description: 'One monitor in full: the fields `GET /v1/monitors` returns for it, plus the query and rules that define it. Every field is required; one that can be absent comes back as an explicit null.
+
+        '
+      required:
+      - id
+      - name
+      - description
+      - disabled
+      - ruleKind
+      - monitorVersion
+      - createdBy
+      - createdAt
+      - updatedBy
+      - updatedAt
+      - disabledDetail
+      - scheduled
+      - rollupStatus
+      - health
+      - governorState
+      - alertState
+      - aiTriagingMode
+      - muteState
+      - mutedUntil
+      - muteCount
+      - lastErrorTime
+      - lastAlarmTime
+      - lastWarnTime
+      - managedBy
+      - lookbackSeconds
+      - dataStabilizationDelaySeconds
+      - maxAlertsPerHour
+      - scheduling
+      - inputQuery
+      - valueColumn
+      - aggregation
+      - baseline
+      - rules
+      - groupBy
+      - serviceBindings
+      - actions
+      - customVariables
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+          description: Name of the monitor, unique within its workspace.
+        description:
+          type:
+          - string
+          - 'null'
+          description: Monitor description. Null when no description is configured.
+        disabled:
+          type: boolean
+          description: 'Whether the monitor is currently disabled, either by a user or automatically by the system on exceeding its alert rate or cost limit.
+
+            '
+        ruleKind:
+          $ref: '#/components/schemas/Monitor-RuleKind'
+        monitorVersion:
+          type: string
+          format: int64
+          description: 'Version of the monitor''s current definition, as a Unix nanosecond timestamp — currently identical to `updatedAt`, and so it advances on every save. Alerts record the version they were evaluated against, so this identifies which definition produced a given alert. Carried as a string because it exceeds the JSON safe-integer range.
+
+            '
+        createdBy:
+          $ref: '#/components/schemas/User'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+        disabledDetail:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-DisabledDetail'
+          - type: 'null'
+          description: 'Why the monitor is disabled. Null when it is enabled.
+
+            '
+        scheduled:
+          type: boolean
+          description: 'Whether the monitor runs on a cron, i.e. `scheduling.cron` is set.
+
+            '
+        rollupStatus:
+          $ref: '#/components/schemas/Monitor-RollupStatus'
+        health:
+          $ref: '#/components/schemas/Monitor-Health'
+        governorState:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-GovernorState'
+          - type: 'null'
+          description: 'Cost-governor state. Null when no spend limit is configured for the monitor, which is the common case. `health` already folds this in; read it directly only to distinguish "no limit" from `Normal`.
+
+            '
+        alertState:
+          $ref: '#/components/schemas/Monitor-AlertState'
+        aiTriagingMode:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-AiTriagingMode'
+          - type: 'null'
+          description: 'Whether AI auto-investigation runs when this monitor alerts. Null when the stored mode is not one this API declares. Not reported as `None`, because the filter compares the stored value and `aiTriagingMode == "None"` would not select these rows.
+
+            '
+        muteState:
+          $ref: '#/components/schemas/Monitor-MuteState'
+        mutedUntil:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'When the mute covering this monitor expires. Null when the monitor is not muted, or is muted indefinitely — use `muteState` to tell those apart.
+
+            '
+        muteCount:
+          type: integer
+          format: int64
+          description: Number of mute rules currently covering this monitor.
+        lastErrorTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'When the monitor last logged a fatal error. Null if it never has.
+
+            '
+        lastAlarmTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: When the monitor last raised an alert. Null if it never has.
+        lastWarnTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'When the monitor last logged a non-fatal warning. Null if it never has.
+
+            '
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'App that manages this monitor, or null when it is user-managed. Returned id-only; request the app separately for its metadata.
+
+            '
+        lookbackSeconds:
+          type: number
+          format: double
+          description: Window of data each evaluation considers, in seconds.
+        dataStabilizationDelaySeconds:
+          type:
+          - number
+          - 'null'
+          format: double
+          description: 'How long evaluation waits for late data before judging a window, in seconds. Null when the monitor takes the server default.
+
+            '
+        maxAlertsPerHour:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Alerts per hour after which the monitor disables itself. Null when the monitor takes the server default.
+
+            '
+        scheduling:
+          $ref: '#/components/schemas/Monitor-Scheduling'
+        inputQuery:
+          $ref: '#/components/schemas/Monitor-MultiStageQuery'
+        valueColumn:
+          type:
+          - string
+          - 'null'
+          description: 'Column of the query output the monitor watches. Null for `Count`, `Promote` and `Composite`.
+
+            '
+        aggregation:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-ValueAggregation'
+          - type: 'null'
+          description: 'How `valueColumn` is reduced over each window before the rules compare it. Null unless `ruleKind` is `Threshold`.
+
+            '
+        baseline:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-Baseline'
+          - type: 'null'
+          description: 'What an anomaly monitor compares `valueColumn` against. Null unless `ruleKind` is `Anomaly`. A composite''s constituents and condition are read from `GET /v1/composite-monitors/{id}`.
+
+            '
+        rules:
+          type: array
+          description: 'When the monitor alerts, one rule per severity, including a `NoData` rule when the monitor alerts on missing data. Empty for `Composite` monitors, whose condition and level are read from `GET /v1/composite-monitors/{id}`.
+
+            '
+          items:
+            $ref: '#/components/schemas/Monitor-Rule'
+        groupBy:
+          type: array
+          description: 'Dimensions the rules are evaluated per; each distinct combination of values alerts independently. Empty for a single global alert.
+
+            '
+          items:
+            $ref: '#/components/schemas/Monitor-Grouping'
+        serviceBindings:
+          type: array
+          description: 'The service the monitor''s alerts are attributed to. At most one entry; empty when the monitor is not bound to a service.
+
+            '
+          items:
+            $ref: '#/components/schemas/Monitor-ServiceBinding'
+        actions:
+          type: array
+          description: 'The actions this monitor notifies through, and when each fires. Empty when it notifies nothing.
+
+            '
+          items:
+            $ref: '#/components/schemas/Monitor-ActionRule'
+        customVariables:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+          description: 'Free-form values the monitor author defined for substitution into action templates. Null when there are none.
+
+            '
+    MonitorAction-WebhookHeader:
+      title: MonitorActionWebhookHeader
+      type: object
+      required:
+      - header
+      - value
+      properties:
+        header:
+          type: string
+          description: Header name.
+        value:
+          type: string
+          description: Header value template.
+    Monitor-TransformSchedule:
+      title: MonitorTransformSchedule
+      type: object
+      description: Evaluation driven by the input dataset's transform.
+      required:
+      - freshnessGoalSeconds
+      properties:
+        freshnessGoalSeconds:
+          type: number
+          format: double
+          description: How stale the monitor's data may get, in seconds.
+    Monitor-ColumnPath:
+      title: MonitorColumnPath
+      type: object
+      description: A column, optionally a field within it.
+      required:
+      - name
+      - path
+      properties:
+        name:
+          type: string
+          description: The column's name within its dataset.
+        path:
+          type:
+          - string
+          - 'null'
+          description: Dotted path into the column. Null for the whole column.
+    MonitorV2AlarmLevel:
+      type: string
+      enum:
+      - Critical
+      - Error
+      - Informational
+      - None
+      - Warning
+    MonitorV2Health:
+      type: string
+      description: 'The monitor''s operating state as one value, computed from its last
+
+        evaluation and from its cluster''s failover role. Resolved by priority,
+
+        highest first:
+
+
+        | Value | Meaning |
+
+        |---|---|
+
+        | `Disabled` | Turned off, whether by a user or by a spend or alert-rate limit. |
+
+        | `ClusterPassive` | Its customer''s monitoring is not active on this cluster, so nothing evaluates. Set for every monitor of that customer at once. |
+
+        | `Failed` | The monitor logged an error since its last run, less than a week ago. |
+
+        | `Warnings` | The monitor logged a warning in that same window. |
+
+        | `Initializing` | An anomaly monitor has not yet produced its output dataset, so it cannot evaluate. |
+
+        | `Running` | Nothing above applies. |
+
+
+        A monitor can satisfy several; the API reports only the highest, and the
+
+        ranking may change.
+
+
+        A monitor that a limit turned off reports plain `Disabled` here. The
+
+        monitors list API separates those causes into `CostDisabled`,
+
+        `AlertRateLimitDisabled` and `AtRisk` in its own `MonitorHealth` enum;
+
+        this one omits them.
+
+        '
+      enum:
+      - ClusterPassive
+      - Disabled
+      - Failed
+      - Initializing
+      - Running
+      - Warnings
+    MonitorV2MuteRuleTerse:
+      type: object
+      required:
+      - id
+      - name
+      - schedule
+      - validFrom
+      properties:
+        schedule:
+          $ref: '#/components/schemas/MonitorV2MuteRuleScheduleTerse'
+        validFrom:
+          readOnly: true
+          $ref: '#/components/schemas/Time'
+        validTo:
+          readOnly: true
+          $ref: '#/components/schemas/Time'
+        monitorID:
+          $ref: '#/components/schemas/ObjectId'
+        id:
+          readOnly: true
+          $ref: '#/components/schemas/ObjectId'
+        name:
+          type: string
+        isGlobal:
+          type: boolean
+          readOnly: true
+        isConditional:
+          type: boolean
+          readOnly: true
+    MonitorAction-Type:
+      title: MonitorActionType
+      type: string
+      description: 'How an action notifies. `PagerDuty` and `Slack` are webhooks posted to those services.
+
+        '
+      enum:
+      - Email
+      - PagerDuty
+      - Slack
+      - Webhook
+    MonitorV2ColumnPath:
+      properties:
+        name:
+          type: string
+        path:
+          type: string
+    MonitorV2MuteRuleSchedule:
+      type: object
+      required:
+      - type
+      properties:
+        type:
+          $ref: '#/components/schemas/MonitorV2MuteScheduleType'
+        oneTime:
+          $ref: '#/components/schemas/MonitorV2OneTimeMuteSchedule'
+    Monitor-SeasonalSensitivity:
+      title: MonitorSeasonalSensitivity
+      type: string
+      description: 'How readily a departure from a seasonal baseline alerts, from `Low` (fewest alerts) to `VeryHigh`.
+
+        '
+      enum:
+      - High
+      - Low
+      - Medium
+      - VeryHigh
+    Monitor-StageQuery:
+      title: MonitorStageQuery
+      type: object
+      description: One stage of a monitor's input query.
+      required:
+      - id
+      - input
+      - pipeline
+      properties:
+        id:
+          type: string
+          description: 'Identifies the stage within this query. `outputStage` and other stages'' `input[].stageId` refer to it by this value.
+
+            '
+        input:
+          type: array
+          description: What this stage reads.
+          items:
+            $ref: '#/components/schemas/Monitor-StageInput'
+        pipeline:
+          type: string
+          description: The stage's OPAL.
+    Monitor-SeasonalAlgorithm:
+      title: MonitorSeasonalAlgorithm
+      type: object
+      description: 'Baseline that models daily and weekly cycles, so a regular nightly trough is not read as an anomaly.
+
+        '
+      required:
+      - sensitivity
+      - dailyPeriods
+      - weeklyPeriods
+      properties:
+        sensitivity:
+          anyOf:
+          - $ref: '#/components/schemas/Monitor-SeasonalSensitivity'
+          - type: 'null'
+          description: 'How readily a departure from the baseline alerts. Null when the monitor takes the server default.
+
+            '
+        dailyPeriods:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Daily cycles the model fits. Null when the monitor takes the server default.
+
+            '
+        weeklyPeriods:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Weekly cycles the model fits. Null when the monitor takes the server default.
+
+            '
+    MonitorV2ComparisonFunction:
+      type: string
+      enum:
+      - Contains
+      - Equal
+      - Greater
+      - GreaterOrEqual
+      - Less
+      - LessOrEqual
+      - NotContains
+      - NotEqual
+      - NotStartsWith
+      - StartsWith
+    MonitorV2ComparisonTerm:
+      type: object
+      required:
+      - comparison
+      - column
+      properties:
+        comparison:
+          $ref: '#/components/schemas/MonitorV2Comparison'
+        column:
+          $ref: '#/components/schemas/MonitorV2Column'
+    Monitor-AlertState:
+      title: MonitorAlertState
+      type: string
+      description: 'Whether the monitor is alerting now, has alerted before, or never has. `Triggering` means an alarm is open, or one was raised since the last evaluation; a monitor that is turned off is never `Triggering` because it cannot evaluate. `Previous` means it has alerted at some point but is not now — the same set as `lastAlarmTime != null` minus the triggering ones.
+
+        '
+      enum:
+      - Never
+      - Previous
+      - Triggering
+    DatasetContentType:
+      title: DatasetContentType
+      type: string
+      description: 'The type of data a dataset contains. For Resource datasets, this is
+
+        determined by the dataset kind. For other kinds, it is derived from the
+
+        dataset''s interface bindings. Returns Unknown if no recognized interface
+
+        is found.
+
+        '
+      enum:
+      - Unknown
+      - Resource
+      - Log
+      - Metric
+      - OTelSpan
+      - OTelTrace
+    MonitorV2OneTimeMuteSchedule:
+      type: object
+      required:
+      - startTime
+      properties:
+        startTime:
+          $ref: '#/components/schemas/Time'
+        endTime:
+          $ref: '#/components/schemas/Time'
+    MonitorAction-Webhook:
+      title: MonitorActionWebhook
+      type: object
+      description: 'A webhook notification''s payload, also used for PagerDuty and Slack. A PagerDuty routing key is part of the `body` template, not a field of its own.
+
+        '
+      required:
+      - url
+      - method
+      - headers
+      - body
+      - fragments
+      properties:
+        url:
+          type:
+          - string
+          - 'null'
+          description: Endpoint to post to. Null when the action sets none.
+        method:
+          anyOf:
+          - $ref: '#/components/schemas/MonitorAction-HttpMethod'
+          - type: 'null'
+          description: HTTP method. Null when the action sets none.
+        headers:
+          type: array
+          description: Headers sent with the request.
+          items:
+            $ref: '#/components/schemas/MonitorAction-WebhookHeader'
+        body:
+          type:
+          - string
+          - 'null'
+          description: Request-body template. Null when the action sets none.
+        fragments:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+          description: 'Named template fragments the body can include. Null when the action defines none.
+
+            '
+    Monitor-ServiceBinding:
+      title: MonitorServiceBinding
+      type: object
+      description: 'A service a monitor''s alerts are attributed to, as its three identifying dimensions.
+
+        '
+      required:
+      - serviceName
+      - environment
+      - serviceNamespace
+      properties:
+        serviceName:
+          $ref: '#/components/schemas/Monitor-ServiceBindingValue'
+        environment:
+          $ref: '#/components/schemas/Monitor-ServiceBindingValue'
+        serviceNamespace:
+          $ref: '#/components/schemas/Monitor-ServiceBindingValue'
+  responses:
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  parameters:
+    Monitor-Id:
+      name: id
+      in: path
+      required: true
+      description: 'Unique identifier of the monitor. A string, as every response body renders it.
+
+        '
+      schema:
+        type: string
+        format: int64
+      example: '41000123'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

@@ -1,0 +1,1984 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Dataset API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Dataset across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Dataset
+  description: Manage datasets. Learn more about datasets..
+paths:
+  /v1/datasets/{id}:
+    get:
+      summary: Get a dataset
+      description: 'Returns a single dataset by ID. The response body is the same
+
+        `Dataset-Resource` shape returned by the list endpoint.
+
+
+        Set `expand=true` to inline reference fields (`createdBy`,
+
+        `updatedBy`, `managedBy`, `defaultDashboard`,
+
+        `defaultInstanceDashboard`, `storageIntegration.record`). Without
+
+        `expand`, references contain only `id`.
+
+
+        To look up a dataset by label or other attribute, use
+
+        `GET /v1/datasets` with a CEL `filter`.'
+      operationId: GetDataset
+      tags:
+      - Dataset
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: int64
+        required: true
+        description: The id of the dataset to query
+        example: 1
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Dataset queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/datasets/{id}/graph:
+    get:
+      summary: Get the lineage graph neighborhood around a focal dataset
+      description: 'Returns the BFS-nearest lineage neighborhood around the focal
+
+        dataset id, walking transform data-input edges (`InputRole=Data`)
+
+        in both directions over the default-filtered dataset set
+
+        (excludes monitors and metric SMA datasets). The response uses
+
+        the same `Dataset-GraphResponse` shape as `GET /v1/datasets/graph`.
+
+
+        Lineage view semantics: foreign-key edges are **not** traversed by
+
+        this endpoint — they are surfaced by the full-graph endpoint for
+
+        the Link/Explore-Universe views. Reference-role transform inputs
+
+        are also excluded.
+
+
+        Ordering within the response is BFS order: focal dataset first,
+
+        then by BFS depth, ties broken by `id` ascending. If the walk
+
+        exceeds `limit`, the response is truncated to the nearest `limit`
+
+        nodes and `meta.totalCount` is set to `-1`. CEL `filter` and
+
+        `expand` are not supported.'
+      operationId: GetDatasetGraph
+      tags:
+      - Dataset
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: int64
+        required: true
+        description: Focal dataset id.
+        example: '41000234'
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          format: int64
+          minimum: 1
+          maximum: 5000
+          default: 500
+        required: false
+        description: 'Max number of nodes (including the focal) in the returned neighborhood.
+
+          Default 500, max 5000. When the BFS hits this cap, meta.totalCount is -1.
+
+          '
+      responses:
+        '200':
+          description: Lineage neighborhood retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset-GraphResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/datasets/stats:
+    get:
+      summary: Get dataset attribute statistics
+      description: 'Returns aggregated statistics — distinct value count and the top-K
+
+        most frequent value/count pairs — for one or more dataset
+
+        attributes, optionally restricted to a CEL-filtered subset of
+
+        datasets.
+
+
+        Each `attributes` entry is a CEL expression that produces a
+
+        comparable value (string, int, bool, timestamp); compound
+
+        expressions are allowed (`coalesce(_package, label)`). The CEL
+
+        environment matches `GET /v1/datasets`; see that endpoint''s
+
+        description for the field mapping, type discrepancies, and
+
+        available functions.
+
+
+        Each `multiValueAttributes` entry is a CEL expression that produces
+
+        a `list`; the list is flattened across all matching
+
+        datasets and counted as **total occurrences**, so a single
+
+        dataset whose expression evaluates to a 3-element list
+
+        contributes 3 increments. `multiValueAttributes` `count` values may
+
+        therefore exceed `meta.filteredDatasets`. For `attributes` the
+
+        count is unchanged: the number of *datasets* with that value.
+
+
+        At least one of `attributes` or `multiValueAttributes` must be
+
+        non-empty; passing neither returns 400.
+
+
+        Stat values are returned as JSON strings regardless of the
+
+        expression''s CEL type:
+
+
+        - `string` — verbatim.
+
+        - `int` — decimal digits (e.g. `"41000234"`).
+
+        - `bool` — `"true"` or `"false"`.
+
+        - `timestamp` — RFC 3339 (e.g. `"2024-01-01T00:00:00Z"`).
+
+
+        The response `meta` block reports `totalDatasets` (before the
+
+        filter) and `filteredDatasets` (after) so callers can compute
+
+        coverage.'
+      operationId: GetDatasetStats
+      tags:
+      - Dataset
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: 'CEL expression restricting which datasets contribute to the
+
+          statistics. Must evaluate to `bool`. Must be URL-encoded.
+
+          If omitted, statistics are computed across all readable
+
+          datasets. See `GET /v1/datasets` for the CEL primer and
+
+          filter examples.
+
+          '
+      - in: query
+        name: attributes
+        schema:
+          type: string
+        required: false
+        description: 'CSV list of CEL expressions, each producing a comparable
+
+          value (string, int, bool, timestamp). Each expression
+
+          identifies one stat to compute over the filtered dataset
+
+          set. Maximum 10 expressions per request. See the operation
+
+          description for the wire format of stat values.
+
+
+          Either `attributes` or `multiValueAttributes` must be non-empty;
+
+          both may be supplied together.
+
+
+          CSV-escape first, then URL-encode. Wrap an item in `"` if it
+
+          contains a comma or `"`; double a literal `"` to `""` inside
+
+          a quoted item.
+
+          '
+      - in: query
+        name: multiValueAttributes
+        schema:
+          type: string
+        required: false
+        description: 'CSV list of CEL expressions, each producing a `list<comparable>`
+
+          (e.g. `interfaces.map(i, i.path)`, `correlationTags.map(t, t.tag)`,
+
+          `primaryKey`, `fieldList.map(f, f.name)`). For each matching
+
+          dataset, the expression''s list is flattened into a per-expression
+
+          bag and counts are total occurrences — a single dataset
+
+          contributes one increment per element. The flattened bag for
+
+          each expression is capped at 10,000 values across all matching
+
+          datasets; exceeding the cap returns 400.
+
+
+          Maximum 10 expressions. Either `attributes` or `multiValueAttributes`
+
+          must be non-empty; both may be supplied together. `topK`
+
+          applies independently to each entry of either array.
+
+
+          CSV-escape first, then URL-encode. Wrap an item in `"` if it
+
+          contains a comma or `"`; double a literal `"` to `""` inside
+
+          a quoted item.
+
+          '
+      - in: query
+        name: topK
+        schema:
+          type: integer
+          format: int64
+          minimum: 1
+          maximum: 100
+        required: true
+        description: 'Number of top values to return per attribute, sorted by count
+
+          descending. Range 1–100. The total distinct count for each
+
+          attribute is always reported via `distinctCount`, even when it
+
+          exceeds `topK`.
+
+          '
+      responses:
+        '200':
+          description: Dataset statistics retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset-StatsResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/datasets/graph:
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Get the full dataset graph
+      description: '> **Beta — schema may still change; breaking changes are coordinated
+
+        > with affected customers. Suitable for evaluation, not production
+
+        > reliance.**
+
+
+        Returns a lean per-dataset projection — `Dataset-GraphSummary` — for
+
+        every dataset visible in the environment, plus the foreign-key and
+
+        transform-input edges between them. Sorted by `id` ascending.
+
+
+        Designed to feed the Explore Universe graph in a single call.
+
+        Intentionally unpaginated and intentionally unfiltered: this
+
+        endpoint applies a fixed default filter that excludes monitors
+
+        (`isMonitor`) and metric SMA datasets (`isMetricSMA`), and does
+
+        not accept a CEL `filter` or `expand`. Always returns 200 with
+
+        `meta.totalCount` equal to the number of returned datasets; the
+
+        `-1` sentinel is not used here. Callers that need to defend
+
+        against very large environments should cap on the client side.
+
+
+        For arbitrary filtering or pagination, use `GET /v1/datasets`
+
+        instead. For the lineage neighborhood around a single dataset,
+
+        use `GET /v1/datasets/{id}/graph`.'
+      operationId: ListDatasetGraph
+      tags:
+      - Dataset
+      responses:
+        '200':
+          description: Graph retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset-GraphResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/datasets:
+    get:
+      summary: Get a list of datasets
+      description: 'Returns a paginated list of datasets the caller has read access to,
+
+        optionally filtered and ordered with a CEL expression.'
+      operationId: ListDatasets
+      tags:
+      - Dataset
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: "CEL expression that response datasets must match. Must evaluate to\n`bool`. Must be URL-encoded. See the operation description for the\nCEL primer (field mapping, type discrepancies, available functions).\n\n## CEL functions\n\n### `hasCorrelationTag(tag string, value string) bool`\n\nReturns `true` if this dataset has ever been associated with the\ncorrelation tag key-value pair `tag=value`.\n\nBoth arguments must be constant string literals. Field references,\n`cel.bind` names, and function calls are rejected with HTTP 400.\n\nError conditions:\n- HTTP 400 if a `(tag, value)` pair matches more than 10,000 datasets.\n  Narrow the tag name or value to reduce the match set.\n- HTTP 400 if this feature is not available for your account.\n  Contact support to enable correlation-tag filtering.\n- HTTP 503 if the tag index is temporarily unavailable. Retry after a short interval.\n\n### `hasCorrelationTag(tag string) bool`\n\nReturns `true` if this dataset contains or inherits the correlation\ntag named `tag` (regardless of value).\n\nThe argument must be a constant string literal. Field references,\n`cel.bind` names, and function calls are rejected with HTTP 400.\n"
+        examples:
+          equalityAndIdList:
+            summary: Top-level scalars and an `id` list (note `id` is `int` in CEL, even though it serializes as a string in JSON)
+            value: label == "Source" || id in [40000123, 40000456]
+          nullSafeNestedRef:
+            summary: Null-guarded traversal into a nested reference record
+            value: storageIntegration != null && storageIntegration.record.label == "snowflake-prod"
+          mapAndListQuantifier:
+            summary: Map key check plus a list quantifier over nested objects
+            value: '"env" in objectTags && interfaces.exists(i, i.path == "log")'
+          stringAndTimestampFunctions:
+            summary: Regex match and timestamp comparison
+            value: label.matches("^Logs/AWS/") && createdAt > timestamp("2024-01-01T00:00:00Z")
+          urlEncoded:
+            summary: URL-encoded form of the equalityAndIdList example
+            value: label%20%3D%3D%20%22Source%22%20%7C%7C%20id%20in%20%5B40000123%2C%2040000456%5D
+          filterByCorrelationTagKV:
+            summary: Filter by a single correlation tag key-value pair
+            value: hasCorrelationTag("customer.name","tekion")
+          filterByCorrelationTagPresence:
+            summary: Filter to datasets that contain or inherit a correlation tag
+            value: hasCorrelationTag("env")
+          filterByTagAndMetadata:
+            summary: Combine hasCorrelationTag with a metadata filter
+            value: hasCorrelationTag("customer.name","tekion") && label.startsWith("k8s")
+          filterByTagOr:
+            summary: Union of two correlation tag values
+            value: hasCorrelationTag("env","prod") || hasCorrelationTag("env","staging")
+      - in: query
+        name: orderBy
+        schema:
+          type: string
+        required: false
+        description: 'CSV list of CEL expressions, each producing a comparable value. Prefix an item with `-` for descending order. Default sort is `id` ascending; pagination is stable as long as no datasets are created or deleted between requests.
+
+          CSV-escape first, then URL-encode. Wrap an item in `"` if it contains a comma or `"`; double a literal `"` to `""` inside a quoted item.
+
+          **Ignored when `query` is set** — results are ordered by relevance when semantic search is active (see the Semantic search section in the operation description).
+
+          '
+        examples:
+          csvQuotedExpression:
+            summary: Multi-key sort with a CSV-quoted CEL expression containing a comma
+            value: '"coalesce(managedBy.label, label)",-id'
+          csvQuotedAndUrlEncoded:
+            summary: URL-encoded form of csvQuotedExpression (literal `,` and `"` percent-encoded; outer CSV delimiter encoded too)
+            value: '%22coalesce%28managedBy.label%2C%20label%29%22%2C-id'
+      - $ref: '#/components/parameters/OffsetParam'
+      - $ref: '#/components/parameters/LimitParam'
+      - $ref: '#/components/parameters/ExpandParam'
+      - in: query
+        name: query
+        schema:
+          type: string
+          maxLength: 2000
+        required: false
+        description: 'Free-text search query. When set, returns datasets ranked by relevance to the query, with the most relevant results first. `orderBy` is ignored — results are always ordered by relevance descending.
+
+          May be combined with `filter` to narrow results after ranking, and with `limit`/`offset` for pagination. When `filter` is also set, the response may contain fewer than `limit` items if many ranked candidates are filtered out.
+
+          `meta.totalCount` is always `-1` for semantic-search requests. Returns 404 if semantic search is not available in this deployment.
+
+          '
+        examples:
+          searchByIntent:
+            summary: Find datasets related to customer purchase events
+            value: customer purchase orders
+      - in: query
+        name: minScore
+        schema:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          default: 0.3
+        required: false
+        description: 'Minimum cosine similarity score (0.0–1.0) for semantic search results. Datasets scoring below this threshold are excluded. Only applies when `query` is set. Defaults to 0.3.
+
+          '
+      responses:
+        '200':
+          description: Datasets queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  parameters:
+    ExpandParam:
+      name: expand
+      in: query
+      description: Whether to expand resources referenced in the response to include additional fields
+      schema:
+        type: boolean
+    OffsetParam:
+      name: offset
+      in: query
+      description: Number of items to skip before starting to collect the result set
+      schema:
+        type: integer
+        format: int64
+    LimitParam:
+      name: limit
+      in: query
+      description: Maximum number of items to return in the response
+      schema:
+        type: integer
+        format: int64
+  schemas:
+    DatasetRef:
+      title: DatasetRef
+      type: object
+      description: 'A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/DatasetBrief'
+    DatasetBrief:
+      title: DatasetBrief
+      type: object
+      description: 'Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - contentType
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        contentType:
+          $ref: '#/components/schemas/DatasetContentType'
+          description: 'The type of data the referenced dataset contains — Resource, Log,
+
+            Metric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset''s
+
+            kind and interface bindings.
+
+            '
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    Dataset-TimeAlignment:
+      title: TimeAlignment
+      type: object
+      required:
+      - stepSizeNanoseconds
+      - offsetNanoseconds
+      properties:
+        stepSizeNanoseconds:
+          $ref: '#/components/schemas/DurationNanoseconds'
+        offsetNanoseconds:
+          $ref: '#/components/schemas/DurationNanoseconds'
+    StorageIntegration-Brief:
+      title: StorageIntegrationBrief
+      type: object
+      required:
+      - label
+      - type
+      - storageProvider
+      description: 'Expanded fields for a storage integration reference.
+
+        Present only when the parent resource is fetched with ?expand=true.
+
+        '
+      properties:
+        label:
+          type: string
+        type:
+          $ref: '#/components/schemas/StorageIntegration-Type'
+        storageProvider:
+          $ref: '#/components/schemas/StorageIntegration-StorageProvider'
+    Dataset-CompilationError:
+      title: CompilationError
+      type: object
+      required:
+      - error
+      - errorInDataset
+      properties:
+        error:
+          type: string
+        errorInDataset:
+          description: 'Reference to the upstream dataset that produced the compilation
+
+            error. Weak ref: in many cases the upstream dataset cannot be
+
+            resolved (cross-workspace deletion, RBAC visibility, race with
+
+            soft-delete). When unresolvable, the field is null and the caller
+
+            still has the `error` string. The field is always present; only
+
+            its value is nullable.
+
+            '
+          anyOf:
+          - $ref: '#/components/schemas/DatasetRef'
+          - type: 'null'
+    Dataset-AccelerationType:
+      title: AccelerationType
+      type: string
+      enum:
+      - InsertOnly
+      - Aggregation
+      - Other
+      - NotSupported
+    AttributeStats:
+      title: AttributeStats
+      type: object
+      description: 'Aggregated statistics for one requested attribute expression: how many
+
+        distinct values it produced, plus the most frequent value/count pairs.
+
+        '
+      required:
+      - attribute
+      - distinctCount
+      - stats
+      properties:
+        attribute:
+          type: string
+          description: The attribute expression that was queried, verbatim from the request.
+        distinctCount:
+          type: integer
+          format: int64
+          description: Total distinct values, including those outside the returned top-K.
+        stats:
+          type: array
+          description: Top-K value/count pairs, sorted by count descending.
+          items:
+            $ref: '#/components/schemas/StatValueCount'
+    ObjectRef:
+      title: ObjectRef
+      type: object
+      description: 'A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/ObjectBrief'
+    Dataset-DefinitionType:
+      title: DefinitionType
+      type: string
+      description: 'The kind of dataset definition. Values match `metatypes.TransformKind`''s
+
+        string constants verbatim where the backend has one (`OPAL`, `Builtin`,
+
+        `LogDerived`); `Source` and `Invalid` are REST-side additions for
+
+        dataset shapes the backend does not surface as a TransformKind.
+
+        - OPAL: dataset is produced by an OPAL transform pipeline.
+
+        - Builtin: dataset is produced by a built-in transform (e.g. canonical-trace).
+
+        - LogDerived: dataset is a log-derived metric.
+
+        - Source: dataset receives data directly (datastream or external table); it has no transform.
+
+        - Invalid: the stored transform kind is empty or unrecognised. Indicates corrupt or partially-migrated data, or a legacy SQL-kind transform (no production datasets carry one as of 2026-05-14).
+
+        '
+      enum:
+      - OPAL
+      - Builtin
+      - LogDerived
+      - Source
+      - Invalid
+    StorageIntegration-Ref:
+      title: StorageIntegrationRef
+      type: object
+      description: 'A reference to a storage integration, used when embedded in other resources.
+
+        Always includes id. When the parent resource is fetched with ?expand=true,
+
+        the record object is present with label, type, and storageProvider.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+        record:
+          $ref: '#/components/schemas/StorageIntegration-Brief'
+    Dataset-DatasetKind:
+      title: DatasetKind
+      type: string
+      enum:
+      - Table
+      - Resource
+      - Event
+      - Interval
+    Dataset-GraphResponse:
+      title: DatasetGraphResponse
+      type: object
+      description: 'Response body for both GET /v1/datasets/graph and GET /v1/datasets/{id}/graph.
+
+        On the full-graph endpoint: datasets are sorted by id ascending, and meta.totalCount
+
+        is always the number of returned datasets (never -1).
+
+        On the focal endpoint: datasets are sorted in BFS-nearest order (focal first, then
+
+        by BFS depth, ties broken by id ascending for determinism), and meta.totalCount is
+
+        -1 iff the BFS was capped by limit; otherwise it is the number of returned datasets.
+
+        '
+      required:
+      - datasets
+      - meta
+      properties:
+        datasets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-GraphSummary'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    Dataset-FieldType:
+      title: FieldType
+      type: object
+      required:
+      - tag
+      properties:
+        tag:
+          $ref: '#/components/schemas/Dataset-DataType'
+    Dataset-AccelerationState:
+      title: AccelerationState
+      type: string
+      description: 'The state of the dataset''s acceleration.
+
+        Initializing: The dataset is newly created/updated and acceleration has just started.
+
+        Accelerated: The dataset is accelerated and available for querying.
+
+        AcceleratedImmediately: The dataset is accelerated and available for querying. The dataset is also in "live mode", meaning it is being updated as fast as possible.
+
+        Unavailable: The dataset is not accelerated and is not available for querying due to a compilation error in the dataset or upstream.
+
+        Disabled: The dataset is not accelerated and is available for querying due to user disablement. (e.g. dataset is a view)
+
+        Error: The dataset is not accelerated and may return outdated results due to a critical error.
+
+        '
+      enum:
+      - Initializing
+      - Accelerated
+      - AcceleratedImmediately
+      - Unavailable
+      - Disabled
+      - Error
+    Dataset-ListResponse:
+      title: DatasetListResponse
+      type: object
+      required:
+      - datasets
+      - meta
+      properties:
+        datasets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-Resource'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    Dataset-InterfaceFieldMapping:
+      title: InterfaceFieldMapping
+      type: object
+      required:
+      - interfaceField
+      - field
+      properties:
+        interfaceField:
+          type: string
+        field:
+          type: string
+    Dataset-DataType:
+      title: DataType
+      type: string
+      enum:
+      - None
+      - Bool
+      - Float64
+      - Int64
+      - String
+      - Timestamp
+      - Duration
+      - IPv4
+      - TDigest
+      - Array
+      - Object
+      - Variant
+      - Link
+      - DatasetRef
+    Dataset-AccelerationInfo:
+      title: AccelerationInfo
+      type: object
+      required:
+      - state
+      - stalenessSeconds
+      - recentStalenessSeconds
+      - stalenessReasons
+      - userConfiguredTargetStalenessSeconds
+      - targetExcludingDownstreamStalenessSeconds
+      - effectiveTargetStalenessSeconds
+      - rateLimitOverrideTargetStalenessSeconds
+      - alwaysAccelerated
+      - acceleratedRanges
+      - targetAcceleratedRanges
+      - freshnessTime
+      - effectiveOnDemandMaterializationLengthDays
+      - dataRetentionEnabled
+      - effectiveDataRetentionPeriodDays
+      - effectiveDataRetentionTimestamp
+      - minimumDataTimestamp
+      - hibernatedAt
+      - errors
+      properties:
+        state:
+          $ref: '#/components/schemas/Dataset-AccelerationState'
+        stalenessSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: Live staleness of the dataset. Null if alwaysAccelerated is true.
+        recentStalenessSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'A stable, conservative measurement of what staleness the dataset is achieving
+
+            over the past few hours. Null if alwaysAccelerated is true.
+
+            '
+        stalenessReasons:
+          type: array
+          description: 'Reasons explaining why this dataset''s freshness is what it is.
+
+            Empty array indicates the dataset is meeting its freshness goal.
+
+            Today the server returns at most one dominant reason; the list
+
+            shape is reserved so we can return multiple stacked reasons
+
+            (e.g. cost-throttle + decay together) in the future without an
+
+            API contract change.
+
+            '
+          items:
+            $ref: '#/components/schemas/Dataset-StalenessReason'
+        userConfiguredTargetStalenessSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'User-configured staleness target of the dataset. Set to default value if not set by user.
+
+            Actual target may be higher due to decaying or credit manager overrides.
+
+            '
+        targetExcludingDownstreamStalenessSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Target staleness of the dataset, ignoring downstream freshness goals.
+
+            This can be higher than the configured staleness target due to decaying or credit manager overrides.
+
+            '
+        effectiveTargetStalenessSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Effective target staleness of the dataset. This is the value that the dataset is being kept up to date to.
+
+            This can be higher or lower than the user-configured target staleness if the credit manager is active or downstream datasets staleness targets demand it.
+
+
+            If `effectiveTargetStalenessSeconds > userConfiguredTargetStalenessSeconds`, then the credit manager is active on this dataset, and
+
+            `effectiveTargetStalenessSeconds == rateLimitOverrideTargetStalenessSeconds`.
+
+            If `effectiveTargetStalenessSeconds < userConfiguredTargetStalenessSeconds`, then a downstream dataset/monitor has a lower configured freshness goal.
+
+            If `effectiveTargetStalenessSeconds == userConfiguredTargetStalenessSeconds`, then the configured freshness goal is in effect.
+
+            '
+        rateLimitOverrideTargetStalenessSeconds:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'The target staleness override for this dataset from the credit manager, if
+
+            a transform credit rate limit is configured and is causing this dataset''s
+
+            configured freshness goal to be overridden.
+
+            '
+        alwaysAccelerated:
+          type: boolean
+        acceleratedRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenTimeRange'
+        targetAcceleratedRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenTimeRange'
+        freshnessTime:
+          $ref: '#/components/schemas/NullableTime'
+        effectiveOnDemandMaterializationLengthDays:
+          type: integer
+          format: int64
+        dataRetentionEnabled:
+          type: boolean
+        effectiveDataRetentionPeriodDays:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        effectiveDataRetentionTimestamp:
+          $ref: '#/components/schemas/NullableTime'
+        minimumDataTimestamp:
+          $ref: '#/components/schemas/NullableTime'
+        hibernatedAt:
+          $ref: '#/components/schemas/NullableTime'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-AccelerationError'
+    Dataset-Resource:
+      title: DatasetResource
+      type: object
+      description: Observe Dataset with properties.
+      required:
+      - id
+      - label
+      - description
+      - icon
+      - kind
+      - source
+      - lastUpdateSource
+      - fieldList
+      - validFromField
+      - validToField
+      - labelField
+      - primaryKey
+      - candidateKeys
+      - foreignKeys
+      - relatedKeys
+      - groupingKey
+      - correlationTags
+      - isSource
+      - interfaces
+      - contentType
+      - customFieldMappings
+      - objectTags
+      - alignment
+      - compilationError
+      - managedBy
+      - dataTableViewState
+      - defaultDashboard
+      - defaultInstanceDashboard
+      - isView
+      - isMonitor
+      - isMetricSMA
+      - accelerationType
+      - accelerationInfo
+      - createdBy
+      - updatedBy
+      - createdAt
+      - updatedAt
+      - storageIntegration
+      - definitionType
+      - defaultQueryWindowSeconds
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+        label:
+          type: string
+        description:
+          type: string
+        icon:
+          type: string
+        kind:
+          $ref: '#/components/schemas/Dataset-DatasetKind'
+        source:
+          type:
+          - string
+          - 'null'
+        lastUpdateSource:
+          type:
+          - string
+          - 'null'
+        fieldList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-FieldDesc'
+        validFromField:
+          type:
+          - string
+          - 'null'
+        validToField:
+          type:
+          - string
+          - 'null'
+        labelField:
+          type:
+          - string
+          - 'null'
+        primaryKey:
+          type: array
+          items:
+            type: string
+        candidateKeys:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+        foreignKeys:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-ForeignKey'
+        relatedKeys:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-RelatedKey'
+        groupingKey:
+          anyOf:
+          - $ref: '#/components/schemas/Dataset-GroupingKey'
+          - type: 'null'
+        correlationTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-CorrelationTag'
+        isSource:
+          type: boolean
+        interfaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-ImplementedInterface'
+        contentType:
+          $ref: '#/components/schemas/DatasetContentType'
+          description: 'The type of data this dataset contains. For Resource datasets, determined by
+
+            the dataset kind. For other kinds, derived from the dataset''s interface bindings.
+
+            Returns Unknown if no recognized interface is found.
+
+            '
+        customFieldMappings:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+          description: 'Custom field mappings associated with the dataset''s content type. Maps canonical
+
+            field names to column name(s). Most fields map to a single column, but some
+
+            (e.g. metric "tag") allow multiple columns. The exact set of keys depends on
+
+            the contentType. For example, a Log dataset might have {"log": ["message"]}, while
+
+            a Metric dataset might have {"metric": ["metric_name"], "value": ["metric_value"]}.
+
+            Empty if the dataset has no recognized content type.
+
+            '
+        objectTags:
+          $ref: '#/components/schemas/ObjectTags'
+        alignment:
+          anyOf:
+          - $ref: '#/components/schemas/Dataset-TimeAlignment'
+          - type: 'null'
+        compilationError:
+          anyOf:
+          - $ref: '#/components/schemas/Dataset-CompilationError'
+          - type: 'null'
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+        dataTableViewState:
+          type:
+          - string
+          - 'null'
+        defaultDashboard:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+        defaultInstanceDashboard:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+        isView:
+          type: boolean
+        isMonitor:
+          type: boolean
+        isMetricSMA:
+          type: boolean
+        accelerationType:
+          $ref: '#/components/schemas/Dataset-AccelerationType'
+        accelerationInfo:
+          $ref: '#/components/schemas/Dataset-AccelerationInfo'
+        createdBy:
+          $ref: '#/components/schemas/User'
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+        storageIntegration:
+          oneOf:
+          - $ref: '#/components/schemas/StorageIntegration-Ref'
+          - type: 'null'
+          readOnly: true
+          description: 'The storage integration associated with this dataset, if any.
+
+            Returns null for datasets without a storage integration.
+
+            When expand=true, includes a record object with label, type, and storageProvider.
+
+            '
+        definitionType:
+          $ref: '#/components/schemas/Dataset-DefinitionType'
+          description: 'The kind of definition that produces this dataset. Always populated;
+
+            classifies every dataset, including source datasets (datastreams /
+
+            external tables) and rows whose stored kind is empty or corrupt.
+
+            '
+        score:
+          type: number
+          format: double
+          readOnly: true
+          description: 'Cosine similarity score (0–1). Only present when the `query` search
+
+            parameter is used (semantic search). Omitted for non-semantic list
+
+            requests.
+
+            '
+    OpenTimeRange:
+      title: Open Time Range
+      description: A time range with a start and/or end time.
+      type: object
+      required:
+      - startTime
+      - endTime
+      properties:
+        startTime:
+          $ref: '#/components/schemas/NullableTime'
+        endTime:
+          $ref: '#/components/schemas/NullableTime'
+    StatValueCount:
+      title: StatValueCount
+      type: object
+      description: One distinct attribute value and the number of rows carrying it.
+      required:
+      - value
+      - count
+      properties:
+        value:
+          type: string
+          description: 'The attribute value, always a JSON string regardless of the expression''s
+
+            underlying type. Strings appear verbatim; ints as decimal digits (e.g.
+
+            `"41000234"`); bools as `"true"` or `"false"`; timestamps as RFC 3339
+
+            (e.g. `"2024-01-01T00:00:00Z"`).
+
+            '
+        count:
+          type: integer
+          format: int64
+          description: Number of rows with this value.
+    Dataset-ImplementedInterface:
+      title: ImplementedInterface
+      type: object
+      required:
+      - path
+      - mapping
+      properties:
+        path:
+          type: string
+        mapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-InterfaceFieldMapping'
+    Dataset-StatsResponse:
+      title: DatasetStatsResponse
+      type: object
+      description: Aggregated stats for requested dataset attributes
+      required:
+      - attributes
+      - multiValueAttributes
+      - meta
+      properties:
+        attributes:
+          type: array
+          description: 'One entry per requested `attributes` expression, in request
+
+            order. Empty array if `attributes` was empty in the request.
+
+            '
+          items:
+            $ref: '#/components/schemas/AttributeStats'
+        multiValueAttributes:
+          type: array
+          description: 'One entry per requested `multiValueAttributes` expression, in
+
+            request order. Empty array if `multiValueAttributes` was empty in
+
+            the request. Each entry''s `count` values are total
+
+            occurrences across all matching datasets and may exceed
+
+            `meta.filteredDatasets`.
+
+            '
+          items:
+            $ref: '#/components/schemas/AttributeStats'
+        meta:
+          $ref: '#/components/schemas/Dataset-StatsMeta'
+    Dataset-ForeignKey:
+      title: ForeignKey
+      type: object
+      required:
+      - label
+      - targetDataset
+      - targetStageLabel
+      - targetLabelField
+      - srcPaths
+      - dstFields
+      properties:
+        label:
+          type: string
+        targetDataset:
+          anyOf:
+          - $ref: '#/components/schemas/DatasetRef'
+          - type: 'null'
+        targetStageLabel:
+          type:
+          - string
+          - 'null'
+        targetLabelField:
+          type:
+          - string
+          - 'null'
+        srcPaths:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-FieldPath'
+        dstFields:
+          type: array
+          items:
+            type: string
+    StorageIntegration-Type:
+      title: StorageIntegrationType
+      type: string
+      enum:
+      - Iceberg
+    ObjectTags:
+      title: ObjectTags
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          type: string
+      description: 'User-applied tags for organization and discovery, as a map of tag key
+
+        to a list of values. For example: {"env": ["prod", "staging"], "team": ["platform"]}.
+
+        '
+    Dataset-FieldPath:
+      title: FieldPath
+      type: object
+      required:
+      - field
+      - path
+      properties:
+        field:
+          type: string
+        path:
+          type: string
+    Dataset-StalenessReason:
+      title: StalenessReason
+      type: string
+      description: 'A reason explaining why a dataset''s freshness is what it is.
+
+        ConfiguredFreshnessGoal: The data meets the freshness goal set for this dataset, but that goal is loose enough to allow this staleness; set a tighter goal for fresher data.
+
+        CreditManagerOverride: The acceleration credit manager raised the freshness goal to keep acceleration cost down.
+
+        SlowAcceleration: Acceleration can''t keep up with the freshness goal; optimizing the dataset''s query or reducing its data volume can help.
+
+        ActiveBackfill: A backfill is accelerating historical data, which can reduce freshness until it finishes.
+
+        DatasetHibernated: Ongoing acceleration is suspended because the dataset is hibernated; querying it resumes acceleration.
+
+        UnusedDatasetHibernating: The freshness goal was relaxed because the dataset hasn''t been queried recently; querying it restores the configured goal.
+
+        '
+      enum:
+      - ConfiguredFreshnessGoal
+      - CreditManagerOverride
+      - SlowAcceleration
+      - ActiveBackfill
+      - DatasetHibernated
+      - UnusedDatasetHibernating
+    StorageIntegration-StorageProvider:
+      title: StorageProvider
+      type: string
+      enum:
+      - S3
+    NullableTime:
+      type:
+      - string
+      - 'null'
+      format: RFC3339
+    Dataset-GroupingKey:
+      title: GroupingKey
+      type: object
+      required:
+      - elements
+      properties:
+        elements:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-GroupingElement'
+    ObjectId:
+      type: string
+      format: ObjectId
+    Dataset-RelatedKey:
+      title: RelatedKey
+      type: object
+      required:
+      - label
+      - targetDataset
+      - srcFields
+      - dstFields
+      properties:
+        label:
+          type: string
+        targetDataset:
+          $ref: '#/components/schemas/DatasetRef'
+        srcFields:
+          type: array
+          items:
+            type: string
+        dstFields:
+          type: array
+          items:
+            type: string
+    Time:
+      type: string
+      format: RFC3339
+    Dataset-FieldDesc:
+      title: FieldDesc
+      type: object
+      required:
+      - name
+      - type
+      - indexDefs
+      - linkDesc
+      - isEnum
+      - isSearchable
+      - isHidden
+      - isConst
+      - isMetric
+      properties:
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/Dataset-FieldType'
+        indexDefs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-IndexDefinition'
+        linkDesc:
+          anyOf:
+          - $ref: '#/components/schemas/Dataset-ForeignKey'
+          - type: 'null'
+        isEnum:
+          type: boolean
+        isSearchable:
+          type: boolean
+        isHidden:
+          type:
+          - boolean
+          - 'null'
+        isConst:
+          type: boolean
+        isMetric:
+          type: boolean
+    DurationNanoseconds:
+      type: string
+      format: int64 nanoseconds
+    Dataset-AccelerationError:
+      title: AccelerationError
+      type: object
+      required:
+      - time
+      - errorText
+      properties:
+        time:
+          $ref: '#/components/schemas/Time'
+        errorText:
+          type: string
+    Dataset-CorrelationTag:
+      title: CorrelationTag
+      type: object
+      required:
+      - tag
+      - path
+      properties:
+        tag:
+          type: string
+        path:
+          $ref: '#/components/schemas/Dataset-FieldPath'
+    ObjectBrief:
+      title: ObjectBrief
+      type: object
+      description: 'Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - managedBy
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager''s brief.'
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    Dataset-IndexType:
+      title: IndexType
+      type: string
+      enum:
+      - TokenIndex
+      - SubstringIndex
+      - EqualityIndex
+      - AutoClusteringIndex
+    Dataset-GraphSummary:
+      title: DatasetGraphSummary
+      type: object
+      description: 'Lean per-dataset projection used to render the Dataset Graph, Lineage tab,
+
+        and Explore Universe views. Intentionally a strict subset of Dataset-Resource:
+
+        only the fields required to render a graph node and its outgoing edges.
+
+        expand is not supported on graph endpoints.
+
+
+        NOTE: foreignKeyTargetIds and inputDatasetIds are returned as flat arrays of
+
+        id strings rather than the nested reference shape used elsewhere in this API.
+
+        This is a deliberate divergence from the REST Style Guide accepted for payload
+
+        size on the full-graph endpoint; these fields are not expandable.
+
+        '
+      required:
+      - id
+      - label
+      - kind
+      - contentType
+      - icon
+      - compilationError
+      - accelerationState
+      - foreignKeyTargetIds
+      - inputDatasetIds
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+        label:
+          type: string
+          description: Full dataset label (path/name).
+        kind:
+          $ref: '#/components/schemas/Dataset-DatasetKind'
+        contentType:
+          $ref: '#/components/schemas/DatasetContentType'
+          description: 'The content type (Resource, Log, Metric, OTelSpan, OTelTrace, Unknown).
+
+            Combined with kind to pick the dataset icon in the UI.
+
+            '
+        icon:
+          type:
+          - string
+          - 'null'
+          description: Explicit icon URL when set; null means the UI should derive from kind + contentType.
+        compilationError:
+          anyOf:
+          - $ref: '#/components/schemas/Dataset-CompilationError'
+          - type: 'null'
+          description: Non-null when the dataset currently fails to compile.
+        accelerationState:
+          $ref: '#/components/schemas/Dataset-AccelerationState'
+          description: 'The dataset''s current acceleration state, projected out of AccelerationInfo.
+
+            Exposed as a top-level scalar on this endpoint to avoid batch-loading the
+
+            full AccelerationInfo object.
+
+            '
+        foreignKeyTargetIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectId'
+          description: 'Deduplicated list of foreign-key target dataset ids (forward edges only).
+
+            Self-references and targets pointing at datasets excluded by the default filter
+
+            are omitted.
+
+            '
+        inputDatasetIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectId'
+          description: 'Deduplicated list of dataset ids that feed this dataset via transform inputs
+
+            with InputRole=Data. Reference-role inputs are excluded.
+
+            '
+    Dataset-GroupingElementType:
+      title: GroupingElementType
+      type: string
+      enum:
+      - Field
+      - Link
+    DatasetContentType:
+      title: DatasetContentType
+      type: string
+      description: 'The type of data a dataset contains. For Resource datasets, this is
+
+        determined by the dataset kind. For other kinds, it is derived from the
+
+        dataset''s interface bindings. Returns Unknown if no recognized interface
+
+        is found.
+
+        '
+      enum:
+      - Unknown
+      - Resource
+      - Log
+      - Metric
+      - OTelSpan
+      - OTelTrace
+    Dataset-StatsMeta:
+      title: DatasetStatsMeta
+      type: object
+      required:
+      - totalDatasets
+      - filteredDatasets
+      properties:
+        totalDatasets:
+          type: integer
+          format: int64
+          description: Total number of datasets before applying filter
+        filteredDatasets:
+          type: integer
+          format: int64
+          description: Number of datasets after applying filter (equal to totalDatasets when no filter)
+    Dataset-GroupingElement:
+      title: GroupingElement
+      type: object
+      required:
+      - type
+      - value
+      properties:
+        type:
+          $ref: '#/components/schemas/Dataset-GroupingElementType'
+        value:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    Dataset-IndexDefinition:
+      title: IndexDefinition
+      type: object
+      required:
+      - field
+      - type
+      properties:
+        field:
+          type: string
+        type:
+          $ref: '#/components/schemas/Dataset-IndexType'
+  responses:
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

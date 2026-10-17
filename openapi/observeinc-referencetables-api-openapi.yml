@@ -1,0 +1,645 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Reference Tables API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged ReferenceTables across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: ReferenceTables
+  x-displayName: Reference Table
+  description: Manage reference tables. Learn more about reference tables.
+paths:
+  /v1/referencetables:
+    post:
+      summary: Create a new reference table
+      description: Creates a new reference table with the specified parameters and uploaded data.
+      operationId: CreateReferenceTable
+      tags:
+      - ReferenceTables
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                metadata:
+                  $ref: '#/components/schemas/ReferenceTables-TableMetadata'
+                upload:
+                  type: string
+                  format: binary
+                  description: CSV file containing the data
+                schema:
+                  type: string
+                  format: binary
+                  description: JSON file specifying the schema (optional)
+      responses:
+        '201':
+          description: Successfully created reference table
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferenceTables-Table'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: Query reference tables
+      description: Search for reference tables with optional filters (label, createdBy) and pagination.
+      operationId: QueryReferenceTables
+      tags:
+      - ReferenceTables
+      parameters:
+      - name: label
+        in: query
+        required: false
+        description: Name of the reference table to search for (supports substring match).
+        schema:
+          type: string
+      - name: createdBy
+        in: query
+        required: false
+        description: Filter by the user who created the reference tables.
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        description: The maximum number of items to return per page. Defaults to 100; values above 1000 are capped to 1000.
+        schema:
+          type: integer
+          default: 100
+      - name: offset
+        in: query
+        required: false
+        description: The index of the first item to return (pagination offset). Defaults to 0.
+        schema:
+          type: integer
+          default: 0
+      responses:
+        '200':
+          description: Successfully queried reference tables
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - totalCount
+                - referenceTables
+                properties:
+                  totalCount:
+                    type: integer
+                    description: Total number of reference tables available, independent of pagination
+                    example: 100
+                  referenceTables:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReferenceTables-Table'
+                    description: List of reference tables that match the query and pagination filters
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/referencetables/{id}:
+    delete:
+      summary: Delete a reference table
+      description: Deletes a reference table with the specified ID.
+      operationId: DeleteReferenceTable
+      tags:
+      - ReferenceTables
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: int64
+      responses:
+        '200':
+          description: Successfully deleted reference table
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferenceTables-MessageResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: Get a reference table
+      description: Retrieve a specific reference table by ID.
+      operationId: GetReferenceTable
+      tags:
+      - ReferenceTables
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successfully retrieved reference table
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferenceTables-Table'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    put:
+      summary: Replace a reference table
+      description: Replaces a reference table with the specified ID.
+      operationId: UpdateReferenceTable
+      tags:
+      - ReferenceTables
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                metadata:
+                  $ref: '#/components/schemas/ReferenceTables-TableMetadata'
+                upload:
+                  type: string
+                  format: binary
+                  description: CSV file containing the data
+                schema:
+                  type: string
+                  format: binary
+                  description: JSON file specifying the schema (optional)
+      responses:
+        '200':
+          description: Successfully replaced reference table
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message
+                required:
+                - message
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      tags:
+      - ReferenceTables
+      summary: Update metadata of a reference table
+      description: Updates the metadata of a reference table with the specified ID.
+      operationId: UpdateReferenceTableMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceTables-TableMetadataPatch'
+      responses:
+        '200':
+          description: Successfully updated reference table metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReferenceTables-Table'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '409':
+          $ref: '#/components/responses/ErrorResponse-409'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  responses:
+    ErrorResponse-409:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  schemas:
+    ObjectId:
+      type: string
+      format: ObjectId
+    ReferenceTables-Table:
+      title: ReferenceTable
+      type: object
+      properties:
+        id:
+          type: string
+          format: int64
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        managedById:
+          type: string
+          format: int64
+        customerId:
+          type: string
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/User'
+        updatedAt:
+          type: string
+          format: date-time
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        datasetId:
+          type: string
+          format: int64
+        checksum:
+          type: string
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReferenceTables-Field'
+          description: The schema definition of the reference table
+        primaryKey:
+          type: array
+          items:
+            type: string
+          description: The primary key columns of the reference table
+        labelField:
+          type: string
+          description: The field that should be used for the OPAL label
+    ReferenceTables-TableMetadata:
+      title: ReferenceTableMetadata
+      type: object
+      properties:
+        label:
+          type: string
+          description: The label of the reference table.
+        description:
+          type: string
+          default: ''
+          description: The description of the reference table.
+        primaryKey:
+          type: array
+          items:
+            type: string
+          description: The primary key of the reference table.
+        labelField:
+          type: string
+          description: The field that should be used for the OPAL label.
+      required:
+      - label
+    ReferenceTables-TableMetadataPatch:
+      title: ReferenceTableMetadataPatch
+      type: object
+      properties:
+        label:
+          type:
+          - string
+          - 'null'
+          description: The label of the reference table.
+        description:
+          type:
+          - string
+          - 'null'
+          description: The description of the reference table.
+        primaryKey:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: The primary key of the reference table.
+    ReferenceTables-Field:
+      title: ReferenceTableField
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the field
+        type:
+          type: string
+          description: The type of the field (e.g., string, float64, array)
+      required:
+      - name
+      - type
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    ReferenceTables-MessageResponse:
+      title: ReferenceTableMessageResponse
+      type: object
+      properties:
+        message:
+          type: string
+          description: Success message
+      required:
+      - message
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

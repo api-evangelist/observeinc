@@ -1,0 +1,425 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Dataset Legacy API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Dataset Legacy across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Dataset Legacy
+  description: Legacy dataset endpoints. Will be deprecated in the future.
+paths:
+  /v1/dataset/{id}:
+    get:
+      summary: Get a dataset (legacy)
+      operationId: getDatasetById
+      tags:
+      - Dataset Legacy
+      description: Get information about one dataset by id. Does not query the data inside the dataset.
+      parameters:
+      - name: id
+        description: The dataset id. Can be an ORN or a plain ID.
+        in: path
+        schema:
+          type: string
+        required: true
+        examples:
+          A dataset ID:
+            value: '40000068'
+      responses:
+        '200':
+          description: '## Properties of one dataset
+
+
+            Dataset properties, encoded as a JSON object.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/DatasetLegacy-Resource'
+              example: "{\n  \"ok\": true,\n  \"data\": {\n    \"meta\":{\"id\":\"o::101:dataset:40000068\",\"workspaceId\":\"40000058\",\"customerId\":\"101\"},\n    \"config\":{\"name\":\"kubernetes/Container Logs\"},\n    \"state\":{\n      \"urlPath\":\"/workspace/40000058/dataset/event/40000068\",\n      \"kind\":\"Event\",\n      \"createdBy\":\"1\",\n      \"createdDate\":\"2023-04-20T16:20:00Z\",\n      \"updatedBy\":\"1\",\n      \"updatedDate\":\"2023-04-20T16:20:00Z\"\n      \"columns\":[{\"name\":\"BUNDLE_TIMESTAMP\",\"type\":\"timestamp\"},{\"name\":\"message\",\"type\":\"string\"},{\"name\":\"tags\",\"type\":\"object\"}],\n      \"interfaces\":[\"log\"]\n    }\n  }\n}\n"
+        '400':
+          description: Invalid request.
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/dataset:
+    get:
+      summary: List datasets (legacy)
+      operationId: listDatasets
+      tags:
+      - Dataset Legacy
+      description: 'List datasets, optionally matching:
+
+
+        * Name substring
+
+        * Workspace ID
+
+        * Dataset type
+
+        * Interface binding'
+      parameters:
+      - name: workspaceId
+        description: Only include datasets in this workspace.
+        in: query
+        schema:
+          type: integer
+        required: false
+        examples:
+          A workspace ID:
+            value: '41000011'
+      - name: match
+        in: query
+        description: Alphanumeric fuzzy match the name of the dataset.
+        schema:
+          type: string
+        required: false
+        examples:
+          A name substring:
+            value: logs
+      - name: name
+        in: query
+        description: exact name of the dataset to match
+        schema:
+          type: string
+        required: false
+        examples:
+          A dataset name`:
+            value: kubernetes/Container Logs
+      - name: type
+        in: query
+        description: Only include datasets of this type.
+        schema:
+          type: string
+        required: false
+        examples:
+          A type:
+            value: Event
+      - name: interface
+        in: query
+        description: Only include datasets that implement this interface.
+        schema:
+          type: string
+        required: false
+        examples:
+          An interface:
+            value: metric
+            summary: A name of an interface. You can specify this more than once to include more datasets.
+      responses:
+        '200':
+          description: '## A list of datasets
+
+            The list is a JSON array of objects, each object representing a dataset.
+
+            '
+          content:
+            application/json:
+              schema:
+                title: ListDatasetsResponse
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DatasetLegacy-Resource'
+              example:
+                ok: true
+                data:
+                - meta:
+                    id: o::101:dataset:40000068
+                    workspaceId: '40000058'
+                    customerId: '101'
+                  config:
+                    name: kubernetes/Container Logs
+                  state:
+                    urlPath: /workspace/40000058/dataset/event/40000068
+                    kind: Event
+                    createdBy: '1'
+                    createdDate: '2023-04-20T16:20:00Z'
+                    updatedBy: '1'
+                    updatedDate: '2023-04-20T16:20:00Z'
+                    columns:
+                    - name: BUNDLE_TIMESTAMP
+                      type: timestamp
+                    - name: message
+                      type: string
+                    - name: tags
+                      type: object
+                    interfaces:
+                    - log
+        '400':
+          description: Invalid request.
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  schemas:
+    DatasetLegacy-Resource:
+      type: object
+      required:
+      - meta
+      - config
+      - state
+      properties:
+        meta:
+          type: object
+          description: Metadata about the dataset.
+          required:
+          - id
+          - workspaceId
+          - customerId
+          properties:
+            id:
+              type: string
+            workspaceId:
+              type: string
+              format: int64
+            customerId:
+              type: string
+              format: int64
+        config:
+          description: Directly settable properties of the dataset.
+          type: object
+          required:
+          - name
+          properties:
+            name:
+              type: string
+        state:
+          description: Implicitly derived state of the dataset.
+          type: object
+          required:
+          - urlPath
+          - kind
+          - createdBy
+          - createdDate
+          - updatedBy
+          - updatedDate
+          properties:
+            urlPath:
+              type: string
+            kind:
+              type: string
+            createdBy:
+              type: string
+              format: int64
+            createdDate:
+              type: string
+              format: date-time
+            updatedBy:
+              type: string
+              format: int64
+            updatedDate:
+              type: string
+              format: date-time
+            columns:
+              type: array
+              items:
+                type: object
+                required:
+                - name
+                - type
+                properties:
+                  name:
+                    type: string
+                  type:
+                    type: string
+            interfaces:
+              type: array
+              items:
+                type: object
+                properties:
+                  path:
+                    type: string
+                  mapping:
+                    type: array
+                    items:
+                      type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

@@ -1,0 +1,1335 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Alert API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Alert across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Alert
+  description: Query monitor alerts. Learn more about alerts.
+paths:
+  /v1/alerts/{id}:
+    get:
+      summary: Get an alert by id
+      description: 'Get a single alert by its unique id. Unlike the list endpoint, this lookup
+
+        is not time-windowed: it returns the alert regardless of how long ago it
+
+        fired. Returns 404 if no alert with the given id exists in the workspace
+
+        or if the caller lacks view permission on the alert''s monitor.'
+      operationId: GetAlert
+      tags:
+      - Alert
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          $ref: '#/components/schemas/UUID'
+        description: Unique identifier of the alert.
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Alert found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Alert-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/alerts:
+    get:
+      summary: List alerts
+      description: 'List monitor alerts, optionally filtering and sorting the response.
+
+        Filters are specified in the CEL query language.
+
+        Supported orderBy fields: id, level, status, start, monitor.id, monitor.label.
+
+        Time scoping can be provided in two ways (mutually exclusive):
+
+        - startTime/endTime: a time range. Alerts overlapping this range are returned. Defaults to the last 24 hours.
+
+        - activeAt: a single timestamp. Returns alerts that were active at that moment.
+
+        If both activeAt and startTime/endTime are provided, returns 400.
+
+        Default page size is 200, maximum is 1000.'
+      operationId: ListAlerts
+      tags:
+      - Alert
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: "Filter that response alerts must match. Specified in CEL format.\nNote that filter expressions must be URL encoded.\n\nSupported filter fields:\n- `id` (string): unique alert identifier\n- `level` (string): one of `Critical`, `Error`, `Warning`, `Informational`, `NoData`, `None`\n- `status` (string): one of `Active`, `Ended`, `Retracted`\n- `monitor.id` (int): ID of the monitor that generated the alert\n- `monitor.label` (string): display label of the monitor (supports `.contains()`, `.startsWith()`, `.endsWith()`, and `.lowerAscii()` for case-insensitive matching)\n- `muted` (bool): whether the alert is muted (`true` / `false`)\n- `hasAiChat` (bool): whether an AI investigation exists for the alert. Tied to a feature under development, and rejected as an unknown field where that feature is not enabled.\n- `context.<key>` (string): context value by key, where `<key>` is a GroupBy column name from the monitor definition. Supports `.contains()`, `.startsWith()`, `.endsWith()`.\n  Dot notation reads a key that is a bare identifier (`context.host`); index notation reaches any key, including one carrying a space, hyphen or dot (`context[\"pod name\"]`, `context[\"k8s.pod.name\"]`). A correlation-tag grouping is keyed by its tag prefixed with `#` (`context[\"#deployment.environment.name\"]`). Only reading a key is supported: `in`, `has()` and macros such as `exists()` over `context` are rejected.\n"
+        examples:
+          filterByMuted:
+            summary: Filter for muted alerts only
+            value: muted == true
+          filterByLevel:
+            summary: Filter for critical alerts
+            value: level == "Critical"
+          filterByMonitorLabel:
+            summary: Filter for alerts from monitors whose label contains "CPU"
+            value: monitor.label.contains("CPU")
+          filterByStatusAndLevel:
+            summary: Filter for active warning or critical alerts
+            value: status == "Active" && (level == "Critical" || level == "Warning")
+          filterByContext:
+            summary: Filter for alerts where the context host is a specific value
+            value: context.host == "web-server-01"
+          filterByContextContains:
+            summary: Filter for alerts where a context field contains a substring
+            value: context.host.contains("prod")
+          filterByContextStartsWith:
+            summary: Filter for alerts where a context field starts with a prefix
+            value: context.region.startsWith("us-")
+          filterByContextEndsWith:
+            summary: Filter for alerts where a context field ends with a suffix
+            value: context.env.endsWith("-staging")
+          filterByContextIndexKey:
+            summary: Filter on a context key that is not a bare identifier
+            value: context["k8s.pod.name"] == "checkout-7f9c"
+      - in: query
+        name: orderBy
+        schema:
+          type: string
+        required: false
+        description: 'A comma-separated list of field expressions to sort by.
+
+          Prefix a field with - for descending order (default is ascending).
+
+          Default sort is by start time, descending.
+
+          '
+        examples:
+          sortByStart:
+            summary: Sort by start time, descending
+            value: -start
+          sortByLevel:
+            summary: Sort by level ascending, then start descending
+            value: level,-start
+      - in: query
+        name: startTime
+        schema:
+          $ref: '#/components/schemas/Time'
+        required: false
+        description: 'Start of the time range to query. Alerts that overlap this range are returned
+
+          (i.e., alerts whose end time is after startTime, or that are still active).
+
+          Defaults to 24 hours ago if not provided.
+
+          '
+      - in: query
+        name: endTime
+        schema:
+          $ref: '#/components/schemas/Time'
+        required: false
+        description: 'End of the time range to query. Alerts whose start time is before endTime are returned.
+
+          Defaults to current time if not provided.
+
+          '
+      - in: query
+        name: activeAt
+        schema:
+          $ref: '#/components/schemas/Time'
+        required: false
+        description: 'A single timestamp to query alerts that were active at that moment.
+
+          Returns alerts where start <= activeAt and (end >= activeAt or the alert is still active).
+
+          Mutually exclusive with startTime and endTime — if both are provided, returns 400.
+
+          '
+      - $ref: '#/components/parameters/OffsetParam'
+      - $ref: '#/components/parameters/LimitParam'
+      - $ref: '#/components/parameters/ExpandParam'
+      - in: query
+        name: includeFacets
+        schema:
+          type: boolean
+        required: false
+        description: 'When true, the response includes faceted counts for key alert attributes,
+
+          computed over all alerts in the requested time window. These counts ignore
+
+          any `filter`, `orderBy`, `offset`, or `limit` parameters, making them
+
+          suitable for building filter panels.
+
+          '
+      responses:
+        '200':
+          description: Alerts queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Alert-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  schemas:
+    Chat-Ref:
+      title: ChatRef
+      type: object
+      description: 'Reference to a chat. Always carries the `id`. The `record` field is
+
+        populated with brief metadata only when `expand=true`.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+          description: Uniquely identifies a chat.
+        record:
+          $ref: '#/components/schemas/Chat-Brief'
+    Alert-LinkColumn:
+      title: AlertLinkColumn
+      type: object
+      required:
+      - name
+      - meta
+      properties:
+        name:
+          type: string
+          description: 'The link column''s identifier. This is the programmatic name used to
+
+            look up the column, not a display label.
+
+            '
+        meta:
+          anyOf:
+          - $ref: '#/components/schemas/Alert-LinkColumnMeta'
+          - type: 'null'
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    ObjectRef:
+      title: ObjectRef
+      type: object
+      description: 'A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/ObjectBrief'
+    Alert-CorrelationTag:
+      title: AlertCorrelationTag
+      type: object
+      description: 'A correlation tag reference. The tag identifier is the canonical
+
+        name; the resolved backing column(s) are server-side details and
+
+        not part of the wire shape.
+
+        '
+      required:
+      - tag
+      properties:
+        tag:
+          type: string
+          description: Canonical correlation tag identifier.
+    Alert-ResolvedServiceBinding:
+      title: AlertResolvedServiceBinding
+      type: object
+      description: 'Service-binding triplet for an alert. Present whenever the alert''s
+
+        monitor has a service binding declared; a dimension that does not
+
+        resolve to a value is an empty string. Omitted only when the
+
+        monitor has no service binding declared.
+
+        '
+      required:
+      - serviceName
+      - environment
+      - serviceNamespace
+      properties:
+        serviceName:
+          type: string
+          description: Value of the `service.name` correlation tag.
+        environment:
+          type: string
+          description: Value of the `deployment.environment.name` correlation tag.
+        serviceNamespace:
+          type: string
+          description: Value of the `service.namespace` correlation tag.
+    Alert-AutomaticInvestigation:
+      title: AlertAutomaticInvestigation
+      type: object
+      required:
+      - outcome
+      - chat
+      properties:
+        outcome:
+          $ref: '#/components/schemas/Alert-AutomaticInvestigationOutcome'
+        chat:
+          anyOf:
+          - $ref: '#/components/schemas/Chat-Ref'
+          - type: 'null'
+          description: 'The automatically created investigation chat. Non-null when
+
+            outcome is `Started` or `Completed`.
+
+            '
+    Alert-AutomaticInvestigationOutcome:
+      title: AlertAutomaticInvestigationOutcome
+      type: string
+      description: Current state or terminal result of an automatic AI investigation attempt.
+      enum:
+      - Started
+      - Completed
+      - RateLimitedPerMonitor
+      - RateLimitedPerCustomer
+      - SkippedAlertMuted
+      - SkippedAlertLevelNotSelected
+      - FailedNoValidUser
+      - FailedInternalError
+    Monitor-Brief:
+      title: MonitorBrief
+      type: object
+      description: Brief monitor metadata included when a reference is expanded.
+      required:
+      - name
+      - label
+      - description
+      properties:
+        name:
+          type: string
+          description: 'Name of the monitor, unique within its workspace.
+
+            '
+        label:
+          type: string
+          deprecated: true
+          description: Same as `name`. Deprecated; read `name` instead.
+        description:
+          type:
+          - string
+          - 'null'
+          description: The monitor's description. Null when no description is configured.
+    Alert-ContextEntry:
+      title: AlertContextEntry
+      type: object
+      description: A context entry representing a grouping value for which the alert triggered
+      required:
+      - column
+      - value
+      properties:
+        column:
+          $ref: '#/components/schemas/Alert-Column'
+        value:
+          type: string
+    Chat-Message-ReadOnly:
+      title: ChatMessageReadOnly
+      type: object
+      description: The readonly server fields of a message within a chat.
+      required:
+      - index
+      - chatRevision
+      - createdBy
+      - createdAt
+      - updatedBy
+      - updatedAt
+      properties:
+        id:
+          type: string
+          description: Client-generated message id scoped to the chat.
+        index:
+          type: integer
+          format: int32
+          minimum: 0
+          description: Zero-based index of the message within the chat. Output only.
+          readOnly: true
+        chatRevision:
+          type: integer
+          format: int64
+          minimum: 0
+          description: The chat revision that includes the last update of this message. Output only.
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/User'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+          readOnly: true
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+          readOnly: true
+    Chat-Resource:
+      title: ChatResource
+      type: object
+      description: 'A chat resource - a conversation with the LLM agent.
+
+
+        The content of the conversation is in separate messages which
+
+        can be inlined into the resource for some operations with `?expand=true`.
+
+        '
+      required:
+      - id
+      - revision
+      - createdBy
+      - createdAt
+      - updatedBy
+      - updatedAt
+      - activeStreamId
+      - alert
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+          description: Uniquely identifies a chat. Output only.
+          readOnly: true
+        revision:
+          type: integer
+          format: int64
+          minimum: 0
+          description: Monotonically increasing with every update to the chat or its messages. Output only.
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/User'
+          readOnly: true
+        createdAt:
+          $ref: '#/components/schemas/Time'
+          readOnly: true
+        updatedBy:
+          $ref: '#/components/schemas/User'
+          readOnly: true
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+          readOnly: true
+        label:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Optional human visible title
+        summary:
+          type: string
+          minLength: 1
+          maxLength: 4096
+          description: Optional chat summary
+        activeStreamId:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+          description: 'ID of the currently active stream, or null when no stream is active.
+
+            Used to determine whether the chat is in-progress (streaming) or idle/completed.
+
+            '
+        alert:
+          description: The alert that triggered this chat, or null if not alert-triggered.
+          anyOf:
+          - $ref: '#/components/schemas/Chat-Alert'
+          - type: 'null'
+        messages:
+          type: array
+          description: Present only when `expand=true`. Output only.
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Chat-FullMessage'
+      examples:
+      - id: 4eb09e18-81c2-11f0-9989-73a1cb13d4a3
+        revision: 3
+        createdBy:
+          id: '123'
+        createdAt: '2023-04-20T16:20:00Z'
+        updatedBy:
+          id: '123'
+        updatedAt: '2023-04-20T16:20:00Z'
+        label: Solving observability, once and for all
+        summary: 'Step by step, we solve all observability problems,
+
+          so that we don''t have to do that individually later on.
+
+          '
+    Alert-ActionStats:
+      title: AlertActionStats
+      type: object
+      description: Statistics about notification actions taken for this alert
+      required:
+      - numNotifsDiscarded
+      - numNotifsMuted
+      - numNotifsSent
+      - numErrors
+      - lastMutedAt
+      - lastSentAt
+      - lastErroredAt
+      properties:
+        numNotifsDiscarded:
+          type: string
+          format: int64
+        numNotifsMuted:
+          type: string
+          format: int64
+        lastMutedAt:
+          $ref: '#/components/schemas/NullableTime'
+          description: When the alert was last muted. Null if never muted.
+        numNotifsSent:
+          type: string
+          format: int64
+        lastSentAt:
+          $ref: '#/components/schemas/NullableTime'
+          description: When a notification was last sent. Null if never sent.
+        numErrors:
+          type: string
+          format: int64
+        lastErroredAt:
+          $ref: '#/components/schemas/NullableTime'
+          description: When the last notification error occurred. Null if no errors.
+    Chat-MessageMetadata:
+      title: ChatMessageMetadata
+      type: object
+      description: Free-form metadata associated with the message (timings, etc.).
+      additionalProperties: true
+    NullableTime:
+      type:
+      - string
+      - 'null'
+      format: RFC3339
+    Alert-CapturedValueType:
+      title: AlertCapturedValueType
+      type: string
+      enum:
+      - Aggregation
+      - GroupBy
+      - LinkSourceField
+    Alert-Facets:
+      title: AlertFacets
+      type: object
+      description: 'Faceted counts of all alerts in the requested time window, grouped by
+
+        key attributes. Computed independently of any filter or pagination
+
+        parameters.
+
+        '
+      required:
+      - byStatus
+      - byLevel
+      - byMonitor
+      - byMuted
+      properties:
+        byStatus:
+          type: array
+          description: Count of alerts grouped by status (Active, Ended, Retracted).
+          items:
+            $ref: '#/components/schemas/Alert-FacetEntry'
+        byLevel:
+          type: array
+          description: Count of alerts grouped by severity level.
+          items:
+            $ref: '#/components/schemas/Alert-FacetEntry'
+        byMonitor:
+          type: array
+          description: Count of alerts grouped by monitor, ordered by count descending.
+          items:
+            $ref: '#/components/schemas/Alert-FacetEntry'
+        byMuted:
+          type: array
+          description: Count of alerts grouped by mute status.
+          items:
+            $ref: '#/components/schemas/Alert-FacetEntry'
+        byHasAiChat:
+          type: array
+          description: Count of alerts with vs without an AI investigation. Omitted when that feature is not enabled.
+          items:
+            $ref: '#/components/schemas/Alert-FacetEntry'
+    Alert-LinkColumnMeta:
+      title: AlertLinkColumnMeta
+      type: object
+      required:
+      - srcFields
+      - dstFields
+      - targetDataset
+      properties:
+        srcFields:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Alert-ColumnPath'
+        dstFields:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        targetDataset:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+    Chat-FullMessage-CreateRequest:
+      title: ChatFullMessageCreateRequest
+      description: 'A message within a chat including message parts.
+
+        Message parts may e.g. contain image data and be quite big.
+
+        '
+      type: object
+      required:
+      - parts
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - data
+        metadata:
+          $ref: '#/components/schemas/Chat-MessageMetadata'
+        id:
+          type: string
+          description: Client-generated message id scoped to the chat.
+        indexedText:
+          description: 'The full text contained in `parts` for full text indexing.
+
+
+            Since the schema of the message parts is not fully known to
+
+            the API server, the client needs to fill this field with the logically
+
+            contained text.
+
+
+            The contents of this field are not shown to the user --
+
+            the UI uses the more structured information in the `parts` field for
+
+            that.
+
+            '
+          type: string
+        parts:
+          type: array
+          maxLength: 256
+          description: The message parts as defined by the AI SDK. Potentially large.
+          items:
+            $ref: '#/components/schemas/Chat-UIMessagePart'
+      examples:
+      - role: user
+        indexedText: What are the most important metrics for critical-component?
+        parts:
+        - type: text
+          text: What are the most important metrics for critical-component?
+          state: done
+    ObjectId:
+      type: string
+      format: ObjectId
+    Time:
+      type: string
+      format: RFC3339
+    Alert-Level:
+      title: AlertLevel
+      type: string
+      description: Severity level of the alert
+      enum:
+      - Critical
+      - Error
+      - Warning
+      - Informational
+      - NoData
+      - None
+    ObjectBrief:
+      title: ObjectBrief
+      type: object
+      description: 'Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - managedBy
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager''s brief.'
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    Alert-FacetEntry:
+      title: AlertFacetEntry
+      type: object
+      description: A single facet value and its alert count.
+      required:
+      - key
+      - label
+      - count
+      properties:
+        key:
+          type: string
+          description: 'The facet value used for filtering (e.g. "Active", "Critical", a
+
+            monitor ID, or "true"/"false" for boolean facets).
+
+            '
+        label:
+          type:
+          - string
+          - 'null'
+          description: 'Human-readable display label. For most facets this equals key.
+
+            For monitors, this is the monitor label while key is the monitor ID.
+
+            Null when no label is needed (i.e. it would equal key).
+
+            '
+        count:
+          type: string
+          format: int64
+          description: Number of alerts matching this facet value.
+    Chat-Brief:
+      title: ChatBrief
+      type: object
+      description: Brief chat metadata included when a reference is expanded.
+      required:
+      - label
+      properties:
+        label:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 255
+          description: Human-visible title. Null when the chat has no title.
+    Alert-ListResponse:
+      title: AlertListResponse
+      type: object
+      required:
+      - alerts
+      - meta
+      properties:
+        alerts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alert-Resource'
+        meta:
+          $ref: '#/components/schemas/Meta'
+        facets:
+          $ref: '#/components/schemas/Alert-Facets'
+          description: 'Faceted counts for key alert attributes across all alerts in the time
+
+            window. Independent of filter and pagination. Only included when
+
+            includeFacets=true.
+
+            '
+    Chat-FullMessage:
+      title: ChatFullMessage
+      description: 'A message within a chat including the actual message "parts".
+
+        Message parts may e.g. contain image data and be quite big, but
+
+        often also just contain a text snippet.
+
+        '
+      allOf:
+      - $ref: '#/components/schemas/Chat-Message-ReadOnly'
+      - $ref: '#/components/schemas/Chat-FullMessage-CreateRequest'
+      examples:
+      - id: some-ai-sdk-id-1
+        index: 0
+        chatRevision: 1
+        createdAt: '2023-04-20T16:20:00Z'
+        createdBy:
+          id: '123'
+        updatedAt: '2023-04-20T16:20:00Z'
+        updatedBy:
+          id: '123'
+        role: user
+        indexedText: What are the most important metrics for critical-component?
+        parts:
+        - type: text
+          text: What are the most important metrics for critical-component?
+          state: done
+    Alert-ColumnPath:
+      title: AlertColumnPath
+      type: object
+      required:
+      - name
+      - path
+      properties:
+        name:
+          type: string
+          description: 'The column''s identifier within its dataset. This is the programmatic
+
+            name used to look up the column, not a display label.
+
+            '
+        path:
+          type:
+          - string
+          - 'null'
+          description: Optional dotted path into a nested column. Null when absent.
+    Chat-Alert:
+      title: ChatAlert
+      type: object
+      description: Reference to the alert that triggered this chat.
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+          description: ID of the alert (monitor_v2_alarm).
+    UUID:
+      type: string
+      format: uuid
+      example: 00000000-0000-0000-0000-000000000000
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    Alert-CapturedValue:
+      title: AlertCapturedValue
+      type: object
+      description: A value captured at the time the alert was triggered
+      required:
+      - types
+      - column
+      - value
+      properties:
+        types:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alert-CapturedValueType'
+        column:
+          $ref: '#/components/schemas/Alert-Column'
+        value:
+          type:
+          - string
+          - 'null'
+          description: The captured cell value. Null when the cell had no value.
+    Chat-UIMessagePart:
+      title: ChatUIMessagePart
+      description: 'A message part. The schema is provided by the AI SDK, see
+
+        https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message#uimessagepart-types
+
+
+        This commonly embeds image data, so it can be quite big, but
+
+        often also just contains a snippet of text.
+
+
+        The backend itself does NOT validate the contents of any part
+
+        except requiring a string type field.
+
+
+        This field is not part of the explicit schema since not all code
+
+        generators support a required type field and capturing additional
+
+        properties in a catch-all field.
+
+
+        The client must validate this field for validity before use.
+
+        '
+      type: object
+      examples:
+      - type: text
+        text: What is our current request failure rate?
+        state: done
+      - type: text
+        text: What is our current request failure rate?
+        state: done
+      - type: file
+        mediaType: image/png
+        filename: my-living-room-i-wish.png
+        url: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=
+      additionalProperties: true
+    Monitor-Ref:
+      title: MonitorRef
+      type: object
+      description: 'Reference to a monitor. Always carries the `id`. The `record` field is
+
+        populated with brief metadata only when `expand=true`.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/Monitor-Brief'
+    Alert-Status:
+      title: AlertStatus
+      type: string
+      description: Current status of the alert
+      enum:
+      - Active
+      - Ended
+      - Retracted
+    Alert-Column:
+      title: AlertColumn
+      type: object
+      description: 'A column reference, either a direct column path, a link column, or a
+
+        correlation tag. Exactly one of `linkColumn`, `columnPath`, or
+
+        `correlationTag` is non-null.
+
+        '
+      required:
+      - linkColumn
+      - columnPath
+      - correlationTag
+      properties:
+        linkColumn:
+          anyOf:
+          - $ref: '#/components/schemas/Alert-LinkColumn'
+          - type: 'null'
+        columnPath:
+          anyOf:
+          - $ref: '#/components/schemas/Alert-ColumnPath'
+          - type: 'null'
+        correlationTag:
+          anyOf:
+          - $ref: '#/components/schemas/Alert-CorrelationTag'
+          - type: 'null'
+    Alert-Resource:
+      title: AlertResource
+      type: object
+      description: A monitor alert representing a detected condition.
+      required:
+      - id
+      - start
+      - end
+      - detectedStart
+      - detectedEnd
+      - status
+      - level
+      - groupingHash
+      - capturedValues
+      - context
+      - monitorVersion
+      - monitor
+      - muted
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the alert
+        start:
+          $ref: '#/components/schemas/Time'
+          description: When the alert condition first occurred
+        end:
+          $ref: '#/components/schemas/NullableTime'
+          description: When the alert condition ended. Null for active alerts.
+        detectedStart:
+          $ref: '#/components/schemas/NullableTime'
+          description: When the alert start was detected by the monitoring system. Null when not yet detected.
+        detectedEnd:
+          $ref: '#/components/schemas/NullableTime'
+          description: When the alert end was detected by the monitoring system. Null for active alerts.
+        status:
+          $ref: '#/components/schemas/Alert-Status'
+        level:
+          $ref: '#/components/schemas/Alert-Level'
+        groupingHash:
+          type: string
+          format: int64
+          description: Hash of the grouping values for this alert
+        capturedValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alert-CapturedValue'
+        context:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alert-ContextEntry'
+        monitorVersion:
+          type: string
+          format: int64
+          description: Version of the monitor when this alert was created
+        monitor:
+          $ref: '#/components/schemas/Monitor-Ref'
+          description: 'Reference to the monitor that generated this alert. Always carries
+
+            the id; the `record` field is populated only when expand=true.
+
+            '
+        muted:
+          type: boolean
+          description: Whether the alert is currently muted by active mute rules.
+        aiChats:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chat-Resource'
+          description: 'Optional field tied to a feature under development. Where that
+
+            feature is not enabled the key is omitted from the response
+
+            entirely, rather than returned as an empty array; it becomes
+
+            required once the feature is generally available.
+
+
+            AI investigations for this alert, newest first; empty when it has
+
+            never been investigated. An investigation is started either
+
+            automatically, when the alert''s monitor has AI triaging enabled, or
+
+            by a user from the alert.
+
+            '
+        automaticInvestigation:
+          anyOf:
+          - $ref: '#/components/schemas/Alert-AutomaticInvestigation'
+          - type: 'null'
+          description: 'The current state or terminal result of the automatic AI
+
+            investigation attempt for this alert. Null when automatic
+
+            investigation was not enabled or no attempt was made.
+
+
+            Optional field tied to a feature under development. Where that
+
+            feature is not enabled the key is omitted from the response,
+
+            matching `aiChats`.
+
+            '
+        resolvedServiceBinding:
+          oneOf:
+          - $ref: '#/components/schemas/Alert-ResolvedServiceBinding'
+          - type: 'null'
+          description: 'Resolved (service.name, deployment.environment.name,
+
+            service.namespace) triplet this alert is attributed to.
+
+            Omitted only when the alert''s monitor has no service binding
+
+            declared. When a binding wildcard does not resolve to a value
+
+            for this alert, that dimension is an empty string.
+
+            '
+        stats:
+          $ref: '#/components/schemas/Alert-ActionStats'
+          description: Action statistics for this alert. Only included when expand=true.
+  parameters:
+    ExpandParam:
+      name: expand
+      in: query
+      description: Whether to expand resources referenced in the response to include additional fields
+      schema:
+        type: boolean
+    OffsetParam:
+      name: offset
+      in: query
+      description: Number of items to skip before starting to collect the result set
+      schema:
+        type: integer
+        format: int64
+    LimitParam:
+      name: limit
+      in: query
+      description: Maximum number of items to return in the response
+      schema:
+        type: integer
+        format: int64
+  responses:
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

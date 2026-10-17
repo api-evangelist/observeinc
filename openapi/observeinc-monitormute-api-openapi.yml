@@ -1,0 +1,815 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Monitor Mute API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged MonitorMute across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: MonitorMute
+  x-displayName: Monitor Mute
+  description: Manage monitor mute rules. Mute rules suppress alert notifications for one or more monitors during a defined time window. Learn more about monitor mute rules.
+paths:
+  /v1/monitor-mutes:
+    post:
+      summary: Create a monitor mute
+      operationId: CreateMonitorMute
+      tags:
+      - MonitorMute
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorMute-CreateRequest'
+      responses:
+        '201':
+          description: Monitor mute created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorMute-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: List monitor mutes
+      description: Returns a paginated list of monitor mute rules, optionally filtered by a CEL expression.
+      operationId: ListMonitorMutes
+      tags:
+      - MonitorMute
+      parameters:
+      - name: filter
+        in: query
+        description: 'CEL expression to filter results over mute rule fields (`label`, `target.kind`, `target.monitors.id`, `createdBy.id`). Supports `matches()` for regex. Example: `target.kind == "Monitors"`.
+
+          '
+        schema:
+          type: string
+        required: false
+      - name: expand
+        in: query
+        description: 'When `true`, expands all referenced objects in the response: populates `record` on each `MonitorRef` in `target.monitors` with brief monitor metadata, and populates `label`, `timezone`, and `locale` on `createdBy` and `updatedBy`. `record` is omitted for any target monitor the caller is not authorized to read; its `id` is still returned, since the target id set is part of the rule''s own configuration.
+
+          '
+        schema:
+          type: boolean
+        required: false
+      - name: limit
+        in: query
+        description: Maximum number of results to return. Defaults to 200, max 1000.
+        schema:
+          type: integer
+          format: int64
+          default: 200
+          minimum: 1
+          maximum: 1000
+        required: false
+      - name: offset
+        in: query
+        description: Number of results to skip for pagination. Defaults to 0.
+        schema:
+          type: integer
+          format: int64
+          default: 0
+          minimum: 0
+        required: false
+      - name: orderBy
+        in: query
+        description: 'Comma-separated fields to order by. Prefix with `-` for descending. Defaults to `id`. Example: `orderBy=createdAt,-label`.
+
+          '
+        schema:
+          type: string
+        required: false
+      responses:
+        '200':
+          description: Monitor mutes listed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorMute-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/monitor-mutes/{id}:
+    delete:
+      summary: Delete a monitor mute
+      operationId: DeleteMonitorMute
+      tags:
+      - MonitorMute
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: int64
+        required: true
+        description: The ID of the monitor mute to delete.
+        example: '1'
+      responses:
+        '204':
+          description: Monitor mute deleted successfully
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: Get a monitor mute
+      description: Retrieve a specific monitor mute rule by ID.
+      operationId: GetMonitorMute
+      tags:
+      - MonitorMute
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: int64
+        required: true
+        description: The ID of the monitor mute to retrieve.
+        example: '1'
+      - name: expand
+        in: query
+        description: 'When `true`, expands all referenced objects in the response: populates `record` on each `MonitorRef` in `target.monitors` with brief monitor metadata, and populates `label`, `timezone`, and `locale` on `createdBy` and `updatedBy`. `record` is omitted for any target monitor the caller is not authorized to read; its `id` is still returned, since the target id set is part of the rule''s own configuration.
+
+          '
+        schema:
+          type: boolean
+        required: false
+      responses:
+        '200':
+          description: Monitor mute retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorMute-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      summary: Update a monitor mute
+      description: Partially updates a monitor mute rule using JSON Merge Patch semantics. Only provided fields are updated; omitted fields remain unchanged. `target.kind` is immutable after creation; sending a `target` object replaces the entire target subtree atomically.
+      operationId: UpdateMonitorMute
+      tags:
+      - MonitorMute
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: int64
+        required: true
+        description: The ID of the monitor mute to update.
+        example: '1'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorMute-UpdateRequest'
+      responses:
+        '200':
+          description: Monitor mute updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorMute-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  schemas:
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    MonitorMute-ScheduleInput:
+      title: MonitorMuteScheduleInput
+      description: 'Input shape for a schedule. `kind` is required; send only the sibling matching `kind` (`oneTime` or `recurring`).
+
+        '
+      type: object
+      required:
+      - kind
+      properties:
+        kind:
+          $ref: '#/components/schemas/MonitorMute-ScheduleKind'
+        oneTime:
+          $ref: '#/components/schemas/MonitorMute-OneTimeInput'
+        recurring:
+          $ref: '#/components/schemas/MonitorMute-RecurringInput'
+    MonitorMute-Resource:
+      title: MonitorMuteResource
+      description: 'A mute rule suppresses alert notifications during a defined time window. Use `target.kind: Global` to mute all monitors, or `target.kind: Monitors` to target a specific set.
+
+        '
+      type: object
+      required:
+      - id
+      - label
+      - description
+      - target
+      - schedule
+      - filter
+      - startTime
+      - endTime
+      - createdBy
+      - createdAt
+      - updatedBy
+      - updatedAt
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          type: string
+          description: Human-readable name for this mute rule.
+        description:
+          type:
+          - string
+          - 'null'
+          description: Free-form description. `null` when unset.
+        target:
+          $ref: '#/components/schemas/MonitorMute-Target'
+        schedule:
+          $ref: '#/components/schemas/MonitorMute-Schedule'
+        filter:
+          type:
+          - string
+          - 'null'
+          description: 'Optional CEL boolean expression evaluated against each fired alarm row at notification time. `null` means every firing is suppressed. Required and non-empty when `target.kind` is `Global` to prevent accidental fleet-wide suppression. Example: `level == "Critical" && context["service"] == "payments"`.
+
+            '
+        startTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'Computed start of the current or next active window. For `OneTime` schedules this mirrors `schedule.oneTime.startTime`. For `Recurring` schedules this is the next computed firing time. `null` between recurring windows.
+
+            '
+        endTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'Computed end of the current or next active window. For `OneTime` schedules this mirrors `schedule.oneTime.endTime` (`null` for open-ended mutes). For `Recurring` schedules this is `startTime + durationSeconds`.
+
+            '
+        createdBy:
+          $ref: '#/components/schemas/User'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+    MonitorMute-ListResponse:
+      title: MonitorMuteListResponse
+      type: object
+      required:
+      - monitorMutes
+      - meta
+      properties:
+        monitorMutes:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonitorMute-Resource'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    MonitorMute-CronSchedule:
+      title: MonitorMuteCronSchedule
+      type: object
+      required:
+      - rawCron
+      - timezone
+      properties:
+        rawCron:
+          type: string
+          description: 'POSIX 5-field cron expression (`minute hour day-of-month month day-of-week`). No seconds field, no year field, no Quartz extensions, no `@daily`-style macros. Fields support `*` (any), `,` (list), `-` (range), and `/` (step). The server rejects expressions outside this dialect with `invalid_schedule`. Examples: `0 2 * * *` (daily at 02:00), `0 9-17 * * 1-5` (every hour 09:00–17:00 Mon–Fri), `0-59/15 * * * *` (every 15 min).
+
+            '
+        timezone:
+          type: string
+          description: 'IANA timezone name. Example: "America/Los_Angeles".'
+    MonitorMute-RecurringInput:
+      title: MonitorMuteRecurringInput
+      description: 'Input shape for a recurring schedule. Mirrors `MonitorMute-Recurring`; kept separate so server-computed response fields can be added to the response type without widening the write contract.
+
+        '
+      type: object
+      required:
+      - cronSchedule
+      - durationSeconds
+      properties:
+        cronSchedule:
+          $ref: '#/components/schemas/MonitorMute-CronSchedule'
+        durationSeconds:
+          type: integer
+          format: int64
+          minimum: 1
+          description: Wall-clock length of each fired window in seconds. Must be at least 1.
+    Monitor-Brief:
+      title: MonitorBrief
+      type: object
+      description: Brief monitor metadata included when a reference is expanded.
+      required:
+      - name
+      - label
+      - description
+      properties:
+        name:
+          type: string
+          description: 'Name of the monitor, unique within its workspace.
+
+            '
+        label:
+          type: string
+          deprecated: true
+          description: Same as `name`. Deprecated; read `name` instead.
+        description:
+          type:
+          - string
+          - 'null'
+          description: The monitor's description. Null when no description is configured.
+    MonitorMute-ScheduleKind:
+      title: MonitorMuteScheduleKind
+      type: string
+      description: '`OneTime` defines a fixed window with an explicit start and optional end. `Recurring` fires on a cron schedule for a specified duration.
+
+        '
+      enum:
+      - OneTime
+      - Recurring
+    MonitorMute-Recurring:
+      title: MonitorMuteRecurring
+      description: A recurring mute window driven by a cron schedule.
+      type: object
+      required:
+      - cronSchedule
+      - durationSeconds
+      properties:
+        cronSchedule:
+          $ref: '#/components/schemas/MonitorMute-CronSchedule'
+        durationSeconds:
+          type: integer
+          format: int64
+          minimum: 1
+          description: Wall-clock length of each fired window in seconds. Must be at least 1.
+    NullableTime:
+      type:
+      - string
+      - 'null'
+      format: RFC3339
+    ObjectId:
+      type: string
+      format: ObjectId
+    Time:
+      type: string
+      format: RFC3339
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    MonitorMute-Target:
+      title: MonitorMuteTarget
+      description: 'Describes which monitors this mute rule applies to. `monitors` is always present: empty when `kind` is `Global`, non-empty when `kind` is `Monitors`.
+
+        '
+      type: object
+      required:
+      - kind
+      - monitors
+      properties:
+        kind:
+          $ref: '#/components/schemas/MonitorMute-TargetKind'
+        monitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Monitor-Ref'
+    MonitorMute-TargetKind:
+      title: MonitorMuteTargetKind
+      type: string
+      description: '`Global` suppresses all monitors (requires a non-empty `filter`). `Monitors` targets a specific set of monitors by ID.
+
+        '
+      enum:
+      - Global
+      - Monitors
+    MonitorMute-OneTime:
+      title: MonitorMuteOneTime
+      description: A one-time mute window. Always fully populated in responses.
+      type: object
+      required:
+      - startTime
+      - endTime
+      properties:
+        startTime:
+          $ref: '#/components/schemas/Time'
+          description: Start of the mute window.
+        endTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: End of the mute window. `null` means until manually deleted.
+    MonitorMute-Schedule:
+      title: MonitorMuteSchedule
+      description: 'Discriminated schedule. Both `oneTime` and `recurring` are always present in responses; the inactive sibling is `null`.
+
+        '
+      type: object
+      required:
+      - kind
+      - oneTime
+      - recurring
+      properties:
+        kind:
+          $ref: '#/components/schemas/MonitorMute-ScheduleKind'
+        oneTime:
+          description: Populated when `kind` is `OneTime`; `null` otherwise.
+          oneOf:
+          - $ref: '#/components/schemas/MonitorMute-OneTime'
+          - type: 'null'
+        recurring:
+          description: Populated when `kind` is `Recurring`; `null` otherwise.
+          oneOf:
+          - $ref: '#/components/schemas/MonitorMute-Recurring'
+          - type: 'null'
+    MonitorMute-TargetInput:
+      title: MonitorMuteTargetInput
+      description: 'Input shape for a mute target. `kind` is optional in PATCH — if provided it must match the existing value since `kind` is immutable after creation. `monitors` is required and non-empty when `kind` is `Monitors`; omit or leave empty when `kind` is `Global`.
+
+        '
+      type: object
+      properties:
+        kind:
+          $ref: '#/components/schemas/MonitorMute-TargetKind'
+        monitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Monitor-Ref'
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    MonitorMute-UpdateRequest:
+      title: MonitorMuteUpdateRequest
+      description: 'All fields are optional. Omitted fields are left unchanged. Sending a `target` object replaces the entire target subtree atomically; `target.kind` must match the existing value (it is immutable). Send `filter: null` to remove an existing filter.
+
+        '
+      type: object
+      properties:
+        label:
+          type: string
+        description:
+          type:
+          - string
+          - 'null'
+          description: Pass `null` to clear the description.
+        target:
+          $ref: '#/components/schemas/MonitorMute-TargetInput'
+        schedule:
+          $ref: '#/components/schemas/MonitorMute-ScheduleInput'
+        filter:
+          type:
+          - string
+          - 'null'
+          description: Pass `null` to remove an existing filter.
+    MonitorMute-OneTimeInput:
+      title: MonitorMuteOneTimeInput
+      description: 'Input shape for a one-time schedule. `startTime` is required. Omit `endTime` or pass `null` to create an open-ended mute.
+
+        '
+      type: object
+      required:
+      - startTime
+      properties:
+        startTime:
+          $ref: '#/components/schemas/Time'
+          description: Start of the mute window.
+        endTime:
+          $ref: '#/components/schemas/NullableTime'
+          description: End of the mute window. Omit or pass `null` for open-ended.
+    Monitor-Ref:
+      title: MonitorRef
+      type: object
+      description: 'Reference to a monitor. Always carries the `id`. The `record` field is
+
+        populated with brief metadata only when `expand=true`.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/Monitor-Brief'
+    MonitorMute-CreateRequest:
+      title: MonitorMuteCreateRequest
+      type: object
+      required:
+      - label
+      - target
+      - schedule
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+          description: Free-form description. Omit to leave blank.
+        target:
+          $ref: '#/components/schemas/MonitorMute-TargetInput'
+        schedule:
+          $ref: '#/components/schemas/MonitorMute-ScheduleInput'
+        filter:
+          type: string
+          description: 'CEL boolean expression evaluated against each fired alarm row. Required and non-empty when `target.kind` is `Global` (prevents accidental fleet-wide suppression). When `target.kind` is `Monitors`, omit to suppress all firings for those monitors unconditionally. Example: `level == "Critical" && context["service"] == "payments"`.
+
+            '
+  responses:
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

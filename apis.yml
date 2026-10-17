@@ -100,17 +100,31 @@ common:
 - type: Blog
   url: https://www.snowflake.com/en/blog/product-and-technology/?tags=blog%2Fproduct-and-technology%2Fobservability
 apis:
-- aid: observeinc:observe-api
-  name: Observe API
-  description: 'Tenant-scoped REST API for the Observe by Snowflake platform: monitors, datasets, ingest tokens, API tokens, service accounts, reference tables, query export and authentication flows. 88 operations documented in the ReadMe API reference.'
+- aid: observeinc:iceberg-rest-catalog
+  name: Observe Apache Iceberg REST Catalog API
+  description: >-
+    Read-only subset of the Apache Iceberg REST Catalog protocol served under /v1/iceberg/catalog on each
+    Observe tenant, authenticated with the same Observe API token. Implements the Apache Iceberg spec;
+    no Observe-specific contract is published.
+  humanURL: https://docs.observeinc.com/reference/base-url
+  baseURL: https://{customerid}.observeinc.com/v1/iceberg/catalog
+  tags:
+  - Apache Iceberg
+  - Data Catalog
+  properties:
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/base-url
+- aid: observeinc:observeinc-alert-api
+  name: Observe Alert API
+  description: >-
+    Query monitor alerts. Learn more about [alerts](https://docs.observeinc.com/docs/work-with-alerts).
   humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
   baseURL: https://{customerid}.observeinc.com
   tags:
-  - Observability
-  - Monitoring
+  - Alert
   properties:
   - type: OpenAPI
-    url: openapi/observeinc-openapi.yml
+    url: openapi/observeinc-alert-api-openapi.yml
   - type: Documentation
     url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
   - type: Authentication
@@ -131,17 +145,618 @@ apis:
     url: json-schema/observeinc-dataset-query-filter-resource-schema.json
   - type: JSONSchema
     url: json-schema/observeinc-ingest-filters-resource-schema.json
-- aid: observeinc:iceberg-rest-catalog
-  name: Observe Apache Iceberg REST Catalog API
-  description: Read-only subset of the Apache Iceberg REST Catalog protocol served under /v1/iceberg/catalog on each Observe tenant, authenticated with the same Observe API token. Implements the Apache Iceberg spec; no Observe-specific contract is published.
+- aid: observeinc:observeinc-apm-api
+  name: Observe APM API
+  description: The APM API from Observe — 3 operation(s) for apm.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - APM
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-apm-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-dashboards-api
+  name: Observe Dashboards API
+  description: The Dashboards API from Observe — 2 operation(s) for dashboards.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-dashboards-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-dataset-api
+  name: Observe Dataset API
+  description: >-
+    Manage datasets. Learn more about [datasets](https://docs.observeinc.com/en/latest/content/reference/ObserveKeyConcepts.html#datasets)..
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Dataset
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-dataset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-dataset-legacy-api
+  name: Observe Dataset Legacy API
+  description: Legacy dataset endpoints. Will be deprecated in the future.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Dataset Legacy
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-dataset-legacy-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-dataset-query-filter-api
+  name: Observe Dataset Query Filter API
+  description: >-
+    Manage dataset query filters. Learn more about [dataset query filters](https://docs.observeinc.com/docs/dataset-query-filters).
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Dataset Query Filter
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-dataset-query-filter-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-documentation-api
+  name: Observe Documentation API
+  description: Semantic search across Observe's built-in documentation.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Documentation
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-documentation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-drop-filters-api
+  name: Observe Drop Filters API
+  description: >-
+    Manage drop filters used to reduce ingest volume by dropping a
+
+    configurable fraction of observations matching an OPAL predicate.
+
+    Learn more about [drop filters](https://docs.observeinc.com/docs/drop-filters).
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Drop Filters
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-drop-filters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-export-api
+  name: Observe Export API
+  description: Export query results from Observe.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Export
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-export-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-ingest-routes-api
+  name: Observe Ingest Routes API
+  description: The Ingest Routes API from Observe — 2 operation(s) for ingest routes.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Ingest Routes
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-ingest-routes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-ingest-tokens-api
+  name: Observe Ingest Tokens API
+  description: The Ingest Tokens API from Observe — 2 operation(s) for ingest tokens.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Ingest Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-ingest-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-login-api
+  name: Observe Login API
+  description: >-
+    Manage api tokens. Learn more about [api tokens](https://docs.observeinc.com/en/latest/content/reference/ObserveAPIAuth.html).
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Login
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-login-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-metrics-api
+  name: Observe Metrics API
+  description: The Metrics API from Observe — 1 operation(s) for metrics.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-metrics-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-monitor-api
+  name: Observe Monitor API
+  description: >-
+    Manage monitors. Learn more about [monitors](https://docs.observeinc.com/en/latest/content/monitors/MonitorsIntro.html).
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Monitor
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-monitor-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-monitormute-api
+  name: Observe Monitor Mute API
+  description: >-
+    Manage monitor mute rules. Mute rules suppress alert notifications for one or more monitors during
+    a defined time window. Learn more about [monitor mute rules](https://docs.observeinc.com/docs/mute-a-monitor).
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - MonitorMute
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-monitormute-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-objecttags-api
+  name: Observe Object Tags API
+  description: Search for object tags on objects such as dashboards, datasets, worksheets, etc.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - ObjectTags
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-objecttags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-referencetables-api
+  name: Observe Reference Tables API
+  description: >-
+    Manage reference tables. Learn more about [reference tables](https://docs.observeinc.com/en/latest/content/reference/ReferenceTables.html).
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - ReferenceTables
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-referencetables-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-skills-api
+  name: Observe Skills API
+  description: Manage custom AI agent skills for the AI-SRE agent.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Skills
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-skills-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-tags-api
+  name: Observe Tags API
+  description: The Tags API from Observe — 1 operation(s) for tags.
+  humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  baseURL: https://{customerid}.observeinc.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-service-accounts-api
+  name: Observe Service Accounts API
+  description: Manage service accounts and api tokens. Learn more about service accounts.
   humanURL: https://docs.observeinc.com/reference/base-url
   baseURL: https://{customerid}.observeinc.com/v1/iceberg/catalog
   tags:
-  - Apache Iceberg
-  - Data Catalog
+  - Service Accounts
   properties:
+  - type: OpenAPI
+    url: openapi/observeinc-service-accounts-api-openapi.yml
   - type: Documentation
-    url: https://docs.observeinc.com/reference/base-url
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
+- aid: observeinc:observeinc-tag-values-api
+  name: Observe Tag Values API
+  description: The Tag Values API from Observe — 1 operation(s) for tag values.
+  humanURL: https://docs.observeinc.com/reference/base-url
+  baseURL: https://{customerid}.observeinc.com/v1/iceberg/catalog
+  tags:
+  - Tag Values
+  properties:
+  - type: OpenAPI
+    url: openapi/observeinc-tag-values-api-openapi.yml
+  - type: Documentation
+    url: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
+  - type: Authentication
+    url: https://docs.observeinc.com/reference/observe-api-authentication
+  - type: RateLimits
+    url: https://docs.observeinc.com/reference/observe-api-rate-limits
+  - type: ChangeLog
+    url: https://docs.observeinc.com/reference/api-changelog
+  - type: JSONSchema
+    url: json-schema/observeinc-monitor-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-alert-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-routes-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-dataset-query-filter-resource-schema.json
+  - type: JSONSchema
+    url: json-schema/observeinc-ingest-filters-resource-schema.json
 x-parent-company: snowflake
 x-enrichment:
   status: enriched

@@ -1,0 +1,1022 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Drop Filters API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Drop Filters across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Drop Filters
+  x-displayName: Drop Filter
+  description: 'Manage drop filters used to reduce ingest volume by dropping a
+
+    configurable fraction of observations matching an OPAL predicate.
+
+    Learn more about drop filters.'
+paths:
+  /v1/ingest/filters:
+    post:
+      summary: Create a drop filter
+      description: 'Creates a drop filter. The OPAL pipeline is compiled against the source
+
+        dataset''s schema; if compilation fails the request is rejected with a
+
+        400 whose error body details the compiler errors.
+
+
+        A dataset accepts at most 100 drop filters. Creating the 101st returns
+
+        a 400. Use `POST /v1/ingest/filters/validate` to check a pipeline
+
+        before creating the filter.
+
+
+        Allow 1-2 minutes for a new filter to take effect on the ingest path.'
+      operationId: CreateIngestFilter
+      tags:
+      - Drop Filters
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestFilters-CreateRequest'
+      responses:
+        '201':
+          description: Drop filter created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestFilters-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: List drop filters
+      description: List drop filters for the calling customer. Default ordering is by `id` ascending. Pagination is offset/limit with `limit` defaulting to 100 and capped at 1000. The `expand` flag will populate the brief record on the `sourceDataset` and `managedBy` references.
+      operationId: ListIngestFilters
+      tags:
+      - Drop Filters
+      parameters:
+      - $ref: '#/components/parameters/ExpandParam'
+      - $ref: '#/components/parameters/IngestFilters-OffsetQuery'
+      - $ref: '#/components/parameters/IngestFilters-LimitQuery'
+      - $ref: '#/components/parameters/IngestFilters-OrderByQuery'
+      - $ref: '#/components/parameters/IngestFilters-FilterQuery'
+      responses:
+        '200':
+          description: Drop filters queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestFilters-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/ingest/filters/{id}:
+    delete:
+      summary: Delete a drop filter
+      description: 'Delete a drop filter. Filters with a non-null `managedBy` are owned by
+
+        an app or other managing object and cannot be deleted through this
+
+        endpoint.'
+      operationId: DeleteIngestFilter
+      tags:
+      - Drop Filters
+      parameters:
+      - $ref: '#/components/parameters/IngestFilters-Id'
+      responses:
+        '204':
+          description: Drop filter deleted successfully
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: Get a drop filter
+      description: Get a drop filter by its ID.
+      operationId: GetIngestFilter
+      tags:
+      - Drop Filters
+      parameters:
+      - $ref: '#/components/parameters/IngestFilters-Id'
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Drop filter queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestFilters-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      summary: Update a drop filter
+      description: 'Merge-patch update of a drop filter. Only fields explicitly present in the body are changed; the source dataset cannot be changed. To toggle the filter, send `{"enabled": true}` or `{"enabled": false}`. If the OPAL pipeline is provided and fails to compile, the request is rejected with a 400.
+
+        Filters with a non-null `managedBy` are owned by an app or other managing object and cannot be updated through this endpoint.
+
+        Allow 1-2 minutes for the change to take effect on the ingest path.'
+      operationId: UpdateIngestFilter
+      tags:
+      - Drop Filters
+      parameters:
+      - $ref: '#/components/parameters/IngestFilters-Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestFilters-UpdateRequest'
+      responses:
+        '200':
+          description: Drop filter updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestFilters-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/ingest/filters/filterable-datasets:
+    get:
+      summary: List datasets eligible for drop filtering
+      description: Returns the source datasets eligible to have drop filters attached. A dataset becomes ineligible once it reaches the per-dataset cap of 100 drop filters.
+      operationId: ListFilterableDatasets
+      tags:
+      - Drop Filters
+      parameters:
+      - $ref: '#/components/parameters/ExpandParam'
+      - $ref: '#/components/parameters/IngestFilters-OffsetQuery'
+      - $ref: '#/components/parameters/IngestFilters-LimitQuery'
+      responses:
+        '200':
+          description: Filterable datasets queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestFilters-FilterableDatasetsResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/ingest/filters/validate:
+    post:
+      summary: Validate a drop filter expression
+      description: Compile the given OPAL pipeline against the source dataset's schema without persisting anything. Always returns 200 if the request body is well-formed; the response `errors` array is empty when the pipeline is valid and populated when compilation failed.
+      operationId: ValidateIngestFilterExpression
+      tags:
+      - Drop Filters
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestFilters-ValidateRequest'
+      responses:
+        '200':
+          description: Validation completed (may include compiler errors)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestFilters-ValidateResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  parameters:
+    ExpandParam:
+      name: expand
+      in: query
+      description: Whether to expand resources referenced in the response to include additional fields
+      schema:
+        type: boolean
+    IngestFilters-FilterQuery:
+      in: query
+      name: filter
+      required: false
+      schema:
+        type: string
+      description: 'CEL expression that response drop filters must match. Must evaluate
+
+        to `bool`. Must be URL-encoded.
+
+        Supported fields: `id` (int), `label` (string), `sourceDataset.id`
+
+        (int), `enabled` (bool).
+
+        '
+      examples:
+        filterByLabel:
+          summary: Exact label match
+          value: label == "my-filter"
+        filterByLabelRegex:
+          summary: Regex search by label
+          value: label.matches(".*prod.*")
+        filterBySourceDataset:
+          summary: All filters attached to a given source dataset
+          value: sourceDataset.id == 41030001
+        filterCombined:
+          summary: Enabled filters whose label contains "checkout"
+          value: enabled && label.contains("checkout")
+    IngestFilters-Id:
+      in: path
+      name: id
+      schema:
+        type: string
+        format: int64
+      required: true
+      description: The ID of the drop filter.
+      example: '41030001'
+    IngestFilters-OffsetQuery:
+      in: query
+      name: offset
+      required: false
+      description: Number of items to skip before starting to collect the result set.
+      schema:
+        type: integer
+        format: int64
+        minimum: 0
+        default: 0
+    IngestFilters-OrderByQuery:
+      in: query
+      name: orderBy
+      required: false
+      schema:
+        type: string
+      description: 'Comma-separated list of fields to order results by. Prefix a field
+
+        with `-` for descending. Default ordering is by `id`.
+
+        Supported fields: `id`, `label`, `enabled`, `dropRate`,
+
+        `sourceDataset.id`.
+
+        '
+    IngestFilters-LimitQuery:
+      in: query
+      name: limit
+      required: false
+      description: Maximum number of items to return in the response.
+      schema:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000
+        default: 100
+  schemas:
+    DatasetRef:
+      title: DatasetRef
+      type: object
+      description: 'A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/DatasetBrief'
+    DatasetBrief:
+      title: DatasetBrief
+      type: object
+      description: 'Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - contentType
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        contentType:
+          $ref: '#/components/schemas/DatasetContentType'
+          description: 'The type of data the referenced dataset contains — Resource, Log,
+
+            Metric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset''s
+
+            kind and interface bindings.
+
+            '
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    IngestFilters-FilterableDatasetsResponse:
+      title: IngestFiltersFilterableDatasetsResponse
+      type: object
+      description: A page of datasets eligible for drop filtering.
+      required:
+      - datasets
+      - meta
+      properties:
+        datasets:
+          type: array
+          description: The eligible source datasets in this page.
+          items:
+            $ref: '#/components/schemas/DatasetRef'
+        meta:
+          $ref: '#/components/schemas/Meta'
+          description: Pagination metadata, including the total dataset count.
+    ObjectRef:
+      title: ObjectRef
+      type: object
+      description: 'A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/ObjectBrief'
+    IngestFilters-ValidateRequest:
+      title: IngestFiltersValidateRequest
+      type: object
+      description: A pipeline to compile, plus the dataset whose schema it compiles against.
+      required:
+      - pipeline
+      - sourceDataset
+      properties:
+        pipeline:
+          type: string
+          description: OPAL pipeline expression to compile.
+        sourceDataset:
+          $ref: '#/components/schemas/DatasetRef'
+          description: Source dataset reference. Only the `id` is consumed; any `record` payload is ignored.
+    ObjectId:
+      type: string
+      format: ObjectId
+    Time:
+      type: string
+      format: RFC3339
+    IngestFilters-Resource:
+      title: IngestFiltersObject
+      type: object
+      description: A drop filter resource.
+      required:
+      - id
+      - label
+      - description
+      - iconUrl
+      - sourceDataset
+      - pipeline
+      - layout
+      - dropRate
+      - enabled
+      - managedBy
+      - createdAt
+      - createdBy
+      - updatedAt
+      - updatedBy
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+          description: Unique, immutable identifier of the filter.
+        label:
+          type: string
+          description: Mutable display name of the filter.
+        description:
+          type:
+          - string
+          - 'null'
+          description: Optional human-readable description.
+        iconUrl:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: Optional icon shown alongside the filter in the UI.
+        sourceDataset:
+          $ref: '#/components/schemas/DatasetRef'
+          description: The source dataset this filter applies to. Cannot be changed after creation.
+        pipeline:
+          type: string
+          description: OPAL pipeline expression defining the filter predicate. Observations matching the pipeline are candidates for dropping, subject to `dropRate`.
+        layout:
+          type:
+          - object
+          - 'null'
+          description: Reserved for UI state. Stored and returned verbatim, never interpreted by Observe. Safe to omit.
+        dropRate:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          description: Fraction (0.0-1.0) of matching observations to drop. 1.0 = drop all matches; 0.0 = drop none.
+        enabled:
+          type: boolean
+          description: Whether the filter is actively dropping observations. Disabled filters are retained but have no effect on ingest.
+        managedBy:
+          readOnly: true
+          description: Identifies the owner/manager of this filter. Managed filters cannot be modified through the API.
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+        createdBy:
+          $ref: '#/components/schemas/User'
+          readOnly: true
+          description: User who created the filter.
+        createdAt:
+          $ref: '#/components/schemas/Time'
+          readOnly: true
+          description: When the filter was created.
+        updatedBy:
+          $ref: '#/components/schemas/User'
+          readOnly: true
+          description: User who most recently updated the filter.
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+          readOnly: true
+          description: When the filter was last updated.
+    IngestFilters-CompilerError:
+      title: IngestFiltersCompilerError
+      type: object
+      description: A single compiler error from compiling the OPAL pipeline.
+      required:
+      - type
+      - message
+      properties:
+        type:
+          type: string
+          description: Stable identifier for the kind of compiler error.
+        message:
+          type: string
+          description: Human-readable explanation of the error.
+        span:
+          $ref: '#/components/schemas/IngestFilters-CompilerErrorSpan'
+          description: Location of the error within the pipeline text. Absent when the compiler could not attribute the error to a specific position.
+    IngestFilters-CompilerErrorSpan:
+      title: IngestFiltersCompilerErrorSpan
+      type: object
+      description: A half-open range within the pipeline text, from `start` up to `end`.
+      properties:
+        start:
+          $ref: '#/components/schemas/IngestFilters-CompilerErrorPos'
+          description: First position covered by the error.
+        end:
+          $ref: '#/components/schemas/IngestFilters-CompilerErrorPos'
+          description: Position just past the last one covered by the error.
+    ObjectBrief:
+      title: ObjectBrief
+      type: object
+      description: 'Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - managedBy
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager''s brief.'
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    IngestFilters-ValidateResponse:
+      title: IngestFiltersValidateResponse
+      type: object
+      description: 'Result of compiling the pipeline. A 200 does not mean the pipeline is valid: check that `errors` is empty.'
+      required:
+      - errors
+      properties:
+        errors:
+          type: array
+          description: Compiler errors, in source order. Empty when the pipeline compiled successfully.
+          items:
+            $ref: '#/components/schemas/IngestFilters-CompilerError'
+      examples:
+      - errors: []
+      - errors:
+        - type: unknown_column
+          message: column "sevrity" does not exist
+          span:
+            start:
+              row: 1
+              col: 8
+            end:
+              row: 1
+              col: 15
+    DatasetContentType:
+      title: DatasetContentType
+      type: string
+      description: 'The type of data a dataset contains. For Resource datasets, this is
+
+        determined by the dataset kind. For other kinds, it is derived from the
+
+        dataset''s interface bindings. Returns Unknown if no recognized interface
+
+        is found.
+
+        '
+      enum:
+      - Unknown
+      - Resource
+      - Log
+      - Metric
+      - OTelSpan
+      - OTelTrace
+    IngestFilters-ListResponse:
+      title: IngestFiltersListResponse
+      type: object
+      description: A page of drop filters.
+      required:
+      - ingestFilters
+      - meta
+      properties:
+        ingestFilters:
+          type: array
+          description: The drop filters in this page, in the requested order.
+          items:
+            $ref: '#/components/schemas/IngestFilters-Resource'
+        meta:
+          $ref: '#/components/schemas/Meta'
+          description: Pagination metadata, including the total filter count.
+    IngestFilters-CompilerErrorPos:
+      title: IngestFiltersCompilerErrorPos
+      type: object
+      description: A single position within the pipeline text.
+      properties:
+        row:
+          type: integer
+          format: int32
+          description: Line number, starting at 1.
+        col:
+          type: integer
+          format: int32
+          description: Column number within the line, starting at 1.
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    IngestFilters-CreateRequest:
+      title: IngestFiltersCreateRequest
+      type: object
+      description: Fields for a new drop filter.
+      required:
+      - label
+      - sourceDataset
+      - pipeline
+      properties:
+        label:
+          type: string
+          description: Display name of the filter.
+        description:
+          type: string
+          description: Optional human-readable description.
+        iconUrl:
+          type: string
+          format: uri
+          description: Optional icon shown alongside the filter in the UI.
+        sourceDataset:
+          $ref: '#/components/schemas/DatasetRef'
+          description: Source dataset reference. Only the `id` is consumed; any `record` payload is ignored. Cannot be changed after creation.
+        pipeline:
+          type: string
+          description: OPAL pipeline expression defining the filter predicate. Observations matching the pipeline are candidates for dropping, subject to `dropRate`.
+        layout:
+          type: object
+          description: Reserved for UI state. Stored and returned verbatim, never interpreted by Observe. Safe to omit.
+        dropRate:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          description: Fraction (0.0-1.0) of matching observations to drop. 1.0 = drop all matches; 0.0 = drop none. Default 1.0 when omitted.
+        enabled:
+          type: boolean
+          description: Whether the filter starts actively dropping observations. Default true when omitted.
+      example:
+        label: drop-debug-logs
+        description: Discard debug-level application logs.
+        sourceDataset:
+          id: '41030001'
+        pipeline: filter severity = "DEBUG"
+        dropRate: 1
+        enabled: true
+    IngestFilters-UpdateRequest:
+      title: IngestFiltersUpdateRequest
+      type: object
+      description: Merge-patch payload (RFC 7396). Only fields explicitly present are updated; omitted fields keep their current value. `description`, `iconUrl`, and `layout` accept an explicit `null` to clear them. `label`, `pipeline`, `dropRate`, and `enabled` are not nullable — sending `null` for any of those is rejected with a 400.
+      properties:
+        label:
+          type: string
+          description: Display name of the filter.
+        description:
+          type:
+          - string
+          - 'null'
+          description: Optional human-readable description. `null` clears it.
+        iconUrl:
+          type:
+          - string
+          - 'null'
+          format: uri
+          description: Optional icon shown in the UI. `null` clears it.
+        pipeline:
+          type: string
+          description: OPAL pipeline expression defining the filter predicate. Compiled against the source dataset's schema; compilation failure returns a 400.
+        layout:
+          type:
+          - object
+          - 'null'
+          description: Reserved for UI state, never interpreted by Observe. `null` clears it.
+        dropRate:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          description: Fraction (0.0-1.0) of matching observations to drop. 1.0 = drop all matches; 0.0 = drop none.
+        enabled:
+          type: boolean
+          description: Whether the filter is actively dropping observations. Send this field alone to enable or disable an existing filter.
+      examples:
+      - enabled: false
+      - label: drop-debug-logs
+        pipeline: filter severity = "DEBUG"
+        dropRate: 0.95
+  responses:
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

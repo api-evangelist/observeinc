@@ -1,0 +1,1283 @@
+openapi: 3.2.0
+info:
+  title: Observeinc APM API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged APM across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: APM
+paths:
+  /v1/apm/invocation-graph:
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      tags:
+      - APM
+      operationId: GetApmInvocationGraph
+      summary: Get the APM service invocation graph
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Returns the service dependency graph for a time window: the services
+
+        observed and the calls between them, always scoped to a single
+
+        `environment` (required). Which graph you get depends on the identity
+
+        parameters you add on top of `environment`:
+
+        - `environment` only: the full graph for that environment.
+
+        - `+ serviceName`: the graph centered on one service.
+
+        - `+ serviceName` + `endpointName`: centered on one endpoint of that
+
+        service.
+
+
+        `services` lists every service in the graph; `invocations` lists the
+
+        calls between them, each from a `source` to a `target` with aggregated
+
+        request, error, and latency metrics. A service that is never the
+
+        `target` of a call is a root.
+
+
+        When centered on an endpoint, `endpointName` is set on whichever side of
+
+        a call is that endpoint — `source` when the endpoint makes the call,
+
+        `target` when it serves the call — and is null on every other
+
+        participant. Match it exactly against the value from a prior response.
+
+
+        By default the full graph for the scope is returned. Set
+
+        `directNeighborsOnly=true` (with a `serviceName`) to return only the
+
+        focal service and the services one hop away from it. If a full graph is
+
+        not available for a request, it is rejected with `BadRequest` indicating
+
+        `directNeighborsOnly=true` should be used.
+
+
+        `serviceNamespace` is an optional additional filter that matches on
+
+        either end of a call (a call is kept when its `source` or `target` is in
+
+        that namespace — a cross-namespace union). `environment`, by contrast,
+
+        matches on both ends: a call is kept only when both its `source` and
+
+        `target` are in that environment.
+
+
+        Required parameter combinations: `environment` is always required (`400
+
+        RequiredParamMissing` otherwise); `endpointName` and
+
+        `directNeighborsOnly` each require a `serviceName`.
+
+
+        The graph is returned in a single response and is not paginated. A
+
+        request whose graph would exceed the maximum size is rejected with `413
+
+        PayloadTooLarge` rather than truncated. Narrow the time window, or
+
+        center the graph on a service or endpoint, to reduce its size.'
+      parameters:
+      - $ref: '#/components/parameters/Apm-ServiceNameParam'
+      - name: environment
+        in: query
+        description: 'OTel deployment.environment, matched exactly. Required: the
+
+          invocation graph is always scoped to a single environment. Omitting
+
+          it returns `400 RequiredParamMissing`.
+
+          '
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Apm-ServiceNamespaceParam'
+      - name: endpointName
+        in: query
+        description: 'Name of an endpoint on the service to center the graph on, matched
+
+          exactly. Requires `serviceName` and `environment`.
+
+          '
+        schema:
+          type: string
+      - name: directNeighborsOnly
+        in: query
+        description: 'Return only the focal service and the services directly connected
+
+          to it (one hop away). Requires `serviceName`. Omit (the default) to
+
+          return the full graph.
+
+          '
+        schema:
+          type: boolean
+          default: false
+      - $ref: '#/components/parameters/Apm-StartTimeParam'
+      - $ref: '#/components/parameters/Apm-EndTimeParam'
+      - name: limit
+        in: query
+        description: 'Not accepted on this endpoint — the dependency graph is returned in
+
+          a single response, not a paginated list. Supplying `limit` returns
+
+          `BadRequest`.
+
+          '
+        schema:
+          type: integer
+          format: int64
+      - name: offset
+        in: query
+        description: 'Not accepted on this endpoint (see `limit`). Supplying `offset`
+
+          returns `BadRequest`.
+
+          '
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Invocation graph returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-InvocationGraphResponse'
+        '400':
+          $ref: '#/components/responses/Apm-ErrorResponse-400'
+        '401':
+          description: Unauthorized — missing or invalid credentials (platform auth layer; body conforms to Apm-Error).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-Error'
+        '403':
+          description: Forbidden — caller lacks permission for this resource (body conforms to Apm-Error).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-Error'
+        '404':
+          description: Not found — unrecognized route (body conforms to Apm-Error).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-Error'
+        '413':
+          $ref: '#/components/responses/Apm-ErrorResponse-413'
+        '500':
+          $ref: '#/components/responses/Apm-ErrorResponse-500'
+        '504':
+          $ref: '#/components/responses/Apm-ErrorResponse-504'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/apm/environments:
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      tags:
+      - APM
+      operationId: ListApmEnvironments
+      summary: List APM environments
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Lists environments and the service namespaces with active telemetry in
+
+        the `[startTime, endTime)` window. `environment` is an optional
+
+        exact-match filter (omit to return all environments). This endpoint
+
+        does not bucket metrics, so it accepts only `startTime`/`endTime` (no
+
+        series bucketing) and returns no `redMetrics` and no `related`.
+
+
+        Each row''s `serviceNamespaces` is the set observed for that environment,
+
+        capped at a server limit; when the full set exceeds the cap, the array
+
+        is truncated and `truncated` is true. The list is never paged separately
+
+        — pagination is on the environments axis. Services emitting no
+
+        `service.namespace` contribute nothing; the array never contains null.'
+      parameters:
+      - $ref: '#/components/parameters/Apm-EnvironmentParam'
+      - $ref: '#/components/parameters/Apm-StartTimeParam'
+      - $ref: '#/components/parameters/Apm-EndTimeParam'
+      - $ref: '#/components/parameters/Apm-LimitParam'
+      - $ref: '#/components/parameters/Apm-OffsetParam'
+      - $ref: '#/components/parameters/Apm-OrderByEnvironmentsParam'
+      responses:
+        '200':
+          description: Environments listed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-EnvironmentsListResponse'
+        '400':
+          $ref: '#/components/responses/Apm-ErrorResponse-400'
+        '401':
+          description: Unauthorized — missing or invalid credentials (platform auth layer; body conforms to Apm-Error).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-Error'
+        '403':
+          description: Forbidden — caller lacks permission for this resource (body conforms to Apm-Error).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-Error'
+        '404':
+          description: Not found — unrecognized route (body conforms to Apm-Error).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-Error'
+        '413':
+          $ref: '#/components/responses/Apm-ErrorResponse-413'
+        '500':
+          $ref: '#/components/responses/Apm-ErrorResponse-500'
+        '504':
+          $ref: '#/components/responses/Apm-ErrorResponse-504'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/apm/services:
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      tags:
+      - APM
+      operationId: ListApmServices
+      summary: List APM services with RED metrics
+      description: '> **Beta — may change; breaking changes are coordinated with affected
+
+        > customers. Suitable for evaluation, not production reliance.**
+
+
+        Lists services, one row per service, each carrying a closed RED metrics
+
+        snapshot under `redMetrics`. Filters are exact-match on `serviceName`,
+
+        `environment`, and `serviceNamespace`; an omitted filter matches every
+
+        value of that dimension.
+
+
+        When `expand=true`, each row''s `redMetrics.series[]` additionally
+
+        carries a per-bucket time series across the query window; read the
+
+        bucket cadence from the spacing between consecutive
+
+        `series[].timestamp`. When `expand` is false or omitted, `series` is
+
+        absent (not `null`, not an empty array).
+
+
+        Zero matches return `200` with `services: []` and `meta.totalCount: 0`.
+
+        `meta.totalCount` is `-1` when an exact count is too expensive to
+
+        compute; in that case paginate by advancing `offset` until a page
+
+        shorter than `limit` is returned.
+
+
+        Response size grows with the number of rows on the page and, when
+
+        `expand=true`, with the number of series points per row. A wide window
+
+        combined with `expand=true` can therefore make a single page exceed the
+
+        server response-size limit and return `413 PayloadTooLarge`. Recover by
+
+        narrowing the time window or requesting a smaller `limit`. `limit` is
+
+        never rejected for being too large: it is clamped to its maximum
+
+        server-side, and to a lower maximum when `expand=true`.'
+      parameters:
+      - $ref: '#/components/parameters/Apm-ServiceNameParam'
+      - $ref: '#/components/parameters/Apm-EnvironmentParam'
+      - $ref: '#/components/parameters/Apm-ServiceNamespaceParam'
+      - $ref: '#/components/parameters/Apm-StartTimeParam'
+      - $ref: '#/components/parameters/Apm-EndTimeParam'
+      - $ref: '#/components/parameters/Apm-ExpandParam'
+      - $ref: '#/components/parameters/Apm-LimitParam'
+      - $ref: '#/components/parameters/Apm-OffsetParam'
+      - $ref: '#/components/parameters/Apm-OrderByServicesParam'
+      responses:
+        '200':
+          description: Services listed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Apm-ServicesListResponse'
+        '400':
+          $ref: '#/components/responses/Apm-ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/Apm-ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/Apm-ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/Apm-ErrorResponse-404'
+        '413':
+          $ref: '#/components/responses/Apm-ErrorResponse-413'
+        '500':
+          $ref: '#/components/responses/Apm-ErrorResponse-500'
+        '504':
+          $ref: '#/components/responses/Apm-ErrorResponse-504'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  parameters:
+    Apm-ExpandParam:
+      name: expand
+      in: query
+      description: 'Endpoint-specific opt-in. On /v1/apm/services, expand=true populates
+
+        redMetrics.series[] on every row.
+
+        '
+      schema:
+        type: boolean
+        default: false
+    Apm-EnvironmentParam:
+      name: environment
+      in: query
+      description: 'OTel deployment.environment. Single-value exact-match filter; omit (or
+
+        pass an empty value) to match services in any environment.
+
+        '
+      schema:
+        type: string
+    Apm-EndTimeParam:
+      name: endTime
+      in: query
+      description: 'RFC3339 window end (exclusive). Defaults to now when omitted. Pairs with
+
+        `startTime` to form the `[startTime, endTime)` window; see `startTime`
+
+        for the full defaulting rule.
+
+        '
+      schema:
+        type: string
+        format: date-time
+    Apm-LimitParam:
+      name: limit
+      in: query
+      description: Max items per page. Default 100, range [1, 100000].
+      schema:
+        type: integer
+        format: int64
+        default: 100
+        minimum: 1
+        maximum: 100000
+    Apm-StartTimeParam:
+      name: startTime
+      in: query
+      description: 'RFC3339 window start (inclusive). The query window is `[startTime,
+
+        endTime)`. The two bounds are independent: omit `startTime` and it
+
+        defaults to `endTime − 1h`; omit `endTime` and it defaults to now;
+
+        omit both for the last hour. `startTime` must be earlier than
+
+        `endTime`, otherwise `BadRequest`.
+
+        '
+      schema:
+        type: string
+        format: date-time
+    Apm-OrderByEnvironmentsParam:
+      name: orderBy
+      in: query
+      description: 'Sort key (single key; leading `-` for descending).
+
+        Default: `environment`. Allowed: `environment` (and `-environment`).
+
+        Ties are broken by `environment` ascending (the primary key, so ties
+
+        across rows are impossible — each environment appears once).
+
+        '
+      schema:
+        type: string
+        default: environment
+        enum:
+        - environment
+        - -environment
+    Apm-ServiceNamespaceParam:
+      name: serviceNamespace
+      in: query
+      description: 'OTel service.namespace. Single-value exact-match filter; omit (or pass
+
+        an empty value) to match services in any namespace.
+
+        '
+      schema:
+        type: string
+    Apm-ServiceNameParam:
+      name: serviceName
+      in: query
+      description: 'OTel service.name. Single-value exact-match filter; omit (or pass an
+
+        empty value) to match services with any service.name.
+
+        '
+      schema:
+        type: string
+    Apm-OffsetParam:
+      name: offset
+      in: query
+      description: Items to skip before the page starts. Default 0.
+      schema:
+        type: integer
+        format: int64
+        default: 0
+        minimum: 0
+    Apm-OrderByServicesParam:
+      name: orderBy
+      in: query
+      description: 'Sort key (single key; leading `-` for descending).
+
+        Default: `serviceName`. Allowed: `serviceName`, `environment`,
+
+        `serviceNamespace`, `invocationRatePerSecond`, `errorRatePerSecond`,
+
+        `durationP95Seconds` (and their `-` descending forms). Sorts on
+
+        row-level scalars only — does not affect series order. Ties on the
+
+        primary key are broken by `serviceName` ascending for deterministic
+
+        pagination.
+
+        '
+      schema:
+        type: string
+        default: serviceName
+        enum:
+        - serviceName
+        - -serviceName
+        - environment
+        - -environment
+        - serviceNamespace
+        - -serviceNamespace
+        - invocationRatePerSecond
+        - -invocationRatePerSecond
+        - errorRatePerSecond
+        - -errorRatePerSecond
+        - durationP95Seconds
+        - -durationP95Seconds
+  schemas:
+    Apm-MetricsRecord:
+      title: ApmMetricsRecord
+      type: object
+      description: 'Closed RED carrier: invocationRatePerSecond, errorRatePerSecond,
+
+        durationP95Seconds. `series[]` is opt-in via expand=true on
+
+        /v1/apm/services only.
+
+        '
+      required:
+      - interval
+      - invocationRatePerSecond
+      - errorRatePerSecond
+      - durationP95Seconds
+      properties:
+        interval:
+          $ref: '#/components/schemas/Apm-Interval'
+        invocationRatePerSecond:
+          type:
+          - number
+          - 'null'
+        errorRatePerSecond:
+          type:
+          - number
+          - 'null'
+        durationP95Seconds:
+          type:
+          - number
+          - 'null'
+        series:
+          type: array
+          description: 'Per-bucket points over the same interval. Populated only when the
+
+            endpoint documents an expand=true opt-in (see /v1/apm/services).
+
+            Absent on every other endpoint.
+
+            '
+          items:
+            $ref: '#/components/schemas/Apm-MetricsRecordPoint'
+      additionalProperties: false
+    Apm-ErrorType:
+      title: ApmErrorType
+      type: string
+      description: "Stable, machine-readable APM error category.\n\n- `BadRequest`: the request is malformed or otherwise the caller's\n  doing (inverted time window, canceled request, invalid filter).\n- `RequiredParamMissing`: a required parameter was omitted or passed\n  empty.\n- `InvalidTimestamp`: a time bound is not a valid RFC3339 timestamp.\n- `OutOfAcceleratedRange`: the requested window starts before this\n  account's accelerated telemetry is available. `acceleratedFrom` is\n  the earliest recoverable timestamp.\n- `NotConfigured`: an account/config state, not a malformed request\n  and not a server fault. The tracing-content dataset an APM read\n  needs has not been installed (or has not yet been discovered) for\n  this account. Retrying will not help until that dataset exists.\n- `PayloadTooLarge`: the result exceeds a server-enforced size cap\n  (for example the invocation graph's edge limit). Narrow the window\n  or supply a focal identity.\n- `TimedOut`: the query exceeded its time budget.\n- `InternalError`: an unexpected server failure.\n"
+      enum:
+      - BadRequest
+      - RequiredParamMissing
+      - InvalidTimestamp
+      - OutOfAcceleratedRange
+      - NotConfigured
+      - PayloadTooLarge
+      - TimedOut
+      - InternalError
+    DatasetRef:
+      title: DatasetRef
+      type: object
+      description: 'A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/DatasetBrief'
+    DatasetBrief:
+      title: DatasetBrief
+      type: object
+      description: 'Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - contentType
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        contentType:
+          $ref: '#/components/schemas/DatasetContentType'
+          description: 'The type of data the referenced dataset contains — Resource, Log,
+
+            Metric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset''s
+
+            kind and interface bindings.
+
+            '
+    Apm-Meta:
+      title: ApmMeta
+      type: object
+      description: 'APM list-response meta. Extends platform Meta (totalCount only) with
+
+        limit and offset echoed from the request. A totalCount of -1 means the
+
+        exact count is unknown (too expensive to compute); in that case paginate
+
+        by advancing offset until a short page (len(items) < limit) is returned.
+
+        '
+      required:
+      - totalCount
+      - limit
+      - offset
+      properties:
+        totalCount:
+          type: integer
+          format: int64
+        limit:
+          type: integer
+          format: int64
+        offset:
+          type: integer
+          format: int64
+      additionalProperties: false
+    Apm-MetricRef:
+      title: ApmMetricRef
+      type: object
+      description: 'One queryable metric on Service.related.metrics. Names are the RED
+
+        metrics used for this row (call count, error count, duration). Every
+
+        entry shares the same `attributeMapping` as `related.correlationTags`.
+
+        Pick the `serviceName` dimension from `Service.type`: `Service` →
+
+        `service.name`, `Database` → `peer.db.name`, `Messaging` →
+
+        `peer.messaging.system`, `ExternalCall` → `peer.server.address`.
+
+        Precedence is `Service` > `Database` > `Messaging` > `ExternalCall`.
+
+        When `type` is null, use `service.name`.
+
+        '
+      required:
+      - metricName
+      - dataset
+      - attributeMapping
+      properties:
+        metricName:
+          type: string
+        dataset:
+          $ref: '#/components/schemas/DatasetRef'
+        attributeMapping:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+      additionalProperties: false
+    Apm-Service:
+      title: ApmService
+      description: 'Service identity (OTel compound key) + RED snapshot under redMetrics +
+
+        per-row related hints. ServiceInvocation uses `metrics` (not
+
+        `redMetrics`) for the same MetricsRecord type — intentional asymmetry.
+
+        '
+      allOf:
+      - $ref: '#/components/schemas/Apm-ServiceIdentity'
+      - type: object
+        required:
+        - redMetrics
+        - related
+        properties:
+          serviceNamespace:
+            type:
+            - string
+            - 'null'
+          type:
+            oneOf:
+            - $ref: '#/components/schemas/Apm-ServiceType'
+            - type: 'null'
+          language:
+            type:
+            - string
+            - 'null'
+          redMetrics:
+            $ref: '#/components/schemas/Apm-MetricsRecord'
+          related:
+            $ref: '#/components/schemas/Apm-ServiceRelated'
+    Apm-InvocationParticipant:
+      title: ApmInvocationParticipant
+      description: 'Source or target end of a ServiceInvocation edge. endpointName is
+
+        populated only in focal-endpoint mode of /v1/apm/invocation-graph.
+
+        '
+      allOf:
+      - $ref: '#/components/schemas/Apm-ServiceIdentity'
+      - type: object
+        properties:
+          serviceNamespace:
+            type:
+            - string
+            - 'null'
+          type:
+            oneOf:
+            - $ref: '#/components/schemas/Apm-ServiceType'
+            - type: 'null'
+          language:
+            type:
+            - string
+            - 'null'
+          endpointName:
+            type:
+            - string
+            - 'null'
+    Apm-EnvironmentEntry:
+      title: ApmEnvironmentEntry
+      type: object
+      description: One environment + the service namespaces observed in it.
+      required:
+      - environment
+      - serviceNamespaces
+      - truncated
+      properties:
+        environment:
+          type: string
+        serviceNamespaces:
+          type: array
+          items:
+            type: string
+        truncated:
+          type: boolean
+          description: 'True when serviceNamespaces was capped at the server limit and the
+
+            full set for this environment is larger than the array returned.
+
+            serviceNamespaces is never paged; this flag signals truncation.
+
+            '
+      additionalProperties: false
+    Apm-InvocationGraphResponse:
+      title: ApmInvocationGraphResponse
+      type: object
+      description: 'The service dependency graph for the requested scope. `interval` echoes
+
+        the resolved query window, `services` lists every service in the graph,
+
+        and `invocations` lists the calls between them. A service that is never
+
+        the `target` of a call is a root.
+
+        '
+      required:
+      - interval
+      - services
+      - invocations
+      properties:
+        interval:
+          $ref: '#/components/schemas/Apm-Interval'
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/Apm-Service'
+        invocations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Apm-ServiceInvocation'
+      additionalProperties: false
+    Apm-ServiceInvocation:
+      title: ApmServiceInvocation
+      type: object
+      description: 'Directed call edge from source to target. Both are always non-null —
+
+        roots are services with no inbound edge in invocations[], not edges
+
+        with null source. Carrier field is `metrics` (not `redMetrics`).
+
+        '
+      required:
+      - source
+      - target
+      - metrics
+      properties:
+        source:
+          $ref: '#/components/schemas/Apm-InvocationParticipant'
+        target:
+          $ref: '#/components/schemas/Apm-InvocationParticipant'
+        metrics:
+          $ref: '#/components/schemas/Apm-MetricsRecord'
+      additionalProperties: false
+    ObjectId:
+      type: string
+      format: ObjectId
+    Apm-MetricsRecordPoint:
+      title: ApmMetricsRecordPoint
+      type: object
+      description: One bucket inside MetricsRecord.series. timestamp = bucket start.
+      required:
+      - timestamp
+      - invocationRatePerSecond
+      - errorRatePerSecond
+      - durationP95Seconds
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        invocationRatePerSecond:
+          type:
+          - number
+          - 'null'
+        errorRatePerSecond:
+          type:
+          - number
+          - 'null'
+        durationP95Seconds:
+          type:
+          - number
+          - 'null'
+      additionalProperties: false
+    Apm-ServiceRelated:
+      title: ApmServiceRelated
+      type: object
+      description: "Per-row correlation hints on Service. Always present; `metrics` may be\n`[]`. `correlationTags` maps Service fields to the attribute keys to\nfilter with:\n\n- `serviceName`: `service.name`, `peer.db.name`, `peer.messaging.system`,\n  `peer.server.address`\n- `environment`: `deployment.environment.name`\n- `serviceNamespace`: `service.namespace`\n\nThese are attribute keys, not dataset column names. Use `Service.type`\nto pick the `serviceName` key to filter on: `Service` →\n`service.name`, `Database` → `peer.db.name`, `Messaging` →\n`peer.messaging.system`, `ExternalCall` → `peer.server.address`.\nPrecedence is `Service` > `Database` > `Messaging` > `ExternalCall`.\nWhen `type` is null, use `service.name`. `environment` and\n`serviceNamespace` apply to every type.\n"
+      required:
+      - correlationTags
+      - metrics
+      properties:
+        correlationTags:
+          type: object
+          description: 'Service field name → attribute keys to filter with. v1 always
+
+            returns the three keys above. Pick `serviceName` by `Service.type`
+
+            (see parent description).
+
+            '
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Apm-MetricRef'
+      additionalProperties: false
+    Apm-ServiceType:
+      title: ApmServiceType
+      type: string
+      description: 'Role of a service-keyed row. PascalCase per style guide. Selects which
+
+        `related.correlationTags.serviceName` key to filter on:
+
+
+        - `Service` → `service.name`
+
+        - `Database` → `peer.db.name`
+
+        - `Messaging` → `peer.messaging.system`
+
+        - `ExternalCall` → `peer.server.address` (uninstrumented hosts)
+
+
+        When more than one key is present, precedence is `Service` >
+
+        `Database` > `Messaging` > `ExternalCall`. When `type` is null (unknown
+
+        catalog type), use `service.name`.
+
+        '
+      enum:
+      - Service
+      - Database
+      - Messaging
+      - ExternalCall
+    Apm-Interval:
+      title: ApmInterval
+      type: object
+      description: 'A `[startTime, endTime)` half-open window. Used both as the per-record
+
+        time slice on `MetricsRecord` and as the response-level executed-window
+
+        echo. RFC3339, startTime inclusive, endTime exclusive.
+
+        '
+      required:
+      - startTime
+      - endTime
+      properties:
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+      additionalProperties: false
+    DatasetContentType:
+      title: DatasetContentType
+      type: string
+      description: 'The type of data a dataset contains. For Resource datasets, this is
+
+        determined by the dataset kind. For other kinds, it is derived from the
+
+        dataset''s interface bindings. Returns Unknown if no recognized interface
+
+        is found.
+
+        '
+      enum:
+      - Unknown
+      - Resource
+      - Log
+      - Metric
+      - OTelSpan
+      - OTelTrace
+    Apm-EnvironmentsListResponse:
+      title: ApmEnvironmentsListResponse
+      type: object
+      description: 'Response envelope for GET /v1/apm/environments. `interval` echoes the
+
+        server-resolved query window. Pagination is on the environments axis
+
+        — `serviceNamespaces` is the complete list per environment, never paged.
+
+        '
+      required:
+      - interval
+      - environments
+      - meta
+      properties:
+        interval:
+          $ref: '#/components/schemas/Apm-Interval'
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Apm-EnvironmentEntry'
+        meta:
+          $ref: '#/components/schemas/Apm-Meta'
+      additionalProperties: false
+    Apm-ServicesListResponse:
+      title: ApmServicesListResponse
+      type: object
+      description: 'Response envelope for GET /v1/apm/services. `interval` echoes the
+
+        server-resolved query window. `meta.totalCount` is `-1` when unknown.
+
+        '
+      required:
+      - interval
+      - services
+      - meta
+      properties:
+        interval:
+          $ref: '#/components/schemas/Apm-Interval'
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/Apm-Service'
+        meta:
+          $ref: '#/components/schemas/Apm-Meta'
+      additionalProperties: false
+    Apm-ServiceIdentity:
+      title: ApmServiceIdentity
+      type: object
+      description: 'Shared OTel service identity fields for APM graph nodes and invocation
+
+        participants.
+
+        '
+      required:
+      - serviceName
+      - environment
+      - serviceNamespace
+      - type
+      - language
+      properties:
+        serviceName:
+          type: string
+        environment:
+          type: string
+        serviceNamespace:
+          type:
+          - string
+          - 'null'
+        type:
+          oneOf:
+          - $ref: '#/components/schemas/Apm-ServiceType'
+          - type: 'null'
+        language:
+          type:
+          - string
+          - 'null'
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    Apm-Error:
+      title: ApmError
+      description: 'APM error envelope. Extends the platform error (type + message) with a
+
+        closed `type` enum (see Apm-ErrorType). On OutOfAcceleratedRange,
+
+        acceleratedFrom is the recovery timestamp.
+
+        '
+      allOf:
+      - $ref: '#/components/schemas/ErrorMessage'
+      - type: object
+        required:
+        - type
+        - message
+        properties:
+          type:
+            $ref: '#/components/schemas/Apm-ErrorType'
+          acceleratedFrom:
+            type: string
+            format: date-time
+            description: 'Earliest moment for which telemetry is available on this account.
+
+              Present only on type=OutOfAcceleratedRange.
+
+              '
+  responses:
+    Apm-ErrorResponse-403:
+      description: Forbidden — the caller lacks permission for this resource.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    Apm-ErrorResponse-404:
+      description: Not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    Apm-ErrorResponse-500:
+      description: Internal server error (InternalError).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Apm-Error'
+    Apm-ErrorResponse-504:
+      description: Query timed out (TimedOut).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Apm-Error'
+    Apm-ErrorResponse-401:
+      description: Unauthorized — missing or invalid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    Apm-ErrorResponse-400:
+      description: Bad request (BadRequest, RequiredParamMissing, InvalidTimestamp, OutOfAcceleratedRange, NotConfigured).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Apm-Error'
+    Apm-ErrorResponse-413:
+      description: Payload too large (PayloadTooLarge).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Apm-Error'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

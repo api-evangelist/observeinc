@@ -1,0 +1,499 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Login API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Login across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Login
+  description: Manage api tokens. Learn more about api tokens.
+paths:
+  /v1/login:
+    post:
+      summary: Generate an API token
+      operationId: generateAPIToken
+      tags:
+      - Login
+      description: 'Given an email address and a password, generate an API authorization token.
+
+        This token can be used with Bearer authorization when used together with
+
+        the customer ID. (The customer ID is the same as the first number in the API
+
+        server URL.)
+
+
+        ```
+
+        Authorization: Bearer
+
+        ```
+
+
+        Only "local" users that have a password can use this API; SSO users cannot
+
+        log in using a password.
+
+
+        This endpoint does not itself need to Authorization header.'
+      security: []
+      requestBody:
+        description: The login username and password.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - user_email
+              - user_password
+              properties:
+                user_email:
+                  description: The email address of the user to mint credentials for.
+                  type: string
+                user_password:
+                  description: The password of the user minting credentials.
+                  type: string
+                  format: password
+                tokenName:
+                  description: Optional name of the token, to remember what it is for.
+                  type: string
+            example:
+              user_email: user@example.com
+              user_password: hunter1
+              tokenName: for the coin tracker integration
+      responses:
+        '200':
+          description: '## Description of result data formats
+
+
+            ### Content-type: application/json
+
+            The response contains an ''ok'' field (boolean) and an "access_key"
+
+            field (string).  The "access_key" is a secret value and is as good
+
+            as the password for accessing the customer instance, so treat it
+
+            with care. You must remember it, because it is not stored and
+
+            cannot be retrieved again, although another access key can be
+
+            generated through another invocation of the API.  By default,
+
+            access keys that are not used, are invalidated after about 10 days
+
+            of inactivity.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: string
+              example: '{"ok":true,"access_key":"ZrL5BhtFXvu2Xe78GznP1dP2Ts81ZszA"}
+
+                '
+        '400':
+          description: Invalid request.
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/login/delegated/{serverToken}:
+    get:
+      summary: Poll the status of a pending login request
+      operationId: pollDelegatedLogin
+      tags:
+      - Login
+      description: 'This endpoint polls the status of a pending login request. The serverToken is
+
+        returned from the initial request, and is used to identify the request.'
+      parameters:
+      - name: serverToken
+        in: path
+        description: The serverToken returned from the initial request.
+        required: true
+        schema:
+          type: string
+          format: password
+      security: []
+      responses:
+        '200':
+          description: 'The request is still pending, or has been accepted, denied, or timed out.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - settled
+                properties:
+                  ok:
+                    description: Whether this HTTP request was valid (does not indicate completion status).
+                    type: boolean
+                  settled:
+                    description: 'If the request has been accepted, denied, or timed out (is settled) then this is true,
+
+                      else if we need to poll again, it is false. If the request is not yet settled, the server
+
+                      side will wait a bit before returning this response, which allows the client to easily
+
+                      implement long polling.
+
+                      '
+                    type: boolean
+                  accessKey:
+                    description: 'The access key if the request has been accepted. If the request is settled but not
+
+                      accepted, it will be empty. Note that only the first request after the login is settled
+
+                      will contain the access key, because it is generated once and not stored server side
+
+                      (only a hash is stored, for later API request authentication.) This key imbues the same
+
+                      powers in the Observe API as are available to the issuing user.
+
+                      '
+                    type: string
+                    format: password
+                  message:
+                    description: 'A message from the server. In case of error, this may be helpful to display to the user.
+
+                      '
+                    type: string
+        '400':
+          description: Invalid request.
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/login/delegated:
+    post:
+      summary: Start an Observe authtoken creation flow
+      operationId: startDelegatedLogin
+      tags:
+      - Login
+      description: 'This endpoint starts an authorization flow that lets an Observe user generate an
+
+        authorization token to use for external tools and scripts. This token will have
+
+        the same powers as the user authorizing, and can be passed in the
+
+        `Authorization: Bearer ` header of requqests.
+
+        This endpoint will return with a URL that the user should visit in a web browser
+
+        to allow the token creation; that URL will lead to a page that requires the user
+
+        to be logged in (through whatever password or SSO mechanism the user normally uses.)
+
+        The response from this endpoint also includes a "serverToken" field, which is a
+
+        token that can be used to poll the tenant for the status of the token creation, and
+
+        if successful, will return the issued access key.
+
+
+        Essentially, this endpoint implements the Oauth "device" authorization flow.'
+      security: []
+      requestBody:
+        description: The credentials to authorize as.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - userEmail
+              - clientToken
+              - integration
+              properties:
+                userEmail:
+                  description: The email address of the user to mint credentials for.
+                  type: string
+                clientToken:
+                  description: 'A token generated by the client to identify this particular request.
+
+                    We recommend a random alphanumeric string of length 24 characters or
+
+                    more to avoid collisions. There is no power or security imbued into
+
+                    this token, other than to tell different simultaneous authorization
+
+                    requests for the same user apart.
+
+                    '
+                  type: string
+                integration:
+                  description: 'The identifier of the particular integration making this request.
+
+                    Integration should be configured in the Observe back-end, but there
+
+                    is currently no UI for this, so you can use the ID of the Observe
+
+                    command-line tool `observe-tool-abdaf0`.
+
+                    '
+                  type: string
+            example:
+              userEmail: user@example.com
+              clientToken: ZrL5BhtFXvu2Xe78GznP1dP2Ts81ZszA
+              integration: observe-tool-abdaf0
+      responses:
+        '200':
+          description: 'This request generates a "pending" login request, which the user will have
+
+            to authorize on the Observe website. Send the user to the given URL in a
+
+            web browser, and then poll the API for the completion endpoint to see whether
+
+            the user accepts, denies, or times out the request.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - url
+                - serverToken
+                properties:
+                  url:
+                    description: The URL to send the user to in a web browser.
+                    type: string
+                  serverToken:
+                    description: 'A token that can be used to poll the tenant for the status of the token creation.
+
+                      This token has some authorization power (because it can be exchanged, once, for a
+
+                      real token) so treat it carefully.
+
+                      '
+                    type: string
+                    format: password
+        '400':
+          description: Invalid request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    description: Whether this HTTP request was valid (does not indicate completion status).
+                    type: boolean
+                  message:
+                    description: 'A message from the server. In case of error, this may be helpful to display to the user.
+
+                      '
+                    type: string
+              example:
+                ok: false
+                message: Invalid request.
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

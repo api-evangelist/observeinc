@@ -1,0 +1,821 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Export API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Export across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Export
+  description: Export query results from Observe.
+paths:
+  /v1/meta/export/query:
+    post:
+      summary: Execute an OPAL query
+      operationId: exportQuery
+      tags:
+      - Export
+      description: 'Execute an OPAL query.
+
+
+        Results can be returned as CSV or NDJSON.
+
+        * Set Accept header to `text/csv` or `application/x-ndjson`
+
+        * Default: CSV
+
+
+        Either two of `startTime`, `endTime`, and `interval` or `interval` alone can be specified to set the time interval. The `startTime` parameter is inclusive and the `endTime` parameter is exclusive, to prevent overlap from subsequent windows.
+
+
+        * `interval`: An interval relative to now
+
+        * `startTime` + `endTime`: The specified time interval
+
+        * `startTime` **or** `endTime` + `interval`: The specified time interval relative to the provided start or end time
+
+
+        Inputs are specified as dataset IDs, or previously-defined stages.
+
+
+        Set paginate to true for an asynchronous paginated mode. The response will be 202 Accepted and contain headers for fetching the results via `/v1/meta/export/query/page`. You may also want to increase rowCount to allow large, paginated queries.'
+      parameters:
+      - name: startTime
+        in: query
+        description: Beginning of time window (inclusive) as ISO time.
+        schema:
+          type: string
+        required: false
+        examples:
+          A start time:
+            value: '2023-04-20T16:20:00Z'
+      - name: endTime
+        in: query
+        description: End of time window (exclusive) as ISO time. Defaults to now if just `interval` is specified.
+        schema:
+          type: string
+        required: false
+        examples:
+          An end time:
+            value: '2023-04-20T16:30:00Z'
+      - name: interval
+        in: query
+        description: Length of time window (if start or end is missing).
+        schema:
+          type: string
+        required: false
+        examples:
+          An interval:
+            value: 10m
+            summary: A duration in h / m / s units
+      - name: stage
+        in: query
+        description: Which stage to get the data from. Defaults to last stage.
+        schema:
+          type: string
+        required: false
+      - name: paginate
+        in: query
+        description: Whether to switch to an asynchronous paginated mode. Defaults to false.
+        schema:
+          type: boolean
+        required: false
+      requestBody:
+        description: The OPAL query text and input dataset bindings.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - query
+              properties:
+                query:
+                  description: Encodes the actual OPAL query and its inputs.
+                  type: object
+                  required:
+                  - stages
+                  properties:
+                    outputStage:
+                      type: string
+                      description: The name of the stage that will be used as output. Defaults to the last specified stage.
+                    stages:
+                      type: array
+                      description: Describes one or more stage pipelines to execute. Stages can reference each other, but not in a cyclic fashion.
+                      items:
+                        type: object
+                        required:
+                        - input
+                        - stageID
+                        - pipeline
+                        properties:
+                          input:
+                            description: Describes the @name bindings for input datasets or stages. The first input is provided as the default input to the pipeline.
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/InputDefinition'
+                          stageID:
+                            description: The ID to assign to this stage when binding as input to other datasets.
+                            type: string
+                          pipeline:
+                            description: 'The actual OPAL pipeline to execute. You can use embedded newlines,
+
+                              or the pipe | character to separate verb clauses. You can include
+
+                              embedded sub-queries, too.
+
+                              '
+                            type: string
+                          parameters:
+                            $ref: '#/components/schemas/ParameterArray'
+                          parameterValues:
+                            $ref: '#/components/schemas/ParameterValueArray'
+                    parameters:
+                      $ref: '#/components/schemas/ParameterArray'
+                    parameterValues:
+                      $ref: '#/components/schemas/ParameterValueArray'
+                rowCount:
+                  description: The maximum number of rows to return. Defaults to 100,000, which is the maximum if paginate=false. If paginate=true rowCount can be up to the maximum value of int64 (9,223,372,036,854,775,807).
+                  type: string
+                  format: int64
+                  minimum: 0
+                  maximum: 100000
+                presentation:
+                  $ref: '#/components/schemas/StagePresentationInput'
+            example:
+              query:
+                outputStage: myStage
+                stages:
+                - input:
+                  - inputName: main
+                    datasetId: '41007104'
+                  - inputName: rds
+                    datasetPath: Workspace.aws/RDS Cluster
+                  stageID: myStage
+                  pipeline: 'pick_col timestamp, log, namespace, containerName, rdsArn
+
+                    leftjoin on(rdsArn=@rds.arn), db:@rds.DBClusterIdentifier
+
+                    '
+              rowCount: '2'
+      responses:
+        '200':
+          description: '## Description of result data formats
+
+
+            ### Content-type: application/x-ndjson
+
+            The results are returned with each row represented as distinct json objects separated by newlines.
+
+            The contents of the json object representing each row is keys representing each column in the output, with values representing the value of that that column for that row.
+
+
+            ### Content-type: text/csv
+
+            The results are returned in csv format, the first row in csv is a header row with the names of the columns.
+
+            '
+          content:
+            application/x-ndjson:
+              schema:
+                type: string
+              example: '{"timestamp":"2023-03-08T18:59:42.397994726Z","log":"I0308 18:59:42.397931             60689787 apiserver/authorize.go:545] msg=\"VerifyAuthorization failed\" customer_id=999999999999 service=collector operation=2 token=\"xxxxxx... (hash h:xxxxxxx)\"","namespace":"prod","containerName":"collector"}
+
+                {"timestamp":"2023-03-08T18:59:42.674391618Z","log":"I0308 18:59:42.397945             60689787 httputil/helpers.go:70] serveStatusError(401): \"Unauthorized\"","namespace":"prod","containerName":"collector"}
+
+                '
+            text/csv:
+              schema:
+                type: string
+              example: '"timestamp","log","namespace","containerName"
+
+                "2023-03-08T18:59:42.397994726Z","I0308 18:59:42.397931             60689787 apiserver/authorize.go:545] msg=""VerifyAuthorization failed"" customer_id=999999999999 service=collector operation=2 token=""xxxxxx... (hash h:xxxxxxx)""","prod","collector"
+
+                "2023-03-08T18:59:42.674391618Z","I0308 18:59:42.397945             60689787 httputil/helpers.go:70] serveStatusError(401): ""Unauthorized""","prod","collector"
+
+                '
+        '202':
+          description: The paginated query request was accepted and will be executed asynchronously.  The response contains two headers that can be used to fetch the results.  There is no body sent.
+          headers:
+            X-Observe-Cursor-Id:
+              schema:
+                type: string
+              description: The ID of a cursor that can be used to fetch the results; to be used with the /v1/meta/export/query/page endpoint.  See that endpoint for more details.
+            X-Observe-Next-Page:
+              schema:
+                type: string
+              description: 'A link to the first page of results, which will contain the cursor ID query parameter, but will omit the offset and numRows query parameters.
+
+                Those defaults can be overriden by adding them to the query parameters.
+
+                '
+        '206':
+          description: 'The query was executed successfully, but the results returned cover only a part of the query window. This happens when the datasets queried are not accelerated for the entire query window.
+
+            ## Description of result data formats
+
+
+            ### Content-type: application/x-ndjson
+
+            The results are returned with each row represented as distinct json objects separated by newlines.
+
+            The contents of the json object representing each row is keys representing each column in the output, with values representing the value of that that column for that row.
+
+
+            ### Content-type: text/csv
+
+            The results are returned in csv format, the first row in csv is a header row with the names of the columns.
+
+            '
+          content:
+            application/x-ndjson:
+              schema:
+                type: string
+              example: '{"timestamp":"2023-03-08T18:59:42.397994726Z","log":"I0308 18:59:42.397931             60689787 apiserver/authorize.go:545] msg=\"VerifyAuthorization failed\" customer_id=999999999999 service=collector operation=2 token=\"xxxxxx... (hash h:xxxxxxx)\"","namespace":"prod","containerName":"collector"}
+
+                {"timestamp":"2023-03-08T18:59:42.674391618Z","log":"I0308 18:59:42.397945             60689787 httputil/helpers.go:70] serveStatusError(401): \"Unauthorized\"","namespace":"prod","containerName":"collector"}
+
+                '
+            text/csv:
+              schema:
+                type: string
+              example: '"timestamp","log","namespace","containerName"
+
+                "2023-03-08T18:59:42.397994726Z","I0308 18:59:42.397931             60689787 apiserver/authorize.go:545] msg=""VerifyAuthorization failed"" customer_id=999999999999 service=collector operation=2 token=""xxxxxx... (hash h:xxxxxxx)""","prod","collector"
+
+                "2023-03-08T18:59:42.674391618Z","I0308 18:59:42.397945             60689787 httputil/helpers.go:70] serveStatusError(401): ""Unauthorized""","prod","collector"
+
+                '
+        '400':
+          description: Query not accepted.
+        '401':
+          description: Authorization missing.
+        '403':
+          description: Authorization denied.
+        '429':
+          description: Rate limit exceeded.
+        '500':
+          description: 'Internal error: query error.'
+        '504':
+          description: 'Internal error: infrastructure error.'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/meta/export/query/page:
+    get:
+      summary: Fetch a page of query results
+      operationId: exportQueryPage
+      tags:
+      - Export
+      description: 'Fetch the results of a paginated "/v1/meta/export/query" request.
+
+
+        Note that paginate must be set to true and rowCount should be set high enough to contain the total expected result set.
+
+
+        This endpoint uses long polling behavior. If a query is in progress when a request is made, the server will delay responding for up to 30 seconds. If the query completes in that time period, the results will be returned with a 200 response code. Otherwise a 202 response code will be returned, and the client should retry the request. The endpoint will also return an error if the query failed.
+
+
+        Queries for paginated data will return an `X-Observe-Total-Rows` header and an `X-Observe-Next-Page` header with a URL for the next page, as long as one is needed. You can use the `X-Observe-Cursor-Id` and the `offset` and `numRows` parameters to construct your own next page URL with different page sizes.
+
+
+        The results can be returned as CSV or NDJSON. The query parameters are used to specify which page of results to fetch.
+
+        * Set Accept header to `text/csv` or `application/x-ndjson`
+
+        * Default: CSV
+
+
+        The number of rows in the full result set is returned in the X-Observe-Total-Rows response header.'
+      parameters:
+      - name: cursorId
+        in: query
+        description: The ID of a cursor
+        schema:
+          type: string
+        required: true
+        examples:
+          A cursor id:
+            value: 123e4567-e89b-12d3-a456-426614174000
+      - name: offset
+        in: query
+        description: Offset into the result set for the page to begin at
+        schema:
+          type: string
+          format: int64
+        required: false
+        examples:
+          An offset:
+            value: 1000
+      - name: numRows
+        in: query
+        description: The number of rows to return in the page
+        schema:
+          type: string
+          format: int64
+        required: false
+        examples:
+          A number of rows:
+            value: 1000
+      responses:
+        '200':
+          description: 'The query is completed and the requested page of results are returned in the body in the format requested by the Accept header. The total number of rows in the full result set is returned in the X-Observe-Total-Rows response header.
+
+
+            ## Description of result data formats
+
+
+            ### Content-type: application/x-ndjson
+
+            The results are returned with each row represented as distinct json objects separated by newlines.
+
+            The contents of the json object representing each row is keys representing each column in the output, with values representing the value of that that column for that row.
+
+
+            ### Content-type: text/csv
+
+            The results are returned in csv format, the first row in csv is a header row with the names of the columns.
+
+            '
+          content:
+            application/x-ndjson:
+              schema:
+                type: string
+              example: '{"timestamp":"2023-03-08T18:59:42.397994726Z","log":"I0308 18:59:42.397931             60689787 apiserver/authorize.go:545] msg=\"VerifyAuthorization failed\" customer_id=999999999999 service=collector operation=2 token=\"xxxxxx... (hash h:xxxxxxx)\"","namespace":"prod","containerName":"collector"}
+
+                {"timestamp":"2023-03-08T18:59:42.674391618Z","log":"I0308 18:59:42.397945             60689787 httputil/helpers.go:70] serveStatusError(401): \"Unauthorized\"","namespace":"prod","containerName":"collector"}
+
+                '
+            text/csv:
+              schema:
+                type: string
+              example: '"timestamp","log","namespace","containerName"
+
+                "2023-03-08T18:59:42.397994726Z","I0308 18:59:42.397931             60689787 apiserver/authorize.go:545] msg=""VerifyAuthorization failed"" customer_id=999999999999 service=collector operation=2 token=""xxxxxx... (hash h:xxxxxxx)""","prod","collector"
+
+                "2023-03-08T18:59:42.674391618Z","I0308 18:59:42.397945             60689787 httputil/helpers.go:70] serveStatusError(401): ""Unauthorized""","prod","collector"
+
+                '
+          headers:
+            X-Observe-Next-Page:
+              schema:
+                type: string
+              description: A link to the next page of results if there is one, otherwise this header is not present.
+            X-Observe-Total-Rows:
+              schema:
+                type: integer
+              description: The number of rows in the full result set.
+        '202':
+          description: 'The query is still in progress; even after waiting for 30 seconds from the request being recieved.
+
+
+            The body of the response will be empty.  The response headers contain the following:
+
+            '
+          headers:
+            X-Observe-Next-Page:
+              schema:
+                type: string
+              description: A link to the first page of results.
+        '400':
+          description: Invalid request.
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/meta/export/worksheet/{worksheetId}:
+    post:
+      summary: Export a worksheet
+      operationId: exportWorksheet
+      tags:
+      - Export
+      description: 'Export data used by a worksheet.
+
+
+        Results are limited to a maximum of 100,000 rows.
+
+
+        Results can be returned as CSV or NDJSON.
+
+        * Set Accept header to `text/csv` or `application/x-ndjson`
+
+        * Default: CSV
+
+
+        Either two of `startTime`, `endTime`, and `interval` or `interval` alone can be specified to set the time interval. The `startTime` parameter is inclusive and the `endTime` parameter is exclusive, to prevent overlap from subsequent windows.
+
+
+        * `interval`: An interval relative to now
+
+        * `startTime` + `endTime`: The specified time interval
+
+        * `startTime` **or** `endTime` + `interval`: The specified time interval relative to the provided start or end time'
+      parameters:
+      - name: worksheetId
+        description: ID of the worksheet to export.
+        in: path
+        schema:
+          type: integer
+        required: true
+        examples:
+          A worksheet ID:
+            value: '123456789'
+      - name: startTime
+        in: query
+        description: Beginning of time window (inclusive) as ISO time.
+        schema:
+          type: string
+        required: false
+        examples:
+          A start time:
+            value: '2023-04-20T16:20:00Z'
+      - name: endTime
+        in: query
+        description: End of time window (exclusive) as ISO time. Defaults to now if just `interval` is specified.
+        schema:
+          type: string
+        required: false
+        examples:
+          An end time:
+            value: '2023-04-20T16:30:00Z'
+      - name: interval
+        in: query
+        description: Length of time window (if start or end is missing).
+        schema:
+          type: string
+        required: false
+        examples:
+          An interval:
+            value: 10m
+            summary: A duration in h / m / s units
+      - name: stage
+        in: query
+        description: Which stage to get the data from. Defaults to last stage.
+        schema:
+          type: string
+        required: false
+      responses:
+        '200':
+          description: '## Description of result data formats
+
+
+            ### Content-type: application/x-ndjson
+
+            The results are returned with each row represented as distinct json objects separated by newlines.
+
+            The contents of the json object representing each row is keys representing each column in the output, with values representing the value of that that column for that row.
+
+
+            ### Content-type: text/csv
+
+            The results are returned in csv format, the first row in csv is a header row with the names of the columns.
+
+            '
+          content:
+            application/x-ndjson:
+              schema:
+                type: string
+              example: '{"BUNDLE_ID":"3729","BUNDLE_TIMESTAMP":"1695924000540747582","DATASTREAM_ID":"41000006","DATASTREAM_TOKEN_ID":"ds1thSTHMTVac5mLzmLv","EXTRA":{"clusterUid":"bd89af7a-2ab9-42de-97da-0d5894354da6","path":"/data/logs"},"FIELDS":{"field1":"value1","field2":"value2"},"OBSERVATION_INDEX":"7","OBSERVATION_KIND":"http","_ob_datastream_token_id":"ds1thSTHMTVac5mLzmLv"}
+
+                {"BUNDLE_ID":"3729","BUNDLE_TIMESTAMP":"1695924000540747582","DATASTREAM_ID":"41000006","DATASTREAM_TOKEN_ID":"ds1thSTHMTVac5mLzmLv","EXTRA":{"clusterUid":"bd89af7a-2ab9-42de-97da-0d5894354da6","path":"/data/logs"},"FIELDS":{"field1":"value3","field2":"value4"},"OBSERVATION_INDEX":"1","OBSERVATION_KIND":"http","_ob_datastream_token_id":"ds1thSTHMTVac5mLzmLv"}
+
+                '
+            text/csv:
+              schema:
+                type: string
+              example: '"BUNDLE_TIMESTAMP","OBSERVATION_KIND","FIELDS","EXTRA","BUNDLE_ID","OBSERVATION_INDEX","DATASTREAM_ID","DATASTREAM_TOKEN_ID","_ob_datastream_token_id"
+
+                "1695924000540747582","http","{""field1"":""value1"",""field2"":""value2""}","{""clusterUid"":""bd89af7a-2ab9-42de-97da-0d5894354da6"",""path"":""/data/logs""}","3729","7","41000006","ds1thSTHMTVac5mLzmLv","ds1thSTHMTVac5mLzmLv"
+
+                "1695924000540747582","http","{""field1"":""value3"",""field2"":""value4""}","{""clusterUid"":""bd89af7a-2ab9-42de-97da-0d5894354da6"",""path"":""/data/logs""}","3729","1","41000006","ds1thSTHMTVac5mLzmLv","ds1thSTHMTVac5mLzmLv"
+
+                '
+        '400':
+          description: Invalid request.
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  schemas:
+    StagePresentationInput:
+      type: object
+      properties:
+        limit:
+          type: string
+          format: int64
+        linkify:
+          description: Turn foreign keys into joined-name columns.
+          type: boolean
+        wantBuckets:
+          description: How many timechart / aggregate buckets to use by default.
+          type: string
+          format: int64
+        orderColumns:
+          description: How to order the output data.
+          type: array
+          items:
+            type: object
+            required:
+            - columnName
+            properties:
+              columnName:
+                type: string
+              ascending:
+                type: boolean
+              nullOrdering:
+                type: boolean
+    InputDefinition:
+      type: object
+      required:
+      - inputName
+      properties:
+        inputName:
+          description: The @name used to reference this input in OPAL (without the @ sign)
+          type: string
+        inputRole:
+          description: Data or Reference, defaults to Data if not specified.
+          type: string
+        datasetId:
+          description: The dataset ID (as int64-string) to bind to this name.
+          type: string
+          format: int64
+        datasetPath:
+          description: The dataset name as Workspace.path/Name to bind to this name. datasetId takes precedence if both are set; on read, this is populated alongside datasetId as a portable reference.
+          type: string
+        stageId:
+          description: The stageID of the previously defined stage to reference, if it's a stage and not a dataset.
+          type: string
+        parameterId:
+          description: The parameter ID to take the input dataset reference from. (Advanced usage only)
+          type: string
+    ParameterValueArray:
+      description: Parameter values bound for $variables for this execution.
+      type: array
+      items:
+        type: object
+        required:
+        - id
+        - value
+        properties:
+          id:
+            type: string
+          value:
+            type: object
+            properties:
+              bool:
+                type: boolean
+              float64:
+                type: number
+              int64:
+                type: string
+                format: int64
+              string:
+                type: string
+              timestamp:
+                type: string
+              duration:
+                type: string
+              nullValueType:
+                type: string
+    ParameterArray:
+      description: Parameters defined for $variables (used for default values)
+      type: array
+      items:
+        type: object
+        required:
+        - id
+        - valueKind
+        - defaultValue
+        properties:
+          id:
+            type: string
+          name:
+            type: string
+          defaultValue:
+            type: object
+            properties:
+              bool:
+                type: boolean
+              float64:
+                type: number
+              int64:
+                type: string
+                format: int64
+              string:
+                type: string
+              timestamp:
+                type: string
+              duration:
+                type: string
+              nullValueType:
+                type: string
+          valueKind:
+            type: object
+            required:
+            - type
+            properties:
+              type:
+                type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

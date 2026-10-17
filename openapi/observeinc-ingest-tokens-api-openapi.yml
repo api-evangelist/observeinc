@@ -1,0 +1,647 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Ingest Tokens API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Ingest Tokens across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Ingest Tokens
+paths:
+  /v1/ingest/tokens:
+    post:
+      summary: Create an ingest token
+      description: 'Creates an ingest token. The secret is returned exactly once in the response
+
+        and cannot be retrieved again.
+
+
+        **Quota:** A customer can hold at most a fixed number of ingest tokens
+
+        (default 5000). Exceeding this returns `403` with type `quota_exceeded`.
+
+        Contact Observe support to raise the cap.'
+      operationId: CreateIngestToken
+      tags:
+      - Ingest Tokens
+      parameters:
+      - $ref: '#/components/parameters/ExpandParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestToken-CreateRequest'
+      responses:
+        '201':
+          description: Ingest token created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestToken-CreateResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '409':
+          $ref: '#/components/responses/ErrorResponse-409'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: List ingest tokens
+      description: 'When `expand=true`, each token''s `stats` (ingest health metrics) are
+
+        included. A token that has not yet ingested any data has no metrics to
+
+        report, so `stats` is omitted for it until it is first used.'
+      operationId: ListIngestTokens
+      tags:
+      - Ingest Tokens
+      parameters:
+      - in: query
+        name: filter
+        required: false
+        description: 'CEL expression to filter results. Variables: `id` (string), `name` (string), `description` (string), `disabled` (bool). Supports `matches()` for regex. Example: `name.matches("prod.*") && disabled == false`.'
+        schema:
+          type: string
+      - in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+          minimum: 0
+      - in: query
+        name: limit
+        required: false
+        description: Max items to return. Default 20; max 100. Values greater than 100 are capped to 100.
+        schema:
+          type: integer
+          minimum: 1
+      - in: query
+        name: orderBy
+        required: false
+        description: 'Comma-separated columns; prefix with `-` for descending. Allowed: `id`, `name`, `createdAt`, `updatedAt`. Default: `-createdAt`,`id`.'
+        schema:
+          type: string
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Ingest tokens listed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestToken-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/ingest/tokens/{id}:
+    delete:
+      summary: Delete an ingest token
+      description: 'Returns 204 on success, 403 if the caller lacks permission to delete
+
+        the token, 404 if the token does not exist or is not visible to the caller.'
+      operationId: DeleteIngestToken
+      tags:
+      - Ingest Tokens
+      parameters:
+      - $ref: '#/components/parameters/IngestTokens-TokenId'
+      responses:
+        '204':
+          description: Ingest token deleted.
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '422':
+          $ref: '#/components/responses/ErrorResponse-422'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      summary: Get an ingest token
+      operationId: GetIngestToken
+      tags:
+      - Ingest Tokens
+      parameters:
+      - $ref: '#/components/parameters/IngestTokens-TokenId'
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Ingest token returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestToken-Resource'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      summary: Update an ingest token
+      description: Merge-patch (RFC 7396). Omitted fields are unchanged.
+      operationId: UpdateIngestToken
+      tags:
+      - Ingest Tokens
+      parameters:
+      - $ref: '#/components/parameters/IngestTokens-TokenId'
+      - $ref: '#/components/parameters/ExpandParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestToken-UpdateRequest'
+      responses:
+        '200':
+          description: Ingest token updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestToken-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '409':
+          $ref: '#/components/responses/ErrorResponse-409'
+        '422':
+          $ref: '#/components/responses/ErrorResponse-422'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  parameters:
+    ExpandParam:
+      name: expand
+      in: query
+      description: Whether to expand resources referenced in the response to include additional fields
+      schema:
+        type: boolean
+    IngestTokens-TokenId:
+      name: id
+      in: path
+      required: true
+      description: The stable token id (the `ds1...` string).
+      schema:
+        type: string
+  schemas:
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    IngestToken-StatsTimeSeriesValue:
+      title: IngestTokenStatsTimeSeriesValue
+      type: object
+      required:
+      - time
+      - value
+      properties:
+        time:
+          $ref: '#/components/schemas/Time'
+        value:
+          type: integer
+          format: int64
+    IngestToken-StatsError:
+      title: IngestTokenStatsError
+      type: object
+      required:
+      - time
+      - message
+      properties:
+        time:
+          $ref: '#/components/schemas/Time'
+        message:
+          type: string
+        code:
+          type: integer
+          format: int64
+    IngestToken-UpdateRequest:
+      title: IngestTokenUpdateRequest
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 127
+          description: New name. Must be unique per customer; max 127 bytes.
+        description:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+          description: New description. Max 255 bytes. `null` resets it to an empty string.
+        disabled:
+          type: boolean
+    ObjectId:
+      type: string
+      format: ObjectId
+    Time:
+      type: string
+      format: RFC3339
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    IngestToken-CreateResponse:
+      title: IngestTokenCreateResponse
+      description: The newly created ingest token. Same shape as IngestToken-Resource, but the one-time `secret` is always present here — it is returned only in this response and can never be read back.
+      allOf:
+      - $ref: '#/components/schemas/IngestToken-Resource'
+      - type: object
+        required:
+        - secret
+        properties:
+          secret:
+            type: string
+            description: Token secret. Returned exactly once, on create; never readable again.
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    IngestToken-CreateRequest:
+      title: IngestTokenCreateRequest
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 127
+          description: Optional. Auto-generated from a timestamp if omitted. Must be unique per customer; max 127 bytes.
+        description:
+          type:
+          - string
+          - 'null'
+          maxLength: 255
+          description: Optional. Max 255 bytes. `null` is stored as an empty string.
+    IngestToken-Stats:
+      title: IngestTokenStats
+      type: object
+      required:
+      - firstUsed
+      - lastUsed
+      - firstIngest
+      - lastIngest
+      - errors
+      - observations
+      - volumeBytes
+      properties:
+        firstUsed:
+          $ref: '#/components/schemas/Time'
+        lastUsed:
+          $ref: '#/components/schemas/Time'
+        lastError:
+          oneOf:
+          - $ref: '#/components/schemas/Time'
+          - type: 'null'
+        firstIngest:
+          $ref: '#/components/schemas/Time'
+        lastIngest:
+          $ref: '#/components/schemas/Time'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestToken-StatsError'
+        observations:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestToken-StatsTimeSeriesValue'
+        volumeBytes:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestToken-StatsTimeSeriesValue'
+    IngestToken-Resource:
+      title: IngestTokenObject
+      type: object
+      required:
+      - id
+      - name
+      - description
+      - disabled
+      - createdBy
+      - createdAt
+      - updatedBy
+      - updatedAt
+      properties:
+        id:
+          type: string
+          description: Stable token id (the `ds1...` string).
+        name:
+          type: string
+          description: Mutable display name. Unique per customer.
+        description:
+          type: string
+        disabled:
+          type: boolean
+        createdBy:
+          $ref: '#/components/schemas/User'
+        createdAt:
+          $ref: '#/components/schemas/Time'
+        updatedBy:
+          $ref: '#/components/schemas/User'
+        updatedAt:
+          $ref: '#/components/schemas/Time'
+        stats:
+          $ref: '#/components/schemas/IngestToken-Stats'
+          description: Ingest health metrics. Populated only when `?expand=true`, and only on GET /v1/ingest/tokens/{id} and the list endpoint (never returned by create or update). A token that has not yet ingested any data has no metrics to report, so the field is omitted until the token is first used.
+    IngestToken-ListResponse:
+      title: IngestTokenListResponse
+      type: object
+      required:
+      - tokens
+      - meta
+      properties:
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/IngestToken-Resource'
+        meta:
+          $ref: '#/components/schemas/Meta'
+  responses:
+    ErrorResponse-409:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-422:
+      description: Unprocessable entity — a required query parameter was omitted (e.g. `missing_field`).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

@@ -1,0 +1,799 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Ingest Routes API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Ingest Routes across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Ingest Routes
+paths:
+  /v1/ingest/routes/{type}:
+    post:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Create an ingest route
+      description: '> **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**
+
+
+        Creates an ingest route. The destination ID must be the ID of a source
+
+        dataset whose type matches the `type` path parameter. Returns the created
+
+        route.'
+      operationId: CreateIngestRoute
+      tags:
+      - Ingest Routes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestRoutes-CreateRequest'
+      parameters:
+      - $ref: '#/components/parameters/IngestRoutes-Type'
+      responses:
+        '201':
+          description: Ingest route created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestRoutes-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: List ingest routes
+      description: '> **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**
+
+
+        List ingest routes for a type. Routes are returned in priority order: the
+
+        route at index 0 is matched against incoming data first, index 1 is
+
+        evaluated next if the first did not match, and so on. The type''s default
+
+        route is always last, and matches anything the others did not.
+
+
+        Disabled routes are included in the response but are skipped during
+
+        matching. This endpoint is not paginated; it returns every route for the
+
+        type, and `meta.totalCount` is that count.'
+      operationId: ListIngestRoutes
+      tags:
+      - Ingest Routes
+      parameters:
+      - $ref: '#/components/parameters/IngestRoutes-Type'
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Ingest routes queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestRoutes-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Update ingest route priorities
+      description: '> **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**
+
+
+        Reorder the ingest routes for a type. Send an ordered list of route IDs
+
+        that sets the new priority order. The list must contain every route ID for
+
+        the type, with no duplicates and no other IDs.
+
+
+        Returns all routes for the type in the new priority order.'
+      operationId: UpdateIngestRoutePriorities
+      tags:
+      - Ingest Routes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestRoutes-UpdatePriorityRequest'
+      parameters:
+      - $ref: '#/components/parameters/IngestRoutes-Type'
+      responses:
+        '200':
+          description: Ingest route priorities updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestRoutes-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+  /v1/ingest/routes/{type}/{id}:
+    delete:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Delete an ingest route
+      description: '> **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**
+
+
+        Delete an ingest route. The default route for a type cannot be deleted.'
+      operationId: DeleteIngestRoute
+      tags:
+      - Ingest Routes
+      parameters:
+      - $ref: '#/components/parameters/IngestRoutes-Type'
+      - $ref: '#/components/parameters/IngestRoutes-Id'
+      responses:
+        '204':
+          description: Ingest route deleted successfully
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    get:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Get an ingest route
+      description: '> **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**
+
+
+        Get a single ingest route by its ID.'
+      operationId: GetIngestRoute
+      tags:
+      - Ingest Routes
+      parameters:
+      - $ref: '#/components/parameters/IngestRoutes-Type'
+      - $ref: '#/components/parameters/IngestRoutes-Id'
+      - $ref: '#/components/parameters/ExpandParam'
+      responses:
+        '200':
+          description: Ingest route queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestRoutes-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    patch:
+      x-badges:
+      - name: beta
+        position: before
+        color: '#FFCC00'
+      summary: Update an ingest route
+      description: '> **Beta — schema may still change; breaking changes are coordinated with affected customers. Suitable for evaluation, not production reliance.**
+
+
+        Update an ingest route configuration. The destination ID must be the ID of
+
+        a source dataset whose type matches the `type` path parameter.
+
+
+        Use `PATCH /v1/ingest/routes/{type}` to change priority order. This
+
+        endpoint does not change priority.'
+      operationId: UpdateIngestRoute
+      tags:
+      - Ingest Routes
+      parameters:
+      - $ref: '#/components/parameters/IngestRoutes-Type'
+      - $ref: '#/components/parameters/IngestRoutes-Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IngestRoutes-UpdateRequest'
+      responses:
+        '200':
+          description: Ingest route updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IngestRoutes-Resource'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  parameters:
+    ExpandParam:
+      name: expand
+      in: query
+      description: Whether to expand resources referenced in the response to include additional fields
+      schema:
+        type: boolean
+    IngestRoutes-Id:
+      in: path
+      name: id
+      schema:
+        type: string
+        format: int64
+      required: true
+      description: The id of the ingest route
+      example: '1'
+    IngestRoutes-Type:
+      in: path
+      name: type
+      schema:
+        $ref: '#/components/schemas/IngestRoutes-Type'
+      required: true
+      description: 'The type of the ingest route to query. These types correspond to the various source dataset schemas supported by Observe.
+
+        `any` refers to the "default" generic source dataset schema with the `FIELDS` and `EXTRA` columns. All of the others
+
+        correspond to direct-write source datasets. Each type is also associated with particular ingest HTTP endpoints that emit
+
+        compatible data for that type. Incoming data on a given endpoint is routable to any dataset of the corresponding type.
+
+
+        The following [type -> ingest path] mappings are defined:
+
+
+        - `otellogs` <-> `/v1/otel/v1/logs`
+
+        - `otelmetrics` <-> `/v1/otel/v1/metrics`
+
+        - `oteltraces` <-> `/v1/otel/v1/traces`
+
+        - `prometheus` <-> `/v1/prometheus`
+
+        - `k8sentity` <-> `/v1/kubernetes`
+
+        - `any` <-> `/v1/*`
+
+        '
+      example: otellogs
+  schemas:
+    IngestRoutes-CreateRequest:
+      title: IngestRoutesCreateRequest
+      type: object
+      description: 'A new route is created **disabled**, and is ignored by the ingest pipeline until you enable it with a PATCH. The one exception is the default route, which is always enabled.
+
+
+        A new route is assigned the lowest priority among non-default routes, so it is evaluated last. Use `PATCH /v1/ingest/routes/{type}` to reorder.
+
+
+        Creating the first route for a type also creates that type''s default route automatically, so that no observation is left unrouted.'
+      required:
+      - pipeline
+      - destinationId
+      properties:
+        pipeline:
+          type: string
+          description: 'OPAL expression acting as the match predicate for this route, compiled against the destination dataset''s schema. A compile error is rejected with a 400.
+
+
+            Pass an empty string to create the type''s default route, the catch-all evaluated after every other route. Once a default route exists, an empty pipeline is rejected with a 400.
+
+
+            Two restrictions apply per type:
+
+
+            - `oteltraces` supports only the default route. A non-empty pipeline is rejected with a 400.
+
+            - Some types restrict which columns the expression may reference: `prometheus`, `k8sentity`, and `oteltraces` allow only `meta`; `otelmetrics` allows `meta` and `metric`. `otellogs` and `any` are unrestricted. Referencing any other column is rejected with a 400.
+
+
+            Unlike a drop filter, a route predicate that fails at evaluation time fails the whole bundle rather than failing open. Expressions are therefore rejected at creation if they reference columns that cannot be resolved.'
+        layout:
+          type: object
+          description: Opaque JSON blob round-tripped to the frontend; not interpreted by the server.
+        destinationId:
+          $ref: '#/components/schemas/ObjectId'
+          description: Primary destination dataset ID. Must be a source dataset whose type matches the `type` path parameter.
+        secondaryDestinationId:
+          $ref: '#/components/schemas/ObjectId'
+          description: Optional secondary destination dataset ID, subject to the same type check as `destinationId`. When set, matching observations are written to both destinations. Omit to leave unset; use PATCH with an explicit `null` to clear it later.
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    ObjectRef:
+      title: ObjectRef
+      type: object
+      description: 'A reference to another resource. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Brief expansion applies to one layer only — fields inside `record` that are themselves ObjectRefs (e.g. `record.managedBy`) are returned id-only, never with their own `record` populated. CEL filter expressions can deeper-resolve via lazy wrapper resolution if needed.
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/ObjectBrief'
+    ObjectId:
+      type: string
+      format: ObjectId
+    ObjectBrief:
+      title: ObjectBrief
+      type: object
+      description: 'Brief record fields for an ObjectRef. This type is polymorphic: additional fields pointing to specific object types (e.g. dataset, dashboard, monitor) may be added in the future as needed.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - managedBy
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        managedBy:
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+          description: 'Owner/manager of this object. Always returned as an id-only ObjectRef even when the parent was requested with expand=true: `expand` populates a single layer of brief data, so `record.managedBy` on a brief is itself never expanded. Pass the inner id back through a separate request (or filter via CEL, which lazily resolves) to access the manager''s brief.'
+    User:
+      title: User
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          title: User Identifier
+          $ref: '#/components/schemas/ObjectId'
+        label:
+          title: User Label
+          type: string
+        timezone:
+          type: string
+        locale:
+          type: string
+    IngestRoutes-UpdateRequest:
+      title: IngestRoutesUpdateRequest
+      type: object
+      description: 'Merge-patch payload (RFC 7396). Only fields explicitly present are updated; omitted fields keep their current value. Priority is not settable here — use `PATCH /v1/ingest/routes/{type}` to reorder.
+
+
+        `secondaryDestinationId` accepts an explicit `null` to clear it.'
+      properties:
+        pipeline:
+          type: string
+          description: Replacement OPAL match predicate, subject to the same compilation and per-type restrictions as on create.
+        layout:
+          type: object
+          description: Opaque JSON blob round-tripped to the frontend; not interpreted by the server. Ignored for a type's default route.
+        destinationId:
+          $ref: '#/components/schemas/ObjectId'
+          description: Replacement primary destination dataset ID. Must be a source dataset whose type matches the route's type.
+        secondaryDestinationId:
+          $ref: '#/components/schemas/NullableObjectId'
+          description: Replacement secondary destination dataset ID, subject to the same type check. Pass `null` to remove the secondary destination.
+        enabled:
+          type: boolean
+          description: Set true to start evaluating this route against incoming data. New routes are created disabled, so this is the call that puts a route into service.
+    IngestRoutes-Resource:
+      title: IngestRoutesObject
+      type: object
+      description: An ingest route resource. This is one rule defining a route for observations of a certain type.
+      required:
+      - id
+      - createdBy
+      - createdAt
+      - updatedBy
+      - updatedAt
+      - type
+      - pipeline
+      - layout
+      - destinationId
+      - secondaryDestinationId
+      - enabled
+      - managedBy
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+          description: Unique identifier for this ingest route.
+        createdBy:
+          $ref: '#/components/schemas/User'
+          readOnly: true
+          description: User who created this route. Always returned as an ID-only object; pass expand=true to populate `record`.
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Time at which this route was created.
+        updatedBy:
+          $ref: '#/components/schemas/User'
+          readOnly: true
+          description: User who last updated this route. Always returned as an ID-only object; pass expand=true to populate `record`.
+        updatedAt:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Time at which this route was last updated.
+        type:
+          $ref: '#/components/schemas/IngestRoutes-Type'
+          readOnly: true
+          description: The observation type this route applies to. Set at creation and cannot be changed.
+        pipeline:
+          type: string
+          readOnly: true
+          description: 'OPAL expression acting as the match predicate for this route. An observation is routed here when the expression evaluates true. Compiled against the schema of the destination source dataset.
+
+
+            An empty string identifies the type''s default route, which matches every observation not matched by a higher-priority route. See the `pipeline` field on the create request for the restrictions that apply per type.'
+        layout:
+          type: object
+          readOnly: true
+          description: Opaque JSON blob round-tripped to the frontend; not interpreted by the server.
+        destinationId:
+          $ref: '#/components/schemas/ObjectId'
+          readOnly: true
+          description: Primary destination dataset ID. Observations matching this route are written here.
+        secondaryDestinationId:
+          $ref: '#/components/schemas/NullableObjectId'
+          readOnly: true
+          description: Secondary destination dataset ID. When set, observations matching this route are duplicated to both the primary and secondary destination datasets.
+        enabled:
+          type: boolean
+          readOnly: true
+          description: Whether this route is evaluated against incoming data. A disabled route is skipped entirely, as though it did not exist. New routes are created disabled; see the create request for details.
+        managedBy:
+          readOnly: true
+          description: Identifies the owner/manager of this route. Managed routes cannot be created, modified, or deleted through the API. Always returned as an ID-only object; pass expand=true to populate `record` (label, description, iconUrl).
+          anyOf:
+          - $ref: '#/components/schemas/ObjectRef'
+          - type: 'null'
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+    NullableObjectId:
+      type:
+      - string
+      - 'null'
+      format: ObjectId
+    IngestRoutes-Type:
+      title: IngestRoutesType
+      type: string
+      description: The observation type a route applies to. Each type corresponds to a source dataset schema and to the ingest endpoints that emit compatible data. `any` is the generic schema with `FIELDS` and `EXTRA` columns; the rest are direct-write source datasets. See the `type` path parameter for the endpoint mappings.
+      enum:
+      - otellogs
+      - otelmetrics
+      - oteltraces
+      - prometheus
+      - k8sentity
+      - any
+    IngestRoutes-UpdatePriorityRequest:
+      title: IngestRoutesUpdatePriorityRequest
+      type: object
+      description: New priority order for every route of a type. Reordering is a whole-list operation; there is no way to move a single route.
+      required:
+      - ordering
+      properties:
+        ordering:
+          type: array
+          description: Route IDs in the desired priority order, highest priority first. Must contain every route ID for the type exactly once.
+          items:
+            $ref: '#/components/schemas/ObjectId'
+    IngestRoutes-ListResponse:
+      title: IngestRoutesListResponse
+      type: object
+      description: All ingest routes for a type, in priority order.
+      required:
+      - ingestRoutes
+      - meta
+      properties:
+        ingestRoutes:
+          type: array
+          description: The routes, ordered by descending priority. The type's default route is always last.
+          items:
+            $ref: '#/components/schemas/IngestRoutes-Resource'
+        meta:
+          $ref: '#/components/schemas/Meta'
+          description: Result metadata. `totalCount` is the number of routes for the type. This endpoint is not paginated, so it always equals the length of `ingestRoutes`.
+  responses:
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml

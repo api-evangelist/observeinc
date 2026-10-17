@@ -1,0 +1,751 @@
+openapi: 3.2.0
+info:
+  title: Observeinc Metrics API
+  version: 1.0.230307
+  x-assembled-from:
+  - https://docs.observeinc.com/reference/createapitoken.md
+  - https://docs.observeinc.com/reference/createdashboard.md
+  - https://docs.observeinc.com/reference/createdatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/createingestfilter.md
+  - https://docs.observeinc.com/reference/createingestroute.md
+  - https://docs.observeinc.com/reference/createingesttoken.md
+  - https://docs.observeinc.com/reference/createmonitor.md
+  - https://docs.observeinc.com/reference/createmonitormute.md
+  - https://docs.observeinc.com/reference/createmonitormuterule.md
+  - https://docs.observeinc.com/reference/createreferencetable.md
+  - https://docs.observeinc.com/reference/createserviceaccount.md
+  - https://docs.observeinc.com/reference/createskill.md
+  - https://docs.observeinc.com/reference/deleteapitoken.md
+  - https://docs.observeinc.com/reference/deletedashboard.md
+  - https://docs.observeinc.com/reference/deletedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/deleteingestfilter.md
+  - https://docs.observeinc.com/reference/deleteingestroute.md
+  - https://docs.observeinc.com/reference/deleteingesttoken.md
+  - https://docs.observeinc.com/reference/deletemonitor.md
+  - https://docs.observeinc.com/reference/deletemonitormute.md
+  - https://docs.observeinc.com/reference/deletemonitormuterule.md
+  - https://docs.observeinc.com/reference/deletereferencetable.md
+  - https://docs.observeinc.com/reference/deleteserviceaccount.md
+  - https://docs.observeinc.com/reference/deleteskill.md
+  - https://docs.observeinc.com/reference/exportquery.md
+  - https://docs.observeinc.com/reference/exportquerypage.md
+  - https://docs.observeinc.com/reference/exportworksheet.md
+  - https://docs.observeinc.com/reference/generateapitoken.md
+  - https://docs.observeinc.com/reference/getalert.md
+  - https://docs.observeinc.com/reference/getapitoken.md
+  - https://docs.observeinc.com/reference/getapminvocationgraph.md
+  - https://docs.observeinc.com/reference/getdashboard.md
+  - https://docs.observeinc.com/reference/getdataset.md
+  - https://docs.observeinc.com/reference/getdatasetbyid.md
+  - https://docs.observeinc.com/reference/getdatasetgraph.md
+  - https://docs.observeinc.com/reference/getdatasetqueryfilterbyid.md
+  - https://docs.observeinc.com/reference/getdatasetstats.md
+  - https://docs.observeinc.com/reference/getingestfilter.md
+  - https://docs.observeinc.com/reference/getingestroute.md
+  - https://docs.observeinc.com/reference/getingesttoken.md
+  - https://docs.observeinc.com/reference/getmonitor-1.md
+  - https://docs.observeinc.com/reference/getmonitormute.md
+  - https://docs.observeinc.com/reference/getmonitormuterule.md
+  - https://docs.observeinc.com/reference/getmonitorstats.md
+  - https://docs.observeinc.com/reference/getreferencetable.md
+  - https://docs.observeinc.com/reference/getserviceaccount.md
+  - https://docs.observeinc.com/reference/getskill.md
+  - https://docs.observeinc.com/reference/listalerts.md
+  - https://docs.observeinc.com/reference/listapitokens.md
+  - https://docs.observeinc.com/reference/listapmenvironments.md
+  - https://docs.observeinc.com/reference/listapmservices.md
+  - https://docs.observeinc.com/reference/listdashboards.md
+  - https://docs.observeinc.com/reference/listdatasetgraph.md
+  - https://docs.observeinc.com/reference/listdatasetqueryfilters.md
+  - https://docs.observeinc.com/reference/listdatasets-1.md
+  - https://docs.observeinc.com/reference/listdatasets.md
+  - https://docs.observeinc.com/reference/listdatasettags.md
+  - https://docs.observeinc.com/reference/listfilterabledatasets.md
+  - https://docs.observeinc.com/reference/listingestfilters.md
+  - https://docs.observeinc.com/reference/listingestroutes.md
+  - https://docs.observeinc.com/reference/listingesttokens.md
+  - https://docs.observeinc.com/reference/listmetrics.md
+  - https://docs.observeinc.com/reference/listmonitormuterules.md
+  - https://docs.observeinc.com/reference/listmonitormutes.md
+  - https://docs.observeinc.com/reference/listmonitors-1.md
+  - https://docs.observeinc.com/reference/listserviceaccounts.md
+  - https://docs.observeinc.com/reference/listskills.md
+  - https://docs.observeinc.com/reference/polldelegatedlogin.md
+  - https://docs.observeinc.com/reference/queryreferencetables.md
+  - https://docs.observeinc.com/reference/searchdocumentation.md
+  - https://docs.observeinc.com/reference/searchobjecttagkeys.md
+  - https://docs.observeinc.com/reference/searchobjecttagvalues.md
+  - https://docs.observeinc.com/reference/searchtagvalues.md
+  - https://docs.observeinc.com/reference/startdelegatedlogin.md
+  - https://docs.observeinc.com/reference/updateapitoken.md
+  - https://docs.observeinc.com/reference/updatedashboard.md
+  - https://docs.observeinc.com/reference/updatedatasetqueryfilter.md
+  - https://docs.observeinc.com/reference/updateingestfilter.md
+  - https://docs.observeinc.com/reference/updateingestroute.md
+  - https://docs.observeinc.com/reference/updateingestroutepriorities.md
+  - https://docs.observeinc.com/reference/updateingesttoken.md
+  - https://docs.observeinc.com/reference/updatemonitor.md
+  - https://docs.observeinc.com/reference/updatemonitormute.md
+  - https://docs.observeinc.com/reference/updatereferencetable.md
+  - https://docs.observeinc.com/reference/updatereferencetablemetadata.md
+  - https://docs.observeinc.com/reference/updateserviceaccount.md
+  - https://docs.observeinc.com/reference/updateskill.md
+  - https://docs.observeinc.com/reference/validateingestfilterexpression.md
+  x-retrieved: '2026-10-13'
+  x-source: Assembled verbatim from the OpenAPI 3.1 definitions ReadMe embeds in each of 88 operation pages under https://docs.observeinc.com/reference/ (no single downloadable spec is published); paths and components merged, nothing authored.
+  description: 'Operations tagged Metrics across 2 of this provider''s published API definitions: observeinc-openapi-assembled.json, observeinc-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://{customerid}.observeinc.com
+  description: US west server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+- url: https://{customerid}.{cluster}.observeinc.com
+  description: Specific regional cluster (prod)
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    cluster:
+      enum:
+      - eu-1
+      - ap-1
+      default: eu-1
+      description: For regional clusters, choose one.
+- url: https://{customerid}.{domain}.com
+  description: Specific Observe server
+  variables:
+    customerid:
+      default: OBSERVE_CUSTOMERID
+      description: The customer ID for your instance.
+    domain:
+      default: OBSERVE_DOMAIN
+      description: The Observe domain for your instance.
+security:
+- bearerAuth: []
+tags:
+- name: Metrics
+paths:
+  /v1/metrics:
+    get:
+      summary: List metrics
+      description: 'List metrics defined by, or auto-discovered in, the customer''s metric
+
+        datasets that the user has read access to. Default page size is 100; maximum is 1000.
+
+        Default ordering is by `name` ascending, then `dataset.id` ascending.
+
+        Set `expand=true` to inline reference fields (`dataset.record`, …). Without `expand`,
+
+        references contain only `id`.
+
+
+        ## Filtering and ordering with CEL
+
+        The `filter` and `orderBy` query parameters are evaluated as
+
+        Common Expression Language (CEL) expressions
+
+        against a stable schema that mirrors the metric response body.
+
+        `filter` must evaluate to `bool`; `orderBy` is a CSV list of
+
+        CEL expressions whose values must be comparable. URL-encode
+
+        both; CSV-escape `orderBy` items first (see the `orderBy`
+
+        parameter for syntax).
+
+
+        ### Discrepancies between CEL and REST
+
+
+        | Field | CEL | REST | Notes |
+
+        | ------------- | -------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
+
+        | `objectTags` | `map(string, list(string))`, from the metric''s dataset''s object tags | not present | CEL-only convenience field. Filter with `"env" in objectTags`; to read the tags, fetch the dataset via `dataset.id`. |
+
+
+        ### Available CEL functions
+
+        The metric CEL environment registers the CEL standard
+
+        definitions
+
+        (operators, `in`, `?:`, `size()`, `string.contains`, `string.startsWith`,
+
+        `string.endsWith`, `matches`, etc.) plus the following extension
+
+        libraries from
+
+        cel-go v0.28.0:
+
+
+        - `ext.Strings` — `charAt`, `indexOf`, `join`, `lowerAscii`, `replace`, `split`, `substring`, `trim`, `upperAscii`, `format`
+
+        - `ext.Lists` — `lists.flatten`, `lists.range`, `lists.slice`
+
+        - `ext.Math` — `math.greatest`, `math.least`
+
+        - `ext.Sets` — `sets.contains`, `sets.equivalent`, `sets.intersects`
+
+        - `ext.Regex` — `re.capture`, `re.extract`
+
+        - `ext.Encoders` — `base64.encode`, `base64.decode`
+
+        - `ext.Bindings` — `cel.bind` for let-binding sub-expressions
+
+        - `ext.Protos` — protobuf helpers
+
+        - `cel.OptionalTypes` — `optional.of`, `optional.ofNonZero`, `optional.none`'
+      operationId: ListMetrics
+      tags:
+      - Metrics
+      parameters:
+      - $ref: '#/components/parameters/LimitParam'
+      - $ref: '#/components/parameters/OffsetParam'
+      - $ref: '#/components/parameters/ExpandParam'
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'CSV list of CEL expressions, each producing a comparable
+
+          value. Prefix an item with `-` for descending order.
+
+
+          CSV-escape first, then URL-encode. Wrap an item in `"` if it
+
+          contains a comma or `"`; double a literal `"` to `""` inside
+
+          a quoted item.
+
+
+          Supported fields: See the description of the `filter` parameter for the
+
+          list of supported fields.
+
+          '
+        example: -lastReported,name
+      - name: filter
+        in: query
+        required: false
+        schema:
+          type: string
+        description: "Filter that response metrics must match. Specified in CEL format.\nNote that filter expressions must be URL encoded.\n\nSupported filter fields:\n- `name` (string): metric name\n- `type` (string): metric type\n- `unit` (string): metric unit\n- `description` (string): metric description\n- `rollup` (string): metric rollup\n- `aggregate` (string): metric aggregate\n- `userDefined` (bool): whether the metric is user-defined\n- `status` (string): metric status\n- `dataset.id` (int): ID of the metric dataset\n- `dataset.label` (string): label of the metric dataset\n- `lastReported` (timestamp): last reported time\n- `metricTags` (list): tag paths observed for this metric. Each\n  element is an object with `field` (string) and `path` (string).\n  Use CEL macros to test membership, e.g.\n  `metricTags.exists(t, t.field == \"container\")`.\n- `correlationTags` (list): correlation tags relevant to this\n  metric. Each element is an object with `tag` (string) and `path`\n  (an object with `field` and `path`). e.g.\n  `correlationTags.exists(c, c.tag == \"service.name\")`.\n- `objectTags` (map of string to list of string): user-applied\n  object tags on the metric's dataset. Test membership with `in`,\n  e.g. `\"env\" in objectTags` or\n  `\"env\" in objectTags && \"prod\" in objectTags[\"env\"]`.\n\nSee the Metric-Resource schema for the detailed descriptions of the supported fields.\n\n## CEL functions\n\n### `hasCorrelationTag(tag string, value string) bool`\n\nReturns `true` if this metric has data points whose correlation tag\n`tag` takes on `value` within a recent observation window.\n\nBoth arguments must be constant string literals.\n\nLimits and error conditions:\n- HTTP 400 if a single filter references more than 8 unique\n  `hasCorrelationTag(T, V)` callsites.\n- For each `(tag, value)` pair, fan-out is capped at 10 candidate\n  datasets, selected deterministically in ascending dataset id.\n  Datasets beyond the cap are not consulted for that pair.\n- HTTP 500 if the OPAL query fails (e.g. Snowflake unavailable).\n- HTTP 503 if no query backend is wired (test / degraded apiserver).\n"
+        examples:
+          filterByName:
+            summary: Filter by exact name
+            value: name == "cpu_usage"
+          filterByType:
+            summary: Filter by metric type
+            value: type == "Gauge"
+          filterByNameRegex:
+            summary: Regex search by name
+            value: name.matches("http.*")
+          filterByDataset:
+            summary: Filter to a specific dataset's metrics
+            value: dataset.id == 41001234
+          filterByDatasetLabel:
+            summary: Filter by the metric dataset's label
+            value: dataset.label == "Kubernetes Metrics"
+          filterByMultiple:
+            summary: User-defined gauges
+            value: type == "Gauge" && userDefined == true
+          filterByMetricTag:
+            summary: Metrics that carry a given tag field
+            value: metricTags.exists(t, t.field == "container")
+          filterByCorrelationTagName:
+            summary: Metrics with a specific correlation tag
+            value: correlationTags.exists(c, c.tag == "service.name")
+          filterByCorrelationTagPath:
+            summary: Match on a correlation tag's nested path field
+            value: correlationTags.exists(c, c.tag == "service.name" && c.path.field == "container")
+          filterByCorrelationTagKV:
+            summary: Filter to metrics that report a specific (correlation-tag, value) pair
+            value: hasCorrelationTag("env","prod")
+          filterByCorrelationTagAndName:
+            summary: Combine hasCorrelationTag with a name predicate
+            value: hasCorrelationTag("env","prod") && name.matches("http_.*")
+          filterByCorrelationTagOr:
+            summary: Union of two correlation-tag value matches
+            value: hasCorrelationTag("env","prod") || hasCorrelationTag("env","staging")
+          filterByObjectTag:
+            summary: Metrics whose dataset carries a given object tag key
+            value: '"env" in objectTags'
+          filterByObjectTagKV:
+            summary: Metrics whose dataset carries a specific object tag key/value
+            value: '"env" in objectTags && "prod" in objectTags["env"]'
+      responses:
+        '200':
+          description: Metrics queried successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Metric-ListResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse-400'
+        '401':
+          $ref: '#/components/responses/ErrorResponse-401'
+        '403':
+          $ref: '#/components/responses/ErrorResponse-403'
+        '404':
+          $ref: '#/components/responses/ErrorResponse-404'
+        '429':
+          $ref: '#/components/responses/ErrorResponse-429'
+        5XX:
+          $ref: '#/components/responses/ErrorResponse-5XX'
+    servers:
+    - url: https://{customerid}.observeinc.com
+      description: US west server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+    - url: https://{customerid}.{cluster}.observeinc.com
+      description: Specific regional cluster (prod)
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        cluster:
+          enum:
+          - eu-1
+          - ap-1
+          default: eu-1
+          description: For regional clusters, choose one.
+    - url: https://{customerid}.{domain}.com
+      description: Specific Observe server
+      variables:
+        customerid:
+          default: OBSERVE_CUSTOMERID
+          description: The customer ID for your instance.
+        domain:
+          default: OBSERVE_DOMAIN
+          description: The Observe domain for your instance.
+components:
+  parameters:
+    ExpandParam:
+      name: expand
+      in: query
+      description: Whether to expand resources referenced in the response to include additional fields
+      schema:
+        type: boolean
+    OffsetParam:
+      name: offset
+      in: query
+      description: Number of items to skip before starting to collect the result set
+      schema:
+        type: integer
+        format: int64
+    LimitParam:
+      name: limit
+      in: query
+      description: Maximum number of items to return in the response
+      schema:
+        type: integer
+        format: int64
+  schemas:
+    DatasetRef:
+      title: DatasetRef
+      type: object
+      description: 'A reference to a dataset. Always carries the id; the optional `record` field carries the brief metadata, populated when expand=true. Mirrors ObjectRef (see ObjectRef / ObjectBrief in this file).
+
+        '
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectId'
+        record:
+          $ref: '#/components/schemas/DatasetBrief'
+    DatasetBrief:
+      title: DatasetBrief
+      type: object
+      description: 'Brief record fields for a DatasetRef (label, description, iconUrl, contentType). Field naming mirrors ObjectBrief in this same file (iconUrl, not icon) for consistency across reference-brief pairs.
+
+        '
+      required:
+      - label
+      - description
+      - iconUrl
+      - contentType
+      properties:
+        label:
+          type: string
+        description:
+          type: string
+        iconUrl:
+          type: string
+        contentType:
+          $ref: '#/components/schemas/DatasetContentType'
+          description: 'The type of data the referenced dataset contains — Resource, Log,
+
+            Metric, OTelSpan, OTelTrace, or Unknown. Derived from the dataset''s
+
+            kind and interface bindings.
+
+            '
+    Meta:
+      description: List Response Metadata
+      type: object
+      required:
+      - totalCount
+      properties:
+        totalCount:
+          description: 'The total number of resources available, independent of pagination.
+
+            The API may return -1 if the total count is unknown or cannot be computed
+
+            in reasonable time.
+
+            '
+          type: integer
+          format: int64
+    Metric-Type:
+      title: MetricType
+      type: string
+      description: 'Metric semantic type.
+
+
+        * `CumulativeCounter`: A metric that represents a non-decreasing counter with possible resets.
+
+        * `Delta`: A metric that represents a change in a value over time
+
+        * `Gauge`: A metric that represents a value that can increase or decrease
+
+        * `TDigest`: A metric that represents a t-digest of values
+
+        * `Sample`: A metric that represents a sample of values
+
+        * `Histogram`: A metric that represents an OpenTelemetry explicit bucket histogram
+
+        * `ExponentialHistogram`: A metric that represents an OpenTelemetry exponential histogram
+
+        '
+      enum:
+      - CumulativeCounter
+      - Delta
+      - Gauge
+      - TDigest
+      - Sample
+      - Histogram
+      - ExponentialHistogram
+    Metric-Resource:
+      title: MetricResource
+      type: object
+      description: 'A metric resource. Metrics do not have a globally unique ObjectId —
+
+        they are identified by the tuple (dataset.id, name).
+
+        '
+      required:
+      - name
+      - dataset
+      - type
+      - unit
+      - description
+      - rollup
+      - aggregate
+      - intervalMillis
+      - suggestedBucketSizeMillis
+      - userDefined
+      - status
+      - lastReported
+      - pointCount
+      - cardinality
+      - linkLabels
+      - metricTags
+      - correlationTags
+      properties:
+        name:
+          type: string
+          description: The metric's name within its dataset.
+        dataset:
+          $ref: '#/components/schemas/DatasetRef'
+          description: 'Reference to the dataset that owns this metric. With ?expand=true,
+
+            `record` is populated with the dataset brief (label, description,
+
+            iconUrl, contentType).
+
+            '
+        type:
+          $ref: '#/components/schemas/Metric-Type'
+        unit:
+          type:
+          - string
+          - 'null'
+          description: 'Unit the metric values are reported in (e.g. "ms", "bytes",
+
+            "requests/s"). Null when not specified.
+
+            '
+        description:
+          type:
+          - string
+          - 'null'
+          description: 'Free-form description of what the metric measures. Null when
+
+            not specified.
+
+            '
+        rollup:
+          type: string
+          description: 'How values are combined when reducing along the time axis (e.g.
+
+            "sum", "avg", "max", "min", "rate"). Drives the default temporal
+
+            aggregation when querying this metric.
+
+            '
+        aggregate:
+          type: string
+          description: 'How values are combined when reducing along non-time dimensions
+
+            (e.g. "sum", "avg", "max", "min"). Drives the default spatial
+
+            aggregation across tag groupings.
+
+            '
+        intervalMillis:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Reporting interval, in milliseconds (e.g. 60000 for a metric
+
+            reported every 60 seconds). If the user declared an interval
+
+            for this metric (via the `set_metric` OPAL verb), this field reflects
+
+            the declared value. Otherwise, this field is the observed cadence
+
+            derived from metric discovery sampling. Null when neither a declaration nor sufficient
+
+            observations are available.
+
+            '
+        suggestedBucketSizeMillis:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Suggested bucket size for queries against this metric, in
+
+            milliseconds. Null when not enough samples have been observed.
+
+            '
+        userDefined:
+          type: boolean
+          description: 'Whether the metric has been defined explicitly by the user.
+
+            Non-user-defined metrics are discovered by scanning metric data.
+
+            '
+        status:
+          $ref: '#/components/schemas/Metric-Status'
+        lastReported:
+          $ref: '#/components/schemas/NullableTime'
+          description: 'Last time this metric was reported, derived from metric
+
+            discovery sampling. May be underreported by up to an hour.
+
+            Null when no observations are available.
+
+            '
+        pointCount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Number of data points observed for this metric in the
+
+            discovery sampling window. Null when no observations are
+
+            available.
+
+            '
+        cardinality:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          description: 'Number of distinct tag combinations observed for this metric
+
+            in the discovery sampling window. Null when no observations
+
+            are available.
+
+            '
+        linkLabels:
+          type: array
+          items:
+            type: string
+          description: 'Link labels on the metric dataset that are useful for
+
+            grouping/filtering this metric, ranked by usefulness and
+
+            cardinality. Derived from metric discovery sampling.
+
+            '
+        metricTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-FieldPath'
+          description: 'Tag paths observed for this metric, ranked by cardinality.
+
+            Derived from metric discovery sampling.
+
+            '
+        correlationTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset-CorrelationTag'
+          description: 'Correlation tags on the metric dataset filtered to those
+
+            relevant to this metric. Derived from metric discovery
+
+            sampling.
+
+            '
+    Dataset-FieldPath:
+      title: FieldPath
+      type: object
+      required:
+      - field
+      - path
+      properties:
+        field:
+          type: string
+        path:
+          type: string
+    NullableTime:
+      type:
+      - string
+      - 'null'
+      format: RFC3339
+    ObjectId:
+      type: string
+      format: ObjectId
+    Dataset-CorrelationTag:
+      title: CorrelationTag
+      type: object
+      required:
+      - tag
+      - path
+      properties:
+        tag:
+          type: string
+        path:
+          $ref: '#/components/schemas/Dataset-FieldPath'
+    Metric-ListResponse:
+      title: MetricListResponse
+      type: object
+      required:
+      - metrics
+      - meta
+      properties:
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Metric-Resource'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    DatasetContentType:
+      title: DatasetContentType
+      type: string
+      description: 'The type of data a dataset contains. For Resource datasets, this is
+
+        determined by the dataset kind. For other kinds, it is derived from the
+
+        dataset''s interface bindings. Returns Unknown if no recognized interface
+
+        is found.
+
+        '
+      enum:
+      - Unknown
+      - Resource
+      - Log
+      - Metric
+      - OTelSpan
+      - OTelTrace
+    Metric-Status:
+      title: MetricStatus
+      type: string
+      description: 'Active: usable and currently reporting.
+
+        Inactive: usable, but not currently reporting.
+
+        Error: unusable because the metric dataset has errors in its
+
+        definition.
+
+        '
+      enum:
+      - Active
+      - Inactive
+      - Error
+    ErrorMessage:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A stable, machine-readable identifier for the kind of error.
+        message:
+          type: string
+          description: Error message
+      required:
+      - type
+      - message
+  responses:
+    ErrorResponse-400:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-404:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-403:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-5XX:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-429:
+      description: Rate limit reached
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorResponse-401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: 'Authorization: Bearer <customerid> <apitoken>
+
+        '
+x-refined-from:
+- observeinc-openapi-assembled.json
+- observeinc-openapi.yml
