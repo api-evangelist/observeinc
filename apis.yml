@@ -212,6 +212,8 @@ apis:
   humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
   baseURL: https://{customerid}.observeinc.com
   tags:
+  - Datasets
+  tags_raw:
   - Dataset
   properties:
   - type: OpenAPI
@@ -520,6 +522,8 @@ apis:
   humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
   baseURL: https://{customerid}.observeinc.com
   tags:
+  - Monitors
+  tags_raw:
   - Monitor
   properties:
   - type: OpenAPI
@@ -582,6 +586,8 @@ apis:
   humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
   baseURL: https://{customerid}.observeinc.com
   tags:
+  - Object Tags
+  tags_raw:
   - ObjectTags
   properties:
   - type: OpenAPI
@@ -613,6 +619,8 @@ apis:
   humanURL: https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api
   baseURL: https://{customerid}.observeinc.com
   tags:
+  - Reference Tables
+  tags_raw:
   - ReferenceTables
   properties:
   - type: OpenAPI
