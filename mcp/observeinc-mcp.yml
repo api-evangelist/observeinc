@@ -2,13 +2,17 @@ generated: '2026-10-13'
 method: searched
 source: https://docs.observeinc.com/docs/model-context-protocol
 name: Observe by Snowflake MCP Server
-description: Tenant-hosted MCP server that lets AI agents investigate incidents, explore logs, metrics and traces, search Datasets, list alerts and monitors, generate OPAL queries and inspect APM service maps. OAuth (IdP login) by default; API token for headless/service-account use. The per-tenant endpoint is configured from the Observe UI and is not published in the docs.
+description: Tenant-hosted MCP server that lets AI agents investigate incidents, explore logs, metrics
+  and traces, search Datasets, list alerts and monitors, generate OPAL queries and inspect APM service
+  maps. OAuth (IdP login) by default; API token for headless/service-account use. The per-tenant endpoint
+  is configured from the Observe UI and is not published in the docs.
 deployment:
   mode: remote
   endpoint: https://docs.observeinc.com/mcp
   auth: none
   verified: probed
-  note: endpoint is the public docs/API-reference MCP server (ReadMe-hosted, tools/list answered 200 unauthenticated). The product MCP server is per tenant with OAuth; its URL is not published.
+  note: endpoint is the public docs/API-reference MCP server (ReadMe-hosted, tools/list answered 200 unauthenticated).
+    The product MCP server is per tenant with OAuth; its URL is not published.
 tools:
 - name: list-endpoints
 - name: get-endpoint
@@ -19,3 +23,28 @@ tools:
 - name: fetch
 listings:
 - https://cursor.com/marketplace/snowflake/observe
+tool_quality:
+  tool_count: 7
+  tokens_total: 1088
+  tokens_per_tool_median: 126
+  heavy_tools: []
+  heavy_tool_count: 0
+  params_total: 6
+  params_undescribed: 0
+  params_described_pct: 100.0
+  tools_with_undescribed_params: 0
+  tools_annotated: 7
+  annotated_pct: 100.0
+  state_changing_unhinted: []
+  tools_missing_schema: 0
+  short_descriptions: 0
+  duplicate_descriptions: 0
+  duplicate_names: 0
+  nonportable_names: []
+  output_schema_count: 0
+  token_estimate: chars/3.6 of each compact tool definition
+  source: mcp/observeinc-mcp-tools.json
+  measured: '2026-10-20'
+  scored: false
+  note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
+    from Glimind's agent-readiness audit.
