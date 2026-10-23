@@ -1,0 +1,14 @@
+{
+  "repo": "observeinc",
+  "feeds": [
+    {
+      "source": "https://www.snowflake.com/en/blog/product-and-technology/?tags=blog%2Fproduct-and-technology%2Fobservability",
+      "feed_url": "https://www.snowflake.com/en/blog/product-and-technology/?tags=blog%2Fproduct-and-technology%2Fobservability",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-10-17T14:53:57Z"
+}
