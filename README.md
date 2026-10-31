@@ -64,5 +64,160 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Observe is a company surfaced via the API Evangelist harvest backlog (source: market-layer-gap) and added to the network as a stub for full-pipeline profiling.
-- https://www.observeinc.com
+Observe (Observe, Inc., now "Observe by Snowflake" following its acquisition by Snowflake; www.observeinc.com redirects to snowflake.com/en/product/observe) is an observability platform for logs, metrics, traces and APM built on a data lake and the OPAL query language. Its developer surface lives on docs.observeinc.com: a tenant-scoped REST API (https://{customerid}.observeinc.com/v1, bearer "<customerid> <token>") covering monitors, datasets, ingest and API tokens, reference tables, service accounts and query export, with date-based Observe-Api-Version response versioning; a read-only Apache Iceberg REST Catalog endpoint; a tenant MCP server; a CLI; and a Terraform provider. Snowflake's own APIs are not credited here.
+
+**Areas:** Company · Observability · Monitoring · Logs · Metrics · Traces · APM · Snowflake
+
+## Observe on APIs.io
+
+Everything profiled for Observe is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/observeinc/](https://apis.io/providers/observeinc/)** — or go straight to one of the APIs or properties below.
+
+### APIs (22)
+
+- [Observe Apache Iceberg REST Catalog API](https://apis.io/apis/observeinc/iceberg-rest-catalog/) — Read-only subset of the Apache Iceberg REST Catalog protocol served under /v1/iceberg/catalog on each Observe tenant, authenticated with the same Observe…
+- [Observe Alert API](https://apis.io/apis/observeinc/observeinc-alert-api/) — Query monitor alerts. Learn more about [alerts](https://docs.observeinc.com/docs/work-with-alerts).
+- [Observe APM API](https://apis.io/apis/observeinc/observeinc-apm-api/) — The APM API from Observe — 3 operation(s) for apm.
+- [Observe Dashboards API](https://apis.io/apis/observeinc/observeinc-dashboards-api/) — The Dashboards API from Observe — 2 operation(s) for dashboards.
+- [Observe Dataset API](https://apis.io/apis/observeinc/observeinc-dataset-api/) — Manage datasets. Learn more about [datasets](https://docs.observeinc.com/en/latest/content/reference/ObserveKeyConcepts.html#datasets)..
+- [Observe Dataset Legacy API](https://apis.io/apis/observeinc/observeinc-dataset-legacy-api/) — Legacy dataset endpoints. Will be deprecated in the future.
+- [Observe Dataset Query Filter API](https://apis.io/apis/observeinc/observeinc-dataset-query-filter-api/) — Manage dataset query filters. Learn more about [dataset query filters](https://docs.observeinc.com/docs/dataset-query-filters).
+- [Observe Documentation API](https://apis.io/apis/observeinc/observeinc-documentation-api/) — Semantic search across Observe's built-in documentation.
+- [Observe Drop Filters API](https://apis.io/apis/observeinc/observeinc-drop-filters-api/) — Manage drop filters used to reduce ingest volume by dropping a configurable fraction of observations matching an OPAL predicate. Learn more about [drop…
+- [Observe Export API](https://apis.io/apis/observeinc/observeinc-export-api/) — Export query results from Observe.
+- [Observe Ingest Routes API](https://apis.io/apis/observeinc/observeinc-ingest-routes-api/) — The Ingest Routes API from Observe — 2 operation(s) for ingest routes.
+- [Observe Ingest Tokens API](https://apis.io/apis/observeinc/observeinc-ingest-tokens-api/) — The Ingest Tokens API from Observe — 2 operation(s) for ingest tokens.
+- [Observe Login API](https://apis.io/apis/observeinc/observeinc-login-api/) — Manage api tokens. Learn more about [api tokens](https://docs.observeinc.com/en/latest/content/reference/ObserveAPIAuth.html).
+- [Observe Metrics API](https://apis.io/apis/observeinc/observeinc-metrics-api/) — The Metrics API from Observe — 1 operation(s) for metrics.
+- [Observe Monitor API](https://apis.io/apis/observeinc/observeinc-monitor-api/) — Manage monitors. Learn more about [monitors](https://docs.observeinc.com/en/latest/content/monitors/MonitorsIntro.html).
+- [Observe Monitor Mute API](https://apis.io/apis/observeinc/observeinc-monitormute-api/) — Manage monitor mute rules. Mute rules suppress alert notifications for one or more monitors during a defined time window. Learn more about [monitor mute…
+- [Observe Object Tags API](https://apis.io/apis/observeinc/observeinc-objecttags-api/) — Search for object tags on objects such as dashboards, datasets, worksheets, etc.
+- [Observe Reference Tables API](https://apis.io/apis/observeinc/observeinc-referencetables-api/) — Manage reference tables. Learn more about [reference tables](https://docs.observeinc.com/en/latest/content/reference/ReferenceTables.html).
+- [Observe Skills API](https://apis.io/apis/observeinc/observeinc-skills-api/) — Manage custom AI agent skills for the AI-SRE agent.
+- [Observe Tags API](https://apis.io/apis/observeinc/observeinc-tags-api/) — The Tags API from Observe — 1 operation(s) for tags.
+- [Observe Service Accounts API](https://apis.io/apis/observeinc/observeinc-service-accounts-api/) — Manage service accounts and api tokens. Learn more about service accounts.
+- [Observe Tag Values API](https://apis.io/apis/observeinc/observeinc-tag-values-api/) — The Tag Values API from Observe — 1 operation(s) for tag values.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Observe by Snowflake MCP Server](https://apis.io/servers/observeinc/observe-by-snowflake-mcp-server/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Observeinc Agentic Access](https://apis.io/agentic-access/observeinc/observeinc-agentic-access/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [AlertResource](https://apis.io/schemas/observeinc/observeinc-alert-resource/)
+- [DatasetQueryFilter](https://apis.io/schemas/observeinc/observeinc-dataset-query-filter-resource/)
+- [DatasetResource](https://apis.io/schemas/observeinc/observeinc-dataset-resource/)
+- [IngestFiltersObject](https://apis.io/schemas/observeinc/observeinc-ingest-filters-resource/)
+- [IngestRoutesObject](https://apis.io/schemas/observeinc/observeinc-ingest-routes-resource/)
+- [MonitorResource](https://apis.io/schemas/observeinc/observeinc-monitor-resource/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Observeinc Context](https://apis.io/jsonld/observeinc/observeinc-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Observe API Rules](https://apis.io/rules/observeinc/observeinc-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Observeinc Authentication](https://apis.io/security/observeinc/observeinc-authentication/)
+- [Observeinc Domain Security](https://apis.io/security/observeinc/observeinc-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Observeinc Rate Limits](https://apis.io/rate-limits/observeinc/observeinc-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.observeinc.com)
+- [Documentation](https://docs.observeinc.com/)
+- [Getting started](https://docs.observeinc.com/docs/google-cloud-platform-quickstart-1)
+- [API reference](https://docs.observeinc.com/reference/how-you-can-interact-with-the-observe-api)
+- [Pricing](https://www.snowflake.com/en/pricing-options/)
+- [Sign up](https://signup.snowflake.com/)
+- [Support](https://www.snowflake.com/en/support/)
+- [Blog](https://www.snowflake.com/en/blog/product-and-technology/?tags=blog%2Fproduct-and-technology%2Fobservability)
+- [Trust centre](https://trust.snowflake.com/)
+- [Terms of service](https://www.observeinc.com/legal/terms-of-service)
+- [Privacy policy](https://www.snowflake.com/en/legal/privacy/privacy-policy/)
+- [GitHub](https://github.com/observeinc)
+- [Status](https://status.snowflake.com/)
+
+## API Evangelist rating
+
+**Kin Score 63.0** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 76.7 |
+| Contract quality | 68.1 |
+| Contract governance | 22.0 |
+| Operational transparency | 86.8 |
+| Developer ergonomics | 61.9 |
+| Access clarity | 52.6 |
+
+**Agent readiness 44.8** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/observeinc/](https://apis.io/providers/observeinc/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Observe: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/observeinc/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
